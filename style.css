@@ -1,0 +1,35 @@
+body{
+	background:url(blue.jpg);
+	background-size:100% 100%;
+	background-attachment:fixed;
+	margin:20px;
+}
+
+h1{
+	font-family:'Ubuntu';
+	color:blue;
+}
+
+ul{
+	list-style-type: none;
+}
+li{
+	color:blue;
+	font-size:30px;
+}
+	
+.row{
+	cursor:pointer;
+	color:red;
+	font-family: 'Rockwell Extra Bold', 'Rockwell Bold', monospace;
+}
+	
+.headings{
+	text-align:center;
+}
+
+.info{
+	text-align:center;
+	font-family: 'Rockwell Extra Bold', 'Rockwell Bold', monospace;
+	font-size:20px;
+}
