@@ -9,6 +9,29 @@ $(document).ready(function(){
 	$(".projects").fadeTo(0,0.5);
 	$(".contact").fadeTo(0,0.5);
 	
+	$(".about-me").hover(function(){
+		$(".about-me").fadeTo(0,1);
+	},function(){
+		$(".about-me").fadeTo(0,0.5);
+		});
+	$(".projects").hover(function(){
+		$(".projects").fadeTo(0,1);
+	},function(){
+		$(".projects").fadeTo(0,0.5);
+		});
+	
+	$(".contact").hover(function(){
+		$(".contact").fadeTo(0,1);
+	},function(){
+		$(".contact").fadeTo(0,0.5);
+		});
+	
+	$(".home").hover(function(){
+		$(".home").fadeTo(0,1);
+	},function(){
+		$(".home").fadeTo(0,0.5);
+		});
+			
     $(".home").click(function(){
 		$(".home").fadeTo(0,1);
 		$(".about-me").fadeTo(0,0.5);
