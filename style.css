@@ -2,12 +2,16 @@ body{
 	background:url(blue.jpg);
 	background-size:100% 100%;
 	background-attachment:fixed;
-	margin:20px;
+	margin:50px;
 }
 
 h1{
-	font-family:'Ubuntu';
+	font-family: "Times New Roman", Times, serif;
+	text-shadow: 1.5px 1.5px #8888ff;
 	color:blue;
+	box-shadow: 10px 10px 5px #888888;
+	border-radius: 50%;
+	background:#e0e1e0;
 }
 
 ul{
@@ -19,13 +23,17 @@ li{
 }
 	
 .row{
+	font-size:20px;
 	cursor:pointer;
 	color:red;
 	font-family: 'Rockwell Extra Bold', 'Rockwell Bold', monospace;
 }
 	
 .headings{
+	border-right:2px solid blue;
+	border-left:2px solid blue;
 	text-align:center;
+	border-radius:15px;
 }
 
 .info{

@@ -1,67 +1,65 @@
 $(document).ready(function(){
 	$(".info").hide();
-/*	$("#info-home").hide();
-	$("#info-about-me").hide();
-	$("#info-projects").hide();
-	$("#info-contact").hide();
-	*/$(".home").fadeTo(0,0.5);
-	$(".about-me").fadeTo(0,0.5);
-	$(".projects").fadeTo(0,0.5);
-	$(".contact").fadeTo(0,0.5);
-	
+	$(".home").fadeTo(0,0.65);
+	$(".about-me").fadeTo(0,0.65);
+	$(".projects").fadeTo(0,0.65);
+	$(".contact").fadeTo(0,0.65);
+	$(".home").css("background-color","#e8e9e8");	
+	$(".home").css({ boxShadow : "5px 5px 3px 0 rgba(100,100,100,0.4)" });
+	$("#info-home").fadeIn(1000);	
 	$(".about-me").hover(function(){
 		$(".about-me").fadeTo(0,1);
 	},function(){
-		$(".about-me").fadeTo(0,0.5);
+		$(".about-me").fadeTo(0,0.65);
 		});
 	$(".projects").hover(function(){
 		$(".projects").fadeTo(0,1);
 	},function(){
-		$(".projects").fadeTo(0,0.5);
+		$(".projects").fadeTo(0,0.65);
 		});
 	
 	$(".contact").hover(function(){
 		$(".contact").fadeTo(0,1);
 	},function(){
-		$(".contact").fadeTo(0,0.5);
+		$(".contact").fadeTo(0,0.65);
 		});
 	
 	$(".home").hover(function(){
 		$(".home").fadeTo(0,1);
 	},function(){
-		$(".home").fadeTo(0,0.5);
+		$(".home").fadeTo(0,0.65);
 		});
 			
     $(".home").click(function(){
-		$(".home").fadeTo(0,1);
-		$(".about-me").fadeTo(0,0.5);
-		$(".projects").fadeTo(0,0.5);
-		$(".contact").fadeTo(0,0.5);
+		$(".headings").css({ boxShadow : "0 0 0 0 rgba(100,100,100,0.4)" });	
+		$(".headings").css("background-color","");	
+		$(".home").css("background-color","#e8e9e8");	
+		$(".home").css({ boxShadow : "5px 5px 3px 0 rgba(100,100,100,0.4)" });
 		$(".info").hide();
         $("#info-home").fadeIn("slow");      
     });
     
     $(".about-me").click(function(){
-		$(".home").fadeTo(0,0.5);
-		$(".about-me").fadeTo(0,1);
-		$(".projects").fadeTo(0,0.5);
-		$(".contact").fadeTo(0,0.5);
+		$(".headings").css("background-color","");	
+		$(".about-me").css("background-color","#e8e9e8");	
+		$(".headings").css({ boxShadow : "0 0 0 0 rgba(100,100,100,0.4)" });		
+		$(".about-me").css({ boxShadow : "5px 5px 3px 0 rgba(100,100,100,0.4)" });
 		$(".info").hide();
 		$("#info-about-me").fadeIn("slow");
     });
     $(".projects").click(function(){
-		$(".home").fadeTo(0,0.5);
-		$(".about-me").fadeTo(0,0.5);
-		$(".projects").fadeTo(0,1);
-		$(".contact").fadeTo(0,0.5);
+		$(".headings").css("background-color","");	
+		$(".projects").css("background-color","#e8e9e8");	
+		$(".headings").css({ boxShadow : "0 0 0 0 rgba(100,100,100,0.4)" });		
+		$(".projects").css({ boxShadow : "5px 5px 3px 0 rgba(100,100,100,0.4)" });
 		$(".info").hide();
 		$("#info-projects").fadeIn("slow");
     });
     $(".contact").click(function(){
-		$(".home").fadeTo(0,0.5);
-		$(".about-me").fadeTo(0,0.5);
-		$(".projects").fadeTo(0,0.5);
-		$(".contact").fadeTo(0,1);
+		$(".headings").css("background-color","");	
+		$(".contact").css("background-color","#e8e9e8");	
+		$(".headings").css({ boxShadow : "0 0 0 0 rgba(100,100,100,0.4)" });		
+		$(".contact").css({ boxShadow : "5px 5px 3px 0 rgba(100,100,100,0.4)" });
 		$(".info").hide();
 		$("#info-contact").fadeIn("slow");
     });        
