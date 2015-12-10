@@ -4,7 +4,7 @@ $(document).ready(function(){
 	$(".about-me").fadeTo(0,0.65);
 	$(".projects").fadeTo(0,0.65);
 	$(".contact").fadeTo(0,0.65);
-	$(".home").css("background-color","#e8e9e8");	
+	$(".home").css("background-color","#eeeff2");	
 	$(".home").css({ boxShadow : "5px 5px 3px 0 rgba(100,100,100,0.4)" });
 	$("#info-home").fadeIn(1000);	
 	$(".about-me").hover(function(){
@@ -33,7 +33,7 @@ $(document).ready(function(){
     $(".home").click(function(){
 		$(".headings").css({ boxShadow : "0 0 0 0 rgba(100,100,100,0.4)" });	
 		$(".headings").css("background-color","");	
-		$(".home").css("background-color","#e8e9e8");	
+		$(".home").css("background-color","#eeeff2");	
 		$(".home").css({ boxShadow : "5px 5px 3px 0 rgba(100,100,100,0.4)" });
 		$(".info").hide();
         $("#info-home").fadeIn("slow");      
@@ -41,7 +41,7 @@ $(document).ready(function(){
     
     $(".about-me").click(function(){
 		$(".headings").css("background-color","");	
-		$(".about-me").css("background-color","#e8e9e8");	
+		$(".about-me").css("background-color","#eeeff2");	
 		$(".headings").css({ boxShadow : "0 0 0 0 rgba(100,100,100,0.4)" });		
 		$(".about-me").css({ boxShadow : "5px 5px 3px 0 rgba(100,100,100,0.4)" });
 		$(".info").hide();
@@ -49,7 +49,7 @@ $(document).ready(function(){
     });
     $(".projects").click(function(){
 		$(".headings").css("background-color","");	
-		$(".projects").css("background-color","#e8e9e8");	
+		$(".projects").css("background-color","#eeeff2");	
 		$(".headings").css({ boxShadow : "0 0 0 0 rgba(100,100,100,0.4)" });		
 		$(".projects").css({ boxShadow : "5px 5px 3px 0 rgba(100,100,100,0.4)" });
 		$(".info").hide();
@@ -57,7 +57,7 @@ $(document).ready(function(){
     });
     $(".contact").click(function(){
 		$(".headings").css("background-color","");	
-		$(".contact").css("background-color","#e8e9e8");	
+		$(".contact").css("background-color","#eeeff2");	
 		$(".headings").css({ boxShadow : "0 0 0 0 rgba(100,100,100,0.4)" });		
 		$(".contact").css({ boxShadow : "5px 5px 3px 0 rgba(100,100,100,0.4)" });
 		$(".info").hide();
