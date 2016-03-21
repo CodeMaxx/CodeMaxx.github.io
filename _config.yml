@@ -82,7 +82,7 @@ JB :
   comments :
     provider : disqus
     disqus :
-      short_name : jekyllbootstrap
+      short_name : GSoC
     livefyre :
       site_id : 123
     intensedebate :
@@ -93,7 +93,7 @@ JB :
       width: 580
       colorscheme: light
     duoshuo :
-      short_name : jekyllbootstrap
+      short_name : GSoC
 
   # Settings for analytics helper
   # Set 'provider' to the analytics provider you want to use.

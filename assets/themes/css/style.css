@@ -14,16 +14,40 @@
   float: right; }*/
 
 /* Jekyll Bootstrap Colors */
-h1, h2, h3, h4 {
-  color: #f22430;
+
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300);
+h1 {
+  text-align: center;
+  color: #f24430;
 }
 #footer {
-  background-color: #fdcd60;
+  background-color: #60cdfd;
 }
-
-
-
+li
+{
+list-style-type: none;
+}
+a{
+  font-family: "Times New Roman", Times, monospace;
+  color: black;
+  opacity: 0.7;
+}
+h1{
+  font-family: "Georgia", Times, monospace;
+}
+h2{
+  font-family: 'Source Sans Pro', sans-serif;
+}
+span{
+  opacity: 0.6;
+}
+.navbar-brand{
+  opacity: 1;
+}
 /* posts index */
+.posts{
+  text-align: center;
+}
 .post > h3.title {
   position: relative;
   padding-top: 10px; }
@@ -77,3 +101,8 @@ h1, h2, h3, h4 {
   background: #57A957;
   border: 1px solid #4c964d;
   color: #FFF; }
+
+a:hover {
+  color: black;
+  opacity: 1;
+}
