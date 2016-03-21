@@ -7,4 +7,4 @@ tags: []
 ---
 {% include JB/setup %}
 
-This blog records my progress during Google Summer of Code 2016.
+## This blog records my progress during Google Summer of Code 2016.

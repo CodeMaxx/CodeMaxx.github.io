@@ -8,8 +8,8 @@ highlighter: rouge
 # Themes are encouraged to use these universal variables
 # so be sure to set them if your theme uses them.
 #
-title : Jekyll Bootstrap
-tagline: Site Tagline
+title : SymEngine GSoC 2016
+tagline: OpenSouce.Code.GSoC
 author :
   name : Akash Trehan
   email : akash.trehan123@gmail.com
@@ -25,6 +25,8 @@ author :
 #
 production_url : http://codemaxx.github.io
 
+#Port for Localhost hosting
+port : 8000
 # All Jekyll-Bootstrap specific configurations are namespaced into this hash
 #
 JB :
