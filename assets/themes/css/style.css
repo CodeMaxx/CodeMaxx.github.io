@@ -103,6 +103,7 @@ span{
   color: #FFF; }
 
 a:hover {
-  color: black;
-  opacity: 1;
+  transition-delay: 0.1s;
+  -webkit-transition-delay: 1s;
+  color: #60cdfd;
 }
