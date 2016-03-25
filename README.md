@@ -1,78 +1,103 @@
-# Jekyll-Bootstrap
+## Indigo Minimalist Jekyll Template - [Demo](http://sergiokopplin.github.io/indigo/)
+[![Build Status](https://travis-ci.org/sergiokopplin/indigo.svg?branch=gh-pages)](https://travis-ci.org/sergiokopplin/indigo)
 
-The quickest way to start and publish your Jekyll powered blog. 100% compatible with GitHub pages
+![Screenshot](https://raw.githubusercontent.com/sergiokopplin/indigo/gh-pages/screen-shot.png)
 
-## Usage
+This is a simple and minimalist template for Jekyll for those who likes to eat noodles.
 
-For all usage and documentation please see: <http://jekyllbootstrap.com>
+---
 
-## Version
+## What has inside?
 
-0.3.0 - stable and versioned using [semantic versioning](http://semver.org/).
+- [Gulp](http://gulpjs.com/) && [BrowserSync](https://www.browsersync.io/)
+- [Stylus](http://stylus-lang.com/) with [RSCSS](http://rscss.io/) Methodology
+- [SVG](https://www.w3.org/Graphics/SVG/)
+- Tests with [Travis](https://travis-ci.org/)
+- No JS
+- Google Speed: [98/100](https://developers.google.com/speed/pagespeed/insights/?url=http%3A%2F%2Fsergiokopplin.github.io%2Findigo%2F)
 
-**NOTE:** 0.3.0 introduces a new theme which is not backwards compatible in the sense it won't _look_ like the old version.
-However, the actual API has not changed at all.
-You might want to run 0.3.0 in a branch to make sure you are ok with the theme design changes.
+# Setup
 
-## Milestones
+1. [Install Jekyll](http://jekyllrb.com)
+2. [Install NodeJS](https://nodejs.org/)
+3. [Install Bundler](http://bundler.io/)
+4. Fork the project [Indigo](https://github.com/sergiokopplin/indigo/fork)
+5. Edit `_config.yml` with your data.
+6. `bundle install`
+7. `npm install`
+8. `gulp`
+9. open in your browser: `http://localhost:3000`
 
-[0.4.0](https://github.com/plusjade/jekyll-bootstrap/milestones/v%200.4.0) - next release [ETA 03/29/2015]
+> [Arti Annaswamy](https://github.com/aannasw) wrote a really nice tutorial of "how to install jekyll". Here's the [part 1](http://artiannaswamy.com/build-a-github-blog-part-1) and [part 2](http://artiannaswamy.com/build-a-github-blog-part-2). :metal:
 
-### GOALS
+# Settings
 
-* No open PRs against master branch.
-* Squash some bugs.
-* Add some new features (low-hanging fruit).
-* Establish social media presence.
+You must fill some informations on `_config.yml` to customize your site.
 
+```
+name: John Doe
+bio: 'A Man who travels the world eating noodles'
+picture: 'assets/images/profile.jpg'
 
-### Bugs
+url: http://YOURUSER.github.io
+# like: http://sergiokopplin.github.io
+permalink: /:title/
 
-|Bug |Description
-|------|---------------
-|[#86](https://github.com/plusjade/jekyll-bootstrap/issues/86)  |&#x2611; Facebook Comments
-|[#113](https://github.com/plusjade/jekyll-bootstrap/issues/113)|&#x2611; ASSET_PATH w/ page & post
-|[#144](https://github.com/plusjade/jekyll-bootstrap/issues/144)|&#x2610; BASE_PATH w/ FQDN
-|[#227](https://github.com/plusjade/jekyll-bootstrap/issues/227)|&#x2611; Redundant JB/setup
+analytics: 'UA-MYANALYTICS'
+disqus: mydisqus
+facebook: myfacebook
+twitter: mytwitter
+instagram: myinstagram
+linkedin: mylinkedin
+youtube: myyoutube
+spotify: myspotify
+github: mygithub
+medium: mymedium
+email: myemail@gmail.com
 
-### Features
+...
 
-|Bug |Description
-|------|---------------
-|[#98](https://github.com/plusjade/jekyll-bootstrap/issues/98)  |&#x2611; GIST Integration
-|[#244](https://github.com/plusjade/jekyll-bootstrap/issues/244)|&#x2611; JB/file_exists Helper
-|[#42](https://github.com/plusjade/jekyll-bootstrap/issues/42)  |&#x2611; Sort collections of Pages / Posts
-|[#84](https://github.com/plusjade/jekyll-bootstrap/issues/84)  |&#x2610; Detecting production mode
+and lot of other options, like width, projects, pages, read-time, tags, relateds, animations, etc.
+```
 
-### TODOS
+## Tests
 
-Review existing pull requests against plusjake/jekyll-bootstrap:master. Merge or close each.
+You can test your app with:
 
-* Create twitter account. Add link / icon on jekyllbootstrap.com.
-* Create blog posts under plusjade/gh-pages, expose on jekyllbootstrap.com, feed to twitter account.
-* Announce state of project, announce roadmap(s), announce new versions as they’re released.
+```bash
+bundle exec htmlproof ./_site --verbose
+````
 
-## Contributing
+If you want travis tests, you can take a look at:
+- [http://www.raywenderlich.com/109418/travis-ci-tutorial](http://www.raywenderlich.com/109418/travis-ci-tutorial)
 
+## Showcase
 
-To contribute to the framework please make sure to checkout your branch based on `jb-development`!!
-This is very important as it allows me to accept your pull request without having to publish a public version release.
+- [fohlen.github.io](http://fohlen.github.io/) by @[Lennard Berger](https://github.com/Fohlen)
+- [gedankenstuecke.github.io](http://gedankenstuecke.github.io) by @[Bastian Greshake](https://github.com/gedankenstuecke)
+- [artiannaswamy.com](http://artiannaswamy.com/) by @[Arti Annaswamy](https://github.com/aannasw)
 
-Small, atomic Features, bugs, etc.
-Use the `jb-development` branch but note it will likely change fast as pull requests are accepted.
-Please rebase as often as possible when working.
-Work on small, atomic features/bugs to avoid upstream commits affecting/breaking your development work.
+> open a [pull-request](https://github.com/sergiokopplin/indigo/pulls) if you want your site in this awesome list
 
-For Big Features or major API extensions/edits:
-This is the one case where I'll accept pull-requests based off the master branch.
-This allows you to work in isolation but it means I'll have to manually merge your work into the next public release.
-Translation : it might take a bit longer so please be patient! (but sincerely thank you).
+## Contributions
 
-**Jekyll-Bootstrap Documentation Website.**
+- [Wojciech Dzikowski](http://github.com/DzikowskiW)
+- [Siddhant Jain](http://github.com/siddhantjain)
+- [Jeanderson Barros Candido](http://github.com/jeandersonbc)
+- [Rootul Patel](http://github.com/rootulp)
+- [Bastian Greshake](http://github.com/gedankenstuecke)
+- [Phat Nguyen](http://github.com/npvinhphat)
 
-The documentation website at <http://jekyllbootstrap.com> is maintained at https://github.com/plusjade/jekyllbootstrap.com
+## Problems?
 
+Tell me on github or open a [issue](https://github.com/sergiokopplin/indigo/issues/new).
+
+### Update your fork.
+
+- [github.com/articles/syncing-a-fork/](https://help.github.com/articles/syncing-a-fork/)
+
+---
 
 ## License
 
-[MIT](http://opensource.org/licenses/MIT)
+[MIT](http://kopplin.mit-license.org/) License © Sérgio Kopplin
