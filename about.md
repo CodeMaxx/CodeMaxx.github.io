@@ -3,21 +3,23 @@ title: About
 layout: page
 permalink: /about/index.html
 ---
-![Profile Image]({{ site.url }}/{{ site.picture }})
+<style>
+.selfie{
+  width: 125px;
+  margin-bottom: 25px;
+  border-radius: 100%;
+  -webkit-transition: all 0.2s;
+          transition: all 0.2s;
+  box-shadow: 0;
+  opacity: 1;
+}
+</style>
+<img class="selfie" alt="{{ site.name }}" src="{% if site.external-image == true %}{{ site.picture }}{% else %}{{ site.url }}/{{ site.picture }}{% endif %}" />
 
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<center><h1>CodeMaxx</h1></center>
+<p>Hi! I am Akash Trehan. I am a first-year undergraduate studying at IIT Bombay.</p>
 
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p></p>
 
 <h2>Skills</h2>
 
@@ -41,7 +43,7 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 <h2>Projects</h2>
 
 <ul>
-	<li><a href="https://github.com/">Lorem Lorem</a></li>
-	<li><a href="https://github.com/">Ipsum Dolor</a></li>
-	<li><a href="https://github.com/">Dolor Lorem</a></li>
+	<li><a href="https://github.com/nihal111/RPG/tree/gh-pages">Video RPG</a></li>
+	<li><a href="https://github.com/CodeMaxx/SyncYoutube">Sync Youtube</a></li>
+	<li><a href="https://github.com/CodeMaxx/CS101-Checkers">Checkers with AI</a></li>
 </ul>
