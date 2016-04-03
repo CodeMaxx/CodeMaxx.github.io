@@ -17,10 +17,10 @@ highlighter: rouge
 analytics-google: 'UA-MYANALYTICS'
 
 # if you don't want comments in your posts, set to false
-disqus: mydisqus
+disqus: codemaxx
 
 # if you don't have any of social below, comment the line
-facebook: https://www.facebook.com/AkashTrehan21
+facebook: AkashTrehan21
 # twitter: mytwitter
 # google: mygoogle
 # instagram: myinstagram
@@ -28,8 +28,8 @@ facebook: https://www.facebook.com/AkashTrehan21
 # linkedin: mylinkedin
 # youtube: myyoutube
 # spotify: myspotify
-github: https://www.github.com/CodeMaxx
-medium: https://medium.com/@akash.trehan
+github: CodeMaxx
+medium: akash.trehan
 email: akash.trehan123@gmail.com
 
 # do you want a larger site? change the option below
