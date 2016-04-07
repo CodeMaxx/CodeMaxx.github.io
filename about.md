@@ -17,33 +17,28 @@ permalink: /about/index.html
 <img class="selfie" alt="{{ site.name }}" src="{% if site.external-image == true %}{{ site.picture }}{% else %}{{ site.url }}/{{ site.picture }}{% endif %}" />
 
 <center><h1>CodeMaxx</h1></center>
-<p>Hi! I am Akash Trehan. I am a first-year undergraduate studying at IIT Bombay.</p>
+<p>Hi! I am Akash Trehan a.k.a. CodeMaxx. I am a first-year undergraduate studying at IIT Bombay. </p>
 
 <p></p>
 
-<h2>Skills</h2>
-
-<ul class="skill-list">
-	<li>HTML - Jade - Haml - Erb</li>
-	<li>Responsive (Mobile First)</li>
-	<li>CSS (Stylus, Sass, Less)</li>
-	<li>Css Frameworks (Bootstrap, Foundation)</li>
-	<li>Javascript (Design Patterns, Testes)</li>
-	<li>NodeJS</li>
-	<li>AngularJS - ReactJS</li>
-	<li>Grunt - Gulp - Yeoman</li>
-	<li>Git</li>
-	<li>PHP</li>
-	<li>Python</li>
-	<li>MySQL - MongoDB</li>
-	<li>Scrum and Kanban</li>
-	<li>TDD e Continuous Integration</li>
-</ul>
-
-<h2>Projects</h2>
+<h2>Hobby Projects</h2>
 
 <ul>
-	<li><a href="https://github.com/nihal111/RPG/tree/gh-pages">Video RPG</a></li>
-	<li><a href="https://github.com/CodeMaxx/SyncYoutube">Sync Youtube</a></li>
-	<li><a href="https://github.com/CodeMaxx/CS101-Checkers">Checkers with AI</a></li>
+	<li><a href="https://github.com/nihal111/MooDLD">MooDLD</a> - Moodle Downloader for IITB</li>
+	<li><a href="https://github.com/nihal111/RPG/tree/gh-pages">Video RPG</a> - Role Playing Game where users interaact through Video</li>
+	<li><a href="https://github.com/CodeMaxx/SyncYoutube">Sync Youtube</a> - Syncs a Youtube channel to a local directory</li>
+	<li><a href="https://github.com/CodeMaxx/CS101-Checkers">Checkers with AI</a> - Traditional Checkers Game</li>
+	<li><a href="https://github.com/CodeMaxx/Breakout">Breakout</a> - Escape by destroying all the pieces</li>
 </ul>
+
+<p></p>
+
+<h2>Open Source</h2>
+
+<ul>
+	<li><a href="https://github.com/symengine/symengine">SymEngine</a> - C++ library for Symbolic Computations</li>
+	<li><a href="https://github.com/sympy/sympy">SymPy</a> - Python library for Symbolic Computations</li>
+	<li><a href="https://github.com/mozilla/wptview">wptview</a>Mozilla's project for displaying Web Platform Tests.</li>
+</ul>
+<br><br>
+<center>See <a href="../projects/">Projects</a> for more details....</center>
