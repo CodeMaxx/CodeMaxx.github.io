@@ -7,6 +7,7 @@ tag:
 - Mathematics
 - C++
 projects: true
+star: true
 description: "Symbolic Computation C++ Library"
 ---
 
