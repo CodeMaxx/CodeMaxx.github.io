@@ -512,7 +512,7 @@ pre {
 .home > .list > .item:hover > .url > .title,
 .blog > .list > .item:hover > .url > .title,
 .projects > .list > .item:hover > .url > .title {
-  color: #4b0082;
+  color: #3399ff;
 }
 .home > .list aside,
 .blog > .list aside,
@@ -661,7 +661,7 @@ pre {
   font-size: 1.6rem;
 }
 .tag-list > .list > .item:hover > .url > .title {
-  color: #4b0082;
+  color: #3399ff;
 }
 .tag-list > .list aside {
   position: relative;
@@ -810,7 +810,7 @@ pre {
   margin: 0;
 }
 .footer-main > .link > .icon:hover {
-  fill: #4b0082 !important;
+  fill: #3399ff !important;
 }
 .footer-main > .extra {
   color: #aaa;
@@ -847,15 +847,15 @@ pre {
 }
 .header-home > .title {
   font-size: 4rem;
-  margin: 0 0 13px;
+  margin: 0 0 0px;
 }
 .header-home > .description {
   font-size: 1.85rem;
   font-weight: 300;
   font-style: normal;
-  color: #aaa;
+  color: #777;
   width: 70%;
-  margin: 0 auto 30px;
+  margin: 0 auto 10px;
 }
 .header-home > .description a {
   font-weight: 200;
@@ -907,7 +907,10 @@ pre {
   width: 70px;
 }
 .nav-home > .list > .item > .link:hover {
-  color: #666;
+  color: #3399ff;
+}
+.nav > .list > .item > .link:hover {
+  color: #3399ff;
 }
 .evidence {
   background-image: -webkit-linear-gradient(top, rgba(39,243,106,0.15), rgba(39,243,106,0.15));
@@ -1132,7 +1135,7 @@ pre {
   width: 35px;
 }
 .social-links > .link:hover > .icon {
-  fill: #4b0082;
+  fill: #3399ff;
 }
 .social-links > .link:hover:before {
   opacity: 1;
