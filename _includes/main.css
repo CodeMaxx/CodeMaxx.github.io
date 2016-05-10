@@ -371,7 +371,7 @@ code,
 tt {
   padding: 1px 3px;
   font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
-  font-size: 12px;
+  font-size: 13px;
   line-height: 20px;
   background: #fff;
   border-radius: 2px;
@@ -458,7 +458,7 @@ pre {
 .home,
 .blog,
 .projects {
-  margin-top: 125px;
+  margin-top: 75px;
 }
 .home > .list,
 .blog > .list,
@@ -833,7 +833,7 @@ pre {
   text-align: center;
 }
 .header-home > .link > .selfie {
-  width: 125px;
+  width: 190px;
   margin-bottom: 25px;
   border-radius: 100%;
   -webkit-transition: all 0.2s;
@@ -887,7 +887,7 @@ pre {
   padding: 0 13px 0;
 }
 .nav > .list > .item > .link {
-  font-size: 1.4rem;
+  font-size: 1.8rem;
   padding: 20px 10px;
 }
 .nav-home {

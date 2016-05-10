@@ -2,19 +2,40 @@
    or page.title == "Blog"
    or page.title == "Projects"
    or page.title == "Tags"
+   or page.title == "About"
 %}{% assign showHeader = true %}{% endif %}
 
-{% if showHeader == true %}
-    <header class="header-home {% if site.animation %}animated{% endif %}">
-        <a class="link" href="{{ site.url }}/about">
-            <img class="selfie" alt="{{ site.name }}" src="{% if site.external-image == true %}{{ site.picture }}{% else %}{{ site.url }}/{{ site.picture }}{% endif %}" />
-        </a>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-        <h1 class="title">{{ site.name }}</h1>
-        <h2 class="description">{{ site.bio }}</h2>
+  ga('create', 'UA-77532305-1', 'auto');
+  ga('send', 'pageview');
 
-        {% include social-links.html %}
-    </header>
-{% endif %}
+</script>
 
 {% include nav.html %}
+
+{% if showHeader == true %}
+<style>
+.selfie{
+  width: 100px;
+  margin-bottom: 10px;
+  border-radius: 100%;
+  -webkit-transition: all 0.2s;
+          transition: all 0.2s;
+  box-shadow: 0;
+  opacity: 1;
+}
+.page {
+  margin-top: 75px;
+}
+</style>
+{% include nav.html %}
+<center><img class="selfie" style='width: 80px' alt="{{ site.name }}" src="{% if site.external-image == true %}{{ site.picture }}{% else %}{{ site.url }}/{{ site.picture }}{% endif %}" /></center>
+
+<center><h3 style="display: inline;">Akash Trehan  </h3> </center>
+<center><h5 style="display: inline;opacity: 0.5;" class="description">{{ site.bio }}</h5></center><br>
+{% endif %}

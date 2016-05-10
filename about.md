@@ -3,42 +3,19 @@ title: About
 layout: page
 permalink: /about/index.html
 ---
-<style>
-.selfie{
-  width: 125px;
-  margin-bottom: 25px;
-  border-radius: 100%;
-  -webkit-transition: all 0.2s;
-          transition: all 0.2s;
-  box-shadow: 0;
-  opacity: 1;
-}
-</style>
-<img class="selfie" alt="{{ site.name }}" src="{% if site.external-image == true %}{{ site.picture }}{% else %}{{ site.url }}/{{ site.picture }}{% endif %}" />
 
-<center><h1>CodeMaxx</h1></center>
-<p>Hi! I am Akash Trehan a.k.a. CodeMaxx. I am a first-year undergraduate studying at IIT Bombay. </p>
+`Hello World!`
 
-<p></p>
+`I'm Akash Trehan, a Second Year Computer Science Undergraduate at Indian Institute of Technology, Bombay. I hail from Ferozepur, Punjab. I am very enthusiastic about Software Developement and Network & Information Security. I always keep myself buzy in Open Source Projects. Lately I have also been trying my hand at Capture the Flag problems and I'm loving it.`
 
-<h2>Hobby Projects</h2>
+`I like tinkering with electronic circuits as well as computer softwares. I have built robotic vehicles for Line Follower and Obstacle Crossing comptetions here at IIT.`
 
-<ul>
-	<li><a href="https://github.com/nihal111/MooDLD">MooDLD</a> - Moodle Downloader for IITB</li>
-	<li><a href="https://github.com/nihal111/RPG/tree/gh-pages">Video RPG</a> - Role Playing Game where users interaact through Video</li>
-	<li><a href="https://github.com/CodeMaxx/SyncYoutube">Sync Youtube</a> - Syncs a Youtube channel to a local directory</li>
-	<li><a href="https://github.com/CodeMaxx/CS101-Checkers">Checkers with AI</a> - Traditional Checkers Game</li>
-	<li><a href="https://github.com/CodeMaxx/Breakout">Breakout</a> - Escape by destroying all the pieces</li>
-</ul>
+`I like to try out new things. In my free time I like listening to music, solving Rubik's cube, watching TV Series, playing online games and doing lots of other random stuff :P . I love Punjabi food :D`
 
-<p></p>
+`I always keep experimenting with things and firmly believe that it is the only way to become good at them.`
 
-<h2>Open Source</h2>
+`I am starting this blog to write about my experiences, my projects, and other interesting stuff.`
 
-<ul>
-	<li><a href="https://github.com/symengine/symengine">SymEngine</a> - C++ library for Symbolic Computations</li>
-	<li><a href="https://github.com/sympy/sympy">SymPy</a> - Python library for Symbolic Computations</li>
-	<li><a href="https://github.com/mozilla/wptview">wptview</a>Mozilla's project for displaying Web Platform Tests.</li>
-</ul>
-<br><br>
-<center>See <a href="../projects/">Projects</a> for more details....</center>
+`Fast forward to my `<a href='../blog' style="text-decoration:none">Blog.</a>
+
+`Take a look at my `<a href='../projects' style="text-decoration:none">Projects.</a>
