@@ -12,7 +12,7 @@ description: "Symbolic Computation C++ Library"
 
 <center>A standalone fast C++ symbolic manipulation library.</center>
 
-This project marks the beginning of my journey with Open Source. I was introduced to this project by [@Sumith1896](https://github.com/Sumith1896) who was himself a [GSoC](https://summerofcode.withgoogle.com/) student in [SymEngine](https://github.com/symengine/symengine/) in 2015. A large perentage of my open source contributions are in this project. Besides contributing code I also review PRs and participate in discussions. I got introduced to lots of advanced details of C++ and the produre of software developement. SymEngine is currently the fastest Computer Algebra System being developed. Lately I have been working on adding support for `Infinity`class which has a wide variety of used in mathematics systems.
+This project marks the beginning of my journey with Open Source. I was introduced to this project by [@Sumith1896](https://github.com/Sumith1896) who was himself a [GSoC](https://summerofcode.withgoogle.com/) student in [SymEngine](https://github.com/symengine/symengine/) in 2015. A large perentage of my open source contributions are in this project. Besides contributing code I also review PRs and participate in discussions. I got introduced to lots of advanced details of C++ and the produre of software developement. SymEngine is currently the fastest [Computer Algebra System](https://en.wikipedia.org/wiki/Computer_algebra_system). Lately I have been working on adding support for `Infinity`class which has a wide variety of used in mathematics systems.
 
 A short description of [My Pull Requests](https://github.com/symengine/symengine/pulls?q=is%3Apr+author%3ACodeMaxx+is%3Aclosed) in SymEngine:
 
