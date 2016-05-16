@@ -11,8 +11,10 @@ url: https://CodeMaxx.github.io
 
 permalink: /:title/
 
-markdown: kramdown
-highlighter: rouge
+# markdown: kramdown
+kramdown:
+  input: GFM
+highlighter: pygment
 
 analytics-google: 'UA-MYANALYTICS'
 
@@ -43,7 +45,7 @@ width: normal
 
 # if you don't need projects, comment the *projects* configs below
 projects: true
-
+write-up: true
 # if you don't need "about" or "blog", comment them out below
 about: true
 blog: true

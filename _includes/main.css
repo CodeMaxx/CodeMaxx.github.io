@@ -378,11 +378,10 @@ tt {
   font-size: 13px;
   line-height: 20px;
   background: #fff;
-  border-radius: 2px;
-  border-radius: 2px;
+  border: none;
 }
 pre {
-  box-sizing: border-box;
+  border: none;
   margin: 0 0 1.75em 0;
   width: 100%;
   padding: 5px 10px;
@@ -391,8 +390,6 @@ pre {
   line-height: 2rem;
   overflow: auto;
   background: #fff;
-  border: 1px solid #ededed;
-  border-radius: 2px;
 }
 .wrapper-normal,
 .wrapper-large {
@@ -909,7 +906,7 @@ pre {
   border-radius: 4%;
   -webkit-transition: all 0.4s ease-in-out;
           transition: all 0.4s ease-in-out;
-  width: 70px;
+  width: 85px;
   color: #3399ff;
 }
 .nav-home > .list > .item > .link:hover {
