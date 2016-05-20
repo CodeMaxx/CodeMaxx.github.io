@@ -875,7 +875,7 @@ pre {
 .nav-home > .list > .item > .link {
   display: inline-block;
   font-weight: 300;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   padding: 20px 10px;
   text-decoration: none;
 }
@@ -900,13 +900,13 @@ pre {
   padding: 0;
 }
 .nav-home > .list > .item > .link {
-  font-size: 2rem;
+  font-size: 1.8rem;
   padding: 7px 15px;
   margin: 0;
   border-radius: 4%;
   -webkit-transition: all 0.4s ease-in-out;
           transition: all 0.4s ease-in-out;
-  width: 85px;
+  width: 75px;
   color: #3399ff;
 }
 .nav-home > .list > .item > .link:hover {

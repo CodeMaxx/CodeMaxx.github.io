@@ -679,6 +679,49 @@ pre {
 .tag-list > .list .item:hover .url aside {
   color: #666;
 }
+.post {
+  margin-top: 125px;
+}
+.post > .title {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.post > .date,
+.post > .post-tags {
+  color: #aaa;
+  font-weight: 300;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  text-align: center;
+  display: block;
+  margin-bottom: 6rem;
+  letter-spacing: 1px;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+.post > .date {
+  margin-bottom: 2rem;
+}
+.post > .post-tags > .item {
+  padding: 3px 6px;
+  border-radius: 3px;
+  font-size: 1.1rem;
+  background: #ededed;
+  color: #666;
+  letter-spacing: 1px;
+  margin: 0 0.5rem;
+  text-decoration: none;
+}
+.post > h2,
+.post > h3,
+.post > h4 {
+  margin-top: 40px;
+}
+.post > h2 a,
+.post > h3 a,
+.post > h4 a {
+  text-decoration: none;
+}
 .author {
   padding: 3rem 0;
   border-bottom: 1px solid #ededed;

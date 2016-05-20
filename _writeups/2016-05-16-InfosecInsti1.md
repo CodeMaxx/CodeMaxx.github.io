@@ -6,10 +6,12 @@ tag:
 - Web
 - Write-up
 - Infosec Institute n00b CTF
-writeup: true
+blog: true
+star: false
 description: "n00b CTF 1"
 points: 10
 category: Web
+points:
 ---
 
 #### Points: 10
