@@ -16,13 +16,13 @@ category: Web
 
 #### Description:
 
-![Level 2 Description](/assets/images/infosecInstin00b/desc2.png)
+![Level 2 Description](/assets/images/InfosecInstin00b/desc2.png)
 
 ## Write-up
 
 Seeing that the Image was broken I went to the source code to check why. There could have been two reasons - the file is not present at the path specified for the image or the file is not a proper image.
 
-![Level 2 Source](/assets/images/infosecInstin00b/source2.png)
+![Level 2 Source](/assets/images/InfosecInstin00b/source2.png)
 
 I clicked on `img/leveltwo.jpeg` to open the file and it did exist. Hence the file can't be an image otherwise it would have shown up on the page. I downloaded the file from [here](http://ctf.infosecinstitute.com/img/leveltwo.jpeg). You can also download it from [here](/assets/images/InfosecInstin00b/leveltwo.jpeg). Just open the link and press `Ctrl + s` to save.
 

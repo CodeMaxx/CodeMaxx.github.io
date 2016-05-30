@@ -16,7 +16,7 @@ category: Web
 
 #### Description:
 
-![Level 3 Description](/assets/images/infosecInstin00b/qr3.png)
+![Level 3 Description](/assets/images/InfosecInstin00b/qr3.png)
 
 ## Write-up
 
@@ -26,7 +26,7 @@ Then I read the QR code using an online utility. Seach for `QR Code decoder` dec
 
 This is what I got.
 
-![Decoded QR](/assets/images/infosecInstin00b/decoded_qr3.png)
+![Decoded QR](/assets/images/InfosecInstin00b/decoded_qr3.png)
 
 This surely looks like `Morse Code`. I used <http://morsecode.scphillips.com/translator.html> to convert this to ascii text.
 I got `INFOSECFLAGISMORSING`.

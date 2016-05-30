@@ -18,7 +18,7 @@ category: Web
 
 ![Markdowm Image][1]
 
-[1]: /assets/images/infosecInstin00b/yoda1.png
+[1]: /assets/images/InfosecInstin00b/yoda1.png
 
 ## Write-up
 
@@ -26,7 +26,7 @@ category: Web
 
 ![Markdowm Image][2]
 
-[2]: /assets/images/infosecInstin00b/source1.png
+[2]: /assets/images/InfosecInstin00b/source1.png
 
 This gives away the flag!
 
