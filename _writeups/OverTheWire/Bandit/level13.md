@@ -33,8 +33,11 @@ It provides us with the private ssh key for the next level. This is how a privat
 I copied the key and created an identical file on my machine.
 Then I used it to login to Level 14.
 
+**Note that you need to change permission of the file to `600`. For this use `chmod`.**
+
 ~~~bash
-ssh -i sshkey.private bandit14@bandit.labs.overthewire.org
+CodeMaxx:~$ chmod 600 sshkey.private
+CodeMaxx:~$ ssh -i sshkey.private bandit14@bandit.labs.overthewire.org
 ~~~
 
 This logs us in without asking for the password. This is how private ssh keys work.<br>

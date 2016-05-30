@@ -32,7 +32,7 @@ This was pretty straightforward. I ssh-ed into level 0 with
 ssh bandit0@bandit.labs.overthewire.org
 ~~~
 
-using the given password `bandit0`.
+using the given password `bandit0`. Note that the password will not be visible when you write it.
 
 Then look at the contents of `readme` file to get the password to the next level.
 
