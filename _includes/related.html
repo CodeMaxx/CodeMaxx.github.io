@@ -22,6 +22,28 @@
             {% endfor %}
         {% endfor %}
     {% endfor %}
+    {% for post in site.writeups  %}
+        {% assign postHasSimilar = false %}
+        {% for tag in post.tags %}
+            {% for thisTag in page.tags %}
+                {% if postHasSimilar == false and hasSimilar.size < 10 and post != page and tag == thisTag %}
+                    {% if hasSimilar.size == 0 %}
+                    <h4 style="font-weight: 500">Related Posts</h4>
+                    <ul>
+                    {% endif %}
+                    <li class="relatedPost">
+                        <a href="{{ site.url }}{{ post.url }}">{{ post.title }}
+                        {% if post.series %}
+                            (Series: {{ post.series }})
+                        {% endif %}
+                        </a>
+                    </li>
+                    {% capture hasSimilar %}{{ hasSimilar }}*{% endcapture %}
+                    {% assign postHasSimilar = true %}
+                {% endif %}
+            {% endfor %}
+        {% endfor %}
+    {% endfor %}
     {% if hasSimilar.size > 0 %}
         </ul>
     {% endif %}

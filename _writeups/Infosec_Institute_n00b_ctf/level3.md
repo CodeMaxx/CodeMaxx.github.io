@@ -4,9 +4,8 @@ layout: post
 date: 2016-05-16 8:15
 tag:
 - Web
-- Write-up
 - Infosec Institute n00b CTF
-blog: true
+writeup: true
 star: false
 description: "n00b CTF 3"
 points: 30

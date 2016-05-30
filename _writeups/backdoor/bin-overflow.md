@@ -1,26 +1,28 @@
 ---
-title: "Infosec Institute n00b Level 3"
+title: "bin-overflow"
 layout: post
-date: 2016-05-16 8:15
+date: 2016-05-24 1:15
 tag:
-- Web
-- Write-up
-- Infosec Institute n00b CTF
+- Pwning
+- Backdoor
 writeup: true
-description: "n00b CTF 3"
-points: 30
-category: Web
+star: false
+link: "Backdoor bin-overflow"
+points: 100
+category: Pwn
 ---
 
 #### Points: 30
 
 #### Description:
 
-![Level 3 Description](/assets/images/infosecInstin00b/qr3.png)
+>Lets see can you can pwn this one<br>
+nc hack.bckdr.in 8013<br>
+[bin-overflow](http://hack.bckdr.in/BIN-OVERFLOW/bin-overflow)
 
 ## Write-up
 
-I saw two suspicious things on the page - a QR code and a 90% complete progress bar. I went to the source code and saw the progress bar was hardcoded to remain at 90% and hence it is just a distraction.
+<!-- I saw two suspicious things on the page - a QR code and a 90% complete progress bar. I went to the source code and saw the progress bar was hardcoded to remain at 90% and hence it is just a distraction.
 
 Then I read the QR code using an online utility. Seach for `QR Code decoder` decoder on `Google`. You'll find plenty of them. I used <https://zxing.org/w/decode.jspx>
 
@@ -33,4 +35,4 @@ I got `INFOSECFLAGISMORSING`.
 
 This gives away the flag.
 
-#### Flag: `infosec_flagis_morsing`
+#### Flag: `infosec_flagis_morsing` -->

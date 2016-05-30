@@ -74,6 +74,7 @@ samp {
   background-color: #e3d2d2;
 }
 .highlight .k {
+  color: #a61717;
   font-weight: bold;
 }
 .highlight .o {
@@ -379,6 +380,7 @@ tt {
   line-height: 20px;
   background: #fff;
   border: none;
+  color: #cc0000
 }
 pre {
   border: none;
@@ -457,12 +459,13 @@ pre {
   }
 }
 .home,
-.blog,
+.blog, .write-ups,
 .projects {
   margin-top: 75px;
 }
 .home > .list,
 .blog > .list,
+.write-ups > .list,
 .projects > .list {
   border-top: 1px solid #ededed;
   margin-top: 30px;
@@ -471,6 +474,7 @@ pre {
 }
 .home > .list:before,
 .blog > .list:before,
+.write-ups > .list:before,
 .projects > .list:before {
   display: block;
   content: " ";
@@ -487,6 +491,7 @@ pre {
 }
 .home > .list > .item,
 .blog > .list > .item,
+.write-ups > .list > .item,
 .projects > .list > .item {
   display: block;
   width: 95%;
@@ -494,6 +499,7 @@ pre {
 }
 .home > .list > .item > .url,
 .blog > .list > .item > .url,
+.write-ups > .list > .item > .url,
 .projects > .list > .item > .url {
   width: 100%;
   height: 100%;
@@ -503,6 +509,7 @@ pre {
 }
 .home > .list > .item > .url > .title,
 .blog > .list > .item > .url > .title,
+.write-ups > .list > .item > .url > .title,
 .projects > .list > .item > .url > .title {
   margin: 0;
   width: 75%;
@@ -512,16 +519,18 @@ pre {
 }
 .home > .list > .item:hover > .url > .title,
 .blog > .list > .item:hover > .url > .title,
+.write-ups > .list > .item:hover > .url > .title,
 .projects > .list > .item:hover > .url > .title {
   color: #3399ff;
 }
 .home > .list aside,
 .blog > .list aside,
+.write-ups > .list aside,
 .projects > .list aside {
   position: relative;
   top: 2px;
   margin: 0;
-  width: 25%;
+  width: 35%;
   float: right;
   font-weight: 300;
   color: #aaa;
@@ -531,6 +540,7 @@ pre {
 }
 .home > .list .item:hover .url aside,
 .blog > .list .item:hover .url aside,
+.write-ups > .list .item:hover .url aside,
 .projects > .list .item:hover .url aside {
   color: #666;
 }

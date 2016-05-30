@@ -20,7 +20,7 @@ var messages = {
 
 gulp.task('jekyll-build', function (done) {
     browserSync.notify(messages.jekyllBuild);
-    return cp.spawn('bundle', ['exec', 'jekyll', 'build', '--drafts', '--quiet', '--config', '_config.yml,_config_dev.yml'], {stdio: 'inherit'}).on('close', done);
+    return cp.spawn('bundle', ['exec', 'jekyll', 'build', '--drafts', '--config', '_config.yml,_config_dev.yml'], {stdio: 'inherit'}).on('close', done);
     // return cp.spawn('bundle', ['exec', 'jekyll', 'build'], {stdio: 'inherit'}).on('close', done);
 });
 
@@ -35,19 +35,19 @@ gulp.task('browserSync', ['jekyll-build'], function() {
     });
 });
 
-gulp.task('styles', function() {
-    return gulp.src('src/styles/main.styl')
-        .pipe(changed('assets/styles'))
-        .pipe(plumber())
-        .pipe(stylus({
-            use:[prefixer(), rupture(), nib()],
-			compress: false
-        }))
-        .pipe(gulp.dest('_site/assets/styles'))
-        .pipe(gulp.dest('_includes'))
-        .pipe(browserSync.reload({stream: true}))
-        .pipe(gulp.dest('assets/styles'));
-});
+// gulp.task('styles', function() {
+//     return gulp.src('src/styles/main.styl')
+//         .pipe(changed('assets/styles'))
+//         .pipe(plumber())
+//         .pipe(stylus({
+//             use:[prefixer(), rupture(), nib()],
+// 			compress: false
+//         }))
+//         .pipe(gulp.dest('_site/assets/styles'))
+//         .pipe(gulp.dest('_includes'))
+//         .pipe(browserSync.reload({stream: true}))
+//         .pipe(gulp.dest('assets/styles'));
+// });
 
 gulp.task('imagemin', function(tmp) {
     return gulp.src('assets/images/**/*.{jpg,png,gif}')
@@ -58,9 +58,10 @@ gulp.task('imagemin', function(tmp) {
 });
 
 gulp.task('watch', function() {
-    gulp.watch('src/styles/**/*', ['styles']);
+    //gulp.watch('src/styles/**/*', ['styles']);
     gulp.watch('src/images/**/*.{jpg,png,gif}', ['imagemin']);
-    gulp.watch(['_drafts/*', '_includes/*', '_layouts/*', '_posts/*', '*.{html,md}', '_config.yml'], ['jekyll-rebuild']);
+    gulp.watch(['_drafts/*', '_includes/*', '_layouts/*', '_posts/*', '*.{html,md}', '_config.yml', '_writeups/*','_writeups/backdoor/*','*', '_writeups/OverTheWire/Bandit/*'], ['jekyll-rebuild']);
 });
 
-gulp.task('default', ['styles', 'imagemin', 'browserSync', 'watch']);
+//gulp.task('default', ['styles', 'imagemin', 'browserSync', 'watch']);
+gulp.task('default', ['imagemin', 'browserSync', 'watch']);

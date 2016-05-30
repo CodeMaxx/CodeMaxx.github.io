@@ -1,0 +1,28 @@
+---
+layout: default
+title: Write-ups
+---
+{% include header.html %}
+<center><h4 style="font-weight: 300; opacity: 0.5;">
+“Because the people who think they are crazy enough to change the world are the ones who do!”<br>
+<pre style="border: none;">                                               - Steve Jobs</pre>
+</h4></center>
+<section class="list">
+	{% if site.posts.size == 0 %}
+		<p class="text-center">Nothing published yet!</p>
+	{% elsif site.paginate %}
+		{% for writeup in paginator.writeups %}
+	        {% include write-ups.html %}
+	    {% endfor %}
+
+		{% if site.paginate %}
+			{% include pagination.html%}
+		{% endif %}
+	{% else %}
+		{% for post in site.writeups %}
+			{% include write-ups.html %}
+		{% endfor %}
+	{% endif %}
+</section>
+
+{% include footer.html %}

@@ -11,10 +11,10 @@ url: https://CodeMaxx.github.io
 
 permalink: /:title/
 
-# markdown: kramdown
+markdown: kramdown
 kramdown:
   input: GFM
-# highlighter: rouge
+highlighter: rouge
 
 analytics-google: 'UA-MYANALYTICS'
 

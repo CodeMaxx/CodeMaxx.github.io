@@ -1,7 +1,7 @@
-{% if post.blog == true %}
+{% if post.writeup == true %}
     <div class="item {% if post.star %}star{% endif %}">
         <a class="url" href="{{ site.url }}{{ post.url }}">
-            <aside class="date"><time datetime="{{ post.date | date:"%d-%m-%Y" }}">{{ post.date | date: "%B %d, %Y" }}</time></aside>
+            <aside class="date"><b>Points: {{ post.points }}</b><br><b>Category: {{ post.category }}</b></aside>
             <h3 class="title">{{ post.title }}</h3>
         </a>
     </div>

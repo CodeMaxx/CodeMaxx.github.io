@@ -2,13 +2,13 @@ GEM
   remote: http://rubygems.org/
   specs:
     RedCloth (4.2.9)
-    activesupport (4.2.6)
+    activesupport (4.2.5.1)
       i18n (~> 0.7)
       json (~> 1.7, >= 1.7.7)
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
-    addressable (2.4.0)
+    addressable (2.3.8)
     coffee-script (2.4.1)
       coffee-script-source
       execjs
@@ -109,8 +109,8 @@ GEM
     net-dns (0.8.0)
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
-    octokit (4.3.0)
-      sawyer (~> 0.7.0, >= 0.5.3)
+    octokit (4.2.0)
+      sawyer (~> 0.6.0, >= 0.5.3)
     parallel (1.6.1)
     posix-spawn (0.3.11)
     public_suffix (1.5.3)
@@ -126,8 +126,8 @@ GEM
     rouge (1.10.1)
     safe_yaml (1.0.4)
     sass (3.4.21)
-    sawyer (0.7.0)
-      addressable (>= 2.3.5, < 2.5)
+    sawyer (0.6.0)
+      addressable (~> 2.3.5)
       faraday (~> 0.8, < 0.10)
     terminal-table (1.5.2)
     thread_safe (0.3.5)
