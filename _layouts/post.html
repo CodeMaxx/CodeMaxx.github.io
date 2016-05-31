@@ -19,6 +19,12 @@ layout: default
 
 {{content}}
 
+<hr>
+
+<a href="{{ page.previous.url }}">{{ page.previous.title }}</a><aside style="display: inline; float: right"><a href="{{ page.next.url }}">{{ page.next.title }}</a></aside>
+
+<hr>
+
 {% if site.related %}
     {% include related.html %}
 {% endif %}
