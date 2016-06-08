@@ -22,6 +22,8 @@ category: Web
 
 ## Write-up
 
+**The challenge was updated. Scroll down to see the updates solution**
+
 When I went to the specified website it said:
 
 >Imagelover loves viewing pictures of people. He has opened this website so that you can share your pics with him. Imagelover visits the image with his flag as a sign of gratitude.
@@ -48,6 +50,20 @@ httpd = SocketServer.TCPServer(("", PORT), Handler)
 print "serving at port", PORT
 httpd.serve_forever()
 ~~~
+
+`**Update_begin**`
+
+So now they don't give us the flag until we return them a `png`, `jpg` or a `gif`. So I decided to redirect them to an image. For this I made some chanegs in the `do_GET()` method. Here is the updated method.
+
+~~~python
+   def do_GET(self):
+        logging.error(self.headers)
+        self.send_response(301) # For a redirect we need to send a `301` response rather than `200`
+        self.send_header('Location','link.to.an/image') # Add a link to an image in place of `lin.to.an/image`
+        self.end_headers()
+~~~
+
+`**Update_end**`
 
 Basically I hosted my VPS with the script above and entered the URL in place of a photograph URL. Imagelover would visit it and I would get the flag from the Headers.
 
