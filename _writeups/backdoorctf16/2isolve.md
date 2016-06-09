@@ -4,12 +4,12 @@ layout: post
 date: 2016-05-30 4:21
 tag:
 - BackdoorCTF2016
-- Miscellaneous
+- Exploitation
 - Backdoor
 writeup: true
 star: false
 points: 200
-category: Misc
+category: Exploit
 ---
 
 **BackdoorCTF is the annual flagship CTF competition conducted by SDSLabs and InfoSecIITR.**

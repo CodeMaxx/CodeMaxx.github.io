@@ -1,7 +1,7 @@
 ---
 title: "BackdoorCTF 2016 - buzybee"
 layout: post
-date: 2016-05-30 4:21
+date: 2016-06-07 14:21
 tag:
 - BackdoorCTF2016
 - Forensics
@@ -18,20 +18,17 @@ category: Forensics
 
 #### Description:
 
->Get the first part of the flag from IRC freenode (#backdoorctf) and the second part from twitter(@BackdoorCTF)
+>A deadly virus is killing bees in Busybee's village Busybox, India. Unfortuantely, you have to go to the village to fight the infection. Get the flag virus out of the infected files.
+Village address: [http://hack.bckdr.in/BUSYBEE/infected.tar](http://hack.bckdr.in/BUSYBEE/infected.tar)
 
 ## Write-up
 
-As the description says I got the first part of the flag from IRC(#backdoorctf) -> `NWQ1bDRiNV9iNG`
+This was actually a good one which got beaten because of the small number of files and low complexity.
 
-The second part of the flag from twitter(@BackdoorCTF) -> `NrZDAwcmM3ZjIwMTY=`
+So what I did during the CTF was just opened and looked at all the `.json` files. They didn't have any flag or anything that I found suspicious. Then I checked for human-readable strings in all the `.tar` files using the `strings` command.
 
-Joining this we get a base64 encoded string -> `NWQ1bDRiNV9iNGNrZDAwcmM3ZjIwMTY=`
+One of them indeed had the flag.
 
-Decoding this and taking its SHA256 hash we get our solution.
+![Infected flag](/assets/images/backdoorctf16/infected.png)
 
-~~~bash
-echo -n NWQ1bDRiNV9iNGNrZDAwcmM3ZjIwMTY= | base64 --decode | shasum -a 256
-~~~~
-
-Note that I added `-n` for `echo` to prevent an extra newline being appended at the end, which will change the SHA256 checksum.
+So that was too easy for a 150 points question so I asked around about the expeced solution. Turns out this was a Docker dump. It had to be mounted in Docker and then searched for abnomalities. I have not tried that out yet(I'll have to set up Docker on my machine. I'm feeling too lazy right now.). I'll do it soon though and update this writeup accordingly.
