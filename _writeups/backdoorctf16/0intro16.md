@@ -12,6 +12,8 @@ points: 10
 category: Misc
 ---
 
+![Backdoor Logo](/assets/images/backdoorctf16/logo.png)
+
 **BackdoorCTF is the annual flagship CTF competition conducted by SDSLabs and InfoSecIITR.**
 
 #### Points: 10
