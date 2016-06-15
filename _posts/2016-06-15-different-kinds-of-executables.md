@@ -35,11 +35,15 @@ Lets go through each word one by one.
 
 ### 32-bit
 
-`32-bit` Computer Architecture system is the one using `x86` assembly instruction set.
+`32-bit` Computer Architecture system is the one using `x86`, `MIPS32` assembly instruction set.
 
 ##### Other:
 
 `64-bit` systems use the `x86-64` assembly instruction set.
+
+**Note that this does not tell you the about the system you are working on but about the way the instructions have been structured and written into the binary(So for the same program, 32-bit and 64-bit will have different assembly instructions but the executable would behave the same way).**
+
+**There are other instruction sets as well like `MIPS32`, `MIPS64`, `ARM`, `PowerPC` which you might encounter but in my experience `x86` and `x86-64` are the most commonly used.**
 
 ### LSB
 
