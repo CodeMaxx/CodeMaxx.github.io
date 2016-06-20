@@ -51,4 +51,4 @@ What `ign_eof` does is it prevents the server from closing down the connection w
 
 Using the correct command and password we get the next password.
 
-#### Level 16 passoword: `cluFn7wTiGryunymYOu4RcffSxQluehd`
+#### Level 16 password: `cluFn7wTiGryunymYOu4RcffSxQluehd`

@@ -51,4 +51,4 @@ cat /etc/bandit_pass/bandit14
 
 You can now log into Level 14 with this password without the need of the private ssh keys.
 
-#### Level 14 passoword: `4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e`
+#### Level 14 password: `4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e`

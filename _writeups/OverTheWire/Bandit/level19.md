@@ -38,4 +38,4 @@ I used this to get the password to next level.
 
 ![Bad Permissions](/assets/images/OverTheWire/Bandit/bad_permission.png)
 
-#### Level 20 passoword: `GbKksEFF4yrVs6il55v6gwY5aVje5f0j`
+#### Level 20 password: `GbKksEFF4yrVs6il55v6gwY5aVje5f0j`

@@ -40,4 +40,4 @@ bandit17@melinda:~$ diff passwords.old passwords.new
 
 The output from `password.new` file gives the password.
 
-#### Level 18 passoword: `kfBf3eYk5BPBRzwjqutbbfE887SVc5Yd`
+#### Level 18 password: `kfBf3eYk5BPBRzwjqutbbfE887SVc5Yd`

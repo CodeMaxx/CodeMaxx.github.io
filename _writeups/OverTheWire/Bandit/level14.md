@@ -47,4 +47,4 @@ echo 4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e | nc localhost 30000
 
 ![nc_command](/assets/images/OverTheWire/Bandit/nc_command.png)
 
-#### Level 15 passoword: `BfMYroe26WYalil77FoDi9qh59eK5xNr`
+#### Level 15 password: `BfMYroe26WYalil77FoDi9qh59eK5xNr`

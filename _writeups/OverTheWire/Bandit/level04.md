@@ -55,4 +55,4 @@ inhere/-file02: data
 
 Thus `inhere/-file07` is the file we are looking for. `cat inhere/-file07` gives the password for the next level.
 
-#### Level 5 passoword: `koReBOKuIDDepwhWk7jZC0RTdopnAYKh`
+#### Level 5 password: `koReBOKuIDDepwhWk7jZC0RTdopnAYKh`

@@ -40,4 +40,4 @@ nmap -p 31000-32000 localhost
 
 So there were 5 ports open. I decided to check them all. I tried to connect through `openssl`. `31790` turned out to be the right port. It gave me the private ssh key to the next level on submitting the current one. I saved the key to a file locally and used it to ssh to the next level and got the password there just like in [Level 13](../level13/)
 
-#### Level 17 passoword: `xLYVMN9WE5zQ5vHacb0sZEVqbrp7nBTn`
+#### Level 17 password: `xLYVMN9WE5zQ5vHacb0sZEVqbrp7nBTn`

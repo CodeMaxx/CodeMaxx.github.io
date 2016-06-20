@@ -48,4 +48,4 @@ Getting two exact same outputs was eerie. After some investigation I found out t
 
 Thus a simple `find inhere -size 1033c -print` in the home directory would have done the job. `cat ~/inhere/maybeinhere07/.file2` gives the password.
 
-#### Level 6 passoword: `DXjZPULLxYr17uwoI01bNLQbtFemEgo7`
+#### Level 6 password: `DXjZPULLxYr17uwoI01bNLQbtFemEgo7`

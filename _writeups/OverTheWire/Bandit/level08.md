@@ -40,4 +40,4 @@ Hence I got the password.
 sort data.txt | uniq -u
 ~~~
 
-#### Level 9 passoword: `UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR`
+#### Level 9 password: `UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR`

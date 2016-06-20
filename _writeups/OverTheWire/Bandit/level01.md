@@ -33,4 +33,4 @@ This was a bit tricky. The filename was `-`. A simple `cat -` didn't work. This 
 
 Thus I used `cat ~/-` to read from the file.
 
-#### Level 2 passoword: `CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9`
+#### Level 2 password: `CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9`

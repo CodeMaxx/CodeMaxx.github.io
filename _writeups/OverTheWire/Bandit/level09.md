@@ -36,4 +36,4 @@ bandit9@melinda:~$ strings data.txt | grep ======
 
 ![output](/assets/images/OverTheWire/Bandit/level9_output.png)
 
-#### Level 10 passoword: `truKLdjsbJ5g7yyJ2X2R0o3a5HQJFuLk`
+#### Level 10 password: `truKLdjsbJ5g7yyJ2X2R0o3a5HQJFuLk`

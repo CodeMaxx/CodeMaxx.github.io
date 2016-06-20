@@ -36,4 +36,4 @@ cat data.txt | grep millionth
 
 This gives the password.
 
-#### Level 8 passoword: `cvX2JJa4CFALtqS87jk27qwqGhBM9plV`
+#### Level 8 password: `cvX2JJa4CFALtqS87jk27qwqGhBM9plV`

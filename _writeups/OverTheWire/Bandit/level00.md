@@ -42,4 +42,4 @@ Then look at the contents of `readme` file to get the password to the next level
 bandit0@melinda:~$ cat readme
 ~~~
 
-#### Level 1 passoword: `boJ9jbbUNNfktd78OOpsqOltutMc3MY1`
+#### Level 1 password: `boJ9jbbUNNfktd78OOpsqOltutMc3MY1`

@@ -47,4 +47,4 @@ So the give file was a hexdump. I used `xxd -r <filename>` to reverse it and sen
 
 ***If you have a method to automate this stuff to make it easier, please comment below or [email me](mailto:akash.trehan123@gmail.com).***
 
-#### Level 13 passoword: `8ZjyCRiBWFYkneahHwxCv3wb2a1ORpYL`
+#### Level 13 password: `8ZjyCRiBWFYkneahHwxCv3wb2a1ORpYL`

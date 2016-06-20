@@ -34,4 +34,4 @@ I used the pre-installed base64 decoder to get the passoword.
 bandit10@melinda:~$ cat data.txt | base64 --decode
 ~~~
 
-#### Level 11 passoword: `IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR`
+#### Level 11 password: `IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR`

@@ -36,4 +36,4 @@ bandit3@melinda:~$ ls inhere/
 
 This shows a `.hidden` file. Files with names starting with a `.`(dot) automatically get hidden in Unix.<br> `cat inhere/.hidden` reveals the password for the next level.
 
-#### Level 4 passoword: `pIwrPrtPN36QITSp3EQaw936yaFoFgAB`
+#### Level 4 password: `pIwrPrtPN36QITSp3EQaw936yaFoFgAB`

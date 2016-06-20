@@ -52,4 +52,4 @@ There is another way to do it. The `-T` flag. `-T` flag disables pseudo-terminal
 ssh -T bandit18@bandit.labs.overthewire.org
 ~~~
 
-#### Level 19 passoword: `IueksS7Ubh8G3DCwVzrTd8rAVOwq3M5x`
+#### Level 19 password: `IueksS7Ubh8G3DCwVzrTd8rAVOwq3M5x`

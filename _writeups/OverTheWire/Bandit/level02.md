@@ -32,4 +32,4 @@ This was simple enough since **Tab completion** was enabled. If that would not b
 
 Thus I used `cat spaces\ in\ this\ filename` to read from the file.
 
-#### Level 3 passoword: `UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK`
+#### Level 3 password: `UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK`

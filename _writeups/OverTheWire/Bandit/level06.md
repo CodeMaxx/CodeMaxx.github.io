@@ -53,4 +53,4 @@ cat `find . -size 33c -group bandit6 -user bandit7 2>/dev/null`
 
 So what `2>/dev/null` does is, it redirects all standard errors like `No such file or directory` and `Permission denied` to `/dev/null` where `null` acts as a special device which discards all information written to it. Thus we only get the one required file as output which I sent as input to `cat` to see its contents.
 
-#### Level 7 passoword: `HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs`
+#### Level 7 password: `HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs`

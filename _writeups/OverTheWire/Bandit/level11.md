@@ -36,4 +36,4 @@ Another method is using the `tr` command for rotation by 13, to get the password
 bandit11@melinda:~$ cat data.txt | tr 'n-za-mN-ZA-M' 'a-zA-Z'
 ~~~
 
-#### Level 12 passoword: `5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu`
+#### Level 12 password: `5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu`
