@@ -1,0 +1,348 @@
+<html>
+        <head>
+
+
+
+
+
+        <title>Add EVENTually</title>
+        <link rel="shortcut icon" type="image/ico" href="favicon.ico" />
+
+        <!-- DATEPICKER JQUERY-->
+        <link rel="stylesheet" type="text/css" href="src/DateTimePicker.css" />
+        <script type="text/javascript" src="src/jquery-1.11.0.min.js"></script>
+        <script type="text/javascript" src="src/DateTimePicker.js"></script>
+
+        <!-- SWITCH BUTTON FOR CHECKBOX JQUERY-->
+        <link rel="stylesheet" href="src/switchery.css" />
+        <script src="src/switchery.js"></script>
+
+        <script src="//www.parsecdn.com/js/parse-1.6.14.min.js"></script>
+
+        <!-- QRCODE JQUERY-->
+        <script type="text/javascript" src="src/jquery.qrcode-0.12.0.js"></script>
+        <script type="text/javascript" src="src/jquery.qrcode-0.12.0.min.js"></script>
+
+        <!-- Clipboard JQUERY-->
+        <script type="text/javascript" src="src/ZeroClipboard.js"></script>
+
+        <!-- Header style-->
+        <link rel="stylesheet" href="src/header.css" />
+
+            <script>
+            function print()
+            {
+                console.log(document.getElementById('reminder').value);
+            }
+            function alldayfn()
+                        {
+                            var allday = document.getElementById('allday').checked;
+                            var section1 = document.getElementById('alldayon');
+                            var section2 = document.getElementById('alldayoff');
+
+                            if (allday==true)
+                            {
+                                section1.style.visibility = "hidden";
+                                section2.style.visibility = "visible";
+                            }
+                            else
+                            {
+                                section2.style.visibility = "hidden";
+                                section1.style.visibility = "visible";
+                            }
+                        }
+            $(document).ready(function()
+            {
+
+
+                var elem = document.querySelector('.js-switch');
+                var init = new Switchery(elem,{ size: 'small' });
+                $("#dtBox").DateTimePicker(
+                {
+                    dateFormat: "dd-mm-yyyy",
+                    addEventHandlers: function()
+                    {
+                        var dtPickerObj = this;
+                        var currentdate = new Date();
+                        var addedtime = new Date();
+                        addedtime.setHours ( currentdate.getHours() + 1 );
+                        dtPickerObj.setDateTimeStringInInputField($("#start"));
+                        dtPickerObj.setDateTimeStringInInputField($("#date1"));
+                        document.getElementById('alldayoff').style.visibility = "hidden";
+                        document.getElementById('result').style.visibility = "hidden";
+                        document.getElementById('mandatory').style.visibility = "hidden";
+                        //dtPickerObj.setDateTimeStringInInputField($("#end"),addedtime);
+                    }
+
+                });
+
+            });
+            </script>
+
+        <style type="text/css">
+                body{
+                    background-image: url('faded.png');
+                    background-attachment: fixed;
+                    margin: 0 0 0 0;
+                }
+                .form-style-2{
+                    max-width: 500px;
+                    padding: 20px 12px 10px 20px;
+                    font: 13px Arial, Helvetica, sans-serif;
+                    float: left;
+                }
+                .form-style-2-heading{
+                    font-weight: bold;
+                    font-style: italic;
+                    border-bottom: 2px solid #e95d3c;
+                    margin-bottom: 20px;
+                    font-size: 15px;
+                    padding-bottom: 3px;
+                }
+                .form-style-2 label{
+                    display: block;
+                    margin: 0px 0px 15px 0px;
+                }
+                .form-style-2 label > span{
+                    width: 120px;
+                    font-weight: bold;
+                    float: left;
+                    padding-top: 8px;
+                    padding-right: 5px;
+                }
+                .form-style-2 span.required{
+                    color:red;
+                }
+                .form-style-2 .tel-number-field{
+                    width: 40px;
+                    text-align: center;
+                }
+                .form-style-2 input.input-field{
+                    width: 48%;
+
+                }
+                .form-style-2 input.input-field,
+                .form-style-2 input.startDate1,
+                .form-style-2 input.endDate1,
+                .form-style-2 input.startDateTime1,
+                .form-style-2 input.endDateTime1,
+                .form-style-2 .tel-number-field,
+                .form-style-2 .textarea-field,
+                 .form-style-2 .select-field{
+                    box-sizing: border-box;
+                    -webkit-box-sizing: border-box;
+                    -moz-box-sizing: border-box;
+                    border: 1px solid #C2C2C2;
+                    box-shadow: 1px 1px 4px #EBEBEB;
+                    -moz-box-shadow: 1px 1px 4px #EBEBEB;
+                    -webkit-box-shadow: 1px 1px 4px #EBEBEB;
+                    border-radius: 3px;
+                    -webkit-border-radius: 3px;
+                    -moz-border-radius: 3px;
+                    padding: 7px;
+                    outline: none;
+                }
+                .form-style-2 .input-field:focus,
+                .form-style-2 .tel-number-field:focus,
+                .form-style-2 .textarea-field:focus,
+                .form-style-2 .select-field:focus{
+                    border: 1px solid #0C0;
+                }
+                .form-style-2 .textarea-field{
+                    height:100px;
+                    width: 55%;
+                }
+                 button,
+                 .downloadqrcode,
+                 .form-style-2 input[type=submit],
+                 .form-style-2 input[type=button]{
+                    border: none;
+                    padding: 8px 15px 8px 15px;
+                    background: #e95d3c;
+                    color: #fff;
+                    box-shadow: 1px 1px 4px #DADADA;
+                    -moz-box-shadow: 1px 1px 4px #DADADA;
+                    -webkit-box-shadow: 1px 1px 4px #DADADA;
+                    border-radius: 3px;
+                    -webkit-border-radius: 3px;
+                    -moz-border-radius: 3px;
+                }
+                .form-style-2 input[type=submit]:hover,
+                .form-style-2 input[type=button]:hover{
+                    background: #e95d3c;
+                    color: #fff;
+                 }
+                 #resulth
+                 {
+                    margin: 0em 0 0em 0;
+                    color: #343434;
+                    text-align: center;
+                    font-weight: normal;
+                    font-size: 30px;
+                    line-height: 40px;
+                    font-family: 'Orienta', sans-serif;
+                 }
+                  #result
+                 {
+                    float: right;
+                 }
+                 #resultp
+                 {
+                    float: right;
+                    border: 1px solid black;
+                    padding: 10px;
+                    text-align: center;
+                    font-size: 20px;
+                    line-height: 20px;
+                    font-family: Georgia, "Times New Roman", Times, serif;
+                    width: 900px;
+                    font-weight: normal;
+                    color: #222;
+                 }
+                 #mandatory
+                 {
+                    font-size: 20px;
+                    line-height: 20px;
+                    font-family: Georgia, "Times New Roman", Times, serif;
+                 }
+
+        </style>
+
+
+        <!-- Header -->
+        <div id="header">
+            <div class="container">
+
+                <!-- Logo -->
+                    <div id="logo">
+                        <a href="http://arpan98.github.io/EVENTual/">
+                        <img class="logo" src="src/EVENTual logo.png" width="115" height="106">
+                        <h1>&nbsp;EVENTual</h1>
+                        </a>
+                    </div>
+
+
+                <!-- Nav -->
+                    <nav id="nav">
+                        <ul>
+                            <li class="active"><a href="http://arpan98.github.io/EVENTual/">Create Event</a></li>
+
+                            <li><a href="search">Search Event</a></li>
+                        </ul>
+                    </nav>
+
+            </div>
+        </div>
+    <!-- Header -->
+
+    <!-- Banner
+        <div id="banner">
+            <div class="container">
+            </div>
+        </div>
+     /Banner -->
+
+
+        </head>
+
+        <body >
+
+            <br><br>
+
+
+            <div class="form-style-2"> <!-- form Layout-->
+                <div class="form-style-2-heading">Provide event information</div>
+                <form>
+                <label for="field1"><span>Title: </span><input type="text" class="input-field" name="title" value="" maxlength="50" /></label>
+                <label for="field2"><span>Description: </span><input type="text" class="input-field" name="description" value="" maxlength="100"/></label>
+                <label for="field1"><span>All-day: </span></label><input type="checkbox"  class="js-switch"  id ="allday" name="allday" onChange = "alldayfn()">
+                <br><br>
+
+
+                <section id = "alldayon">
+                <label for="field4"><span>Start DateTime: <span class="required">*</span></span><input class="startDateTime1" type="text" data-field="datetime" data-startend="start" data-startendelem=".endDateTime1" readonly id= "start" name="start"></label>
+                <label for="field4"><span>End DateTime: <span class="required">*</span></span><input class="endDateTime1" type="text" data-field="datetime" data-startend="end" data-startendelem=".startDateTime1" readonly id= "end" name="end"></label>
+
+                </section>
+
+                <section id = "alldayoff">
+                <label for="field5"><span>Start Date:<span class="required">*</span></span><input id= "date1" name="date1" class="startDate1" type="text" data-field="date" data-startend="start" data-startendelem=".endDate1" readonly> </label>
+                <label for="field6"><span>End Date: <span class="required">*</span></span><input id= "date2" name="date2" class="endDate1" type="text" data-field="date" data-startend="end" data-startendelem=".startDate1" readonly></label>
+
+                </section>
+
+                <label for="field7"><span>Location:</span><input type="text" class="input-field" name="location" value="" maxlength="50"/></label>
+
+            <!--
+                <label for="field8"><span>Timezone: </span><input type="text" class="input-field" name="timezone" value="" /></label>
+
+                <label for="field9"><span>Reminder: </span><select name="reminder" id="reminder" class="select-field" onChange="print()">
+                <option value="0">No reminder</option>
+                <option value="1">0 minutes</option>
+                <option value="2">5 minutes</option>
+                <option value="3">10 minutes</option>
+                <option value="4">15 minutes</option>
+                <option value="5">30 minutes</option>
+                <option value="6">1 hour</option>
+                <option value="7">1 day</option>
+                <option value="8">2 days</option>
+                <option value="9">1 week</option>
+                </select></label>
+            -->
+                <label><span>&nbsp;</span></label>
+                </form>
+                <button type="button" id="Save" onclick="check()">Save</button>
+                <br><br>
+                <p id="mandatory">Please fill mandatory(<span style="color: red">*</span>) fields.</p>
+                <label><span>&nbsp;</span></label>
+            </div><!-- form Layout-->
+
+
+
+
+
+
+    <div id="dtBox"></div>
+
+
+
+    <div id="result" >
+
+        <h3 id="resulth">Event link and QR code:</h3>
+        <br><br>
+        <center>
+        <input type="text" id ="linkaddress" name="linkaddress" size="40" readonly>
+        <button id="copylink" onClick="linkcopy()">Double Click To Copy</button>
+
+        <br><br>
+        <script src="save.js"></script>
+
+        <div id="qrcode"></div>
+        <br><br>
+
+        <a class= "downloadqrcode" href="#" onclick="prepHref(this)" download>Download QR Code</a>
+        </center>
+        <p id="resultp">Share the link and QR Code generated with others to allow them to save this event to their calendars automatically by opening the link with EVENTual or scanning the QR Code using EVENTual QR Code Scanner.</p>
+    </div>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    </body>
+    <!-- Copyright -->
+        <div id="copyright">
+
+            <center>
+            <br>
+            <a class="EVENTual" href="https://github.com/arpan98/EVENTual">EVENTual<br><br>
+            <img class="logo" src="src/EVENTual logo.png"  width="115" height="106">
+            </a>
+            </center>
+            <a href="https://play.google.com/store/apps/details?id=com.nihal.arpan.eventual"><img class="googleplay" src="src/google-play-badge.png" width="242" height"="72" style=" border-style:solid;
+border-width:3px;
+border-color:rgb(145,145,145) ;" >
+</a>
+
+            Created By: <br><a class="creator" href="https://github.com/arpan98">Arpan Banerjee</a> <br> <a class="creator" href="https://github.com/nihal111">Nihal Singh</a> <br><a class="creator" href="https://github.com/CodeMaxx">Akash Trehan</a><br><br>
+
+        </div>
+
+
+    </html>
