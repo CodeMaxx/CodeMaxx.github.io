@@ -45,6 +45,6 @@ The following is what I actually did
 
 So the give file was a hexdump. I used `xxd -r <filename>` to reverse it and sent the output to a file. I kept using `file` command at each step to know what I'm tackling.<br> `gzip` compressed files are extracted using `gunzip`. But `gunzip` extracts files only with certain extension, `.gz` being one of them. So I renamed the file to have that extension. <br>`bzip2` compressed files are extracted using `bzip2 -d <filename>` where `-d` flag stands for "decompress". <br>For `tar` archives I used `tar xvf <filename>`.<br> After repeatedly extracting and re-extracting, I landed upon a file containing ASCII text. That sure containted the password.
 
-***If you have a method to automate this stuff to make it easier, please comment below or [email me](mailto:akash.trehan123@gmail.com).***
+***If you have a method to automate this stuff to make it easier, please comment below or [email me](mailto:&#097;&#107;&#097;&#115;&#104;&#046;&#116;&#114;&#101;&#104;&#097;&#110;&#049;&#050;&#051;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;).***
 
 #### Level 13 password: `8ZjyCRiBWFYkneahHwxCv3wb2a1ORpYL`
