@@ -1,5 +1,5 @@
 ---
-title: "Different kinds of Executables"
+title: "Knowing your Binary!"
 layout: post
 date: 2016-06-15 00:00
 tag:
