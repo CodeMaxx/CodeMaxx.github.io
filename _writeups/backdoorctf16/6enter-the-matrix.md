@@ -139,7 +139,7 @@ I got back the same resonse as above but no flag. This was bad. After all this w
 ![zion](/assets/images/backdoorctf16/zion.png)
 <figcaption class="caption">From zion()</figcaption>
 <br>
-So all `zion` was doing was to execute the following command `printf '[name]'`. The name in our case was 'Neo'. There is no chance we can get a flag with that. I tried different combinations like `Neo\0;cat flag` etc. I was expecting the strins comparison to stop at `\0`. Nothing like that happened so I was unable to get into `zion` without keeping the name 'Neo'.
+So all `zion` was doing was to execute the following command `printf '[name]'`. The name in our case was 'Neo'. There is no chance we can get a flag with that. I tried different combinations like `Neo\0;cat flag` etc. I was expecting the string comparison to stop at `\0`. Nothing like that happened so I was unable to get into `zion` without keeping the name 'Neo'.
 
 Probably this wasn't the right path afterall. I check at what all places `zion` function was being called. There was this other option which we had rejected earlier - setting the `choice` to `0`. There was a posibility that I maybe able to overwrite the `choice` while entering the `name`. I checked how they were being stored.
 
