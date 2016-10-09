@@ -24,3 +24,5 @@ I am starting this blog to write about my experiences, my projects, and other in
 `Fast forward to `<a href='../writeups' style="text-decoration:none">Write-ups</a>
 
 `Take a look at my `<a href='../projects' style="text-decoration:none">Projects.</a>
+
+<a class="github-button" href="https://github.com/CodeMaxx" data-style="mega" data-count-href="/CodeMaxx/followers" data-count-api="/users/CodeMaxx#followers" data-count-aria-label="# followers on GitHub" aria-label="Follow @CodeMaxx on GitHub">Follow @CodeMaxx</a>
