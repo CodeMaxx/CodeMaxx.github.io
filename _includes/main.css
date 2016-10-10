@@ -577,7 +577,7 @@ pre {
 }
 .post > .date,
 .post > .post-tags {
-  color: #aaa;
+  color: #666;
   font-weight: 300;
   font-size: 1.4rem;
   text-transform: uppercase;
