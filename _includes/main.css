@@ -635,7 +635,7 @@ pre {
   border-radius: 3px;
 }
 .tags > .list > .item {
-  font-weight: 300;
+  font-weight: 400;
   text-transform: uppercase;
   text-align: center;
   margin-bottom: 6rem;
@@ -644,8 +644,8 @@ pre {
   padding: 3px 6px;
   border-radius: 3px;
   font-size: 1.3rem;
-  background: #ededed;
-  color: #666;
+  background: #3399ff;
+  color: #fff;
   letter-spacing: 1px;
   margin: 0 0.5rem 1rem;
   text-decoration: none;
