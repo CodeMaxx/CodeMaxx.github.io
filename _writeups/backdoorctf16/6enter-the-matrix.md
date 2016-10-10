@@ -169,4 +169,4 @@ The Vulnerability in this pwn challenge was `Off by One` error. This means that 
 
 Writing<br> `for(int i = 0; i <= 10; i++)`<br> rather than<br> `for(int i = 0; i < 10; i++)` ;) #nostalgia :P
 
-Cheers who read through it all! I hope you learnt something from my mistakes. **Go through other [writeups](../../) for more such fun challenges.**
+Cheers to those who read through it all! I hope you learnt something from my mistakes. **Go through other [writeups](../../) for more such fun challenges.**
