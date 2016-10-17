@@ -2,6 +2,7 @@
 layout: default
 title: Home
 ---
+{% seo %}
 <header class="header-home {% if site.animation %}animated{% endif %}">
         <a class="link" href="{{ site.url }}/about">
             <img class="selfie" alt="{{ site.name }}" src="{% if site.external-image == true %}{{ site.picture }}{% else %}{{ site.url }}/{{ site.picture }}{% endif %}" />
