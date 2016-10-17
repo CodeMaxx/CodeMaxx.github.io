@@ -68,12 +68,11 @@ collections:
     output: true
     writeups: true
 
-
--gems:
+gems:
+  - jekyll-feed
   - jemoji
   - jekyll-mentions
   - jekyll-seo-tag
-  - jekyll-feed
   - jekyll-sitemap
   - jekyll-gist
   - jekyll-paginate
