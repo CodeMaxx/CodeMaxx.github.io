@@ -5,10 +5,40 @@ title: Tags
 ---
 {% include header.html %}
 
+<!-- Create empty arrays -->
+{% assign tags = '' | split: ',' %}
+{% assign unique_tags = '' | split: ',' %}
+
+<!-- Map and flatten -->
+{% assign post_tags =  site.posts | map: 'tags' | join: ',' | join: ',' | split: ',' %}
+{% assign writeup_tags =  site.writeups | map: 'tags' | join: ',' | join: ',' | split: ',' %}
+
+<!-- Push to tags -->
+{% for tag in post_tags '%}
+  {% assign tags = tags | push: tag %}
+{% endfor %}
+{% for tag in writeup_tags '%}
+  {% assign tags = tags | push: tag %}
+{% endfor %}
+
+<!-- Uniq -->
+{% assign tags = tags | sort %}
+{% for tag in tags %}
+
+  <!-- If not equal to previous then it must be unique as sorted -->
+  {% unless tag == previous %}
+
+    <!-- Push to unique_tags -->
+    {% assign unique_tags = unique_tags | push: tag %}
+  {% endunless %}
+
+  {% assign previous = tag %}
+{% endfor %}
+
 <section class="list">
     <h1 class="title">Tags</h1>
 
-    {% assign tags_list = site.tags %}
+    {% assign tags_list = unique_tags %}
 
     {% if tags_list.first[0] == null %}
         {% for tag in tags_list %}
@@ -23,6 +53,7 @@ title: Tags
     {% assign tags_list = nil %}
 </section>
 
+<p style="color: #f00">Note: If clicking on a tag doesn't do anything, the posts related to the tag are in the <a href="../writeups">Writeups</a> section</p>
 <hr>
 
 <section class="tag-list">

@@ -61,7 +61,7 @@ So now they don't give us the flag until we return them a `png`, `jpg` or a `gif
    def do_GET(self):
         logging.error(self.headers)
         self.send_response(301) # For a redirect we need to send a `301` response rather than `200`
-        self.send_header('Location','link.to.an/image') # Add a link to an image in place of `lin.to.an/image`
+        self.send_header('Location','link.to.an/image') # Add a link to an image in place of `link.to.an/image`
         self.end_headers()
 ~~~
 
