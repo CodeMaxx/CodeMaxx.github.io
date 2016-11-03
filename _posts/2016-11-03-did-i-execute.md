@@ -10,6 +10,8 @@ blog: true
 description: ""
 ---
 
+![Terminal](/assets/images/terminal.ico)
+
 I'll be discussing about a small detail, about executing multiple commands on a terminal, which I realised most people don't know about.
 
 There are three ways in which commands are combined:-
