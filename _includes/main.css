@@ -1210,6 +1210,7 @@ pre {
 ::selection {
   background: #42ffcc; /* WebKit/Blink Browsers */
 }
+
 ::-moz-selection {
   background: #42ffcc; /* Gecko Browsers */
 }

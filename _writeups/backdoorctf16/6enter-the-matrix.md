@@ -150,7 +150,7 @@ So the name could have 64 characters an just after that in the memory our choice
 So I tried to overwrite it:
 
 ~~~bash
-python -c "print '2\n' + a'*64 + '\000'" | ./matrix
+python -c "print '2\n' + 'a'*64 + '\000'" | ./matrix
 ~~~
 
 And voila! It did enter `zion`. So now I used the appropriate string so as to print the flag. This was a bit tricky. But this is what I finally used.
