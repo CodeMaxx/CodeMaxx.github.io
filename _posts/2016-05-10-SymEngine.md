@@ -61,4 +61,4 @@ A short description of [My Pull Requests](https://github.com/symengine/symengine
 
 22. [PR #917](https://github.com/symengine/symengine/pull/917)(**Unmerged**) - Prevent sorting of `includes` with `clangformat`. Will be useful after SymEngine upgrades to `clang-format 3.8`
 
-`Note: See [CodeMaxx's SymEngine PRs](https://github.com/symengine/symengine/pulls?q=is%3Apr+author%3ACodeMaxx+is%3Aclosed) for updates and discussions.`
+`Note:` See [CodeMaxx's SymEngine PRs](https://github.com/symengine/symengine/pulls?q=is%3Apr+author%3ACodeMaxx+is%3Aclosed) for updates and discussions.
