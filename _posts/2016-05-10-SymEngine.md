@@ -55,8 +55,10 @@ A short description of [My Pull Requests](https://github.com/symengine/symengine
 
 19. [PR #901](https://github.com/symengine/symengine/pull/901)(**Merged**) - Improved Install instuctions in Readme.
 
-20. [PR #904](https://github.com/symengine/symengine/pull/904)(**Unmerged**) - Some changes in `clang-format` configuration. Remove Linux version error for `clang-format`.
+20. [PR #904](https://github.com/symengine/symengine/pull/904)(**Closed**) - Some changes in `clang-format` configuration. Remove Linux version error for `clang-format`.
 
-21. [PR #916](https://github.com/symengine/symengine/pull/916)(**Unmerged**) - Implement `Infinity` class. Still in progress. My favourite contribution! :D
+21. [PR #916](https://github.com/symengine/symengine/pull/916)(**Merged as [#1048](https://github.com/symengine/symengine/pull/1048)**) - Implement `Infinity` class. Still in progress. My favourite contribution! :D
 
 22. [PR #917](https://github.com/symengine/symengine/pull/917)(**Unmerged**) - Prevent sorting of `includes` with `clangformat`. Will be useful after SymEngine upgrades to `clang-format 3.8`
+
+`Note: See [CodeMaxx's SymEngine PRs](https://github.com/symengine/symengine/pulls?q=is%3Apr+author%3ACodeMaxx+is%3Aclosed) for updates and discussions.`
