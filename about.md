@@ -20,7 +20,7 @@ I like to try out new things. In my free time I like listening to music, solving
 
 I always keep experimenting with things and firmly believe that it is the only way to become good at them.
 
-I'm a convener of the Web Team and also the Founder and Manager of Information Security Club at IIT.
+I'm a convener of the Web Team and also the Founder and Manager of [Cyber Security Club at IIT](https://www.facebook.com/groups/csec.iitb).
 
 I am starting this blog to write about my experiences, my projects, and other interesting stuff. I will mostly be updating the [Write-ups](../writeups) section though.
 
