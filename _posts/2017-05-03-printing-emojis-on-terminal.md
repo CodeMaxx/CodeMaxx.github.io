@@ -17,7 +17,7 @@ Today I spent an hour on the simple task of printing an emoji on my terminal wit
 
 Lots of searching on stackoverflow led to me various pages with no reliable platform-independent solution. Finally, with some help from my friend [Manish](http://manishearth.github.io/), I figured it out.
 
-It is actually really easy...if you know how [Unicode](http://unicode.org/standard/WhatIsUnicode.html) works. I'll not go into the details of various character encoding, since I myself am a noob at it, but simply show you various C and C++ ways for accomplishing the task at hand.
+It is actually really easy...if you know how [Unicode](http://unicode.org/standard/WhatIsUnicode.html) works. I'll not go into the details of various character encoding(since I myself am a noob at it :stuck_out_tongue_winking_eye:), but simply show you various C and C++ ways for accomplishing the task at hand.
 
 ## Code
 
