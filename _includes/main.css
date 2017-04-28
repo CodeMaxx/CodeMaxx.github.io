@@ -51,6 +51,11 @@ img {
   margin-left: auto;
   margin-right: auto
 }
+
+img.emoji {
+display: inline;
+}
+
 hr {
   box-sizing: content-box;
   height: 0;
