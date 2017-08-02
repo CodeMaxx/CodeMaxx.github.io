@@ -8,6 +8,7 @@ tag:
 - CTF
 writeup: true
 star: false
+points: ∞
 category: Pwn
 ---
 
