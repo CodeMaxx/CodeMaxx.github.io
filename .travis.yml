@@ -8,7 +8,7 @@ before_script:
 
 script: 
  - ./travis.sh
- - awesome_bot ./*/*.md
+ - awesome_bot --allow-dupe ./*/*.md
 
 notifications:
     email: false
