@@ -2,7 +2,7 @@ source 'http://rubygems.org'
 
 gem 'github-pages'
 gem 'jekyll-feed'
-gem 'rake'
+gem 'rake', '12.0.0'
 gem 'rouge'
 gem 'pygments.rb'
 gem 'jekyll'

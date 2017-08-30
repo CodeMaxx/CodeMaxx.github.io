@@ -237,7 +237,7 @@ DEPENDENCIES
   jekyll-sitemap
   jemoji
   pygments.rb
-  rake
+  rake (= 12.0.0)
   rouge
 
 BUNDLED WITH
