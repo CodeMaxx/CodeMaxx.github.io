@@ -336,7 +336,7 @@ r.interactive()
 
 ## memcpy
 
-Read about memory alignment. I've added some reading material on my [Binary Explitation repository on github](https://www.github.com/codemaxx/Binary-Exploitation).
+Read about memory alignment. I've added some reading material on my [Binary Explitation repository on github](https://github.com/codemaxx/Binary-Exploitation).
 Basically the ASM operation need 16 byte alignment whereas 32-bit guarantees only 8-bit alignment by default, so we need to send proper chunk sizes for copying.
 
 ```python

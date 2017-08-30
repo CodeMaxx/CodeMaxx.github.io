@@ -15,7 +15,7 @@ description: "C++ code for printing emojis to terminal"
 
 Today I spent an hour on the simple task of printing an emoji on my terminal with a C++ program.... well not so simple. :trollface:
 
-Lots of searching on stackoverflow led to me various pages with no reliable platform-independent solution. Finally, with some help from my friend [Manish](http://manishearth.github.io/), I figured it out.
+Lots of searching on stackoverflow led to me various pages with no reliable platform-independent solution. Finally, with some help from my friend [Manish](https://manishearth.github.io/), I figured it out.
 
 It is actually really easy...if you know how [Unicode](http://unicode.org/standard/WhatIsUnicode.html) works. I'll not go into the details of various character encoding(since I myself am a noob at it :stuck_out_tongue_winking_eye:), but simply show you various C and C++ ways for accomplishing the task at hand.
 
@@ -79,7 +79,7 @@ The Unicode and UTF8 values for some common emojis can be found [here](https://a
 
 ---
 
-My goal was to add emoji support in the [Chat Application](https://github.com/CodeMaxx/Chat-Application) my team made for our Networks project. Though we later ended up using Android rather than command-line. :iphone:
+My goal was to add emoji support in the [Chat Application](https://github.com/CodeMaxx/Count-to-Infinity) my team made for our Networks project. Though we later ended up using Android rather than command-line. :iphone:
 
 Please don't hesitate to ask questions in the comments section. I'll try to reply as soon as possible. Also, do point out any errors you find in the solution and/or provide better solutions.
 
