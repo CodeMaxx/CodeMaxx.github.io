@@ -27,7 +27,7 @@ twitter: cod3maxx
 # google: mygoogle
 # instagram: myinstagram
 # pinterest: AkashTrehan21
-# linkedin: mylinkedin
+linkedin: in/akash-trehan-440726124
 # youtube: myyoutube
 # spotify: myspotify
 github: CodeMaxx
@@ -68,7 +68,7 @@ collections:
     output: true
     writeups: true
 
-gems:
+plugins:
   - jekyll-feed
   - jemoji
   - jekyll-mentions

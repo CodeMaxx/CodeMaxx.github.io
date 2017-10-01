@@ -14,10 +14,10 @@ title: Tags
 {% assign writeup_tags =  site.writeups | map: 'tags' | join: ',' | join: ',' | split: ',' %}
 
 <!-- Push to tags -->
-{% for tag in post_tags '%}
+{% for tag in post_tags %}
   {% assign tags = tags | push: tag %}
 {% endfor %}
-{% for tag in writeup_tags '%}
+{% for tag in writeup_tags %}
   {% assign tags = tags | push: tag %}
 {% endfor %}
 
