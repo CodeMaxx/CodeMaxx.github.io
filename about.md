@@ -11,7 +11,7 @@ permalink: /about/index.html
 </footer>
 `Hello World!`
 
-I'm Akash Trehan, a Second Year Computer Science Undergraduate at Indian Institute of Technology, Bombay. I hail from Ferozepur, Punjab. I am very enthusiastic about Cyber Security and Software Developement. I always keep myself buzy in Open Source Projects and Capture the Flag competitions.
+I'm Akash Trehan, a Third Year Computer Science Undergraduate at Indian Institute of Technology, Bombay. I hail from Ferozepur, Punjab. I am very enthusiastic about Cyber Security and Software Developement. I always keep myself buzy in Open Source Projects and Capture the Flag competitions.
 I am self-taught in the field of Information Security in which I want to research later in my life.
 
 I like tinkering with electronic circuits as well as computer softwares. I have built robotic vehicles for Line Follower and Obstacle Crossing comptetions here at IIT. I've also released a couple of applications and a website for use inside the institute.
