@@ -9,23 +9,18 @@ permalink: /about/index.html
 </h4></center>
 <footer class="footer-main" style="padding: 5px 0;">
 </footer>
-`Hello World!`
+Akash Trehan is the Founder and Manager of the [Cybersecurity Club](https://www.facebook.com/groups/csec.iitb/) at the Indian Institute of Technology Bombay, taking initiatives to form a community of security enthusiasts and giving talks to spread awareness about the latest research in the area. He is also a member of the [Web & Coding Club](https://www.facebook.com/wncc.iitb), one of the largest college level programming clubs in India which provide mentorship to students as well as a platform to showcase their skills.
 
-I'm Akash Trehan, a Third Year Computer Science Undergraduate at Indian Institute of Technology, Bombay. I hail from Ferozepur, Punjab. I am very enthusiastic about Cyber Security and Software Developement. I always keep myself buzy in Open Source Projects and Capture the Flag competitions.
-I am self-taught in the field of Information Security in which I want to research later in my life.
+Akash is a third year undergraduate at [IIT Bombay](https://www.iitb.ac.in/), majoring in [Computer Science & Engineering](https://www.cse.iitb.ac.in/). He was awarded the Academic Prize 2015-16 for his exceptional academic performance and is currently among the top 3 in CS. He also ranked 24th amongst 1.5 millions students who took JEE Advanced, one of the toughest college admission tests.
 
-I like tinkering with electronic circuits as well as computer softwares. I have built robotic vehicles for Line Follower and Obstacle Crossing comptetions here at IIT. I've also released a couple of applications and a website for use inside the institute.
+When not busy with college work, Akash spends his time participating in Capture the Flag competitions, where his favourite categories are Reverse Engineering and Pwning. He is primarily interested in software, systems and network security but likes to take on any challenge he finds interesting. He is very passionate about computer security and is mostly self taught in the area. He hopes to do some ground-breaking security research later in his life. Last summer he got the amazing opportunity to research under [Prof. Giovanni Vigna](https://www.cs.ucsb.edu/~vigna/) and [Prof. Christopher Kruegel](http://www.cs.ucsb.edu/~chris/) at the University of California, Santa Barbara and play CTFs which the famous team [Shellphish](http://shellphish.net/cgc/)!
 
-I like to try out new things. In my free time I like listening to music, solving Rubik's cube, watching TV Series, playing online games and doing lots of other random stuff :P . I love Punjabi food :D
+Not only does he love breaking software but also building them. Akash, in his freshman year formed the [Ferozepurwale](https://github.com/Ferozepurwale/) hackathon team with two of his friends, Nihal and Arpan. Together they have won several prizes including- Yahoo! Japan Most Creative Hack, Microsoft Code.Fun.Do Showcase Finalist, Lenovo GameJam, Kandy Hackathon, Hack InOut (India’s largest college hackathon) 5th ranker. They’ve also developed apps and websites for the university. Akash is also an open-source enthusiast and contributes to softwares like OWASP ZSC, SymEngine on Github where he goes by the handle '[CodeMaxx](https://github.com/CodeMaxx)'.
 
-I always keep experimenting with things and firmly believe that it is the only way to become good at them.
+Akash loves to think, read, listen to and analyse new ideas and opinions. He firmly believes that creativity, imagination and ideas can change the world. He watches every TED talks he comes across and dreams of giving one himself someday.
 
-I'm a convener of the Web Team and also the Founder and Manager of [Cyber Security Club at IIT](https://www.facebook.com/groups/csec.iitb).
+In his spare time, you will find Akash listening to Music or watching his all time favourite show - Impractical Jokers.
 
-I am starting this blog to write about my experiences, my projects, and other interesting stuff. I will mostly be updating the [Write-ups](../writeups) section though.
-
-`Fast forward to `<a href='../writeups' style="text-decoration:none">Write-ups</a>
-
-`Take a look at my `<a href='../projects' style="text-decoration:none">Projects.</a>
+Akash is always interested in collaborating on projects and discussing ideas. [Email him](http://www.google.com/recaptcha/mailhide/d?k=01VG-M2zL1CCSeYr97HKgLtA==&c=eoBC31BPlm_BNGxSQFrp_3Zk9kKbEB_gOaoModecKZo=) if you’d like to get in touch.
 
 <a class="github-button" href="https://github.com/CodeMaxx" data-style="mega" data-count-href="/CodeMaxx/followers" data-count-api="/users/CodeMaxx#followers" data-count-aria-label="# followers on GitHub" aria-label="Follow @CodeMaxx on GitHub">Follow @CodeMaxx</a>
