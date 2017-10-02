@@ -2,7 +2,6 @@
 layout: default
 title: Home
 ---
-{% seo %}
 <header class="header-home {% if site.animation %}animated{% endif %}">
         <a class="link" href="{{ site.url }}/about">
             <img class="selfie" alt="{{ site.name }}" src="{% if site.external-image == true %}{{ site.picture }}{% else %}{{ site.url }}/{{ site.picture }}{% endif %}" />
@@ -11,8 +10,11 @@ title: Home
         <h1 class="title" style="font-weight: 500">{{ site.name }}</h1>
         <h2 class="description" style="opacity: 0.5">a.k.a. CodeMaxx</h2>
         <h2 class="description glitch" style="color: #3399ff" data-text="{{ site.bio }}">{{ site.bio }}</h2>
+        {% seo %}
 </header>
-<script async defer src="{{ site.url }}/assets/js/buttons.js"></script>
+
+<!-- Place this tag in your head or just before your close body tag. -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>
 
 <center>{% include social-links.html %}</center>
 <center><h4 style="font-weight: 300; opacity: 0.5;">
