@@ -31,9 +31,11 @@
 }
 </style>
 {% include nav.html %}
+
 <center><img class="selfie" style='width: 80px' alt="{{ site.name }}" src="{% if site.external-image == true %}{{ site.picture }}{% else %}{{ site.url }}/{{ site.picture }}{% endif %}" /></center>
 
 <center><h3 style="display: inline;">Akash Trehan  </h3> </center>
+
 <center><h5 style="display: inline;opacity: 0.8; color: #3399ff; font-style: normal; font-weight: 300" class="description glitch" data-text="{{ site.bio }}">{{ site.bio }}</h5></center><br>
 
 {% seo %}
