@@ -34,3 +34,5 @@ One of them indeed had the flag.
 ![Infected flag](/assets/images/backdoorctf16/infected.png)
 
 So that was too easy for a 150 points question so I asked around about the expeced solution. Turns out this was a Docker dump. It had to be mounted in Docker and then searched for abnomalities. I have not tried that out yet(I'll have to set up Docker on my machine. I'm feeling too lazy right now.). I'll do it soon though and update this writeup accordingly.
+
+**Go through other [writeups](../) for more such fun challenges.**

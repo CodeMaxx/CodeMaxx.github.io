@@ -58,4 +58,4 @@ Note that I didn't know in advance that the base64 string will give a PNG image.
 
 Open `flag.png` and you have your flag.
 
-**Cheer! Go through other [writeups](../) for more such fun challenges.**
+**Go through other [writeups](../) for more such fun challenges.**

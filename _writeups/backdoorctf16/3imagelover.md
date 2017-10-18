@@ -70,3 +70,6 @@ So now they don't give us the flag until we return them a `png`, `jpg` or a `gif
 Basically I hosted my VPS with the script above and entered the URL in place of a photograph URL. Imagelover would visit it and I would get the flag from the Headers.
 
 And as expeced as soon as I submitted my URL I got a GET request with the flag in the cookie.
+
+**Go through other [writeups](../) for more such fun challenges.**
+

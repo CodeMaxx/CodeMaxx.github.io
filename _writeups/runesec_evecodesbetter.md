@@ -130,4 +130,4 @@ Thus `is__admin` now equals `__True__`, and we're in. Hacked!
 
 ![Penguin](/assets/images/evecodesbetter/ecb.png)
 
-**Cheer! Go through other [writeups](../) for more such fun challenges.**
+**Go through other [writeups](../) for more such fun challenges.**

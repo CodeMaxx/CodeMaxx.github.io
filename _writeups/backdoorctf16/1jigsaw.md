@@ -42,6 +42,8 @@ for filename in glob.glob('*.png'):
         inverted_image.save('../' + filename) # Path of inverted file
 ~~~
 
-I didn't try the the solver yet. But it will probably give you most of the letter. You can get the rest easily.
+I didn't try the the solver yet. But it will probably give you most of the letters. You can get the rest easily.
 
 **Next:** So now we got a list of 16 letters. I looked at them for sometime trying to unjumble them. In about 5 minutes I got `LOVEBEINGPUZZLED`.
+
+**Go through other [writeups](../) for more such fun challenges.**
