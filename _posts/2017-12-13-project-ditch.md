@@ -20,7 +20,7 @@ We were given the freedom to choose whatever project we liked, which more often 
 
 We were given some sample projects we could take up, most of which were Android apps. Their main focus was software development and understanding how to design database schemas. Most of the teams came up with great ideas for this type of project but as usual my rebellious self kicked in.
 
-"This is the only course project you're doing this semester! It must be something different!", I said to myself.
+_"This is the only course project you're doing this semester! It must be something different, something awesome!"_
 
 The first step was to convince the team to take on a hard project. Since the project counted for 30% of the course marks, not being able to complete it would be devastating for our grade. The team had some discussions and by the end all of us were pretty excited to take on the challenge. We knew it was a risk but we did it anyways.
 
