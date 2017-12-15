@@ -24,7 +24,7 @@ We were given some sample projects we could take up, most of which were Android 
 
 The first step was to convince the team to take on a hard project. Since the project counted for 30% of the course marks, not being able to complete it would be devastating for our grade. The team had some discussions and by the end all of us were pretty excited to take on the challenge. We knew it was a risk but we did it anyways.
 
-We talked with our guide, Prof. Sudarshan S and decided on the project you're reading about. "Hacking Postgres Internals" had a nice ring to it I thought. The project actually implements a part of [his paper from 1997](https://www.cse.iitb.ac.in/~sudarsha/Pubs-dir/indexbuffering-vldb97.pdf).
+We talked with our guide, [Prof. Sudarshan S](https://www.cse.iitb.ac.in/~sudarsha/) and decided on the project you're reading about. "Hacking Postgres Internals" had a nice ring to it I thought. The project actually implements a part of [his paper from 1997](https://www.cse.iitb.ac.in/~sudarsha/Pubs-dir/indexbuffering-vldb97.pdf).
 
 
 ## The Team
@@ -52,13 +52,15 @@ So no permission, no switch.
 
 We got our heads back into postgres and determined to complete it.
 
-And we did end up completing the project. It was lengen...wait for it...dary. Legendary!
+And we did end up completing the project. It was [lengen...wait for it...dary](https://www.youtube.com/watch?v=VCeblzSL4cE). Legendary!
 
 ## The Project Report
 
 All the engineering details are mentioned in the report.
 
 The report is in another post [here](../indexing-schemes/).
+
+The [code for this project](https://github.com/codemaxx/postgres) has been open-sourced on Github.
 
 <br>
 Do check out other [projects](../../projects), [my blog](../../blog) or [my write-ups](../../writeups) for various CTFs.
