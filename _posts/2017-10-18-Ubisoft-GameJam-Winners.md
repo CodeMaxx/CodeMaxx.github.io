@@ -37,6 +37,8 @@ Here's an aftermovie of the hackathon by Ubisoft:
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/cP-jsgug0FU" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
 
+The code for our game is open source and available [here](https://github.com/Ferozepurwale/Flood-League).
+
 Thank you for reading!
 
 **Cheers!**
