@@ -17,7 +17,7 @@ description: "Microsoft Malware Classification Challenge"
 ## Background
 
 #### Why this project?
-This project emerged for fulfilling a requirement of the Machine Learning course (EE 769) I took this semester. As I have always been interested in computer security, I wanted to combine my newly learnt knowledge from this course with it. The attacks last year from malwares like [WannaCry](https://www.wikiwand.com/en/WannaCry_ransomware_attack), [NotPetya](https://www.wikiwand.com/en/Petya_(malware)#/2017_Cyberattack) and [Bad Rabbit](https://www.kaspersky.com/blog/bad-rabbit-ransomware/19887/) had made me curious about how these attacks could be prevented. Malware Classification was the perfect project. For this I teamed up with my good friend Mukesh Pareek who is also a security enthusiast. This post is written in collaboration with him.
+This project emerged for fulfilling a requirement of the Machine Learning course (EE 769) I took this semester. As I have always been interested in computer security, I wanted to combine my newly learnt knowledge from this course with it. The attacks last year from malwares like [WannaCry](https://www.wikiwand.com/en/WannaCry_ransomware_attack), [NotPetya](https://www.wikiwand.com/en/Petya_(malware)#/2017_Cyberattack) and [Bad Rabbit](https://www.kaspersky.com/blog/bad-rabbit-ransomware/19887/) had made me curious about how these attacks could be prevented. Malware Classification was the perfect project. For this I teamed up with my good friend Mukesh Pareek who is also a security enthusiast. This post is written in collaboration with him. Our guide for this project is [Prof. Amit Sethi](https://www.ee.iitb.ac.in/web/people/faculty/home/asethi).
 
 #### Malware
 Wikipedia defines [malware](https://www.wikiwand.com/en/Malware) as:
@@ -55,12 +55,12 @@ Now we come to what exactly is the information we have about the malware and wha
 
 For every malware sample, the input we have is:
 
-1. ".asm" file - This contains the assembly code for the malware program and can be used to extract information about instruction calls, segments etc.
+- *.asm file* - This contains the assembly code for the malware program and can be used to extract information about instruction calls, segments etc.
 
 ![Screenshot of .asm file](/assets/images/malware/asm.png)
 <figcaption class="caption">Snippet from asm file</figcaption>
 
-2. ".bytes" file - This contains the hexadecimal representation of the file's binary content. It can be used to extract infomation about the lower level functioning of the malware.
+- *.bytes file* - This contains the hexadecimal representation of the file's binary content. It can be used to extract infomation about the lower level functioning of the malware.
 
 ![Screenshot of .bytes file](/assets/images/malware/bytes.png)
 <figcaption class="caption">Snippet from bytes file</figcaption>
@@ -91,19 +91,19 @@ Each malware sample had a 20 character long ID. We had a csv contatining the ID 
 
 The features we used for classification are as follows:
 
-1. Instruction n-gram from _.asm_ file - We extracted a list of instructions from the .asm file and used the count for each instruction (1-gram) and instruction-instruction pair (2-gram).
+1. Instruction n-gram from `.asm` file - We extracted a list of instructions from the .asm file and used the count for each instruction (1-gram) and instruction-instruction pair (2-gram).
 
-2. Byte n-gram from _.bytes_ file - We used the hexadecimal representation to extract the byte sequence of the actual malware. Then we used the 1-gram and 2-gram count as our features
+2. Byte n-gram from `.bytes` file - We used the hexadecimal representation to extract the byte sequence of the actual malware. Then we used the 1-gram and 2-gram count as our features
 
-3. Segment Size - We store the number of lines in each of the segments - Header, Data, Text etc. This information is extracted from the _.asm_ files
+3. Segment Size - We store the number of lines in each of the segments - Header, Data, Text etc. This information is extracted from the `.asm` files
 
-4. Pixel Intensity of _.asm_ files -  We converted the _.asm_ file into an image and then extracted the last 1000 pixels of the image as features
+4. Pixel Intensity of `.asm` files -  We converted the `.asm` file into an image and then extracted the last 1000 pixels of the image as features
 
 Our intuition behind using instruction n-grams was that samples from the same class of malware should have similar code and hence there should be similar instructions sequences present in the code. n-grams were a way to represent that. Likewise for the byte n-grams. Using segment size is again based on the intuition that the amount of static data, the amount of space required for the code would be similar for the same class.
 
 #### Implementation details
 
-Extracting the above features involves text processing and parsing. For this we used the `pyparsing` python library. The library can be used to specify token formats which make it easier to identify the required instructions or bytes. For getting an image from the _.asm_ file we used byte arrays.
+Extracting the above features involves text processing and parsing. For this we used the `pyparsing` python library. The library can be used to specify token formats which make it easier to identify the required instructions or bytes. For getting an image from the `.asm` file we used byte arrays.
 
 For speeding up the feature extraction we used the `ProcessPoolExecutor` from `concurrent` library which made sure that all the cores were being used for processing.
 
@@ -140,15 +140,39 @@ The graphs for hyperparameter tuning are as follows:
 
 #### Cross Validation and Test Accuracy
 
-- Table for cross validation and test accuracy
+Average CV accuracy - Logistic Regression:  0.9745187647140285
 
-## What didn't work out
+Average CV accuracy - SVC:  0.9775654341503947
 
-What did not work is as important as understanding what worked. This section talks about the challenges we faced during this project and what we learned from them.
+Average CV accuracy - Neural Network:  0.941
+
+Average CV accuracy - KNN:  0.9641323916355076
+
+Average CV accuracy - XGBoost:  0.9945990859991691
+
+Average CV accuracy - Random Forest:  0.9609472372247612
+
+## Problems faced and Learning
+
+What did not work is as important as understanding what worked. This section talks about the challenges we faced during this project and what we learned from them. Firstly was the number of features. We wanted to take higher n-grams but the number of combinations were too many leading to very slow training. To get across this hurdle we decided to use Random Forest feature selection so that other models need not train on all the features but only the most important ones.
+
+We were also trying to account for loops in the `.asm` files while getting the instruction counts. But since we can only do static analysis of the files, we could only follow unconditional jumps which would not have been very useful.
+
+Since we were trying out various techniques we hadn't used before, we decided to apply semi-supervised learning. But later we learnt that it is used when we have a small amount of labelled data and a large amount of unlabelled data. Then we also use the unlabelled data for learning. Since we didn't have any shortage of samples, we decided not to do this.
+
+We also wanted to try out Deep Learning but due to the large size of the files (~100 MB for many of the `.asm` files) it would have been very slow without extracting features manually first to decrease the size.
+
+A major problem we faced was the huge size of the data. We didn't have enough space on our computers to store all the training data so we had to store it on a server and then run all our code there. After doing this a few times, we came up with the idea that we should just dump the features after extracting them the first time. Then we can read directly from the dumps. This reduced the size from 200 GBs to ~1GB! We thought we were done but then we ran short of another resource - the RAM. All the features from all the data did not fit inside the RAM. A better idea at this point would have been to do batch learning, but we ended up just training on a smaller amount of data due to lack of time.
+
+We learnt a lot about practical ML lessons during the project which increased our understanding significantly.
 
 ## Conclusion and Future Work
 
-Also, machine learning models aren’t full-proof too. The dataset usually used to train the models is biased because of lack of collaboration in the industry. And hence it poses a serious threat of overfitting.
+We got good enough accuracy with the data and the low computational resources we had. Thus we can conclude that machine learning can be an effective technique for malware classification. Infact it is extensively being used in industrial applications these days.
+
+Inspite of all the success, machine learning models aren’t full-proof too. The datasets used to train the models are usually biased because there is no common data sink for malware samples. This is caused by the lack of collaboration in the industry.
+
+In future, we would like to try out more models and try more combination of features to find out which ones work best together. We will also make a web front-end for the application where people can upload malware samples and in the backend we use our models to predicts it's class. This would make this project a complete ready to use package for the users.
 
 ### References
 
@@ -159,3 +183,5 @@ Also, machine learning models aren’t full-proof too. The dataset usually used 
 [3] [Microsoft Malware Clasification Challenge 2015](https://www.kaggle.com/c/malware-classification/data)
 
 [4] [Feature selection and extraction for Malware Classification](http://www.iis.sinica.edu.tw/page/jise/2015/201505_11.pdf)
+
+[5] [Kaggle challenge first place team](https://github.com/xiaozhouwang/kaggle_Microsoft_Malware/blob/master/Saynotooverfitting.pdf)
