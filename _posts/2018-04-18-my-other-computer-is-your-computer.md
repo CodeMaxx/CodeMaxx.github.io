@@ -20,6 +20,13 @@ description: "Microsoft Malware Classification Challenge"
 This project emerged for fulfilling a requirement of the Machine Learning course (EE 769) I took this semester. As I have always been interested in computer security, I wanted to combine my newly learnt knowledge from this course with it. The attacks last year from malwares like [WannaCry](https://www.wikiwand.com/en/WannaCry_ransomware_attack), [NotPetya](https://www.wikiwand.com/en/Petya_(malware)#/2017_Cyberattack) and [Bad Rabbit](https://www.kaspersky.com/blog/bad-rabbit-ransomware/19887/) had made me curious about how these attacks could be prevented. Malware Classification was the perfect project. For this I teamed up with my good friend Mukesh Pareek who is also a security enthusiast. This post is written in collaboration with him. Our guide for this project is [Prof. Amit Sethi](https://www.ee.iitb.ac.in/web/people/faculty/home/asethi).
 
 #### Malware
+
+![Malware Classes](/assets/images/malware/classes.jpg)
+
+<!-- Source [^p1]
+
+[^p1] http://thepcworks.com/malware/ -->
+
 Wikipedia defines [malware](https://www.wikiwand.com/en/Malware) as:
 
 >   Malware, short for malicious software, is an umbrella term used to refer to a variety of forms of hostile or intrusive software, including computer viruses, worms, Trojan horses, ransomware, spyware, adware, scareware, and other intentionally harmful programs.
@@ -126,31 +133,60 @@ For each of these models we did hyperparameter tuning to find out the best model
 
 ## Evaluation
 
-<!-- #### Hyperparameter Tuning
+#### Hyperparameter Tuning
 
 The graphs for hyperparameter tuning are as follows:
 
-![Graphs with model as caption]()
+![svc](/assets/images/malware/svc.png)
+<figcaption class="caption">Support Vector Classifier</figcaption>
 
-- Graphs for hyperparameter tuning
+![svc](/assets/images/malware/knn.png)
+<figcaption class="caption">K Nearest Neighbour Classifier</figcaption>
 
-#### Feature importance
+![svc](/assets/images/malware/lr.png)
+<figcaption class="caption">Logistic Regression</figcaption>
+
+![svc](/assets/images/malware/xgbc.png)
+<figcaption class="caption">Xtreme Gradient Booster</figcaption>
+
+![svc](/assets/images/malware/rfc.png)
+<figcaption class="caption">Random Forest Classifier</figcaption>
+
+<!-- #### Feature importance
 
 ![Feature importance]() -->
 
-#### Cross Validation and Test Accuracy
+#### Average 4-fold Cross Validation Accuracy
 
-Average CV accuracy - Logistic Regression:  0.9745187647140285
+Logistic Regression:  0.9745187647140285
 
-Average CV accuracy - SVC:  0.9775654341503947
+SVC:  0.9775654341503947
 
-Average CV accuracy - Neural Network:  0.941
+Neural Network:  0.941
 
-Average CV accuracy - KNN:  0.9641323916355076
+KNN:  0.9641323916355076
 
-Average CV accuracy - XGBoost:  0.9945990859991691
+XGBoost:  0.9945990859991691
 
-Average CV accuracy - Random Forest:  0.9609472372247612
+Random Forest:  0.9609472372247612
+
+We find that we get very good accuracies with all models but XGBoost works the best.
+
+#### Test Accuracy
+
+Logistic Regression:  0.910562449264865
+
+SVC:  0.869346629758593
+
+Neural Network:  0.89387560
+
+KNN:  0.821231293817
+
+XGBoost:  0.92123162381276
+
+Random Forest:  0.886584973720
+
+XGBoost still dominate all the other models but Logistic regression and neural networks also come quite close.
 
 ## Problems faced and Learning
 
