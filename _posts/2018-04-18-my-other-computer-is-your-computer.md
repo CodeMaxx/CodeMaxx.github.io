@@ -126,7 +126,7 @@ For each of these models we did hyperparameter tuning to find out the best model
 
 ## Evaluation
 
-#### Hyperparameter Tuning
+<!-- #### Hyperparameter Tuning
 
 The graphs for hyperparameter tuning are as follows:
 
@@ -136,7 +136,7 @@ The graphs for hyperparameter tuning are as follows:
 
 #### Feature importance
 
-![Feature importance]()
+![Feature importance]() -->
 
 #### Cross Validation and Test Accuracy
 
