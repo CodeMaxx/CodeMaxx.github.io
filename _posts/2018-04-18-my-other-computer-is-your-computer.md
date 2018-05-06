@@ -155,37 +155,20 @@ The graphs for hyperparameter tuning are as follows:
 
 ![Feature importance]() -->
 
-#### Average 4-fold Cross Validation Accuracy
+#### Cross Validation and Test Set Accuracy
 
-Logistic Regression:  0.9745187647140285
+| Model                      | 4-Fold Cross Validation Accuracy | Test Set Accuracy |
+|--------------------------------|------------------------------------|-------------------|
+| Logistic Regression            | 0.9745187647140285                 | 0.910562449264865 |
+| Support Vector Classifier      | 0.9775654341503947                 | 0.869346629       |
+| Neural Network                 | 0.941                              | 0.893875612342112 |
+| K Nearest Neighbour Classifier | 0.9641323916355076                 | 0.821231293817848 |
+| XGBoost                        | 0.9945990859991691                 | 0.921231623812763 |
+| Random Forest                  | 0.9609472372247612                 | 0.88658497372     |
 
-SVC:  0.9775654341503947
+We find that we get very good cross-validation accuracies with all models but XGBoost works the best.
 
-Neural Network:  0.941
-
-KNN:  0.9641323916355076
-
-XGBoost:  0.9945990859991691
-
-Random Forest:  0.9609472372247612
-
-We find that we get very good accuracies with all models but XGBoost works the best.
-
-#### Test Accuracy
-
-Logistic Regression:  0.910562449264865
-
-SVC:  0.869346629758593
-
-Neural Network:  0.89387560
-
-KNN:  0.821231293817
-
-XGBoost:  0.92123162381276
-
-Random Forest:  0.886584973720
-
-XGBoost still dominate all the other models but Logistic regression and neural networks also come quite close.
+XGBoost still dominate all the other models in case of test set but Logistic regression and neural networks also come quite close.
 
 ## Problems faced and Learning
 
