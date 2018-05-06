@@ -13,6 +13,7 @@ description: "Microsoft Malware Classification Challenge"
 
 ![Malware](/assets/images/malware/malware.jpg)
 
+Source: <https://www.cyberpointllc.com/images/svcs/img-mare.jpg>
 
 ## Background
 
@@ -23,9 +24,7 @@ This project emerged for fulfilling a requirement of the Machine Learning course
 
 ![Malware Classes](/assets/images/malware/classes.jpg)
 
-<!-- Source [^p1]
-
-[^p1] http://thepcworks.com/malware/ -->
+Source: <http://thepcworks.com/malware/>
 
 Wikipedia defines [malware](https://www.wikiwand.com/en/Malware) as:
 
