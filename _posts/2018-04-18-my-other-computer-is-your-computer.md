@@ -57,17 +57,13 @@ For every malware sample, the input we have is:
 
 1. ".asm" file - This contains the assembly code for the malware program and can be used to extract information about instruction calls, segments etc.
 
-{% highlight raw %}
 ![Screenshot of .asm file](/assets/images/malware/asm.png)
 <figcaption class="caption">Snippet from asm file</figcaption>
-{% endhighlight %}
 
 2. ".bytes" file - This contains the hexadecimal representation of the file's binary content. It can be used to extract infomation about the lower level functioning of the malware.
 
-{% highlight raw %}
 ![Screenshot of .bytes file](/assets/images/malware/bytes.png)
 <figcaption class="caption">Snippet from bytes file</figcaption>
-{% endhighlight %}
 
 So these two files need to be used to classify the malware into the following 9 families:
 
@@ -87,7 +83,7 @@ The specific problem as stated above is taken from a [malware classification cha
 
 Each malware sample had a 20 character long ID. We had a csv contatining the ID to Class mapping of the training samples.
 
-[!Dataset Class Graph](/assets/images/malware/eda.png)
+![Dataset Class Graph](/assets/images/malware/eda.png)
 
 
 ## Preprocessing and Feature Extraction [^code]
@@ -112,6 +108,8 @@ Extracting the above features involves text processing and parsing. For this we 
 For speeding up the feature extraction we used the `ProcessPoolExecutor` from `concurrent` library which made sure that all the cores were being used for processing.
 
 After extracting the features we dumped them to a file so that the processing need not be done again.
+
+- Write about feature selection
 
 ## Training
 
