@@ -1,7 +1,7 @@
 ---
 title: "My Other Computer is Your Computer - Malware Classification"
 layout: post
-date: 2018-04-18 11:00
+date: 2018-05-06 00:00
 tag:
 - Security
 - Malware
@@ -57,11 +57,17 @@ For every malware sample, the input we have is:
 
 1. ".asm" file - This contains the assembly code for the malware program and can be used to extract information about instruction calls, segments etc.
 
-![Screenshot of .asm file]()
+{% highlight raw %}
+![Screenshot of .asm file](/assets/images/malware/asm.png)
+<figcaption class="caption">Snippet from asm file</figcaption>
+{% endhighlight %}
 
 2. ".bytes" file - This contains the hexadecimal representation of the file's binary content. It can be used to extract infomation about the lower level functioning of the malware.
 
-![Screenshot of .bytes file]()
+{% highlight raw %}
+![Screenshot of .bytes file](/assets/images/malware/bytes.png)
+<figcaption class="caption">Snippet from bytes file</figcaption>
+{% endhighlight %}
 
 So these two files need to be used to classify the malware into the following 9 families:
 
@@ -81,7 +87,7 @@ The specific problem as stated above is taken from a [malware classification cha
 
 Each malware sample had a 20 character long ID. We had a csv contatining the ID to Class mapping of the training samples.
 
-[! Dataset Class Graph]
+[!Dataset Class Graph](/assets/images/malware/eda.png)
 
 
 ## Preprocessing and Feature Extraction [^code]
@@ -126,9 +132,13 @@ For each of these models we did hyperparameter tuning to find out the best model
 
 The graphs for hyperparameter tuning are as follows:
 
-![Graphs with model as caption]
+![Graphs with model as caption]()
 
 - Graphs for hyperparameter tuning
+
+#### Feature importance
+
+![Feature importance]()
 
 #### Cross Validation and Test Accuracy
 
