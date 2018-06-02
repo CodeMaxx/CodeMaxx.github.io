@@ -27,5 +27,11 @@
   "scripts": {
     "build": "bundle exec jekyll build",
     "test": "bundle exec htmlproof ./_site --verbose"
+  },
+  "resolutions": {
+    "natives": "1.1.3"
+  },
+  "dependencies": {
+    "npm": "^6.0.1"
   }
 }
