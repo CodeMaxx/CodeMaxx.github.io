@@ -1,7 +1,7 @@
 {% if post.writeup == true %}
     <div class="item {% if post.star %}star{% endif %}">
         {% if post.external_url %}
-        <a class="url" href="{{ post.external_url }}" onclick="ga('send', 'pageview', '/' + {{ post.url }});">
+        <a class="url" href="{{ post.external_url }}" onclick='ga("send", "pageview", "{{ post.url }}");'>
         {% else %}
         <a class="url" href="{{ site.url }}{{ post.url }}">
         {% endif %}
