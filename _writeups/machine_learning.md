@@ -8,9 +8,6 @@ tag:
 writeup: true
 star: false
 points: ∞
+external_url: https://github.com/CodeMaxx/Machine-Learning-Coursera
 category: ML
 ---
-
-<META http-equiv="refresh" content="0;URL=https://github.com/CodeMaxx/Machine-Learning-Coursera">
-
-### **Loading...**
