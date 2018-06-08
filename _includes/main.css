@@ -377,9 +377,10 @@ figure.highlight {
   width: 100%;
   margin: 0;
 }
-.highlight {
+.highlight .highlight {
   border: solid;
 }
+
 code,
 tt {
   padding: 1px 3px;
