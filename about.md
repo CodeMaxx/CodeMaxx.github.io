@@ -24,4 +24,5 @@ In his spare time, you will find him listening to Music or watching his all time
 Akash is always interested in collaborating on projects and discussing ideas. [Email him](http://www.google.com/recaptcha/mailhide/d?k=01VG-M2zL1CCSeYr97HKgLtA==&c=eoBC31BPlm_BNGxSQFrp_3Zk9kKbEB_gOaoModecKZo=) if you’d like to get in touch.
 
 <div>
-<a class="github-button" href="https://github.com/CodeMaxx" data-style="mega" data-count-href="/CodeMaxx/followers" data-count-api="/users/CodeMaxx#followers" data-count-aria-label="# followers on GitHub" aria-label="Follow @CodeMaxx on GitHub">Follow @CodeMaxx</a><aside style="display: inline; float: right"><a href="https://twitter.com/cod3maxx?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="true" data-size="large" data-lang="en">Follow @cod3maxx</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></aside></div>
+    {% include follow-buttons.html %}
+</div>
