@@ -4,7 +4,7 @@ bio: 'Hacker-Developer-Geek'
 
 # if it's an external image, update below for true
 external-image: false
-picture: 'assets/images/face.png'
+picture: 'assets/images/face_new.jpeg'
 
 url: https://www.akashtrehan.com
 # your url: http://USERNAME.github.io
@@ -25,9 +25,9 @@ disqus: codemaxx
 facebook: AkashTrehan21
 twitter: cod3maxx
 # google: mygoogle
-# instagram: myinstagram
+instagram: akash.trehan
 # pinterest: AkashTrehan21
-linkedin: in/akash-trehan-440726124
+linkedin: in/akash-trehan
 # youtube: myyoutube
 # spotify: myspotify
 github: CodeMaxx
