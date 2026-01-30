@@ -13,8 +13,6 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
-    env:
-      NOKOGIRI_USE_SYSTEM_LIBRARIES: true
     
     steps:
       - name: Checkout repository
