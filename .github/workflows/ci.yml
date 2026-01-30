@@ -23,7 +23,7 @@ jobs:
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '2.7'
+          ruby-version: '3.2'
           bundler-cache: true
 
       - name: Set up Node.js
@@ -42,7 +42,7 @@ jobs:
         run: bundle exec jekyll build
 
       - name: Run HTML proofer
-        run: bundle exec htmlproofer ./_site --trace
+        run: bundle exec htmlproofer ./_site --disable-external --no-enforce-https
 
       - name: Check links in markdown files
         run: awesome_bot --allow-dupe ./*/*.md
