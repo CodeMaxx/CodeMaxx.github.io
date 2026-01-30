@@ -1,6 +1,5 @@
 import gulp from 'gulp';
 import browserSyncLib from 'browser-sync';
-import plumber from 'gulp-plumber';
 import { spawn } from 'child_process';
 import changed from 'gulp-changed';
 
@@ -33,12 +32,14 @@ function browserSyncTask(done) {
 function imageminTask() {
     return gulp.src('assets/images/**/*.{jpg,png,gif}')
         .pipe(changed('assets/images'))
-        .pipe(plumber())
         .pipe(imagemin([
             gifsicle({ interlaced: true }),
             mozjpeg({ progressive: true }),
             optipng({ optimizationLevel: 3 })
-        ]))
+        ]).on('error', function(err) {
+            console.error('Image minification error:', err.message);
+            this.emit('end');
+        }))
         .pipe(gulp.dest('assets/images'));
 }
 
