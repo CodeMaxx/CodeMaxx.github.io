@@ -1,5 +1,0 @@
-{
-  "error": true,
-  "title": "Found 2 link issues",
-  "message": "#### Link issues by [`awesome_bot`](https://github.com/dkhamsing/awesome_bot)\n\n  Line | Status | Link\n| ---: | :----: | --- |\n15 | [308](https://httpstatuses.com/308) | https://hackinout.co/blog/blockchain-track-winner-spamslam/ redirects to<br>https://hackinout.co/blog/blockchain-track-winner-spamslam\n27 | [404](https://httpstatuses.com/404) | http://cheekujodhpur.github.io/ \n"
-}

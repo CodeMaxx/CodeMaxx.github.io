@@ -1,5 +1,0 @@
-{
-  "error": true,
-  "title": "Found 3 link issues",
-  "message": "#### Link issues by [`awesome_bot`](https://github.com/dkhamsing/awesome_bot)\n\n  Line | Status | Link\n| ---: | :----: | --- |\n27 | [301](https://httpstatuses.com/301) | https://github.com/codemaxx/postgres redirects to<br>https://github.com/CodeMaxx/postgres-with-stepped-merge-index\n177 | [301](https://httpstatuses.com/301) | https://www.postgresql.org/docs/9.6/static/xindex.html redirects to<br>https://www.postgresql.org/docs/9.6/xindex.html\n178 | [301](https://httpstatuses.com/301) | https://www.postgresql.org/docs/9.6/static/indexam.html redirects to<br>https://www.postgresql.org/docs/9.6/indexam.html\n"
-}

@@ -1,5 +1,0 @@
-{
-  "error": true,
-  "title": "Found 1 link issue",
-  "message": "#### Link issue by [`awesome_bot`](https://github.com/dkhamsing/awesome_bot)\n\n  Line | Status | Link\n| ---: | :----: | --- |\n78 | [301](https://httpstatuses.com/301) | https://www.webpagefx.com/tools/emoji-cheat-sheet/ redirects to<br>https://www.webfx.com/tools/emoji-cheat-sheet/\n"
-}

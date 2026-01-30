@@ -1,5 +1,0 @@
-{
-  "error": true,
-  "title": "Found 1 link issue",
-  "message": "#### Link issue by [`awesome_bot`](https://github.com/dkhamsing/awesome_bot)\n\n  Line | Status | Link\n| ---: | :----: | --- |\n11 | [301](https://httpstatuses.com/301) | https://github.com/CodeMaxx/cs475-assignments redirects to<br>https://github.com/CodeMaxx/CS475-Graphics\n"
-}
