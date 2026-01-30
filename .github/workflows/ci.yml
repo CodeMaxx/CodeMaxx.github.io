@@ -35,3 +35,5 @@ jobs:
 
       - name: Build Jekyll site
         run: bundle exec jekyll build
+        env:
+          JEKYLL_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
