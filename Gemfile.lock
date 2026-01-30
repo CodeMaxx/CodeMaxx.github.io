@@ -305,7 +305,7 @@ GEM
     pygments.rb (4.0.0)
     racc (1.8.1)
     rainbow (3.1.1)
-    rake (12.0.0)
+    rake (13.3.1)
     rb-fsevent (0.11.2)
     rb-inotify (0.11.1)
       ffi (~> 1.0)
@@ -360,7 +360,7 @@ DEPENDENCIES
   jekyll-sitemap
   jemoji
   pygments.rb
-  rake (= 12.0.0)
+  rake (~> 13.3)
   rouge
 
 CHECKSUMS
@@ -473,7 +473,7 @@ CHECKSUMS
   pygments.rb (4.0.0) sha256=f48bb03a28cf5eaa56e8d3d5a49b76a978199a51bd8643cc4b32fbb7ffecee57
   racc (1.8.1) sha256=4a7f6929691dbec8b5209a0b373bc2614882b55fc5d2e447a21aaa691303d62f
   rainbow (3.1.1) sha256=039491aa3a89f42efa1d6dec2fc4e62ede96eb6acd95e52f1ad581182b79bc6a
-  rake (12.0.0) sha256=f6b43059e2923ddd30128fbbf4eb2e610c020b888ad97b57d7d94abc12734806
+  rake (13.3.1) sha256=8c9e89d09f66a26a01264e7e3480ec0607f0c497a861ef16063604b1b08eb19c
   rb-fsevent (0.11.2) sha256=43900b972e7301d6570f64b850a5aa67833ee7d87b458ee92805d56b7318aefe
   rb-inotify (0.11.1) sha256=a0a700441239b0ff18eb65e3866236cd78613d6b9f78fea1f9ac47a85e47be6e
   rexml (3.4.4) sha256=19e0a2c3425dfbf2d4fc1189747bdb2f849b6c5e74180401b15734bc97b5d142
