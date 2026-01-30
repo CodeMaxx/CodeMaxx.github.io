@@ -1,5 +1,7 @@
 # main text of home
 name: Akash Trehan
+# title is required by many Jekyll plugins and themes
+title: Akash Trehan
 bio: 'Hacker-Developer-Geek'
 
 # if it's an external image, update below for true
@@ -8,6 +10,9 @@ picture: 'assets/images/face_new.jpeg'
 
 url: https://www.akashtrehan.com
 # your url: http://USERNAME.github.io
+# For user/organization sites, baseurl should be empty
+# For project sites, set to /<repository-name>
+baseurl: ""
 
 permalink: /:title/
 
