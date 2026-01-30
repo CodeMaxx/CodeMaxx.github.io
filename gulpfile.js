@@ -1,67 +1,53 @@
-var gulp        = require('gulp'),
-    concat      = require('gulp-concat'),
-    browserSync = require('browser-sync'),
-    plumber     = require('gulp-plumber'),
-    cp          = require('child_process'),
-    changed     = require('gulp-changed'),
+import gulp from 'gulp';
+import browserSyncLib from 'browser-sync';
+import plumber from 'gulp-plumber';
+import { spawn } from 'child_process';
+import changed from 'gulp-changed';
 
-    // stylus
-    stylus      = require('gulp-stylus'),
-	rupture     = require('rupture'),
-	prefixer    = require('autoprefixer-stylus'),
-    nib         = require('nib'),
+// images
+import imagemin, { gifsicle, mozjpeg, optipng } from 'gulp-imagemin';
 
-    // images
-    imagemin    = require('gulp-imagemin');
+const browserSync = browserSyncLib.create();
 
-var messages = {
-	jekyllBuild: '<span style="color: grey">Running:</span> $ jekyll build'
+const messages = {
+    jekyllBuild: '<span style="color: grey">Running:</span> $ jekyll build'
 };
 
-gulp.task('jekyll-build', function (done) {
+function jekyllBuild(done) {
     browserSync.notify(messages.jekyllBuild);
-    return cp.spawn('bundle', ['exec', 'jekyll', 'build', '--drafts', '--config', '_config.yml,_config_dev.yml'], {stdio: 'inherit'}).on('close', done);
-    // return cp.spawn('bundle', ['exec', 'jekyll', 'build'], {stdio: 'inherit'}).on('close', done);
-});
+    spawn('bundle', ['exec', 'jekyll', 'build', '--drafts', '--config', '_config.yml,_config_dev.yml'], {stdio: 'inherit'}).on('close', done);
+}
 
-gulp.task('jekyll-rebuild', ['jekyll-build'], function () {
+function jekyllRebuild(done) {
     browserSync.reload();
-});
+    done();
+}
 
-gulp.task('browserSync', ['jekyll-build'], function() {
-    browserSync({
+function browserSyncTask(done) {
+    browserSync.init({
         server: { baseDir: "_site/" },
         open: false
-    });
-});
+    }, done);
+}
 
-// gulp.task('styles', function() {
-//     return gulp.src('src/styles/main.styl')
-//         .pipe(changed('assets/styles'))
-//         .pipe(plumber())
-//         .pipe(stylus({
-//             use:[prefixer(), rupture(), nib()],
-// 			compress: false
-//         }))
-//         .pipe(gulp.dest('_site/assets/styles'))
-//         .pipe(gulp.dest('_includes'))
-//         .pipe(browserSync.reload({stream: true}))
-//         .pipe(gulp.dest('assets/styles'));
-// });
-
-gulp.task('imagemin', function(tmp) {
+function imageminTask() {
     return gulp.src('assets/images/**/*.{jpg,png,gif}')
         .pipe(changed('assets/images'))
         .pipe(plumber())
-        .pipe(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true }))
+        .pipe(imagemin([
+            gifsicle({ interlaced: true }),
+            mozjpeg({ progressive: true }),
+            optipng({ optimizationLevel: 3 })
+        ]))
         .pipe(gulp.dest('assets/images'));
-});
+}
 
-gulp.task('watch', function() {
-    //gulp.watch('src/styles/**/*', ['styles']);
-    gulp.watch('src/images/**/*.{jpg,png,gif}', ['imagemin']);
-    gulp.watch(['_drafts/*', '_includes/*', '_layouts/*', '_posts/*', '*.{html,md}', '_config.yml', '_writeups/*','_writeups/*/*','_writeups/*/*/*'], ['jekyll-rebuild']);
-});
+function watchTask(done) {
+    gulp.watch('src/images/**/*.{jpg,png,gif}', gulp.series(imageminTask));
+    gulp.watch(['_drafts/*', '_includes/*', '_layouts/*', '_posts/*', '*.{html,md}', '_config.yml', '_writeups/*','_writeups/*/*','_writeups/*/*/*'], gulp.series(jekyllBuild, jekyllRebuild));
+    done();
+}
 
-//gulp.task('default', ['styles', 'imagemin', 'browserSync', 'watch']);
-gulp.task('default', ['imagemin', 'browserSync', 'watch']);
+// Export tasks
+export { imageminTask as imagemin };
+export default gulp.series(imageminTask, jekyllBuild, browserSyncTask, watchTask);
