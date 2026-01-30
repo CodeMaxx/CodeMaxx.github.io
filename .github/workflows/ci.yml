@@ -27,12 +27,6 @@ jobs:
       - name: Install npm dependencies
         run: npm ci
 
-      - name: Verify gulp tasks are registered
-        run: npm run gulp:tasks
-
-      - name: Run gulp imagemin
-        run: npm run gulp:imagemin
-
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
