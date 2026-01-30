@@ -4,6 +4,9 @@ name: Akash Trehan
 title: Akash Trehan
 bio: 'Hacker-Developer-Geek'
 
+# Repository setting required for jekyll-github-metadata plugin
+repository: CodeMaxx/CodeMaxx.github.io
+
 # if it's an external image, update below for true
 external-image: false
 picture: 'assets/images/face_new.jpeg'
