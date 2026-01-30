@@ -1,0 +1,118 @@
+{
+  "date": "2026-01-31 01:53:38 -0800",
+  "links": [
+    "https://github.com/Ferozepurwale",
+    "https://unity3d.com/learn/tutorials",
+    "https://www.youtube.com/embed/cP-jsgug0FU",
+    "https://github.com/Ferozepurwale/Flood-League"
+  ],
+  "issues": [
+    {
+      "url": "https://unity3d.com/learn/tutorials",
+      "status": 301,
+      "error": null,
+      "headers": {
+        "content-type": "text/html",
+        "location": "https://learn.unity.com",
+        "x-cloud-trace-context": "a83e9e1c18e08901d373ef3f40fa7094",
+        "server": "Google Frontend",
+        "content-length": "169",
+        "date": "Sat, 31 Jan 2026 09:53:37 GMT",
+        "connection": "keep-alive",
+        "x-n": "S"
+      },
+      "loc": 28
+    }
+  ],
+  "all": [
+    {
+      "url": "https://www.youtube.com/embed/cP-jsgug0FU",
+      "status": 200,
+      "error": null,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "x-content-type-options": "nosniff",
+        "cache-control": "no-cache, no-store, max-age=0, must-revalidate",
+        "pragma": "no-cache",
+        "expires": "Mon, 01 Jan 1990 00:00:00 GMT",
+        "date": "Sat, 31 Jan 2026 09:53:37 GMT",
+        "p3p": "CP=\"This is not a P3P policy! See http://support.google.com/accounts/answer/151657?hl=en for more info.\"",
+        "strict-transport-security": "max-age=31536000",
+        "content-security-policy": "require-trusted-types-for 'script'",
+        "origin-trial": "AmhMBR6zCLzDDxpW+HfpP67BqwIknWnyMOXOQGfzYswFmJe+fgaI6XZgAzcxOrzNtP7hEDsOo1jdjFnVr2IdxQ4AAAB4eyJvcmlnaW4iOiJodHRwczovL3lvdXR1YmUuY29tOjQ0MyIsImZlYXR1cmUiOiJXZWJWaWV3WFJlcXVlc3RlZFdpdGhEZXByZWNhdGlvbiIsImV4cGlyeSI6MTc1ODA2NzE5OSwiaXNTdWJkb21haW4iOnRydWV9, AiDEBptUfVeO93q48VdVMe/ubupazdAl8AaHP+NBzdnW8quUcHdzJUyGSfrmtpKJu7EOvwRp9ug2rEo3XU+WMAMAAAB2eyJvcmlnaW4iOiJodHRwczovL3lvdXR1YmUuY29tOjQ0MyIsImZlYXR1cmUiOiJEZXZpY2VCb3VuZFNlc3Npb25DcmVkZW50aWFsczIiLCJleHBpcnkiOjE3NzQzMTA0MDAsImlzU3ViZG9tYWluIjp0cnVlfQ==",
+        "report-to": "{\"group\":\"youtube_main\",\"max_age\":2592000,\"endpoints\":[{\"url\":\"https://csp.withgoogle.com/csp/report-to/youtube_main\"}]}",
+        "cross-origin-resource-policy": "cross-origin",
+        "content-security-policy-report-only": "report-uri https://csp.withgoogle.com/csp/youtube_main/strict;base-uri 'self';object-src 'none';script-src 'report-sample' 'nonce-MKG0854he69yunhoymqjKA' 'unsafe-inline' 'strict-dynamic' https: http: 'unsafe-eval'",
+        "cross-origin-opener-policy-report-only": "same-origin; report-to=\"youtube_main\"",
+        "permissions-policy": "ch-ua-arch=*, ch-ua-bitness=*, ch-ua-full-version=*, ch-ua-full-version-list=*, ch-ua-model=*, ch-ua-wow64=*, ch-ua-form-factors=*, ch-ua-platform=*, ch-ua-platform-version=*",
+        "server": "ESF",
+        "x-xss-protection": "0",
+        "set-cookie": "__Secure-YNID=15.YT=NMVkH9HkhBgch-gecGMZ8QI5MqELNQwZOWPqIqWlR9YCQeyOew0mHtldQ5NekmT4Ma1BoJLhvGmFl3xcxS2s_TSp2dC6A4yVeGavJ05V2SAUpwjdioPofEFYPVffM34XCQw7tAb5ZL8kNLYepqHblDOekMS3rnSzIl6jhmAye8nNBEb8YZJ3aEzPH0szN0TMYwGfipwCB3QzBTNOSh_P0ozSGlt9r8-beo1YXK3ickW1h6OoOstFb1yeeX5JiehVXBDfrRuaC-maVp1uoGP1tKibtkVmhNWK6Q313GFsGNjPCGgKjm2Qoy88SCO94yJdLKPkj0l1nJZfe6tNZkSHYQ; expires=Thu, 30-Jul-2026 09:53:37 GMT; path=/; domain=.youtube.com; Secure; HttpOnly; SameSite=none, YSC=leN8-FPtw9E; Domain=.youtube.com; Path=/; Secure; HttpOnly; SameSite=none, __Secure-ROLLOUT_TOKEN=CKnulPKMoMGcaxCvhcKCwbWSAxivhcKCwbWSAw%3D%3D; Domain=youtube.com; Expires=Thu, 30-Jul-2026 09:53:37 GMT; Path=/; Secure; HttpOnly; SameSite=none; Partitioned, __Secure-YEC=; Domain=.youtube.com; Expires=Sun, 07-May-2023 09:53:37 GMT; Path=/; Secure; HttpOnly; SameSite=lax, VISITOR_INFO1_LIVE=WW21ar6eWH4; Domain=.youtube.com; Expires=Thu, 30-Jul-2026 09:53:37 GMT; Path=/; Secure; HttpOnly; SameSite=none, VISITOR_PRIVACY_METADATA=CgJVUxIEGgAgag%3D%3D; Domain=.youtube.com; Expires=Thu, 30-Jul-2026 09:53:37 GMT; Path=/; Secure; HttpOnly; SameSite=none",
+        "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+        "transfer-encoding": "chunked"
+      }
+    },
+    {
+      "url": "https://unity3d.com/learn/tutorials",
+      "status": 301,
+      "error": null,
+      "headers": {
+        "content-type": "text/html",
+        "location": "https://learn.unity.com",
+        "x-cloud-trace-context": "a83e9e1c18e08901d373ef3f40fa7094",
+        "server": "Google Frontend",
+        "content-length": "169",
+        "date": "Sat, 31 Jan 2026 09:53:37 GMT",
+        "connection": "keep-alive",
+        "x-n": "S"
+      },
+      "loc": 28
+    },
+    {
+      "url": "https://github.com/Ferozepurwale",
+      "status": 200,
+      "error": null,
+      "headers": {
+        "date": "Sat, 31 Jan 2026 09:53:37 GMT",
+        "content-type": "text/html; charset=utf-8",
+        "vary": "X-PJAX, X-PJAX-Container, Turbo-Visit, Turbo-Frame, X-Requested-With,Accept-Encoding, Accept, X-Requested-With",
+        "etag": "W/\"2c2dbf2b3ce92285e355f3ce7fd88255\"",
+        "cache-control": "max-age=0, private, must-revalidate",
+        "strict-transport-security": "max-age=31536000; includeSubdomains; preload",
+        "x-frame-options": "deny",
+        "x-content-type-options": "nosniff",
+        "x-xss-protection": "0",
+        "referrer-policy": "origin-when-cross-origin, strict-origin-when-cross-origin",
+        "content-security-policy": "default-src 'none'; base-uri 'self'; child-src github.githubassets.com github.com/assets-cdn/worker/ github.com/assets/ gist.github.com/assets-cdn/worker/; connect-src 'self' uploads.github.com www.githubstatus.com collector.github.com raw.githubusercontent.com api.github.com github-cloud.s3.amazonaws.com github-production-repository-file-5c1aeb.s3.amazonaws.com github-production-upload-manifest-file-7fdce7.s3.amazonaws.com github-production-user-asset-6210df.s3.amazonaws.com *.rel.tunnels.api.visualstudio.com wss://*.rel.tunnels.api.visualstudio.com github.githubassets.com objects-origin.githubusercontent.com copilot-proxy.githubusercontent.com proxy.individual.githubcopilot.com proxy.business.githubcopilot.com proxy.enterprise.githubcopilot.com *.actions.githubusercontent.com wss://*.actions.githubusercontent.com productionresultssa0.blob.core.windows.net/ productionresultssa1.blob.core.windows.net/ productionresultssa2.blob.core.windows.net/ productionresultssa3.blob.core.windows.net/ productionresultssa4.blob.core.windows.net/ productionresultssa5.blob.core.windows.net/ productionresultssa6.blob.core.windows.net/ productionresultssa7.blob.core.windows.net/ productionresultssa8.blob.core.windows.net/ productionresultssa9.blob.core.windows.net/ productionresultssa10.blob.core.windows.net/ productionresultssa11.blob.core.windows.net/ productionresultssa12.blob.core.windows.net/ productionresultssa13.blob.core.windows.net/ productionresultssa14.blob.core.windows.net/ productionresultssa15.blob.core.windows.net/ productionresultssa16.blob.core.windows.net/ productionresultssa17.blob.core.windows.net/ productionresultssa18.blob.core.windows.net/ productionresultssa19.blob.core.windows.net/ github-production-repository-image-32fea6.s3.amazonaws.com github-production-release-asset-2e65be.s3.amazonaws.com insights.github.com wss://alive.github.com wss://alive-staging.github.com api.githubcopilot.com api.individual.githubcopilot.com api.business.githubcopilot.com api.enterprise.githubcopilot.com; font-src github.githubassets.com; form-action 'self' github.com gist.github.com copilot-workspace.githubnext.com objects-origin.githubusercontent.com; frame-ancestors 'none'; frame-src viewscreen.githubusercontent.com notebooks.githubusercontent.com; img-src 'self' data: blob: github.githubassets.com media.githubusercontent.com camo.githubusercontent.com identicons.github.com avatars.githubusercontent.com private-avatars.githubusercontent.com github-cloud.s3.amazonaws.com objects.githubusercontent.com release-assets.githubusercontent.com secured-user-images.githubusercontent.com/ user-images.githubusercontent.com/ private-user-images.githubusercontent.com opengraph.githubassets.com marketplace-screenshots.githubusercontent.com/ copilotprodattachments.blob.core.windows.net/github-production-copilot-attachments/ github-production-user-asset-6210df.s3.amazonaws.com customer-stories-feed.github.com spotlights-feed.github.com objects-origin.githubusercontent.com *.githubusercontent.com; manifest-src 'self'; media-src github.com user-images.githubusercontent.com/ secured-user-images.githubusercontent.com/ private-user-images.githubusercontent.com github-production-user-asset-6210df.s3.amazonaws.com gist.github.com github.githubassets.com; script-src github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; upgrade-insecure-requests; worker-src github.githubassets.com github.com/assets-cdn/worker/ github.com/assets/ gist.github.com/assets-cdn/worker/",
+        "server": "github.com",
+        "accept-ranges": "bytes",
+        "set-cookie": "_gh_sess=OqiszkHiPuGE%2BpA6S07CR1%2F%2BNeZnm53iO3xqwuGWETU0TnYYpSpYbo9EMPU1eDtn0NXe%2FRxjOrN9tMOJEkigipm87Tb2JsbwlALPSbN2OlN%2FzYBoTPbEwS0i7plQOAmwy%2B4HA4S9ckAb%2F6%2FZ2CELEE8v1aBK949JEgn%2F459Wk0Yz6y7I5goSe6jwap9tvj%2FF4F%2Bj30wiwLQU3rklfgzMnz2A3rRcCLJoDMjs9KoFkbnSKdozPhFSIcjOrIx6RXGp0n5absiw1sDnGF98K%2BZQnA%3D%3D--OmzvWxbYcGUEpDYK--L%2FwGT%2FQ53syQzyQChAPKpw%3D%3D; Path=/; HttpOnly; Secure; SameSite=Lax, _octo=GH1.1.798655987.1769853217; Path=/; Domain=github.com; Expires=Sun, 31 Jan 2027 09:53:37 GMT; Secure; SameSite=Lax, logged_in=no; Path=/; Domain=github.com; Expires=Sun, 31 Jan 2027 09:53:37 GMT; HttpOnly; Secure; SameSite=Lax",
+        "x-github-request-id": "D6B8:34202A:3E568F:4EC62C:697DD121",
+        "transfer-encoding": "chunked"
+      }
+    },
+    {
+      "url": "https://github.com/Ferozepurwale/Flood-League",
+      "status": 200,
+      "error": null,
+      "headers": {
+        "date": "Sat, 31 Jan 2026 09:53:37 GMT",
+        "content-type": "text/html; charset=utf-8",
+        "vary": "X-PJAX, X-PJAX-Container, Turbo-Visit, Turbo-Frame, X-Requested-With,Accept-Encoding, Accept, X-Requested-With",
+        "etag": "W/\"e8e04ba410e78cc081782c9854fe86db\"",
+        "cache-control": "max-age=0, private, must-revalidate",
+        "strict-transport-security": "max-age=31536000; includeSubdomains; preload",
+        "x-frame-options": "deny",
+        "x-content-type-options": "nosniff",
+        "x-xss-protection": "0",
+        "referrer-policy": "no-referrer-when-downgrade",
+        "content-security-policy": "default-src 'none'; base-uri 'self'; child-src github.githubassets.com github.com/assets-cdn/worker/ github.com/assets/ gist.github.com/assets-cdn/worker/; connect-src 'self' uploads.github.com www.githubstatus.com collector.github.com raw.githubusercontent.com api.github.com github-cloud.s3.amazonaws.com github-production-repository-file-5c1aeb.s3.amazonaws.com github-production-upload-manifest-file-7fdce7.s3.amazonaws.com github-production-user-asset-6210df.s3.amazonaws.com *.rel.tunnels.api.visualstudio.com wss://*.rel.tunnels.api.visualstudio.com github.githubassets.com objects-origin.githubusercontent.com copilot-proxy.githubusercontent.com proxy.individual.githubcopilot.com proxy.business.githubcopilot.com proxy.enterprise.githubcopilot.com *.actions.githubusercontent.com wss://*.actions.githubusercontent.com productionresultssa0.blob.core.windows.net/ productionresultssa1.blob.core.windows.net/ productionresultssa2.blob.core.windows.net/ productionresultssa3.blob.core.windows.net/ productionresultssa4.blob.core.windows.net/ productionresultssa5.blob.core.windows.net/ productionresultssa6.blob.core.windows.net/ productionresultssa7.blob.core.windows.net/ productionresultssa8.blob.core.windows.net/ productionresultssa9.blob.core.windows.net/ productionresultssa10.blob.core.windows.net/ productionresultssa11.blob.core.windows.net/ productionresultssa12.blob.core.windows.net/ productionresultssa13.blob.core.windows.net/ productionresultssa14.blob.core.windows.net/ productionresultssa15.blob.core.windows.net/ productionresultssa16.blob.core.windows.net/ productionresultssa17.blob.core.windows.net/ productionresultssa18.blob.core.windows.net/ productionresultssa19.blob.core.windows.net/ github-production-repository-image-32fea6.s3.amazonaws.com github-production-release-asset-2e65be.s3.amazonaws.com insights.github.com wss://alive.github.com wss://alive-staging.github.com api.githubcopilot.com api.individual.githubcopilot.com api.business.githubcopilot.com api.enterprise.githubcopilot.com; font-src github.githubassets.com; form-action 'self' github.com gist.github.com copilot-workspace.githubnext.com objects-origin.githubusercontent.com; frame-ancestors 'none'; frame-src viewscreen.githubusercontent.com notebooks.githubusercontent.com; img-src 'self' data: blob: github.githubassets.com media.githubusercontent.com camo.githubusercontent.com identicons.github.com avatars.githubusercontent.com private-avatars.githubusercontent.com github-cloud.s3.amazonaws.com objects.githubusercontent.com release-assets.githubusercontent.com secured-user-images.githubusercontent.com/ user-images.githubusercontent.com/ private-user-images.githubusercontent.com opengraph.githubassets.com marketplace-screenshots.githubusercontent.com/ copilotprodattachments.blob.core.windows.net/github-production-copilot-attachments/ github-production-user-asset-6210df.s3.amazonaws.com customer-stories-feed.github.com spotlights-feed.github.com objects-origin.githubusercontent.com *.githubusercontent.com; manifest-src 'self'; media-src github.com user-images.githubusercontent.com/ secured-user-images.githubusercontent.com/ private-user-images.githubusercontent.com github-production-user-asset-6210df.s3.amazonaws.com gist.github.com github.githubassets.com; script-src github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; upgrade-insecure-requests; worker-src github.githubassets.com github.com/assets-cdn/worker/ github.com/assets/ gist.github.com/assets-cdn/worker/",
+        "server": "github.com",
+        "accept-ranges": "bytes",
+        "set-cookie": "_gh_sess=nP686vpG2y0X%2BOvDL0Xk5S1YL6GeMS3TJXTT2wEr497BvVnECjpOf%2FAWseSiNiyNKuCPdrtNShAUUhzC8%2BvX88zbdA7mLBmxssJGEvelAwM36Y8ioCRJwj7R1CU4u3xspNJsRlFH7pGn9AgfvxsSzo%2B9MoQegDUegQzLJH4Rp4j%2BeFWFXJkOapjd%2FkiWbniNxBf8JD9cdXkbsVgSNXl%2Fg5vKSjFoO%2BYB5nwm9sAwQY6PyyZyxWcRdAGWiVcHfU1dymAG8uS08gHYCYAmjecFGQ%3D%3D--2Ox%2F58z8%2Bh8QjReV--8bH29lZ84l8yWA6%2FaRp4dA%3D%3D; Path=/; HttpOnly; Secure; SameSite=Lax, _octo=GH1.1.1653390011.1769853217; Path=/; Domain=github.com; Expires=Sun, 31 Jan 2027 09:53:37 GMT; Secure; SameSite=Lax, logged_in=no; Path=/; Domain=github.com; Expires=Sun, 31 Jan 2027 09:53:37 GMT; HttpOnly; Secure; SameSite=Lax",
+        "x-github-request-id": "D6BA:2B570C:43F1F3:57D72D:697DD121",
+        "transfer-encoding": "chunked"
+      }
+    }
+  ]
+}

@@ -9,4 +9,3 @@ tmp
 # Ignore Gemfile.lock for GitHub Pages as GitHub uses its own gem versions
 # See: https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/creating-a-github-pages-site-with-jekyll
 Gemfile.lock
-ab-results-*

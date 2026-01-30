@@ -1,0 +1,44 @@
+{
+  "date": "2026-01-31 01:53:51 -0800",
+  "links": [
+    "https://hackinout.co/blog/blockchain-track-winner-spamslam/"
+  ],
+  "issues": [
+    {
+      "url": "https://hackinout.co/blog/blockchain-track-winner-spamslam/",
+      "status": 308,
+      "error": null,
+      "headers": {
+        "cache-control": "public, max-age=0, must-revalidate",
+        "content-type": "text/plain",
+        "date": "Sat, 31 Jan 2026 09:53:51 GMT",
+        "location": "https://hackinout.co/blog/blockchain-track-winner-spamslam",
+        "refresh": "0;url=/blog/blockchain-track-winner-spamslam",
+        "server": "Vercel",
+        "strict-transport-security": "max-age=63072000",
+        "x-vercel-id": "pdx1::mbs7j-1769853231606-86ada1b0bffb",
+        "transfer-encoding": "chunked"
+      },
+      "loc": 10
+    }
+  ],
+  "all": [
+    {
+      "url": "https://hackinout.co/blog/blockchain-track-winner-spamslam/",
+      "status": 308,
+      "error": null,
+      "headers": {
+        "cache-control": "public, max-age=0, must-revalidate",
+        "content-type": "text/plain",
+        "date": "Sat, 31 Jan 2026 09:53:51 GMT",
+        "location": "https://hackinout.co/blog/blockchain-track-winner-spamslam",
+        "refresh": "0;url=/blog/blockchain-track-winner-spamslam",
+        "server": "Vercel",
+        "strict-transport-security": "max-age=63072000",
+        "x-vercel-id": "pdx1::mbs7j-1769853231606-86ada1b0bffb",
+        "transfer-encoding": "chunked"
+      },
+      "loc": 10
+    }
+  ]
+}

@@ -1,0 +1,147 @@
+{
+  "date": "2026-01-31 01:53:52 -0800",
+  "links": [
+    "https://hackinout.co/blog/blockchain-track-winner-spamslam/",
+    "https://hackinout.co/",
+    "https://speakerdeck.com/codemaxx/hackinout-blockchain-winner-spamslam?slide=1",
+    "http://cheekujodhpur.github.io/"
+  ],
+  "issues": [
+    {
+      "url": "https://hackinout.co/blog/blockchain-track-winner-spamslam/",
+      "status": 308,
+      "error": null,
+      "headers": {
+        "cache-control": "public, max-age=0, must-revalidate",
+        "content-type": "text/plain",
+        "date": "Sat, 31 Jan 2026 09:53:51 GMT",
+        "location": "https://hackinout.co/blog/blockchain-track-winner-spamslam",
+        "refresh": "0;url=/blog/blockchain-track-winner-spamslam",
+        "server": "Vercel",
+        "strict-transport-security": "max-age=63072000",
+        "x-vercel-id": "pdx1::c6548-1769853231736-9bf09c32da6b",
+        "transfer-encoding": "chunked"
+      },
+      "loc": 15
+    },
+    {
+      "url": "http://cheekujodhpur.github.io/",
+      "status": 404,
+      "error": null,
+      "headers": {
+        "connection": "keep-alive",
+        "content-length": "5142",
+        "server": "GitHub.com",
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"697d069f-239b\"",
+        "content-security-policy": "default-src 'none'; style-src 'unsafe-inline'; img-src data:; connect-src 'self'",
+        "x-github-request-id": "7692:85B7:9D9CF:A74D5:697DD12F",
+        "accept-ranges": "bytes",
+        "date": "Sat, 31 Jan 2026 09:53:51 GMT",
+        "via": "1.1 varnish",
+        "age": "0",
+        "x-served-by": "cache-pdx12332-PDX",
+        "x-cache": "MISS",
+        "x-cache-hits": "0",
+        "x-timer": "S1769853232.741934,VS0,VE99",
+        "vary": "Accept-Encoding",
+        "x-fastly-request-id": "6617437374539459e50fa007012574fa196174f5"
+      },
+      "loc": 27
+    }
+  ],
+  "all": [
+    {
+      "url": "https://hackinout.co/blog/blockchain-track-winner-spamslam/",
+      "status": 308,
+      "error": null,
+      "headers": {
+        "cache-control": "public, max-age=0, must-revalidate",
+        "content-type": "text/plain",
+        "date": "Sat, 31 Jan 2026 09:53:51 GMT",
+        "location": "https://hackinout.co/blog/blockchain-track-winner-spamslam",
+        "refresh": "0;url=/blog/blockchain-track-winner-spamslam",
+        "server": "Vercel",
+        "strict-transport-security": "max-age=63072000",
+        "x-vercel-id": "pdx1::c6548-1769853231736-9bf09c32da6b",
+        "transfer-encoding": "chunked"
+      },
+      "loc": 15
+    },
+    {
+      "url": "https://hackinout.co/",
+      "status": 200,
+      "error": null,
+      "headers": {
+        "access-control-allow-origin": "*",
+        "age": "5734848",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "content-disposition": "inline; filename=\"index\"",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Sat, 31 Jan 2026 09:53:51 GMT",
+        "etag": "W/\"432d2b9483c1d0c20ef8d75f7624050a1b3a32d92426cfb2413a7601333fa9cb\"",
+        "last-modified": "Wed, 26 Nov 2025 00:53:03 GMT",
+        "server": "Vercel",
+        "strict-transport-security": "max-age=63072000",
+        "x-matched-path": "/",
+        "x-vercel-cache": "HIT",
+        "x-vercel-id": "pdx1::pmbm5-1769853231745-a38c69e0a766",
+        "transfer-encoding": "chunked"
+      }
+    },
+    {
+      "url": "http://cheekujodhpur.github.io/",
+      "status": 404,
+      "error": null,
+      "headers": {
+        "connection": "keep-alive",
+        "content-length": "5142",
+        "server": "GitHub.com",
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"697d069f-239b\"",
+        "content-security-policy": "default-src 'none'; style-src 'unsafe-inline'; img-src data:; connect-src 'self'",
+        "x-github-request-id": "7692:85B7:9D9CF:A74D5:697DD12F",
+        "accept-ranges": "bytes",
+        "date": "Sat, 31 Jan 2026 09:53:51 GMT",
+        "via": "1.1 varnish",
+        "age": "0",
+        "x-served-by": "cache-pdx12332-PDX",
+        "x-cache": "MISS",
+        "x-cache-hits": "0",
+        "x-timer": "S1769853232.741934,VS0,VE99",
+        "vary": "Accept-Encoding",
+        "x-fastly-request-id": "6617437374539459e50fa007012574fa196174f5"
+      },
+      "loc": 27
+    },
+    {
+      "url": "https://speakerdeck.com/codemaxx/hackinout-blockchain-winner-spamslam?slide=1",
+      "status": 200,
+      "error": null,
+      "headers": {
+        "date": "Sat, 31 Jan 2026 09:53:51 GMT",
+        "content-type": "text/html; charset=utf-8",
+        "transfer-encoding": "chunked",
+        "connection": "keep-alive",
+        "cache-control": "max-age=0, private, must-revalidate",
+        "link": "<https://d1eu30co0ohy4w.cloudfront.net/assets/player-7e966d6345abe78be365260efc8d6d7c55d76ff31db35727f941e3b04151da4d.css>; rel=preload; as=style; nopush,<https://d1eu30co0ohy4w.cloudfront.net/assets/js/player-1557b9d03d43a5c7dec2.js>; rel=preload; as=script; nopush,<https://d1eu30co0ohy4w.cloudfront.net/assets/application-d37d4fe9d536b3445f2d7b0a2831b77c75991c901562cd4e9d252520149739bc.css>; rel=preload; as=style; nopush,<https://d1eu30co0ohy4w.cloudfront.net/assets/js/application-3867cf77b24dbf782b67.js>; rel=preload; as=script; nopush,<https://d1eu30co0ohy4w.cloudfront.net/assets/js/stats-066544ee5ddf3e5e4a9c.js>; rel=preload; as=script; nopush",
+        "nel": "{\"report_to\":\"heroku-nel\",\"response_headers\":[\"Via\"],\"max_age\":3600,\"success_fraction\":0.01,\"failure_fraction\":0.1}",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "report-to": "{\"group\":\"heroku-nel\",\"endpoints\":[{\"url\":\"https://nel.heroku.com/reports?s=WBR40jkWnc3sPECcMvkYleiHWKJ%2FNNWpBRCm29EKfQQ%3D\\u0026sid=e11707d5-02a7-43ef-b45e-2cf4d2036f7d\\u0026ts=1769853231\"}],\"max_age\":3600}",
+        "reporting-endpoints": "heroku-nel=\"https://nel.heroku.com/reports?s=WBR40jkWnc3sPECcMvkYleiHWKJ%2FNNWpBRCm29EKfQQ%3D&sid=e11707d5-02a7-43ef-b45e-2cf4d2036f7d&ts=1769853231\"",
+        "server": "cloudflare",
+        "set-cookie": "_secure_speakerd_session=AKStHjdPI%2BjzXvuH8Mhp5wROmNHclGu9tE6WblrXXpOtInLuNSwdnyq5cbllknutK%2Bc4tJGCkEohD2XVdfsPETm9Iz5ijTdLk9aq6XgN3SEVMqqteYracaYk7cD60LUMttdjkaQD%2F8oCou8hBi2Cw48e92kGoPUcnINUeV%2BAsJIPfNptaC8ABfURVvzgnoZNbACQO9oCdxMo4%2F3S2fc%2FLKBsZm5IshhNI273cTVTnZu%2FMEqt8jTArgvqwve30lIo5wj7UKOeXe2PbNIJl6sF0iAlhE4SGANBArhGTiBkcN%2FhWPDMRSiXOJodehJMRmgdscU2nOmea9Qu6holWXdjC0UvQbyRJI3COWoGCpmvJJ8A8ztmZSxU3L2aQyQ3s9AHZT9qsDsexc22cHfhxQwEX3mO--nEnV3OQ00hwHYiLn--RJRl%2BfMk5bN3INqnsjcGxw%3D%3D; path=/; expires=Sat, 14 Feb 2026 09:53:51 GMT; secure; HttpOnly; SameSite=Lax",
+        "strict-transport-security": "max-age=0; includeSubDomains",
+        "vary": "Accept,Accept-Encoding",
+        "via": "2.0 heroku-router",
+        "x-content-type-options": "nosniff",
+        "x-permitted-cross-domain-policies": "none",
+        "x-request-id": "16ee5e19-db0e-74c8-3b72-3fc93ec2c1ce",
+        "x-runtime": "0.141754",
+        "x-xss-protection": "0",
+        "cf-cache-status": "DYNAMIC",
+        "cf-ray": "9c68530a7d17b5ed-SEA"
+      }
+    }
+  ]
+}

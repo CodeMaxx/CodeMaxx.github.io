@@ -1,0 +1,23 @@
+[
+  {
+    "loc": 27,
+    "status": 301,
+    "link": "https://github.com/codemaxx/postgres",
+    "redirect": "https://github.com/CodeMaxx/postgres-with-stepped-merge-index",
+    "error": ""
+  },
+  {
+    "loc": 177,
+    "status": 301,
+    "link": "https://www.postgresql.org/docs/9.6/static/xindex.html",
+    "redirect": "https://www.postgresql.org/docs/9.6/xindex.html",
+    "error": ""
+  },
+  {
+    "loc": 178,
+    "status": 301,
+    "link": "https://www.postgresql.org/docs/9.6/static/indexam.html",
+    "redirect": "https://www.postgresql.org/docs/9.6/indexam.html",
+    "error": ""
+  }
+]

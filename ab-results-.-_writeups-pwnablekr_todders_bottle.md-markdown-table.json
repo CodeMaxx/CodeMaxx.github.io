@@ -1,0 +1,5 @@
+{
+  "error": true,
+  "title": "Found 2 link issues",
+  "message": "#### Link issues by [`awesome_bot`](https://github.com/dkhamsing/awesome_bot)\n\n  Line | Status | Link\n| ---: | :----: | --- |\n17 | [301](https://httpstatuses.com/301) | http://pwnable.kr redirects to<br>https://pwnable.kr/\n78 | [301](https://httpstatuses.com/301) | https://www.hex-rays.com/products/ida/ redirects to<br>https://hex-rays.com/products/ida/\n"
+}
