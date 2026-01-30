@@ -37,3 +37,23 @@ jobs:
         run: bundle exec jekyll build
         env:
           JEKYLL_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  check-links:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2'
+
+      - name: Install awesome_bot
+        run: gem install awesome_bot
+
+      - name: Check links in markdown files
+        run: awesome_bot --allow-dupe ./*/*.md
