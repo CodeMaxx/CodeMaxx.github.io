@@ -24,7 +24,7 @@ description: "Hacking Postgres Internals - Indexing Schemes for Data Recording S
 
 For the backstory on this project read [this](../project-ditch/) first.
 
-The [code for this project](https://github.com/codemaxx/postgres) has been open-sourced on Github.
+The [code for this project](https://github.com/CodeMaxx/postgres-with-stepped-merge-index) has been open-sourced on Github.
 
 ## Introduction
 

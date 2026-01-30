@@ -60,7 +60,7 @@ All the engineering details are mentioned in the report.
 
 The report is in another post [here](../indexing-schemes/).
 
-The [code for this project](https://github.com/codemaxx/postgres) has been open-sourced on Github.
+The [code for this project](https://github.com/CodeMaxx/postgres-with-stepped-merge-index) has been open-sourced on Github.
 
 <br>
 Do check out other [projects](../../projects), [my blog](../../blog) or [my write-ups](../../writeups) for various CTFs.
