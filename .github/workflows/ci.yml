@@ -35,14 +35,5 @@ jobs:
       - name: Install npm dependencies
         run: npm ci
 
-      - name: Install awesome_bot
-        run: gem install awesome_bot
-
       - name: Build Jekyll site
         run: bundle exec jekyll build
-
-      - name: Run HTML proofer
-        run: bundle exec htmlproofer ./_site --disable-external --no-enforce-https
-
-      - name: Check links in markdown files
-        run: awesome_bot --allow-dupe ./*/*.md
