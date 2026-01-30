@@ -15,3 +15,5 @@ gem 'jekyll-sitemap'
 gem 'jekyll-gist'
 # Required for Ruby 3.0+ (see Jekyll documentation)
 gem 'webrick'
+# Required for Faraday v2.0+ retry middleware
+gem 'faraday-retry'

@@ -31,6 +31,11 @@
     "cross-spawn": "^7.0.6",
     "http-cache-semantics": "^4.1.1",
     "semver-regex": "^4.0.5",
-    "got": "^12.0.0"
+    "got": "^12.0.0",
+    "glob": "^10.3.10",
+    "rimraf": "^5.0.5",
+    "inflight": "^1.0.6",
+    "uuid": "^9.0.1",
+    "svgo": "^3.0.0"
   }
 }

@@ -1,5 +1,7 @@
 # main text of home
 name: Akash Trehan
+# title is required by many Jekyll plugins and themes
+title: Akash Trehan
 bio: 'Hacker-Developer-Geek'
 
 # if it's an external image, update below for true
