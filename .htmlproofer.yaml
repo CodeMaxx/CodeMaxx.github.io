@@ -12,6 +12,9 @@ ignore_urls:
   - /iitb\.ac\.in/                          # Blocks bots (works in browsers)
   - /westwind\.com/                         # Site no longer active
   - /citeseerx\.ist\.psu\.edu/              # PDF downloads broken (502)
+  - /devfolio\.co/                          # Returns 403 (blocks bots)
+  - /instagram\.com/                        # Returns 429 (rate limits bots)
+  - /morsecode\.scphillips\.com/            # Returns 403 (blocks bots)
 
 # Files/directories to ignore (paths relative to _site)
 ignore_files:
