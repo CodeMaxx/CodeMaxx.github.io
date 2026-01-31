@@ -10,7 +10,6 @@ ignore_urls:
   - /iitb\.ac\.in/                          # Flaky connection (works in browsers)
   - /devfolio\.co/                          # Blocks GitHub Actions IPs
   - /morsecode\.scphillips\.com/            # Blocks GitHub Actions IPs
-  - /akashtrehan\.com\/tags/                # Tags page anchors need fixing
   - /hack\.bckdr\.in/                       # Backdoor CTF server sunset by SDSLabs
   - /github\.com\/CodeMaxx\/Binary-Exploitation.*#/  # GitHub JS-rendered anchors (false positive)
   - /ctf\.infosecinstitute\.com/            # CTF server no longer available
@@ -20,7 +19,6 @@ ignore_urls:
 # Files/directories to ignore (paths relative to _site)
 ignore_files:
   - /cs741/
-  - /tags\/index\.html/                     # Tag section anchors need fixing
 
 # Allow anchor tags without href attribute
 allow_missing_href: true
