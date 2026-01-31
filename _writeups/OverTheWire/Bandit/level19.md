@@ -24,7 +24,7 @@ category: Wargame
 
 #### Helpful Reading Material
 
->[setuid on Wikipedia](http://en.wikipedia.org/wiki/Setuid)
+>[setuid on Wikipedia](https://en.wikipedia.org/wiki/Setuid)
 
 ## Write-up
 

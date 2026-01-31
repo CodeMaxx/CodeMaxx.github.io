@@ -20,7 +20,7 @@ category: Web
 
 #### Description:
 
->Find imagelover [here](http://hack.bckdr.in:6969/)
+>Find imagelover ~~[here](http://hack.bckdr.in:6969/)~~ *(CTF server no longer available)*
 
 ## Write-up
 
@@ -71,4 +71,4 @@ Basically I hosted my VPS with the script above and entered the URL in place of 
 
 And as expeced as soon as I submitted my URL I got a GET request with the flag in the cookie.
 
-**Go through other [writeups](../) for more such fun challenges.**
+**Go through other [writeups](/writeups/) for more such fun challenges.**

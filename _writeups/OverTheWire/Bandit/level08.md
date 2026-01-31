@@ -24,7 +24,7 @@ category: Wargame
 
 #### Helpful Reading Material
 
->[The unix commandline: pipes and redirects](http://www.westwind.com/reference/os-x/commandline/pipes.html)
+>~~[The unix commandline: pipes and redirects](http://www.westwind.com/reference/os-x/commandline/pipes.html)~~ *(Site no longer active)*
 
 ## Write-up
 

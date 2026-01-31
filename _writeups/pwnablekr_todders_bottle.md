@@ -18,7 +18,7 @@ category: Pwn
 
 Toddler's Bottle is a section of easy-ish challenges. This writeup contains solutions to almost all of the challenges in that section.
 
-So partly due to lack of time and partly because I want you to think on your own, I'll not be explaining my solutions like I do for my other [Writeups](../). I'll just be posting my python/bash/C scripts here with occasional explanations.
+So partly due to lack of time and partly because I want you to think on your own, I'll not be explaining my solutions like I do for my other [Writeups](/writeups/). I'll just be posting my python/bash/C scripts here with occasional explanations.
 
 The scripts use the `pwntools` library.
 
@@ -436,4 +436,4 @@ r.sendline(shell_address + "A"*12 + p32(int(stack_address, 16) + 12) + p32(int(h
 r.interactive()
 ```
 
-**Go through other [writeups](../) for more such fun challenges.**
+**Go through other [writeups](/writeups/) for more such fun challenges.**

@@ -25,7 +25,7 @@ category: Wargame
 #### Helpful Reading Material
 
 >[Google Search for “dashed filename”](https://www.google.com/search?q=dashed+filename)
-[Advanced Bash-scripting Guide - Chapter 3 - Special Characters](http://tldp.org/LDP/abs/html/special-chars.html)
+[Advanced Bash-scripting Guide - Chapter 3 - Special Characters](https://tldp.org/LDP/abs/html/special-chars.html)
 
 ## Write-up
 

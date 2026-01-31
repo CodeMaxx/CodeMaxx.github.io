@@ -21,7 +21,7 @@ category: RE
 #### Description:
 
 >Take sha256 of string obtained.
-[http://hack.bckdr.in/DEBUG/debug32](http://hack.bckdr.in/DEBUG/debug32)
+~~[http://hack.bckdr.in/DEBUG/debug32](http://hack.bckdr.in/DEBUG/debug32)~~ *(CTF server no longer available)*
 
 ## Write-up
 
@@ -51,5 +51,5 @@ This as expected printed out the flag!
 
 ![Flag Printed](/assets/images/backdoorctf16/debug_flag.png)
 
-**Go through other [writeups](../) for more such fun challenges.**
+**Go through other [writeups](/writeups/) for more such fun challenges.**
 

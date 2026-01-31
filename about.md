@@ -13,7 +13,7 @@ Akash Trehan is the Founder and Manager of the [Cybersecurity Club](https://www.
 
 Akash is a rising senior at [IIT Bombay](https://www.iitb.ac.in/), majoring in [Computer Science & Engineering](https://www.cse.iitb.ac.in/). He was awarded the Academic Prize 2015-16 for his exceptional performance and is currently among the top 3 in the Computer Science department. He also ranked 24th amongst 1.5 million students who took JEE Advanced, one of the toughest college admission tests.
 
-When not busy with college work, Akash spends his time participating in Capture the Flag competitions, where his favourite categories are Reverse Engineering and Pwning. He is primarily interested in Software & Systems security, Network security but likes to take on any challenge he finds interesting. He is very passionate about computer security and is mostly self-taught in the area. He hopes to do some ground-breaking security research later in his life. Last summer he got the amazing opportunity to research under [Prof. Giovanni Vigna](https://www.cs.ucsb.edu/~vigna/) and [Prof. Christopher Kruegel](http://www.cs.ucsb.edu/~chris/) at the University of California, Santa Barbara and play CTFs with the famous team [Shellphish](http://shellphish.net/cgc/)!
+When not busy with college work, Akash spends his time participating in Capture the Flag competitions, where his favourite categories are Reverse Engineering and Pwning. He is primarily interested in Software & Systems security, Network security but likes to take on any challenge he finds interesting. He is very passionate about computer security and is mostly self-taught in the area. He hopes to do some ground-breaking security research later in his life. Last summer he got the amazing opportunity to research under [Prof. Giovanni Vigna](https://www.cs.ucsb.edu/~vigna/) and [Prof. Christopher Kruegel](https://www.cs.ucsb.edu/~chris/) at the University of California, Santa Barbara and play CTFs with the famous team [Shellphish](https://shellphish.net/cgc/)!
 
 Not only does he love breaking software but also building them. Akash, in his freshman year, formed the [Ferozepurwale](https://github.com/Ferozepurwale/) hackathon team with two of his friends, Nihal and Arpan. Together they have won several prizes including- Ubisoft GameJam 1st place, Yahoo! Japan Most Creative Hack, Microsoft Code.Fun.Do Showcase Finalist, Lenovo GameJam, Kandy Hackathon, Hack InOut blockchain track 1st prize among others. They’ve also developed apps and websites for their university. Akash is also an open-source enthusiast and contributes to software like OWASP ZSC, SymEngine on Github where he goes by the handle '[CodeMaxx](https://github.com/CodeMaxx)'.
 
@@ -21,7 +21,7 @@ Akash loves to think, read, listen to and analyze new ideas and opinions. He fir
 
 In his spare time, you will find him listening to Music or watching his all time favourite show - Impractical Jokers.
 
-Akash is always interested in collaborating on projects and discussing ideas. [Email him](http://www.google.com/recaptcha/mailhide/d?k=01VG-M2zL1CCSeYr97HKgLtA==&c=eoBC31BPlm_BNGxSQFrp_3Zk9kKbEB_gOaoModecKZo=) if you’d like to get in touch.
+Akash is always interested in collaborating on projects and discussing ideas. <a href="#" onclick="location.href='mailto:' + 'me' + '@' + 'akashtrehan.com'; return false;">Email him</a> if you'd like to get in touch.
 
 <div>
     {% include follow-buttons.html %}

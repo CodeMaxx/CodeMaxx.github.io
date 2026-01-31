@@ -2,10 +2,21 @@
 # https://github.com/gjtorikian/html-proofer#configuration
 
 # URLs to ignore (regex patterns)
-# Add specific URLs here that are known to block bots or have SSL issues
 ignore_urls:
   - /blackhat\.com\/eu-16\/arsenal\.html/  # Returns 403 (blocks bots)
-  - /defcon\.org\/html\/defcon-24/          # SSL/TLS issues
+  - /linkedin\.com/                         # Returns 999 (blocks bots)
+  - /akashtrehan\.com\/tags/                # Tags page anchors need fixing
+  - /hack\.bckdr\.in/                       # Backdoor CTF server sunset by SDSLabs
+  - /github\.com\/CodeMaxx\/Binary-Exploitation.*#/  # GitHub JS-rendered anchors (false positive)
+  - /ctf\.infosecinstitute\.com/            # CTF server no longer available
+  - /iitb\.ac\.in/                          # Blocks bots (works in browsers)
+  - /westwind\.com/                         # Site no longer active
+  - /citeseerx\.ist\.psu\.edu/              # PDF downloads broken (502)
+
+# Files/directories to ignore (paths relative to _site)
+ignore_files:
+  - /cs741/
+  - /tags\/index\.html/                     # Tag section anchors need fixing
 
 # Allow anchor tags without href attribute
 allow_missing_href: true

@@ -1,9 +1,41 @@
-require 'html/proofer'
+require 'html-proofer'
+require 'yaml'
 
 # rake test
 desc "build and test website"
 
 task :test do
   sh "bundle exec jekyll build"
-  HTML::Proofer.new("_site", {:href_ignore=> ['http://localhost:4000'], :verbose => true}).run
+  
+  # Load config from YAML file
+  config = YAML.load_file('.htmlproofer.yaml')
+  
+  options = {
+    allow_hash_href: config['allow_hash_href'] || true,
+    allow_missing_href: config['allow_missing_href'] || false,
+  }
+  
+  # Convert ignore_urls strings to regexes
+  if config['ignore_urls']
+    options[:ignore_urls] = config['ignore_urls'].map do |pattern|
+      if pattern.start_with?('/') && pattern.end_with?('/')
+        Regexp.new(pattern[1..-2])
+      else
+        pattern
+      end
+    end
+  end
+  
+  # Convert ignore_files strings to regexes
+  if config['ignore_files']
+    options[:ignore_files] = config['ignore_files'].map do |pattern|
+      if pattern.start_with?('/') && pattern.end_with?('/')
+        Regexp.new(pattern[1..-2])
+      else
+        pattern
+      end
+    end
+  end
+  
+  HTMLProofer.check_directory('./_site', options).run
 end

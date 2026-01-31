@@ -13,8 +13,6 @@ description: "Microsoft Malware Classification Challenge"
 
 ![Malware](/assets/images/malware/malware.jpg)
 
-Source: <https://www.cyberpointllc.com/images/svcs/img-mare.jpg>
-
 ## Background
 
 #### Why this project?
@@ -196,7 +194,7 @@ In future, we would like to try out more models and try more combination of feat
 
 [1] [Malware Images: Visualization and Automatic Classification](https://vizsec.org/files/2011/Nataraj.pdf)
 
-[2] [Code Obfuscation and Malware Detection](https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.109.644&rep=rep1&type=pdf)
+[2] ~~[Code Obfuscation and Malware Detection](https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.109.644&rep=rep1&type=pdf)~~ *(PDF download currently unavailable)*
 
 [3] [Microsoft Malware Clasification Challenge 2015](https://www.kaggle.com/c/malware-classification/data)
 

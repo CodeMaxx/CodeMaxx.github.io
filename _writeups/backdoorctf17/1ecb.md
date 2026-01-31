@@ -22,8 +22,8 @@ category: Crypto
 
 > n00b learnt about ECB and has encrypted some images with it. Can you find the flag?
 
->    [img1.png](/assets/files/img1.png)
-    [img2.png](/assets/files/img2.png)
+>    [img1.png](/assets/images/backdoorctf17/img1.png)
+    [img2.png](/assets/images/backdoorctf17/img2.png)
 
 
 ## Background
@@ -38,7 +38,7 @@ If you haven't heard about the famous ECB penguin before, you probably haven't h
 
 The problem with ECB is that two blocks in a message get encrypted to the same ciphertext. A lack of diffusion causes pattern to be preserved and hence we can see the outline of the penguin.
 
-You can read the details about ECB [here](https://www.wikiwand.com/en/Block_cipher_mode_of_operation#/Electronic_Codebook_.28ECB.29).
+You can read the details about ECB [here](https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#Electronic_codebook_(ECB)).
 
 
 ## Write-up
@@ -128,4 +128,4 @@ And voila!
 
 **Flag:** `CTF{0n1y_n00b5_u53_3cb}`
 
-**Go through other [writeups](../) for more such fun challenges.**
+**Go through other [writeups](/writeups/) for more such fun challenges.**

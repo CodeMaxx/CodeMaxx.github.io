@@ -19,7 +19,7 @@ description: "Hacking Postgres Internals - Indexing Schemes for Data Recording S
 | ------------- | ------------- |
 | [Harshith Goka](https://github.com/tastelessjolt/)  | |
 | [Akash Trehan](https://github.com/codemaxx)  | |
-| [Abhishek Kumar](AbhishekKumar16) | |
+| [Abhishek Kumar](https://github.com/AbhishekKumar16) | |
 | [Tarun Verma](https://github.com/vermatarunv) | |
 
 For the backstory on this project read [this](../project-ditch/) first.

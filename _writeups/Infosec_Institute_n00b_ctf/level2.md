@@ -24,7 +24,7 @@ Seeing that the Image was broken I went to the source code to check why. There c
 
 ![Level 2 Source](/assets/images/InfosecInstin00b/source2.png)
 
-I clicked on `img/leveltwo.jpeg` to open the file and it did exist. Hence the file can't be an image otherwise it would have shown up on the page. I downloaded the file from [here](http://ctf.infosecinstitute.com/img/leveltwo.jpeg). You can also download it from [here](/assets/images/InfosecInstin00b/leveltwo.jpeg). Just open the link and press `Ctrl + s` to save.
+I clicked on `img/leveltwo.jpeg` to open the file and it did exist. Hence the file can't be an image otherwise it would have shown up on the page. I downloaded the file from ~~[here](http://ctf.infosecinstitute.com/img/leveltwo.jpeg)~~ *(server no longer available)*. You can also download it from [here](/assets/images/InfosecInstin00b/leveltwo.jpeg). Just open the link and press `Ctrl + s` to save.
 
 To see what kind of file it is I used the `file` command:
 

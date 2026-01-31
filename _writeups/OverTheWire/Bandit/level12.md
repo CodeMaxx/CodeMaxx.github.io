@@ -24,7 +24,7 @@ category: Wargame
 
 #### Helpful Reading Material
 
->[Hex dump on Wikipedia](http://en.wikipedia.org/wiki/Hex_dump)
+>[Hex dump on Wikipedia](https://en.wikipedia.org/wiki/Hex_dump)
 
 ## Write-up
 
@@ -45,6 +45,6 @@ The following is what I actually did
 
 So the given file was a hexdump. I used `xxd -r <filename>` to reverse it and sent the output to a file. I kept using `file` command at each step to know what I'm tackling.<br> `gzip` compressed files are extracted using `gunzip`. But `gunzip` extracts files only with certain extension, `.gz` being one of them. So I renamed the file to have that extension. <br>`bzip2` compressed files are extracted using `bzip2 -d <filename>` where `-d` flag stands for "decompress". <br>For `tar` archives I used `tar xvf <filename>`.<br> After repeatedly extracting and re-extracting, I landed upon a file containing ASCII text. That sure containted the password.
 
-***If you have a method to automate this stuff to make it easier, please comment below or [email me](http://www.google.com/recaptcha/mailhide/d?k=01VG-M2zL1CCSeYr97HKgLtA==&c=eoBC31BPlm_BNGxSQFrp_3Zk9kKbEB_gOaoModecKZo=).***
+***If you have a method to automate this stuff to make it easier, please comment below or <a href="#" onclick="location.href='mailto:' + 'me' + '@' + 'akashtrehan.com'; return false;">email me</a>.***
 
 #### Level 13 password: `8ZjyCRiBWFYkneahHwxCv3wb2a1ORpYL`

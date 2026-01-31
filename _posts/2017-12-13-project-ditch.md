@@ -29,7 +29,7 @@ We talked with our guide, [Prof. Sudarshan S](https://www.cse.iitb.ac.in/~sudars
 
 ## The Team
 
-[Harshith Goka](https://github.com/tastelessjolt/), [Abhishek Kumar](AbhishekKumar16) and [Tarun Verma](https://github.com/vermatarunv) were my teammates. I have teamed up with Goka a few times before. He's very enthusiastic above software development and has always been a great teammate. With Abhishek, I had done the Digital Logic Design project before and we became good friends since. I had never teamed up with Tarun before but knew he was a sincere guy. We really enjoyed doing the project together!
+[Harshith Goka](https://github.com/tastelessjolt/), [Abhishek Kumar](https://github.com/AbhishekKumar16) and [Tarun Verma](https://github.com/vermatarunv) were my teammates. I have teamed up with Goka a few times before. He's very enthusiastic above software development and has always been a great teammate. With Abhishek, I had done the Digital Logic Design project before and we became good friends since. I had never teamed up with Tarun before but knew he was a sincere guy. We really enjoyed doing the project together!
 
 
 ## The Preparation

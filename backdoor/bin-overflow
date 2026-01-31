@@ -30,7 +30,7 @@ This is what I got.
 
 ![Decoded QR](/assets/images/infosecInstin00b/decoded_qr3.png)
 
-This surely looks like `Morse Code`. I used <http://morsecode.scphillips.com/translator.html> to convert this to ascii text.
+This surely looks like `Morse Code`. I used <https://morsecode.scphillips.com/translator.html> to convert this to ascii text.
 I got `INFOSECFLAGISMORSING`.
 
 This gives away the flag.
