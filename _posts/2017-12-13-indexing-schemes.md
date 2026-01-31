@@ -174,8 +174,8 @@ After `N-1`th level fills up, it is merged with the single root relation.
 
 ## Resources
 
-<https://www.postgresql.org/docs/9.6/static/xindex.html> (Prequel for the below)
-<https://www.postgresql.org/docs/9.6/static/indexam.html>
+<https://www.postgresql.org/docs/9.6/xindex.html> (Prequel for the below)
+<https://www.postgresql.org/docs/9.6/indexam.html>
 <https://www.postgresql.org/files/developer/internalpics.pdf>
 <https://www.pgcon.org/2016/schedule/attachments/434_Index-internals-PGCon2016.pdf>
 

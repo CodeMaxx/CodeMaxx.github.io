@@ -75,7 +75,7 @@ You will also have to `#include<locale.h>`
 
 The Unicode and UTF8 values for some common emojis can be found [here](https://apps.timwhitlock.info/emoji/tables/unicode).
 
-**Bonus:** Get markdown emoji codes [here](https://www.webpagefx.com/tools/emoji-cheat-sheet/)
+**Bonus:** Get markdown emoji codes [here](https://www.webfx.com/tools/emoji-cheat-sheet/)
 
 ---
 

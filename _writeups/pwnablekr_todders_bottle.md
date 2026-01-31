@@ -75,7 +75,7 @@ Unpacking binary:
 $ upx -d flag
 ```
 
-Then you can see the flag being put on the heap using [IDA](https://www.hex-rays.com/products/ida/) or `gdb`
+Then you can see the flag being put on the heap using [IDA](https://hex-rays.com/products/ida/) or `gdb`
 
 ## passcode
 

@@ -24,7 +24,7 @@ This project emerged for fulfilling a requirement of the Machine Learning course
 
 ![Malware Classes](/assets/images/malware/classes.jpg)
 
-Source: <https://thepcworks.com/malware/>
+Source: <https://thepcworks.com/computer-services/malware-virus-removal/>
 
 Wikipedia defines [malware](https://en.wikipedia.org/wiki/Malware) as:
 
