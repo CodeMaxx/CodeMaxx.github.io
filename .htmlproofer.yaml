@@ -3,18 +3,17 @@
 
 # URLs to ignore (regex patterns)
 ignore_urls:
-  - /blackhat\.com\/eu-16\/arsenal\.html/  # Returns 403 (blocks bots)
-  - /linkedin\.com/                         # Returns 999 (blocks bots)
+  - /linkedin\.com/                         # Returns 999 (blocks even with browser UA)
+  - /instagram\.com/                        # Returns 429 (rate limits aggressively)
+  - /facebook\.com/                         # Returns 400 (blocks scrapers)
+  - /iitb\.ac\.in/                          # Resets connection (blocks bots)
+  - /blackhat\.com/                         # Returns 403 (blocks bots)
   - /akashtrehan\.com\/tags/                # Tags page anchors need fixing
   - /hack\.bckdr\.in/                       # Backdoor CTF server sunset by SDSLabs
   - /github\.com\/CodeMaxx\/Binary-Exploitation.*#/  # GitHub JS-rendered anchors (false positive)
   - /ctf\.infosecinstitute\.com/            # CTF server no longer available
-  - /iitb\.ac\.in/                          # Blocks bots (works in browsers)
   - /westwind\.com/                         # Site no longer active
   - /citeseerx\.ist\.psu\.edu/              # PDF downloads broken (502)
-  - /devfolio\.co/                          # Returns 403 (blocks bots)
-  - /instagram\.com/                        # Returns 429 (rate limits bots)
-  - /morsecode\.scphillips\.com/            # Returns 403 (blocks bots)
 
 # Files/directories to ignore (paths relative to _site)
 ignore_files:
