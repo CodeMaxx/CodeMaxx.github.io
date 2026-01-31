@@ -18,15 +18,15 @@ Source: <https://www.cyberpointllc.com/images/svcs/img-mare.jpg>
 ## Background
 
 #### Why this project?
-This project emerged for fulfilling a requirement of the Machine Learning course (EE 769) I took this semester. As I have always been interested in computer security, I wanted to combine my newly learnt knowledge from this course with it. The attacks last year from malwares like [WannaCry](https://www.wikiwand.com/en/WannaCry_ransomware_attack), [NotPetya](https://www.wikiwand.com/en/Petya_(malware)#/2017_Cyberattack) and [Bad Rabbit](https://www.kaspersky.com/blog/bad-rabbit-ransomware/19887/) had made me curious about how these attacks could be prevented. Malware Classification was the perfect project. For this I teamed up with my good friend Mukesh Pareek who is also a security enthusiast. This post is written in collaboration with him. Our guide for this project is [Prof. Amit Sethi](https://www.ee.iitb.ac.in/web/people/faculty/home/asethi).
+This project emerged for fulfilling a requirement of the Machine Learning course (EE 769) I took this semester. As I have always been interested in computer security, I wanted to combine my newly learnt knowledge from this course with it. The attacks last year from malwares like [WannaCry](https://en.wikipedia.org/wiki/WannaCry_ransomware_attack), [NotPetya](https://en.wikipedia.org/wiki/Petya_and_NotPetya) and [Bad Rabbit](https://en.wikipedia.org/wiki/Bad_Rabbit) had made me curious about how these attacks could be prevented. Malware Classification was the perfect project. For this I teamed up with my good friend Mukesh Pareek who is also a security enthusiast. This post is written in collaboration with him. Our guide for this project is Prof. Amit Sethi.
 
 #### Malware
 
 ![Malware Classes](/assets/images/malware/classes.jpg)
 
-Source: <http://thepcworks.com/malware/>
+Source: <https://thepcworks.com/malware/>
 
-Wikipedia defines [malware](https://www.wikiwand.com/en/Malware) as:
+Wikipedia defines [malware](https://en.wikipedia.org/wiki/Malware) as:
 
 >   Malware, short for malicious software, is an umbrella term used to refer to a variety of forms of hostile or intrusive software, including computer viruses, worms, Trojan horses, ransomware, spyware, adware, scareware, and other intentionally harmful programs.
 
@@ -194,12 +194,12 @@ In future, we would like to try out more models and try more combination of feat
 
 ### References
 
-[1] [Malware Images: Visualization and Automatic Classification](http://vizsec.org/files/2011/Nataraj.pdf)
+[1] [Malware Images: Visualization and Automatic Classification](https://vizsec.org/files/2011/Nataraj.pdf)
 
-[2] [Code Obfuscation and Malware Detection](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.109.644&rep=rep1&type=pdf)
+[2] [Code Obfuscation and Malware Detection](https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.109.644&rep=rep1&type=pdf)
 
 [3] [Microsoft Malware Clasification Challenge 2015](https://www.kaggle.com/c/malware-classification/data)
 
-[4] [Feature selection and extraction for Malware Classification](http://www.iis.sinica.edu.tw/page/jise/2015/201505_11.pdf)
+[4] [Feature selection and extraction for Malware Classification](https://www.iis.sinica.edu.tw/page/jise/2015/201505_11.pdf)
 
 [5] [Kaggle challenge first place team](https://github.com/xiaozhouwang/kaggle_Microsoft_Malware/blob/master/Saynotooverfitting.pdf)

@@ -18,7 +18,7 @@ category: Crypto
 
 #### Description:
 
-> There is a website running at [http://challenges.runesec.com:62856](http://challenges.runesec.com:62856). Try to see if you can become an administrator.
+> There is a website running at `http://challenges.runesec.com:62856` (no longer available). Try to see if you can become an administrator.
 
 ##### Hints:
 
@@ -64,7 +64,7 @@ So I went on for another 15 minutes trying to md5 various string combination in 
 
 "I should look at the hint."
 
-Penguin...What kind of hint is this. And then it struck me. The same day we had been studying about [Electronic Code Book (ECB)](https://www.wikiwand.com/en/Block_cipher_mode_of_operation#/Electronic_Codebook_.28ECB.29) mode for [Advanced Encryption Standard (AES)](https://www.wikiwand.com/en/Advanced_Encryption_Standard), and sure enough we'd been given the penguin example. You'll know exactly what I mean in a moment.
+Penguin...What kind of hint is this. And then it struck me. The same day we had been studying about [Electronic Code Book (ECB)](https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#Electronic_codebook_(ECB)) mode for [Advanced Encryption Standard (AES)](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard), and sure enough we'd been given the penguin example. You'll know exactly what I mean in a moment.
 
 So what happens in ECB is that you independently encrypt blocks of the original text with the keys. Now this causes two blocks which are the same to have the same encrypted output. Thus there is confusion but no diffusion. (Ask in the comments if you don't know what this means.)
 

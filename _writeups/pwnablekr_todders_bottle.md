@@ -14,7 +14,7 @@ category: Pwn
 
 ![Pwnable.kr](/assets/images/pwnablekr.png)
 
-**[pwnable.kr](http://pwnable.kr) is a wargame site which provides various pwn challenges regarding system exploitation. The main purpose of pwnable.kr is having "fun" while improving one's hacking skills ;)**
+**[pwnable.kr](https://pwnable.kr) is a wargame site which provides various pwn challenges regarding system exploitation. The main purpose of pwnable.kr is having "fun" while improving one's hacking skills ;)**
 
 Toddler's Bottle is a section of easy-ish challenges. This writeup contains solutions to almost all of the challenges in that section.
 
