@@ -18,7 +18,7 @@ Source: <https://www.cyberpointllc.com/images/svcs/img-mare.jpg>
 ## Background
 
 #### Why this project?
-This project emerged for fulfilling a requirement of the Machine Learning course (EE 769) I took this semester. As I have always been interested in computer security, I wanted to combine my newly learnt knowledge from this course with it. The attacks last year from malwares like [WannaCry](https://en.wikipedia.org/wiki/WannaCry_ransomware_attack), [NotPetya](https://en.wikipedia.org/wiki/Petya_and_NotPetya) and [Bad Rabbit](https://en.wikipedia.org/wiki/Bad_Rabbit) had made me curious about how these attacks could be prevented. Malware Classification was the perfect project. For this I teamed up with my good friend Mukesh Pareek who is also a security enthusiast. This post is written in collaboration with him. Our guide for this project is Prof. Amit Sethi.
+This project emerged for fulfilling a requirement of the Machine Learning course (EE 769) I took this semester. As I have always been interested in computer security, I wanted to combine my newly learnt knowledge from this course with it. The attacks last year from malwares like [WannaCry](https://en.wikipedia.org/wiki/WannaCry_ransomware_attack), [NotPetya](https://en.wikipedia.org/wiki/Petya_(malware_family)#2017_Cyberattack) and [Bad Rabbit](https://www.kaspersky.com/blog/bad-rabbit-ransomware/19887/) had made me curious about how these attacks could be prevented. Malware Classification was the perfect project. For this I teamed up with my good friend Mukesh Pareek who is also a security enthusiast. This post is written in collaboration with him. Our guide for this project is [Prof. Amit Sethi](https://www.ee.iitb.ac.in/~asethi/).
 
 #### Malware
 
