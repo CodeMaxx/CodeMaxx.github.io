@@ -53,33 +53,40 @@ title: Tags
     {% assign tags_list = nil %}
 </section>
 
-<p style="color: #f00">Note: If clicking on a tag doesn't do anything, the posts related to the tag are in the <a href="../writeups">Writeups</a> section</p>
 <hr>
 
 <section class="tag-list">
-    {% for tag in site.tags  %}
-    <h2 class="title" id="{{ tag[0] | slugify }}">#{{ tag[0] }}</h2>
+    {% for tag in unique_tags %}
+    <h2 class="title" id="{{ tag | slugify }}">#{{ tag }}</h2>
 
     <ul class="list">
-        {% assign pages_list = tag[1] %}
-        {% for post in pages_list reversed %}
-            {% if post.title != null %}
-                {% if group == null or group == post.group %}
-                    <li class="item">
-                        {% if post.external_url %}
-                        <a class="url" href="{{ post.external_url }}" onclick='ga("send", "pageview", "{{ post.url }}");'>
-                        {% else %}
-                        <a class="url" href="{{ site.url }}{{ post.url }}">
-                        {% endif %}
-                            <aside class="date"><time datetime="{{ post.date | date:"%d-%m-%Y" }}">{{ post.date | date: "%b %d %Y" }}</time></aside>
-                            <h3 class="title">{{ post.title }}</h3>
-                        </a>
-                    </li>
-                {% endif %}
+        <!-- Posts with this tag -->
+        {% for post in site.posts %}
+            {% if post.tags contains tag %}
+                <li class="item">
+                    {% if post.external_url %}
+                    <a class="url" href="{{ post.external_url }}" onclick='ga("send", "pageview", "{{ post.url }}");'>
+                    {% else %}
+                    <a class="url" href="{{ post.url }}">
+                    {% endif %}
+                        <aside class="date"><time datetime="{{ post.date | date:"%d-%m-%Y" }}">{{ post.date | date: "%b %d %Y" }}</time></aside>
+                        <h3 class="title">{{ post.title }}</h3>
+                    </a>
+                </li>
             {% endif %}
         {% endfor %}
-        {% assign pages_list = nil %}
-        {% assign group = nil %}
+
+        <!-- Writeups with this tag -->
+        {% for writeup in site.writeups %}
+            {% if writeup.tags contains tag %}
+                <li class="item">
+                    <a class="url" href="{{ writeup.url }}">
+                        <aside class="date"><time datetime="{{ writeup.date | date:"%d-%m-%Y" }}">{{ writeup.date | date: "%b %d %Y" }}</time></aside>
+                        <h3 class="title">{{ writeup.title }}</h3>
+                    </a>
+                </li>
+            {% endif %}
+        {% endfor %}
     </ul>
 
     <div class="breaker"></div>
