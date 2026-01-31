@@ -20,7 +20,7 @@ category: Exploit
 
 #### Description:
 
->nc hack.bckdr.in 7070
+>~~nc hack.bckdr.in 7070~~ *(CTF server no longer available)*
 
 ## Write-up
 
@@ -64,4 +64,4 @@ This gave me this :) :
 followed by the flag of the form<br>
 `flag{...}`
 
-**Go through other [writeups](../) for more such fun challenges.**
+**Go through other [writeups](/writeups/) for more such fun challenges.**

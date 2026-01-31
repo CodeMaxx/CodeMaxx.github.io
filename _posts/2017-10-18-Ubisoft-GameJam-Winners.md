@@ -25,7 +25,7 @@ The theme given to us for the hackathon was **Flood!**
 
 Fortunately one of the ideas we had in our mind touched upon the theme. We decided to go 3D with Unity. I had never used Unity before but my teammates had.
 
-A good game needs a good backstory. After working on the backstory and overall idea of the game, we got started. (BTW do take a look at the official [Unity3D's tutorials](https://unity3d.com/learn/tutorials) - they're great!)
+A good game needs a good backstory. After working on the backstory and overall idea of the game, we got started. (BTW do take a look at the official [Unity3D's tutorials](https://learn.unity.com) - they're great!)
 
 We had about 30 hours to complete our game - the graphics, level design, characters and an overall immersive experience.
 

@@ -25,11 +25,11 @@ category: Wargame
 #### Helpful Reading Material
 
 >[How the Internet works in 5 minutes (YouTube)](https://www.youtube.com/watch?v=7_LPdttKXPc)(Not completely accurate, but good enough for beginners)
-[IP Addresses](http://computer.howstuffworks.com/web-server5.htm)
-[IP Address on Wikipedia](http://en.wikipedia.org/wiki/IP_address)
-[Localhost on Wikipedia](http://en.wikipedia.org/wiki/Localhost)
-[Ports](http://computer.howstuffworks.com/web-server8.htm)
-[Port (computer networking) on Wikipedia](http://en.wikipedia.org/wiki/Port_(computer_networking))
+[IP Addresses](https://computer.howstuffworks.com/web-server5.htm)
+[IP Address on Wikipedia](https://en.wikipedia.org/wiki/IP_address)
+[Localhost on Wikipedia](https://en.wikipedia.org/wiki/Localhost)
+[Ports](https://computer.howstuffworks.com/web-server8.htm)
+[Port (computer networking) on Wikipedia](https://en.wikipedia.org/wiki/Port_(computer_networking))
 
 ## Write-up
 

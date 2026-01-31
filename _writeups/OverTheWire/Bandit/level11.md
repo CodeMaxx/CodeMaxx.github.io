@@ -24,7 +24,7 @@ category: Wargame
 
 #### Helpful Reading Material
 
->[Rot13 on Wikipedia](http://en.wikipedia.org/wiki/Rot13)
+>[Rot13 on Wikipedia](https://en.wikipedia.org/wiki/Rot13)
 
 ## Write-up
 

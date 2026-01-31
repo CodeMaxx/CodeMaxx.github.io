@@ -1,0 +1,29 @@
+# html-proofer configuration
+# https://github.com/gjtorikian/html-proofer#configuration
+
+# URLs to ignore (regex patterns)
+ignore_urls:
+  - /linkedin\.com/                         # Returns 999 (JS-based bot detection)
+  - /instagram\.com/                        # Returns 429 (aggressive rate limiting)
+  - /facebook\.com/                         # Returns 400 (JS-based bot detection)
+  - /blackhat\.com/                         # Returns 403 (Cloudflare JS challenge)
+  - /iitb\.ac\.in/                          # Flaky connection (works in browsers)
+  - /devfolio\.co/                          # Blocks GitHub Actions IPs
+  - /morsecode\.scphillips\.com/            # Blocks GitHub Actions IPs
+  - /akashtrehan\.com\/tags/                # Tags page anchors need fixing
+  - /hack\.bckdr\.in/                       # Backdoor CTF server sunset by SDSLabs
+  - /github\.com\/CodeMaxx\/Binary-Exploitation.*#/  # GitHub JS-rendered anchors (false positive)
+  - /ctf\.infosecinstitute\.com/            # CTF server no longer available
+  - /westwind\.com/                         # Site no longer active
+  - /citeseerx\.ist\.psu\.edu/              # PDF downloads broken (502)
+
+# Files/directories to ignore (paths relative to _site)
+ignore_files:
+  - /cs741/
+  - /tags\/index\.html/                     # Tag section anchors need fixing
+
+# Allow anchor tags without href attribute
+allow_missing_href: true
+
+# Allow hash href (href="#")
+allow_hash_href: true

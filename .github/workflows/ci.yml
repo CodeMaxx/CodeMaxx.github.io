@@ -33,7 +33,7 @@ jobs:
           ruby-version: '3.2'
           bundler-cache: true
 
-      - name: Build Jekyll site
-        run: bundle exec jekyll build
+      - name: Build and check links
+        run: bundle exec rake test
         env:
           JEKYLL_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

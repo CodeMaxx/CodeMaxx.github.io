@@ -7,6 +7,6 @@ tag:
 - Terminal
 - Tutorial
 blog: true
-external_url: https://github.com/CodeMaxx/Terminal-Commands-Beginner
+external_url: https://github.com/CodeMaxx/Awesome-Terminal-Commands
 description: ""
 ---

@@ -20,7 +20,7 @@ category: Misc
 
 #### Description:
 
-> cr4wl3r was always found solving jigsaw puzzle. Let us know why he solves so many jigsaws by solving the same. Get the puzzle pieces [here](http://hack.bckdr.in/JIGSAW/jigsaw.tar.gz)
+> cr4wl3r was always found solving jigsaw puzzle. Let us know why he solves so many jigsaws by solving the same. Get the puzzle pieces ~~[here](http://hack.bckdr.in/JIGSAW/jigsaw.tar.gz)~~ *(CTF server no longer available)*
 
 ## Write-up
 
@@ -46,4 +46,4 @@ I didn't try the the solver yet. But it will probably give you most of the lette
 
 **Next:** So now we got a list of 16 letters. I looked at them for sometime trying to unjumble them. In about 5 minutes I got `LOVEBEINGPUZZLED`.
 
-**Go through other [writeups](../) for more such fun challenges.**
+**Go through other [writeups](/writeups/) for more such fun challenges.**

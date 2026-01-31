@@ -20,8 +20,8 @@ category: Pwn
 
 #### Description:
 
->Can you reach Zion and find the flag? You can download a copy of the Matrix to play with [here](http://hack.bckdr.in/ENTER-THE-MATRIX/matrix), but the flag can only be found on Zion, through the real Matrix at
-nc hack.bckdr.in 9004
+>Can you reach Zion and find the flag? You can download a copy of the Matrix to play with ~~[here](http://hack.bckdr.in/ENTER-THE-MATRIX/matrix)~~ *(CTF server no longer available)*, but the flag can only be found on Zion, through the real Matrix at
+~~nc hack.bckdr.in 9004~~ *(server offline)*
 
 ## Write-up
 

@@ -19,12 +19,12 @@ description: "Hacking Postgres Internals - Indexing Schemes for Data Recording S
 | ------------- | ------------- |
 | [Harshith Goka](https://github.com/tastelessjolt/)  | |
 | [Akash Trehan](https://github.com/codemaxx)  | |
-| [Abhishek Kumar](AbhishekKumar16) | |
+| [Abhishek Kumar](https://github.com/AbhishekKumar16) | |
 | [Tarun Verma](https://github.com/vermatarunv) | |
 
 For the backstory on this project read [this](../project-ditch/) first.
 
-The [code for this project](https://github.com/codemaxx/postgres) has been open-sourced on Github.
+The [code for this project](https://github.com/CodeMaxx/postgres-with-stepped-merge-index) has been open-sourced on Github.
 
 ## Introduction
 
@@ -174,8 +174,8 @@ After `N-1`th level fills up, it is merged with the single root relation.
 
 ## Resources
 
-<https://www.postgresql.org/docs/9.6/static/xindex.html> (Prequel for the below)
-<https://www.postgresql.org/docs/9.6/static/indexam.html>
+<https://www.postgresql.org/docs/9.6/xindex.html> (Prequel for the below)
+<https://www.postgresql.org/docs/9.6/indexam.html>
 <https://www.postgresql.org/files/developer/internalpics.pdf>
 <https://www.pgcon.org/2016/schedule/attachments/434_Index-internals-PGCon2016.pdf>
 

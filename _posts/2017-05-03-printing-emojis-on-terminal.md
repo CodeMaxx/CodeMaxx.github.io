@@ -17,7 +17,7 @@ Today I spent an hour on the simple task of printing an emoji on my terminal wit
 
 Lots of searching on stackoverflow led to me various pages with no reliable platform-independent solution. Finally, with some help from my friend [Manish](https://manishearth.github.io/), I figured it out.
 
-It is actually really easy...if you know how [Unicode](http://unicode.org/standard/WhatIsUnicode.html) works. I'll not go into the details of various character encoding(since I myself am a noob at it :stuck_out_tongue_winking_eye:), but simply show you various C and C++ ways for accomplishing the task at hand.
+It is actually really easy...if you know how [Unicode](https://unicode.org/standard/WhatIsUnicode.html) works. I'll not go into the details of various character encoding(since I myself am a noob at it :stuck_out_tongue_winking_eye:), but simply show you various C and C++ ways for accomplishing the task at hand.
 
 ## Code
 
@@ -75,7 +75,7 @@ You will also have to `#include<locale.h>`
 
 The Unicode and UTF8 values for some common emojis can be found [here](https://apps.timwhitlock.info/emoji/tables/unicode).
 
-**Bonus:** Get markdown emoji codes [here](https://www.webpagefx.com/tools/emoji-cheat-sheet/)
+**Bonus:** Get markdown emoji codes [here](https://www.webfx.com/tools/emoji-cheat-sheet/)
 
 ---
 

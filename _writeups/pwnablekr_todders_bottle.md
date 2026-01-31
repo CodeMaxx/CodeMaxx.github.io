@@ -14,11 +14,11 @@ category: Pwn
 
 ![Pwnable.kr](/assets/images/pwnablekr.png)
 
-**[pwnable.kr](http://pwnable.kr) is a wargame site which provides various pwn challenges regarding system exploitation. The main purpose of pwnable.kr is having "fun" while improving one's hacking skills ;)**
+**[pwnable.kr](https://pwnable.kr) is a wargame site which provides various pwn challenges regarding system exploitation. The main purpose of pwnable.kr is having "fun" while improving one's hacking skills ;)**
 
 Toddler's Bottle is a section of easy-ish challenges. This writeup contains solutions to almost all of the challenges in that section.
 
-So partly due to lack of time and partly because I want you to think on your own, I'll not be explaining my solutions like I do for my other [Writeups](../). I'll just be posting my python/bash/C scripts here with occasional explanations.
+So partly due to lack of time and partly because I want you to think on your own, I'll not be explaining my solutions like I do for my other [Writeups](/writeups/). I'll just be posting my python/bash/C scripts here with occasional explanations.
 
 The scripts use the `pwntools` library.
 
@@ -75,7 +75,7 @@ Unpacking binary:
 $ upx -d flag
 ```
 
-Then you can see the flag being put on the heap using [IDA](https://www.hex-rays.com/products/ida/) or `gdb`
+Then you can see the flag being put on the heap using [IDA](https://hex-rays.com/products/ida/) or `gdb`
 
 ## passcode
 
@@ -436,4 +436,4 @@ r.sendline(shell_address + "A"*12 + p32(int(stack_address, 16) + 12) + p32(int(h
 r.interactive()
 ```
 
-**Go through other [writeups](../) for more such fun challenges.**
+**Go through other [writeups](/writeups/) for more such fun challenges.**
