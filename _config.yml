@@ -24,7 +24,7 @@ kramdown:
   input: GFM
 highlighter: rouge
 
-analytics-google: 'UA-MYANALYTICS'
+analytics-google: 'G-P6YXLLEDMH'
 
 # if you don't want comments in your posts, set to false
 disqus: codemaxx
