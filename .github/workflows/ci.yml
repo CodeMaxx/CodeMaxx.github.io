@@ -38,8 +38,7 @@ jobs:
         env:
           JEKYLL_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Install awesome_bot
-        run: gem install awesome_bot
-
-      - name: Check links in markdown files
-        run: awesome_bot --allow-dupe ./*/*.md
+      - name: Check links with html-proofer
+        run: |
+          gem install html-proofer
+          htmlproofer ./_site

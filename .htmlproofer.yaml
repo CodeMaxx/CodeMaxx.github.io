@@ -1,0 +1,14 @@
+# html-proofer configuration
+# https://github.com/gjtorikian/html-proofer#configuration
+
+# URLs to ignore (regex patterns)
+# Add specific URLs here that are known to block bots or have SSL issues
+ignore_urls:
+  - /blackhat\.com\/eu-16\/arsenal\.html/  # Returns 403 (blocks bots)
+  - /defcon\.org\/html\/defcon-24/          # SSL/TLS issues
+
+# Allow anchor tags without href attribute
+allow_missing_href: true
+
+# Allow hash href (href="#")
+allow_hash_href: true
