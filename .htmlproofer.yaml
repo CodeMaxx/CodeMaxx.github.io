@@ -7,7 +7,7 @@ ignore_urls:
   - /instagram\.com/                        # Returns 429 (aggressive rate limiting)
   - /facebook\.com/                         # Returns 400 (JS-based bot detection)
   - /blackhat\.com/                         # Returns 403 (Cloudflare JS challenge)
-  - /iitb\.ac\.in/                          # Unreliable connection (works in browsers)
+  - /iitb\.ac\.in/                          # Flaky connection (works in browsers)
   - /devfolio\.co/                          # Blocks GitHub Actions IPs
   - /morsecode\.scphillips\.com/            # Blocks GitHub Actions IPs
   - /akashtrehan\.com\/tags/                # Tags page anchors need fixing
