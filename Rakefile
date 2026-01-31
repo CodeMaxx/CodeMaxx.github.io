@@ -15,8 +15,17 @@ task :test do
     allow_missing_href: config['allow_missing_href'] || false,
     typhoeus: {
       headers: {
-        "User-Agent" => "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
-      }
+        "User-Agent" => "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+        "Accept" => "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
+        "Accept-Language" => "en-US,en;q=0.5"
+      },
+      connecttimeout: 30,
+      timeout: 60,
+      ssl_verifypeer: true,
+      followlocation: true
+    },
+    hydra: {
+      max_concurrency: 10
     }
   }
   

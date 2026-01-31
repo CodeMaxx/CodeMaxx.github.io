@@ -3,11 +3,10 @@
 
 # URLs to ignore (regex patterns)
 ignore_urls:
-  - /linkedin\.com/                         # Returns 999 (blocks even with browser UA)
-  - /instagram\.com/                        # Returns 429 (rate limits aggressively)
-  - /facebook\.com/                         # Returns 400 (blocks scrapers)
-  - /iitb\.ac\.in/                          # Resets connection (blocks bots)
-  - /blackhat\.com/                         # Returns 403 (blocks bots)
+  - /linkedin\.com/                         # Returns 999 (JS-based bot detection)
+  - /instagram\.com/                        # Returns 429 (aggressive rate limiting)
+  - /facebook\.com/                         # Returns 400 (JS-based bot detection)
+  - /blackhat\.com/                         # Returns 403 (Cloudflare JS challenge)
   - /akashtrehan\.com\/tags/                # Tags page anchors need fixing
   - /hack\.bckdr\.in/                       # Backdoor CTF server sunset by SDSLabs
   - /github\.com\/CodeMaxx\/Binary-Exploitation.*#/  # GitHub JS-rendered anchors (false positive)
