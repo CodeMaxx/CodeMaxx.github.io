@@ -878,6 +878,8 @@ pre {
   color: #777;
   width: 70%;
   margin: 0 auto 10px;
+  position: relative;
+  overflow: hidden;
 }
 .header-home > .description a {
   font-weight: 200;
@@ -927,7 +929,7 @@ pre {
   border-radius: 4%;
   -webkit-transition: all 0.4s ease-in-out;
           transition: all 0.4s ease-in-out;
-  width: 75px;
+  width: auto;
   color: #3399ff;
 }
 .nav-home > .list > .item > .link:hover {
@@ -1299,6 +1301,16 @@ pre {
   .nav > .list > .item > .link {
     font-size: 1.4rem;
     padding: 10px 6px;
+  }
+  .header-home > .description {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 400px) and (max-width: 780px) {
+  .nav {
+    position: static;
+    text-align: center;
   }
   .header-home > .description {
     width: 100%;
