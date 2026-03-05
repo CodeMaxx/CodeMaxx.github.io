@@ -22,7 +22,7 @@ category: Web
 
 I saw two suspicious things on the page - a QR code and a 90% complete progress bar. I went to the source code and saw the progress bar was hardcoded to remain at 90% and hence it is just a distraction.
 
-Then I read the QR code using an online utility. Seach for `QR Code decoder` decoder on `Google`. You'll find plenty of them. I used <https://zxing.org/w/decode.jspx>
+Then I read the QR code using an online utility. Search for `QR Code decoder` decoder on `Google`. You'll find plenty of them. I used <https://www.qr-codes.com/decoder>
 
 This is what I got.
 
