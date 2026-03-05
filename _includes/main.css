@@ -395,13 +395,29 @@ pre {
   border: none;
   margin: 0 0 1.75em 0;
   width: 100%;
-  padding: 5px 10px;
+  padding: 5px 10px 20px 10px;
   font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
   font-size: 1.2rem;
   line-height: 2rem;
   overflow: auto;
   background: #fff;
   box-sizing: border-box;
+}
+
+/* Scrollbar styling for code blocks */
+pre::-webkit-scrollbar {
+  height: 8px;
+}
+pre::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+pre::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+pre::-webkit-scrollbar-thumb:hover {
+  background: #a1a1a1;
 }
 .wrapper-normal,
 .wrapper-large {
