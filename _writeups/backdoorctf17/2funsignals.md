@@ -2,6 +2,7 @@
 title: "BackdoorCTF 2017 - Fun Signals"
 layout: post
 date: 2017-10-18 5:21
+image: /assets/images/backdoorctf16/logo.png
 tag:
 - BackdoorCTF2017
 - Pwn

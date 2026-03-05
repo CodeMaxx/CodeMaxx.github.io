@@ -2,6 +2,7 @@
 title: "Did I Execute?"
 layout: post
 date: 2016-11-03 11:00
+image: /assets/images/terminal.ico
 tag:
 - Unix
 - Terminal

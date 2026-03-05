@@ -2,6 +2,7 @@
 title: "pwnable.kr - Toddler's Bottle"
 layout: post
 date: 2017-06-11 4:21
+image: /assets/images/pwnablekr.png
 tag:
 - Pwning
 - Hacking

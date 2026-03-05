@@ -2,6 +2,7 @@
 title: "Hacking Postgres Internals - Indexing Schemes for Data Recording Systems"
 layout: post
 date: 2017-12-13 8:20
+image: /assets/images/database.jpg
 tag:
 - Databases
 - C

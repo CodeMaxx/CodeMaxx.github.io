@@ -2,6 +2,7 @@
 title: "Compile & Decompile Python files"
 layout: post
 date: 2017-05-20 00:00
+image: /assets/images/python.png
 tag:
 - Python
 - Decompile

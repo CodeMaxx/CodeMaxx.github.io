@@ -2,6 +2,7 @@
 title: "Runesec CTF 2017 - EveCodesBetter"
 layout: post
 date: 2017-08-12 4:21
+image: /assets/images/evecodesbetter/runesec.png
 tag:
 - Crypto
 - Hacking

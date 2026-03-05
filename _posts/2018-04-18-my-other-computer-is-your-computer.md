@@ -2,6 +2,7 @@
 title: "My Other Computer is Your Computer - Malware Classification"
 layout: post
 date: 2018-05-06 00:00
+image: /assets/images/malware/malware.jpg
 tag:
 - Security
 - Malware
