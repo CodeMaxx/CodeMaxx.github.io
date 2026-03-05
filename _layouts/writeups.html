@@ -3,15 +3,15 @@ layout: default
 title: Write-ups
 ---
 {% include header.html %}
-<center><h4 style="font-weight: 300; opacity: 0.5;">
+<div style="text-align: center;"><h4 style="font-weight: 300; opacity: 0.5;">
 “Because the people who think they are crazy enough to change the world are the ones who do!”<br>
 <span style="display: block; text-align: right; font-family: inherit; font-size: inherit;">- Steve Jobs</span>
-</h4></center>
+</h4></div>
 <section class="list" style="display: flex; flex-direction: column-reverse">
-	{% if site.posts.size == 0 %}
+	{% if site.writeups.size == 0 %}
 		<p class="text-center">Nothing published yet!</p>
 	{% elsif site.paginate %}
-		{% for writeup in paginator.writeups %}
+		{% for post in paginator.posts %}
 	        {% include write-ups.html %}
 	    {% endfor %}
 

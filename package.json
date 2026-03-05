@@ -21,7 +21,7 @@
   },
   "scripts": {
     "build": "bundle exec jekyll build",
-    "test": "bundle exec htmlproof ./_site --verbose"
+    "test": "bundle exec htmlproofer ./_site --verbose"
   },
   "engines": {
     "node": ">=18",
