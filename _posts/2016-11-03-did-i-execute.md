@@ -8,7 +8,7 @@ tag:
 - Terminal
 - Tutorial
 blog: true
-description: ""
+description: "The subtle difference between ;, && and || that most terminal users get wrong"
 ---
 
 ![Terminal](/assets/images/terminal.ico)

@@ -11,6 +11,7 @@ writeup: true
 star: false
 points: 150
 category: Misc
+description: "BackdoorCTF 2016 jigsaw: manually reassembling 64 image pieces to decode 16 characters"
 ---
 
 ![Backdoor Logo](/assets/images/backdoorctf16/logo.png)

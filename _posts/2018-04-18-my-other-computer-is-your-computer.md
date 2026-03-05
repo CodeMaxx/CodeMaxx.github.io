@@ -9,7 +9,7 @@ tag:
 - Machine Learning
 - Project
 projects: true
-description: "Microsoft Malware Classification Challenge"
+description: "Classifying malware into 9 families using ML on assembly code and byte patterns"
 ---
 
 ![Malware](/assets/images/malware/malware.jpg)

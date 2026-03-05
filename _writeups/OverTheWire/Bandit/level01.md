@@ -11,6 +11,7 @@ writeup: true
 star: false
 points:
 category: Wargame
+description: "Bandit Level 1 → 2: reading a file named with a dash using a path prefix"
 ---
 
 ![OverTheWire logo](/assets/images/OverTheWire/logo.png)

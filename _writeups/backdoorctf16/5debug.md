@@ -11,6 +11,7 @@ writeup: true
 star: false
 points: 30
 category: RE
+description: "BackdoorCTF 2016 debug: reversing a 32-bit binary and hashing the result with SHA256"
 ---
 
 ![Backdoor Logo](/assets/images/backdoorctf16/logo.png)

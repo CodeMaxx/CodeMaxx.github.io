@@ -11,6 +11,7 @@ writeup: true
 star: false
 points:
 category: Wargame
+description: "Bandit Level 5 → 6: using find with size and non-executable flags to locate the password"
 ---
 
 ![OverTheWire logo](/assets/images/OverTheWire/logo.png)

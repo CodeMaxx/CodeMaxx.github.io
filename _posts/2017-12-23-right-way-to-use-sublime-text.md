@@ -8,7 +8,7 @@ tag:
 - Text Editor
 - Tutorial
 blog: true
-description: ""
+description: "11 keyboard shortcuts that turn Sublime Text into a productivity beast"
 ---
 
 ![Sublime Text](/assets/images/sublime.png)

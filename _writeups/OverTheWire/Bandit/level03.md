@@ -11,6 +11,7 @@ writeup: true
 star: false
 points:
 category: Wargame
+description: "Bandit Level 3 → 4: finding and reading a hidden file with ls -a"
 ---
 
 ![OverTheWire logo](/assets/images/OverTheWire/logo.png)

@@ -11,6 +11,7 @@ writeup: true
 star: false
 points: 10
 category: Misc
+description: "BackdoorCTF 2016 intro16: collecting flag fragments from IRC and Twitter"
 ---
 
 ![Backdoor Logo](/assets/images/backdoorctf16/logo.png)

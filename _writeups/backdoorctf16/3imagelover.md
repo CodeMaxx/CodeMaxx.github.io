@@ -11,6 +11,7 @@ writeup: true
 star: false
 points: 70
 category: Web
+description: "BackdoorCTF 2016 imagelover: web exploitation via malicious image upload"
 ---
 
 ![Backdoor Logo](/assets/images/backdoorctf16/logo.png)

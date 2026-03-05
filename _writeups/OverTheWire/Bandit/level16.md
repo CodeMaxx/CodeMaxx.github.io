@@ -11,6 +11,7 @@ writeup: true
 star: false
 points:
 category: Wargame
+description: "Bandit Level 16 → 17: port scanning with nmap to find the SSL listener and get an SSH key"
 ---
 
 ![OverTheWire logo](/assets/images/OverTheWire/logo.png)

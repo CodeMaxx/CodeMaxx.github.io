@@ -8,7 +8,7 @@ tag:
 - Hack
 - Tutorial
 blog: true
-description: ""
+description: "Capturing the WPA2 four-way handshake and brute-forcing it with Aircrack-ng"
 ---
 
 ![Wifi-crack](/assets/images/wifi_crack/wifi-crack.jpg)

@@ -11,6 +11,7 @@ writeup: true
 star: false
 points:
 category: Wargame
+description: "Bandit Level 18 → 19: bypassing .bashrc logout by running a command directly over SSH"
 ---
 
 ![OverTheWire logo](/assets/images/OverTheWire/logo.png)

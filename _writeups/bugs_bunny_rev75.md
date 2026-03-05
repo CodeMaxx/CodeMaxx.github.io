@@ -10,6 +10,7 @@ tag:
 writeup: true
 star: false
 points: 75
+description: "Reversing a binary with XOR-encoded flag hidden in a lookup table"
 category: Reversing
 ---
 

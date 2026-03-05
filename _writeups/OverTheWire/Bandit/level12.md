@@ -11,6 +11,7 @@ writeup: true
 star: false
 points:
 category: Wargame
+description: "Bandit Level 12 → 13: decompressing a repeatedly-compressed hexdump with xxd, gzip, bzip2, and tar"
 ---
 
 ![OverTheWire logo](/assets/images/OverTheWire/logo.png)
