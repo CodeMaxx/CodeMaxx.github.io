@@ -2,6 +2,7 @@
 title: "BackdoorCTF 2016 - enter the matrix"
 layout: post
 date: 2016-06-07 14:21
+image: /assets/images/backdoorctf16/logo.png
 tag:
 - BackdoorCTF2016
 - Pwning

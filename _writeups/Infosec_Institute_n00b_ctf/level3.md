@@ -2,6 +2,7 @@
 title: "Infosec Institute n00b Level 3"
 layout: post
 date: 2016-05-16 8:15
+image: /assets/images/InfosecInstin00b/qr3.png
 tag:
 - Web
 - Infosec Institute n00b CTF

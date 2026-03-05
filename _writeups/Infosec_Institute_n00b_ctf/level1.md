@@ -2,6 +2,7 @@
 title: "Infosec Institute n00b Level 1"
 layout: post
 date: 2016-05-16 8:10
+image: /assets/images/InfosecInstin00b/yoda1.png
 tag:
 - Web
 - Infosec Institute n00b CTF

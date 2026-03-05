@@ -2,6 +2,7 @@
 title: "Bugs Bunny CTF 2k17 - mysterious!"
 layout: post
 date: 2017-08-01 4:21
+image: /assets/images/bugs_bunny.png
 tag:
 - Reversing
 - Hacking

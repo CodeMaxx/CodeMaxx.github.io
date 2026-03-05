@@ -2,6 +2,7 @@
 title: "BackdoorCTF 2016 - jigsaw"
 layout: post
 date: 2016-05-30 4:21
+image: /assets/images/backdoorctf16/logo.png
 tag:
 - BackdoorCTF2016
 - Miscellaneous
