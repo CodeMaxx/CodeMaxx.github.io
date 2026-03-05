@@ -26,7 +26,10 @@ layout: default
 
 <hr>
 
-<a href="{{ page.previous.url }}">{{ page.previous.title }}</a><aside style="display: inline; float: right"><a href="{{ page.next.url }}">{{ page.next.title }}</a></aside>
+<div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px;">
+    <a href="{{ page.previous.url }}">{{ page.previous.title }}</a>
+    <a href="{{ page.next.url }}">{{ page.next.title }}</a>
+</div>
 
 <hr>
 
