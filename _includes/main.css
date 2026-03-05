@@ -402,6 +402,8 @@ pre {
   overflow: auto;
   background: #fff;
   box-sizing: border-box;
+  scrollbar-width: thin;
+  scrollbar-color: #c1c1c1 #f1f1f1;
 }
 
 /* Scrollbar styling for code blocks */
