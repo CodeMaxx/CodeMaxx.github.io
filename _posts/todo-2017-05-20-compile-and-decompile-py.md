@@ -8,7 +8,7 @@ tag:
 - Decompile
 - Tutorial
 blog: true
-description: ""
+description: "How Python compiles source to .pyc bytecode and how to decompile it back"
 ---
 
 ![Python](/assets/images/python.png)
