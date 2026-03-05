@@ -406,7 +406,17 @@ pre {
   scrollbar-color: #c1c1c1 #f1f1f1;
 }
 
-/* Scrollbar styling for code blocks */
+/*
+ * Scrollbar styling for code blocks.
+ * Two approaches are needed for full browser coverage:
+ *   - scrollbar-width / scrollbar-color (standard CSS Scrollbars spec):
+ *       supported by Chrome 121+, Edge 121+, and Firefox 64+.
+ *       These properties are already set on the `pre` rule above.
+ *   - ::-webkit-scrollbar pseudo-elements (non-standard, WebKit/Blink):
+ *       required for Safari, which does not yet support the standard spec.
+ *       Chrome and Edge also honour these rules (both use the Chromium engine),
+ *       so they are covered by both approaches.
+ */
 pre::-webkit-scrollbar {
   height: 8px;
 }
