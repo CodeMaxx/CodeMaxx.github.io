@@ -401,6 +401,7 @@ pre {
   line-height: 2rem;
   overflow: auto;
   background: #fff;
+  box-sizing: border-box;
 }
 .wrapper-normal,
 .wrapper-large {
