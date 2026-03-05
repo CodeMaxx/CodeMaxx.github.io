@@ -2,6 +2,7 @@
 title: "Database course project and how I almost ditched it!"
 layout: post
 date: 2017-12-12 8:20
+image: /assets/images/database.jpg
 tag:
 - Databases
 - C

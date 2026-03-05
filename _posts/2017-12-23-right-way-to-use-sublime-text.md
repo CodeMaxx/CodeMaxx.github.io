@@ -2,6 +2,7 @@
 title: "The Right way to use Sublime Text"
 layout: post
 date: 2017-12-23 00:00
+image: /assets/images/sublime.png
 tag:
 - Productivity
 - Text Editor

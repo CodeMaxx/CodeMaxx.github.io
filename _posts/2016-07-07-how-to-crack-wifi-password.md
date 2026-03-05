@@ -2,6 +2,7 @@
 title: "How to crack Wifi Passwords"
 layout: post
 date: 2016-07-07 11:00
+image: /assets/images/wifi_crack/wifi-crack.jpg
 tag:
 - Wifi
 - Hack

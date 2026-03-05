@@ -2,6 +2,7 @@
 title: "Knowing your Binary!"
 layout: post
 date: 2016-06-15 00:00
+image: /assets/images/re.png
 tag:
 - Executable
 - ELF v/s Mach-o v/s PE

@@ -2,6 +2,7 @@
 title: "Printing Emojis on Terminal"
 layout: post
 date: 2017-05-03 9:00
+image: /assets/images/emoji/emoji.jpg
 tag:
 - Tutorial
 - Terminal

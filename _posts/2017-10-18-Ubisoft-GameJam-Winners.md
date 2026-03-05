@@ -2,6 +2,7 @@
 title: "Won Ubisoft GameJam 2017"
 layout: post
 date: 2017-10-18 11:00
+image: /assets/images/ubisoft.jpg
 tag:
 - Hackathon
 - Ubisoft
