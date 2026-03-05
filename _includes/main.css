@@ -395,13 +395,41 @@ pre {
   border: none;
   margin: 0 0 1.75em 0;
   width: 100%;
-  padding: 5px 10px;
+  padding: 5px 10px 20px 10px;
   font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
   font-size: 1.2rem;
   line-height: 2rem;
   overflow: auto;
   background: #fff;
   box-sizing: border-box;
+  scrollbar-width: thin;
+  scrollbar-color: #c1c1c1 #f1f1f1;
+}
+
+/*
+ * Scrollbar styling for code blocks.
+ * Two approaches are needed for full browser coverage:
+ *   - scrollbar-width / scrollbar-color (standard CSS Scrollbars spec):
+ *       supported by Chrome 121+, Edge 121+, and Firefox 64+.
+ *       These properties are already set on the `pre` rule above.
+ *   - ::-webkit-scrollbar pseudo-elements (non-standard, WebKit/Blink):
+ *       required for Safari, which does not yet support the standard spec.
+ *       Chrome and Edge also honour these rules (both use the Chromium engine),
+ *       so they are covered by both approaches.
+ */
+pre::-webkit-scrollbar {
+  height: 8px;
+}
+pre::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+pre::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+pre::-webkit-scrollbar-thumb:hover {
+  background: #a1a1a1;
 }
 .wrapper-normal,
 .wrapper-large {
