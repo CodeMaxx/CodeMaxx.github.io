@@ -2,6 +2,7 @@
 title: "Bandit Level 9"
 layout: post
 date: 2016-05-30 4:21
+image: /assets/images/OverTheWire/logo.png
 tag:
 - Bandit
 - OverTheWire
