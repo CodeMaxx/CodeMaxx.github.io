@@ -2,6 +2,7 @@
 title: "Bandit Level 1"
 layout: post
 date: 2016-05-30 4:21
+image: /assets/images/OverTheWire/logo.png
 tag:
 - Bandit
 - OverTheWire
@@ -24,8 +25,7 @@ category: Wargame
 
 #### Helpful Reading Material
 
->[Google Search for “dashed filename”](https://www.google.com/search?q=dashed+filename)
-[Advanced Bash-scripting Guide - Chapter 3 - Special Characters](https://tldp.org/LDP/abs/html/special-chars.html)
+>[Google Search for "dashed filename"](https://www.google.com/search?q=dashed+filename)[Advanced Bash-scripting Guide - Chapter 3 - Special Characters](https://tldp.org/LDP/abs/html/special-chars.html)
 
 ## Write-up
 
