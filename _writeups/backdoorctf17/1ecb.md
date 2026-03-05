@@ -11,6 +11,7 @@ writeup: true
 star: false
 points: 150
 category: Crypto
+description: "BackdoorCTF 2017 ECB: exploiting AES-ECB pattern leakage to reveal an encrypted image flag"
 ---
 
 ![Backdoor Logo](/assets/images/backdoorctf16/logo.png)

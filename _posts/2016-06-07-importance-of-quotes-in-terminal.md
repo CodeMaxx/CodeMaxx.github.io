@@ -7,7 +7,7 @@ tag:
 - Terminal
 - Tutorial
 blog: true
-description: ""
+description: "Single vs double vs no quotes — how shell expansion changes everything"
 ---
 
 I was tinkering with the `echo` command when I came across the difference between using `echo '...'` and `echo "..."`.

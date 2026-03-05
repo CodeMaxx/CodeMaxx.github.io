@@ -11,6 +11,7 @@ writeup: true
 star: false
 points:
 category: Wargame
+description: "Bandit Level 14 → 15: submitting a password to a localhost port using netcat"
 ---
 
 ![OverTheWire logo](/assets/images/OverTheWire/logo.png)

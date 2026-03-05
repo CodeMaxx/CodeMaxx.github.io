@@ -11,6 +11,7 @@ writeup: true
 star: false
 points:
 category: Wargame
+description: "Bandit Level 7 → 8: extracting a password next to the word 'millionth' with grep"
 ---
 
 ![OverTheWire logo](/assets/images/OverTheWire/logo.png)

@@ -11,6 +11,7 @@ writeup: true
 star: false
 points:
 category: Wargame
+description: "Bandit Level 15 → 16: submitting a password over SSL using openssl s_client"
 ---
 
 ![OverTheWire logo](/assets/images/OverTheWire/logo.png)

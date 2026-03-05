@@ -9,7 +9,7 @@ tag:
 - Reversing
 - Tutorial
 blog: true
-description: ""
+description: "ELF, Mach-O, PE — decoding every word the file command throws at you"
 ---
 
 ![Reverse Engineering](/assets/images/re.png)

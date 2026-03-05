@@ -9,7 +9,7 @@ tag:
 - Postgres
 projects: true
 star: true
-description: "Hacking Postgres Internals - Indexing Schemes for Data Recording Systems"
+description: "Implementing stepped-merge indexes inside PostgreSQL's C codebase from a 1997 research paper"
 ---
 
 ![Databases](/assets/images/database.jpg)

@@ -8,6 +8,7 @@ tag:
 writeup: true
 star: false
 points: ∞
+description: "Quick-reference links for getting started with machine learning"
 external_url: https://github.com/CodeMaxx/Machine-Learning-Coursera
 category: ML
 ---

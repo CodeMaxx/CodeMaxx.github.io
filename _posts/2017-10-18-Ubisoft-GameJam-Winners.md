@@ -10,7 +10,7 @@ tag:
 - GameJam
 - Unity
 blog: true
-description: ""
+description: "How we built a 3D Unity game in 30 hours and won Ubisoft's GameJam 2017"
 ---
 
 ![Ubisoft](/assets/images/ubisoft.jpg)

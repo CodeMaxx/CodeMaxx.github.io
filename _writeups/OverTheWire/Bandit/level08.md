@@ -11,6 +11,7 @@ writeup: true
 star: false
 points:
 category: Wargame
+description: "Bandit Level 8 → 9: finding the only unique line in a file using sort and uniq -u"
 ---
 
 ![OverTheWire logo](/assets/images/OverTheWire/logo.png)

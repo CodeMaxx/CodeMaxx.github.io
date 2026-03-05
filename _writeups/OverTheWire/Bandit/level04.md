@@ -11,6 +11,7 @@ writeup: true
 star: false
 points:
 category: Wargame
+description: "Bandit Level 4 → 5: using the file command to find the only human-readable file"
 ---
 
 ![OverTheWire logo](/assets/images/OverTheWire/logo.png)

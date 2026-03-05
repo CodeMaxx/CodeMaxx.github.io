@@ -11,6 +11,7 @@ writeup: true
 star: false
 points:
 category: Wargame
+description: "Bandit Level 10 → 11: decoding base64-encoded data with the base64 command"
 ---
 
 ![OverTheWire logo](/assets/images/OverTheWire/logo.png)

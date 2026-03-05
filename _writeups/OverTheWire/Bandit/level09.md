@@ -11,6 +11,7 @@ writeup: true
 star: false
 points:
 category: Wargame
+description: "Bandit Level 9 → 10: using strings to extract human-readable text from a binary file"
 ---
 
 ![OverTheWire logo](/assets/images/OverTheWire/logo.png)

@@ -11,6 +11,7 @@ writeup: true
 star: false
 points:
 category: Wargame
+description: "Bandit Level 2 → 3: reading a filename with spaces using quotes or backslash"
 ---
 
 ![OverTheWire logo](/assets/images/OverTheWire/logo.png)

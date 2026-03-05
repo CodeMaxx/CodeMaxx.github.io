@@ -11,6 +11,7 @@ writeup: true
 star: false
 points:
 category: Wargame
+description: "Bandit Level 13 → 14: using an SSH private key to log in without a password"
 ---
 
 ![OverTheWire logo](/assets/images/OverTheWire/logo.png)

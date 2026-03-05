@@ -11,6 +11,7 @@ writeup: true
 star: false
 points: 200
 category: Exploit
+description: "BackdoorCTF 2016 isolve: auto-generating regex-matching strings with exrex under a time limit"
 ---
 
 ![Backdoor Logo](/assets/images/backdoorctf16/logo.png)

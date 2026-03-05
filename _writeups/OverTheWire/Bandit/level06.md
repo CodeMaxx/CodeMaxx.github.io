@@ -11,6 +11,7 @@ writeup: true
 star: false
 points:
 category: Wargame
+description: "Bandit Level 6 → 7: searching the whole server by owner, group, and size with find"
 ---
 
 ![OverTheWire logo](/assets/images/OverTheWire/logo.png)

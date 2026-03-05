@@ -10,6 +10,7 @@ tag:
 writeup: true
 star: false
 points: 400
+description: "Cracking a Vigenère cipher and XOR-encoded PNG to reveal the hidden flag"
 category: Crypto
 ---
 

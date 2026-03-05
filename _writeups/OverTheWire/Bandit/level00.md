@@ -11,6 +11,7 @@ writeup: true
 star: false
 points:
 category: Wargame
+description: "Bandit Level 0 → 1: logging into SSH and reading a file with cat"
 ---
 
 ![OverTheWire logo](/assets/images/OverTheWire/logo.png)

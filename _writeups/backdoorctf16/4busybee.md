@@ -11,6 +11,7 @@ writeup: true
 star: false
 points: 150
 category: Forensics
+description: "BackdoorCTF 2016 buzybee: forensics challenge extracting a flag virus from infected files"
 ---
 
 ![Backdoor Logo](/assets/images/backdoorctf16/logo.png)

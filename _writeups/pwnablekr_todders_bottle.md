@@ -10,6 +10,7 @@ tag:
 writeup: true
 star: false
 points: ∞
+description: "Walkthroughs for fd, collision, bof, flag, and passcode challenges on pwnable.kr"
 category: Pwn
 ---
 

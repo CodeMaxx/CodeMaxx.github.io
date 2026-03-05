@@ -11,6 +11,7 @@ writeup: true
 star: false
 points: 250
 category: Pwn
+description: "BackdoorCTF 2017 Fun Signals: using Linux signal handlers as a ret2syscall exploit primitive"
 ---
 
 ![Backdoor Logo](/assets/images/backdoorctf16/logo.png)

@@ -11,6 +11,7 @@ writeup: true
 star: false
 points:
 category: Wargame
+description: "Bandit Level 19 → 20: using a setuid binary to read a file owned by another user"
 ---
 
 ![OverTheWire logo](/assets/images/OverTheWire/logo.png)

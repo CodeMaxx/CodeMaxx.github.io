@@ -11,6 +11,7 @@ writeup: true
 star: false
 points:
 category: Wargame
+description: "Bandit Level 11 → 12: decoding a ROT13 cipher using the tr command"
 ---
 
 ![OverTheWire logo](/assets/images/OverTheWire/logo.png)

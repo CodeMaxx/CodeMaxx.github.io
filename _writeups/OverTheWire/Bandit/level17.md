@@ -11,6 +11,7 @@ writeup: true
 star: false
 points:
 category: Wargame
+description: "Bandit Level 17 → 18: using diff to find the one changed line between two password files"
 ---
 
 ![OverTheWire logo](/assets/images/OverTheWire/logo.png)
