@@ -2,7 +2,7 @@ window.dataLayer = window.dataLayer || [];
 function gtag() { dataLayer.push(arguments); }
 gtag('js', new Date());
 
-var gaScript = document.querySelector('script[data-ga-id]');
-if (gaScript) {
-  gtag('config', gaScript.getAttribute('data-ga-id'));
+var gaId = document.currentScript && document.currentScript.getAttribute('data-ga-id');
+if (gaId) {
+  gtag('config', gaId);
 }
