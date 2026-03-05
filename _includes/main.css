@@ -855,6 +855,7 @@ pre {
 }
 .header-home > .link > .selfie {
   width: 190px;
+  max-width: 100%;
   margin-bottom: 25px;
   border-radius: 100%;
   -webkit-transition: all 0.2s;
@@ -1288,4 +1289,18 @@ pre {
   90% { clip: rect(58px, 9999px, 81px, 0); }
   95% { clip: rect(29px, 9999px, 20px, 0); }
   100% { clip: rect(82px, 9999px, 28px, 0); }
+}
+
+@media only screen and (max-width: 400px) {
+  .nav {
+    position: static;
+    text-align: center;
+  }
+  .nav > .list > .item > .link {
+    font-size: 1.4rem;
+    padding: 10px 6px;
+  }
+  .header-home > .description {
+    width: 100%;
+  }
 }

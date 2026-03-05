@@ -5,7 +5,7 @@ permalink: /about/index.html
 ---
 <center><h4 style="font-weight: 300; opacity: 0.5;">
 “Knowing yourself is the beginning of all wisdom.”<br>
-<pre style="border: none;">                                  - Aristotle</pre>
+<span style="display: block; text-align: right; font-family: inherit; font-size: inherit;">- Aristotle</span>
 </h4></center>
 <footer class="footer-main" style="padding: 5px 0;">
 </footer>
