@@ -7,6 +7,14 @@
       "tags"     : "{{ post.tags | array_to_sentence_string }}",
       "url"      : "{{ site.baseurl }}{{ post.url }}",
       "date"     : "{{ post.date | date_to_string}}"
+    } {% unless forloop.last and site.writeups.size == 0 %},{% endunless %}
+  {% endfor %}
+  {% for writeup in site.writeups %}
+    {
+      "title"    : "{{ writeup.title | escape }}",
+      "tags"     : "{{ writeup.tags | array_to_sentence_string }}",
+      "url"      : "{{ site.baseurl }}{{ writeup.url }}",
+      "date"     : "{{ writeup.date | date_to_string}}"
     } {% unless forloop.last %},{% endunless %}
   {% endfor %}
 ]

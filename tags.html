@@ -65,7 +65,7 @@ title: Tags
             {% if post.tags contains tag %}
                 <li class="item">
                     {% if post.external_url %}
-                    <a class="url" href="{{ post.external_url }}" onclick='ga("send", "pageview", "{{ post.url }}");'>
+                    <a class="url" href="{{ post.external_url }}" onclick='gtag("event", "page_view", {"page_path": "{{ post.url }}"});'>
                     {% else %}
                     <a class="url" href="{{ post.url }}">
                     {% endif %}
