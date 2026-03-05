@@ -10,6 +10,8 @@
 
 {% feed_meta %}
 
+{% include nav.html %}
+
 {% if showHeader == true %}
 <style>
 .selfie{
@@ -25,7 +27,6 @@
   margin-top: 75px;
 }
 </style>
-{% include nav.html %}
 
 <center><img class="selfie" style='width: 80px' alt="{{ site.name }}" src="{% if site.external-image == true %}{{ site.picture }}{% else %}{{ site.url }}/{{ site.picture }}{% endif %}" /></center>
 
