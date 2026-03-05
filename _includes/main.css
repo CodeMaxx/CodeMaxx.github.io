@@ -903,9 +903,8 @@ pre {
   text-decoration: none;
 }
 .nav {
-  right: 0;
-  top: 0;
-  position: absolute;
+  text-align: center;
+  margin-bottom: 20px;
 }
 .nav > .list {
   padding: 0 13px 0;
