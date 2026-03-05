@@ -905,6 +905,11 @@ pre {
 .nav {
   text-align: center;
   margin-bottom: 20px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #fff;
+  padding: 5px 0;
 }
 .nav > .list {
   padding: 0 13px 0;
@@ -1294,7 +1299,6 @@ pre {
 
 @media only screen and (max-width: 400px) {
   .nav {
-    position: static;
     text-align: center;
   }
   .nav > .list > .item > .link {
@@ -1308,7 +1312,6 @@ pre {
 
 @media only screen and (min-width: 400px) and (max-width: 780px) {
   .nav {
-    position: static;
     text-align: center;
   }
   .header-home > .description {
