@@ -910,6 +910,7 @@ pre {
   z-index: 100;
   background: #fff;
   padding: 5px 0;
+  border-bottom: 1px solid #ededed;
 }
 .nav > .list {
   padding: 0 13px 0;
