@@ -34,6 +34,15 @@ jobs:
           ruby-version: '3.4'
           bundler-cache: true
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: 'npm'
+
+      - name: Install npm dependencies
+        run: npm ci
+
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
@@ -43,6 +52,10 @@ jobs:
         env:
           JEKYLL_ENV: production
           JEKYLL_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Optimize built images
+        run: node scripts/optimize-images.mjs _site
+        continue-on-error: true
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
