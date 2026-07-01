@@ -86,4 +86,4 @@ plugins:
 jekyll-mentions:
     base_url: https://github.com
 
-exclude: [README.md, Gemfile, Gemfile.lock, node_modules, package.json, package-lock.json, scripts, _site, src, vendor, CNAME, Rakefile]
+exclude: [README.md, Gemfile, Gemfile.lock, node_modules, package.json, package-lock.json, scripts, _site, vendor, CNAME, Rakefile]
