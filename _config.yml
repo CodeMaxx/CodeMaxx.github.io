@@ -82,8 +82,6 @@ plugins:
   - jekyll-mentions
   - jekyll-seo-tag
   - jekyll-sitemap
-  - jekyll-gist
-  - jekyll-paginate
 
 jekyll-mentions:
     base_url: https://github.com
