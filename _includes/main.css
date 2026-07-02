@@ -583,6 +583,11 @@ pre::-webkit-scrollbar-thumb:hover {
 .projects > .list .item:hover .url aside {
   color: #666;
 }
+.list aside b,
+.list aside strong {
+  color: inherit;
+  font-weight: inherit;
+}
 .projects > .list > .item > .url > .title {
   display: inline;
 }
