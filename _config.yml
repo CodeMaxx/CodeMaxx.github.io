@@ -2,7 +2,8 @@
 name: Akash Trehan
 # title is required by many Jekyll plugins and themes
 title: Akash Trehan
-bio: 'Hacker-Developer-Geek'
+bio: 'Windows kernel & security engineer'
+description: 'Akash Trehan — Windows kernel and security engineer. Writing about the Secure Kernel, VBS, runtime attestation, cybersecurity, and AI security.'
 
 # Repository setting required for jekyll-github-metadata plugin
 repository: CodeMaxx/CodeMaxx.github.io
@@ -36,9 +37,10 @@ twitter: cod3maxx
 instagram: akash.trehan
 # pinterest: AkashTrehan21
 linkedin: in/akash-trehan
-# youtube: myyoutube
+# youtube handle is set below near github
 # spotify: myspotify
 github: CodeMaxx
+youtube: '@akash.trehan'
 # medium: akash.trehan
 email: email
 
