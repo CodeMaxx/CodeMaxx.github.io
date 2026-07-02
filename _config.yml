@@ -2,8 +2,8 @@
 name: Akash Trehan
 # title is required by many Jekyll plugins and themes
 title: Akash Trehan
-bio: 'Windows kernel & security engineer'
-description: 'Akash Trehan — Windows kernel and security engineer. Writing about the Secure Kernel, VBS, runtime attestation, cybersecurity, and AI security.'
+bio: 'Senior Windows Kernel & Security Engineer'
+description: 'Akash Trehan — Senior Windows kernel and security engineer at Microsoft. Writing about the Secure Kernel, VBS, runtime attestation, cybersecurity, and AI security.'
 
 # Repository setting required for jekyll-github-metadata plugin
 repository: CodeMaxx/CodeMaxx.github.io
