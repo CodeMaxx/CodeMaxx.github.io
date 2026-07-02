@@ -316,7 +316,7 @@ a {
 }
 p {
   line-height: 1.7;
-  color: #666;
+  color: #222;
   font-weight: 300;
   margin-bottom: 20px;
   letter-spacing: 0.4px;
@@ -334,7 +334,7 @@ ul li,
 ol li {
   line-height: 2.4rem;
   font-weight: 300;
-  color: #666;
+  color: #222;
 }
 img,
 pre,
