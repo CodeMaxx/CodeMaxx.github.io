@@ -3,28 +3,25 @@ title: About
 layout: page
 permalink: /about/index.html
 ---
+<center><h4 style="font-weight: 300; opacity: 0.5;">
+“Knowing yourself is the beginning of all wisdom.”<br>
+<span style="display: block; text-align: right; font-family: inherit; font-size: inherit;">- Aristotle</span>
+</h4></center>
+<footer class="footer-main" style="padding: 5px 0;">
+</footer>
+Akash Trehan is the Founder and Manager of the [Cybersecurity Club](https://www.facebook.com/groups/csec.iitb/) at the Indian Institute of Technology Bombay, taking initiatives to form a community of security enthusiasts and giving talks to spread awareness about the latest research in the area. He is also a member of the [Web & Coding Club](https://www.facebook.com/wncc.iitb), one of the largest college-level programming clubs in India which provides mentorship to students as well as a platform to showcase their skills.
 
-# About me
+Akash is a rising senior at [IIT Bombay](https://www.iitb.ac.in/), majoring in [Computer Science & Engineering](https://www.cse.iitb.ac.in/). He was awarded the Academic Prize 2015-16 for his exceptional performance and is currently among the top 3 in the Computer Science department. He also ranked 24th amongst 1.5 million students who took JEE Advanced, one of the toughest college admission tests.
 
-I'm **Akash Trehan** — a systems and security engineer working on the Windows operating system at Microsoft. For the better part of a decade I've worked deep in the OS: the **Secure Kernel** (VTL 1 / IUM), **Virtualization-Based Security** (VBS), and the mechanisms that let Windows prove what's actually running on a machine — runtime attestation, driver and hotpatch reporting, and the primitives that anti-cheat and anti-tamper systems are built on.
+When not busy with college work, Akash spends his time participating in Capture the Flag competitions, where his favourite categories are Reverse Engineering and Pwning. He is primarily interested in Software & Systems security, Network security but likes to take on any challenge he finds interesting. He is very passionate about computer security and is mostly self-taught in the area. He hopes to do some ground-breaking security research later in his life. Last summer he got the amazing opportunity to research under [Prof. Giovanni Vigna](https://www.cs.ucsb.edu/~vigna/) and [Prof. Christopher Kruegel](https://www.cs.ucsb.edu/~chris/) at the University of California, Santa Barbara and play CTFs with the famous team [Shellphish](https://shellphish.net/cgc/)!
 
-This blog is where I write about that world in plain language. My goal is simple: take the parts of systems security that are usually locked away inside proprietary code and internal docs, and explain them clearly enough that the next engineer doesn't have to learn them the hard way.
+Not only does he love breaking software but also building them. Akash, in his freshman year, formed the [Ferozepurwale](https://github.com/Ferozepurwale/) hackathon team with two of his friends, Nihal and Arpan. Together they have won several prizes including- Ubisoft GameJam 1st place, Yahoo! Japan Most Creative Hack, Microsoft Code.Fun.Do Showcase Finalist, Lenovo GameJam, Kandy Hackathon, Hack InOut blockchain track 1st prize among others. They’ve also developed apps and websites for their university. Akash is also an open-source enthusiast and contributes to software like OWASP ZSC, SymEngine on Github where he goes by the handle '[CodeMaxx](https://github.com/CodeMaxx)'.
 
-## What I write about
+Akash loves to think, read, listen to and analyze new ideas and opinions. He firmly believes that creativity, imagination, and ideas can change the world. He watches every TED talks he comes across and dreams of giving one himself someday.
 
-- **Kernel & OS security** — the Secure Kernel, VBS/HVCI, runtime attestation, hotpatching, and how Windows defends itself from the inside.
-- **Cybersecurity** — exploitation, reverse engineering, and defensive design, from someone who's spent time on both sides.
-- **AI security** — where machine learning meets systems security, and the new attack surface that comes with it.
+In his spare time, you will find him listening to Music or watching his all time favourite show - Impractical Jokers.
 
-I also write, now and then, about **travel and life** outside the terminal — because I'm a person, not a changelog.
-
-## A bit of history
-
-I got into security the way a lot of people do: by trying to break things. I played Capture the Flag competitions for years — reverse engineering and pwning were my favourites — founded the [Cybersecurity Club](https://www.facebook.com/groups/csec.iitb/) at IIT Bombay, and spent a summer researching under [Prof. Giovanni Vigna](https://www.cs.ucsb.edu/~vigna/) and [Prof. Christopher Kruegel](https://www.cs.ucsb.edu/~chris/) at UC Santa Barbara, playing CTFs with [Shellphish](https://shellphish.net/cgc/). Those college-era write-ups and projects still live on this site — I've kept them around because that's where the curiosity started.
-
-## Get in touch
-
-I'm always happy to talk about kernel internals, security research, or a good idea. <a href="mailto:me@akashtrehan.com">Email me</a>, or find me on the links below.
+Akash is always interested in collaborating on projects and discussing ideas. <a href="#" onclick="location.href='mailto:' + 'me' + '@' + 'akashtrehan.com'; return false;">Email him</a> if you'd like to get in touch.
 
 <div>
     {% include follow-buttons.html %}
