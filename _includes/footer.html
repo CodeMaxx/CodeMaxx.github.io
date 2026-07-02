@@ -1,5 +1,13 @@
 
 <footer class="footer-main">
-    © {{ site.name }} {{ site.time | date: '%Y' }} <a class="link" href="{{ site.url }}/feed.xml" target="_blank"><svg class="icon icon-rss"><use xlink:href="#icon-rss"></use></svg></a>
+    <div class="footer-social">
+        {% if site.twitter %}<a class="link" href="https://twitter.com/{{ site.twitter }}" target="_blank" rel="noopener noreferrer" aria-label="Twitter / X"><svg class="icon icon-twitter"><use xlink:href="#icon-twitter"></use></svg></a>{% endif %}
+        {% if site.github %}<a class="link" href="https://github.com/{{ site.github }}" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg class="icon icon-github"><use xlink:href="#icon-github"></use></svg></a>{% endif %}
+        {% if site.linkedin %}<a class="link" href="https://linkedin.com/{{ site.linkedin }}" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg class="icon icon-linkedin"><use xlink:href="#icon-linkedin"></use></svg></a>{% endif %}
+        {% if site.youtube %}<a class="link" href="https://youtube.com/{{ site.youtube }}" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><svg class="icon icon-youtube"><use xlink:href="#icon-youtube"></use></svg></a>{% endif %}
+        {% if site.instagram %}<a class="link" href="https://instagram.com/{{ site.instagram }}" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg class="icon icon-instagram"><use xlink:href="#icon-instagram"></use></svg></a>{% endif %}
+        {% if site.email %}<a class="link" href="#" onclick="location.href='mailto:' + 'me' + '@' + 'akashtrehan.com'; return false;" aria-label="Email"><svg class="icon icon-mail"><use xlink:href="#icon-mail"></use></svg></a>{% endif %}
+    </div>
+    © {{ site.name }} {{ site.time | date: '%Y' }} <a class="link" href="{{ site.url }}/feed.xml" target="_blank" aria-label="RSS feed"><svg class="icon icon-rss"><use xlink:href="#icon-rss"></use></svg></a>
 
 </footer>

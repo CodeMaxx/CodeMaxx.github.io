@@ -878,6 +878,23 @@ pre::-webkit-scrollbar-thumb:hover {
 .footer-main > .extra > .link:hover {
   border-color: #aaa;
 }
+.footer-main > .footer-social {
+  margin-bottom: 16px;
+}
+.footer-main > .footer-social > .link {
+  display: inline-block;
+  margin: 0 8px;
+}
+.footer-main > .footer-social > .link > .icon {
+  width: 18px !important;
+  height: 18px;
+  fill: #aaa !important;
+  -webkit-transition: ease-in-out all 0.3s;
+          transition: ease-in-out all 0.3s;
+}
+.footer-main > .footer-social > .link > .icon:hover {
+  fill: #3399ff !important;
+}
 .header-home {
   display: block;
   margin: 0 auto;
