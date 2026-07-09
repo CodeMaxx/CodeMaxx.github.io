@@ -1,5 +1,24 @@
+<!-- The Footer -->
+<!-- Local override of the Chirpy footer: drops the "Powered by Jekyll with
+     Chirpy theme" credit line; keeps the copyright. -->
 
-<footer class="footer-main">
-    © {{ site.name }} {{ site.time | date: '%Y' }} <a class="link" href="{{ site.url }}/feed.xml" target="_blank"><svg class="icon icon-rss"><use xlink:href="#icon-rss"></use></svg></a>
+<footer
+  aria-label="Site Info"
+  class="
+    d-flex flex-column justify-content-center text-muted
+    flex-lg-row justify-content-lg-between align-items-lg-center pb-lg-3
+  "
+>
+  <p>
+    {{- '©' }}
+    <time>{{ 'now' | date: '%Y' }}</time>
 
+    {% if site.social.links %}
+      <a href="{{ site.social.links[0] }}">{{ site.social.name }}</a>.
+    {% else %}
+      <em class="fst-normal">{{ site.social.name }}</em>.
+    {% endif %}
+
+    All rights reserved.
+  </p>
 </footer>

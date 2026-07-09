@@ -1,89 +1,216 @@
-# main text of home
-name: Akash Trehan
-# title is required by many Jekyll plugins and themes
-title: Akash Trehan
-bio: 'Hacker-Developer-Geek'
+# The Site Configuration
 
-# Repository setting required for jekyll-github-metadata plugin
-repository: CodeMaxx/CodeMaxx.github.io
+# Import the theme
+theme: jekyll-theme-chirpy
 
-# if it's an external image, update below for true
-external-image: false
-picture: 'assets/images/face_new.jpeg'
+# The language of the webpage › http://www.lingoes.net/en/translator/langcode.htm
+lang: en
 
-url: https://www.akashtrehan.com
-# your url: http://USERNAME.github.io
-# For user/organization sites, baseurl should be empty
-# For project sites, set to /<repository-name>
+# Change to your timezone › https://kevinnovak.github.io/Time-Zone-Picker
+timezone: Asia/Kolkata
+
+# jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
+# ↓ --------------------------
+
+title: Akash Trehan # the main title
+
+tagline: Senior Windows Kernel & Security Engineer at Microsoft # it will display as the subtitle
+
+description: >- # used by seo meta and the atom feed
+  Personal blog of Akash Trehan — security, systems, and the occasional detour.
+
+# Fill in the protocol & hostname for your site.
+url: "https://www.akashtrehan.com"
+
+github:
+  username: CodeMaxx # change to your GitHub username
+
+twitter:
+  username: cod3maxx # change to your Twitter username
+
+social:
+  # Change to your full name.
+  # It will be displayed as the default author of the posts and the copyright owner in the Footer
+  name: Akash Trehan
+  email: me@akashtrehan.com # change to your email address
+  fediverse_handle: # fill in your fediverse handle. E.g. "@username@domain.com"
+  links:
+    # The first element serves as the copyright owner's link
+    - https://github.com/CodeMaxx
+    - https://twitter.com/cod3maxx
+    - https://www.linkedin.com/in/akash-trehan
+    - https://www.facebook.com/AkashTrehan21
+    - https://www.instagram.com/akash.trehan
+
+# Site Verification Settings
+webmaster_verifications:
+  google: # fill in your Google verification code
+  bing:
+  alexa:
+  yandex:
+  baidu:
+  facebook:
+
+# ↑ --------------------------
+# The end of `jekyll-seo-tag` settings
+
+# Web Analytics Settings
+analytics:
+  google:
+    id: "G-P6YXLLEDMH" # Google Analytics 4 measurement ID
+  goatcounter:
+    id:
+  umami:
+    id:
+    domain:
+  matomo:
+    id:
+    domain:
+  cloudflare:
+    id:
+  fathom:
+    id:
+
+# Page views settings
+pageviews:
+  provider: # now only supports 'goatcounter'
+
+# Prefer color scheme setting.
+#
+# Note: Keep empty will follow the system prefer color by default,
+# and there will be a toggle to switch the theme between dark and light
+# on the bottom left of the sidebar.
+theme_mode: # [light | dark]
+
+# The CDN endpoint for media resources.
+# Empty means media resources are served from this site directly.
+cdn:
+
+# the avatar on sidebar, support local or CORS resources
+avatar: /assets/images/avatar.png
+
+# The URL of the site-wide social preview image used in SEO `og:image` meta tag.
+social_preview_image: # string, local or CORS resources
+
+# boolean type, the global switch for TOC in posts.
+toc: true
+
+comments:
+  # Global switch for the post-comment system. Keeping it empty means disabled.
+  provider: disqus # [disqus | utterances | giscus]
+  # The provider options are as follows:
+  disqus:
+    shortname: codemaxx # fill with the Disqus shortname. › https://help.disqus.com/en/articles/1717111-what-s-a-shortname
+  # utterances settings › https://utteranc.es/
+  utterances:
+    repo:
+    issue_term:
+  # Giscus options › https://giscus.app
+  giscus:
+    repo:
+    repo_id:
+    category:
+    category_id:
+    mapping:
+    strict:
+    input_position:
+    lang:
+    reactions_enabled:
+
+# Self-hosted static assets, optional › https://github.com/cotes2020/chirpy-static-assets
+assets:
+  self_host:
+    enabled: # boolean, keep empty means false
+    env: # [development | production]
+
+pwa:
+  enabled: true # The option for PWA feature (installable)
+  cache:
+    enabled: true # The option for PWA offline cache
+    deny_paths:
+
+paginate: 10
+
+# The base URL of your site
 baseurl: ""
 
-permalink: /:title/
+# ------------ The following options are not recommended to be modified ------------------
 
-markdown: kramdown
 kramdown:
-  input: GFM
-highlighter: rouge
-
-analytics-google: 'G-P6YXLLEDMH'
-
-# if you don't want comments in your posts, set to false
-disqus: codemaxx
-
-# if you don't have any of social below, comment the line
-facebook: AkashTrehan21
-twitter: cod3maxx
-# google: mygoogle
-instagram: akash.trehan
-# pinterest: AkashTrehan21
-linkedin: in/akash-trehan
-# youtube: myyoutube
-# spotify: myspotify
-github: CodeMaxx
-# medium: akash.trehan
-email: email
-
-# do you want a larger site? change the option below
-# options: [normal, large] | default: normal
-# normal = 560px / large = 810px
-width: normal
-
-# if you don't need pagination, comment the *paginate* configs below
-# paginate: 5
-# paginate_path: "blog/:num/"
-
-# if you don't need projects, comment the *projects* configs below
-projects: true
-writeups: true
-# if you don't need "about" or "blog", comment them out below
-about: true
-blog: true
-
-tags: true
-# do you want to show the "read time" of the posts?
-#read-time: true
-
-# do you want to show the "tags" inside the posts?
-show-tags: true
-
-# related posts inside a post?
-related: true
-
-# do you want some animations?
-animation: true
+  footnote_backlink: "&#8617;&#xfe0e;"
+  syntax_highlighter: rouge
+  syntax_highlighter_opts: # Rouge Options › https://github.com/jneen/rouge#full-options
+    css_class: highlight
+    # default_lang: console
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
+      start_line: 1
 
 collections:
-  writeups:
+  tabs:
     output: true
-    writeups: true
+    sort_by: order
 
-plugins:
-  - jekyll-feed
-  - jemoji
-  - jekyll-mentions
-  - jekyll-seo-tag
-  - jekyll-sitemap
+defaults:
+  - scope:
+      path: "" # An empty string here means all files in the project
+      type: posts
+    values:
+      layout: post
+      comments: true # Enable comments in posts.
+      toc: true # Display TOC column in posts.
+      # Preserve the legacy Indigo permalink so existing inbound links AND
+      # Disqus comment threads (keyed by URL) keep working after the migration.
+      permalink: /:title/
+  - scope:
+      path: _drafts
+    values:
+      comments: false
+  - scope:
+      path: ""
+      type: tabs # see `site.collections`
+    values:
+      layout: page
+      permalink: /:title/
 
+sass:
+  style: compressed
+
+compress_html:
+  clippings: all
+  comments: all
+  endings: all
+  profile: false
+  blanklines: false
+  ignore:
+    envs: [development]
+
+exclude:
+  - "*.gem"
+  - "*.gemspec"
+  - docs
+  - tools
+  - README.md
+  - LICENSE
+  - purgecss.js
+  - "*.config.js"
+  - "package*.json"
+  - node_modules
+  - vendor
+  - scripts
+  - Gemfile
+  - Gemfile.lock
+
+jekyll-archives:
+  enabled: [tags]
+  layouts:
+    tag: tag
+  permalinks:
+    tag: /tags/:name/
+    category: /categories/:name/
+
+# jekyll-mentions: link @username to GitHub profiles (retained from prior setup)
 jekyll-mentions:
-    base_url: https://github.com
-
-exclude: [README.md, Gemfile, Gemfile.lock, node_modules, package.json, package-lock.json, scripts, _site, vendor, CNAME, Rakefile]
+  base_url: https://github.com

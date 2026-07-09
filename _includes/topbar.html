@@ -1,0 +1,95 @@
+<!-- The Top Bar -->
+<!--
+  Local override of Chirpy's topbar. The theme shows a bare "Home" breadcrumb
+  and the site title for every `layout: home` page. Our Blog / Write-ups /
+  Projects tabs reuse `layout: home` (with a `list_source`), so we special-case
+  them here to show their own name in the breadcrumb and topbar title, while
+  the real front page (no `list_source`) keeps the original behaviour.
+-->
+
+<header id="topbar-wrapper" class="flex-shrink-0" aria-label="Top Bar">
+  <div
+    id="topbar"
+    class="d-flex align-items-center justify-content-between px-lg-3 h-100"
+  >
+    <nav id="breadcrumb" aria-label="Breadcrumb">
+      {% if page.layout == 'home' and page.list_source == nil %}
+        <!-- front page: no breadcrumb -->
+
+      {% elsif page.layout == 'home' and page.list_source %}
+        <!-- Blog / Write-ups / Projects listing tab: just its own name -->
+        <span>{{ page.title }}</span>
+
+      {% elsif page.layout == 'post' %}
+        <!-- post: link back to its section (Blog / Write-ups / Projects) -->
+        {% assign sec_name = nil %}
+        {% if page.writeup %}
+          {% assign sec_name = 'Write-ups' %}{% assign sec_url = '/writeups/' %}
+        {% elsif page.projects %}
+          {% assign sec_name = 'Projects' %}{% assign sec_url = '/projects/' %}
+        {% elsif page.blog %}
+          {% assign sec_name = 'Blog' %}{% assign sec_url = '/blog/' %}
+        {% endif %}
+        {% if sec_name %}
+          <span><a href="{{ sec_url | relative_url }}">{{ sec_name }}</a></span>
+        {% else %}
+          <span>
+            <a href="{{ '/' | relative_url }}">
+              {{- site.data.locales[include.lang].tabs.home | capitalize -}}
+            </a>
+          </span>
+        {% endif %}
+        <span>{{ page.title }}</span>
+
+      {% else %}
+        <!-- other pages (about, tags, archives, ...) -->
+        <span>
+          <a href="{{ '/' | relative_url }}">
+            {{- site.data.locales[include.lang].tabs.home | capitalize -}}
+          </a>
+        </span>
+        {% assign last_seg = page.url | split: '/' | last %}
+        <span>{{ site.data.locales[include.lang].tabs[last_seg] | default: page.title }}</span>
+      {% endif %}
+    </nav>
+    <!-- endof #breadcrumb -->
+
+    <button type="button" id="sidebar-trigger" class="btn btn-link" aria-label="Sidebar">
+      <i class="fas fa-bars fa-fw"></i>
+    </button>
+
+    <div id="topbar-title">
+      {% if page.layout == 'home' and page.list_source %}
+        {{- page.title -}}
+      {% elsif page.layout == 'home' %}
+        {{- site.data.locales[include.lang].title | default: site.title -}}
+      {% elsif page.collection == 'tabs' or page.layout == 'page' %}
+        {%- capture tab_key -%}{{ page.url | split: '/' }}{%- endcapture -%}
+        {{- site.data.locales[include.lang].tabs[tab_key] | default: page.title -}}
+      {% elsif page.layout == 'post' %}
+        {%- if page.writeup -%}Write-ups{%- elsif page.projects -%}Projects{%- elsif page.blog -%}Blog{%- else -%}{{ page.title }}{%- endif -%}
+      {% else %}
+        {{- site.data.locales[include.lang].layout[page.layout] | default: page.layout | capitalize -}}
+      {% endif %}
+    </div>
+
+    <button type="button" id="search-trigger" class="btn btn-link" aria-label="Search">
+      <i class="fas fa-search fa-fw"></i>
+    </button>
+
+    <search id="search" class="align-items-center ms-3 ms-lg-0">
+      <i class="fas fa-search fa-fw"></i>
+      <input
+        class="form-control"
+        id="search-input"
+        type="search"
+        aria-label="search"
+        autocomplete="off"
+        placeholder="{{ site.data.locales[include.lang].search.hint | capitalize }}..."
+      >
+    </search>
+    <button type="button" class="btn btn-link text-decoration-none" id="search-cancel">
+      {{- site.data.locales[include.lang].search.cancel -}}
+    </button>
+  </div>
+</header>

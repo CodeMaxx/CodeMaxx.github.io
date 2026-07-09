@@ -5,7 +5,7 @@ date: 2016-05-9 8:10
 tag:
 - Open Source
 - Mathematics
-- C++
+- Cpp
 projects: true
 star: true
 description: "Symbolic Computation C++ Library"

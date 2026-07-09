@@ -2,6 +2,7 @@
 title: "Importance of quotes in Terminal"
 layout: post
 date: 2016-06-07 11:00
+image: /assets/images/quotes-hero.png
 tag:
 - Unix
 - Terminal

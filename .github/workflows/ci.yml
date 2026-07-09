@@ -13,27 +13,36 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
-    
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
         with:
-          node-version: '24'
-          cache: 'npm'
-
-      - name: Install npm dependencies
-        run: npm ci
+          fetch-depth: 0 # required by the posts-lastmod git hook
 
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.4'
+          ruby-version: "3.4"
           bundler-cache: true
 
-      - name: Build and check links
-        run: bundle exec rake test
+      - name: Build site
+        run: bundle exec jekyll b
         env:
-          JEKYLL_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          JEKYLL_ENV: "production"
+
+      - name: Check links (html-proofer)
+        run: |
+          bundle exec htmlproofer _site \
+            --disable-external \
+            --no-enforce-https \
+            --allow-hash-href \
+            --ignore-files "/cs741/" \
+            --ignore-urls "/^\/wiki\//,/\/blog$/,/\/projects$/,/\/writeups$/,/crate\.png$/"
+        # Ignores are pre-existing content debt (not theme-migration issues),
+        # carried over from the old .htmlproofer.yaml plus links to sections
+        # deferred during the Chirpy migration. Tracked in beads for a content
+        # pass: /wiki/* relative Wikipedia links, the /blog//projects//writeups
+        # post-body links, the /cs741/ static test artifacts, and crate.png.
+        # --enforce-https is off because the imported CTF write-ups link to
+        # legacy http-only challenge resources (e.g. hack.bckdr.in).

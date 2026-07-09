@@ -2,7 +2,7 @@
 title: "Printing Emojis on Terminal"
 layout: post
 date: 2017-05-03 9:00
-image: /assets/images/emoji/emoji.jpg
+image: /assets/images/emoji/printing-emojis-hero.png
 tag:
 - Tutorial
 - Terminal
@@ -11,7 +11,6 @@ blog: true
 description: "C++ code for printing emojis to terminal"
 ---
 
-![Emojis](/assets/images/emoji/emoji.jpg){:height="180px" width="221px"} | ![Right arrow](/assets/images/emoji/rightarrow.png){:height="60px" width="120px"} | ![Terminal](/assets/images/emoji/terminal.png){:height="220px" width="220px"}
 
 
 Today I spent an hour on the simple task of printing an emoji on my terminal with a C++ program.... well not so simple. :trollface:

@@ -1,66 +1,69 @@
-name: Deploy Jekyll site to GitHub Pages
-
+name: "Build and Deploy"
 on:
-  # Runs on pushes targeting the default branch
   push:
-    branches: ["master"]
+    branches:
+      - master
+    paths-ignore:
+      - .gitignore
+      - README.md
+      - LICENSE
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read
   pages: write
   id-token: write
 
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+# Allow one concurrent deployment
 concurrency:
   group: "pages"
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
-  # Build job
   build:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
-      - name: Setup Ruby
-        uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.4'
-          bundler-cache: true
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '24'
-          cache: 'npm'
-
-      - name: Install npm dependencies
-        run: npm ci
+          fetch-depth: 0 # required by the posts-lastmod git hook
 
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
 
-      - name: Build with Jekyll
-        run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.4"
+          bundler-cache: true
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          cache: "npm"
+
+      - name: Install npm dependencies
+        run: npm ci
+
+      - name: Build site
+        run: bundle exec jekyll b -d "_site${{ steps.pages.outputs.base_path }}"
         env:
-          JEKYLL_ENV: production
-          JEKYLL_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          JEKYLL_ENV: "production"
 
       - name: Optimize built images
-        run: node scripts/optimize-images.mjs _site
+        run: node scripts/optimize-images.mjs "_site${{ steps.pages.outputs.base_path }}"
         continue-on-error: true
 
-      - name: Upload artifact
+      - name: Upload site artifact
         uses: actions/upload-pages-artifact@v3
+        with:
+          path: "_site${{ steps.pages.outputs.base_path }}"
 
-  # Deployment job
   deploy:
     environment:
       name: github-pages

@@ -2,7 +2,7 @@
 title: "Did I Execute?"
 layout: post
 date: 2016-11-03 11:00
-image: /assets/images/terminal.ico
+image: /assets/images/terminal-hero.png
 tag:
 - Unix
 - Terminal
@@ -10,8 +10,6 @@ tag:
 blog: true
 description: "The subtle difference between ;, && and || that most terminal users get wrong"
 ---
-
-![Terminal](/assets/images/terminal.ico)
 
 I'll be discussing about a small detail, about executing multiple commands on a terminal, which I realised most people don't know about.
 

@@ -2,7 +2,7 @@
 title: "How to crack Wifi Passwords"
 layout: post
 date: 2016-07-07 11:00
-image: /assets/images/wifi_crack/wifi-crack.jpg
+image: /assets/images/wifi_crack/wifi-crack-wide.png
 tag:
 - Wifi
 - Hack
@@ -10,8 +10,6 @@ tag:
 blog: true
 description: "Capturing the WPA2 four-way handshake and brute-forcing it with Aircrack-ng"
 ---
-
-![Wifi-crack](/assets/images/wifi_crack/wifi-crack.jpg)
 
 If you want to crack a wifi password, then you should know what kind of encryption you are using. WEP and WPA1 can easily be cracked and you will find various tutorials on a Google search. But nobody uses these encryptions anymore. The most used now a days is WPA2-PSK and its very secure. There’s just one small thing. The “four-way handshake”.
 
