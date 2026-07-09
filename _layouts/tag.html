@@ -1,0 +1,43 @@
+---
+layout: page
+# The layout for Tag page
+---
+<!--
+  Local override of Chirpy's tag layout. jekyll-archives orders a tag's posts
+  by date+time only, so a same-day series (e.g. the OverTheWire Bandit levels,
+  all committed 2016-05-31) comes out in commit-time order, not level order.
+
+  We sort with a single composite key "YYYYMMDD#url" (day-granularity date,
+  then URL) and reverse it: newest day first, and within a day the zero-padded
+  slugs (level00…level19) read level19 → level00 down the page. A single sort
+  avoids relying on sort stability (Jekyll's `sort` is not stable). The
+  "@@@index" suffix keeps keys unique and maps back to the original post.
+-->
+
+{% include lang.html %}
+
+{% assign keyed = '' | split: '' %}
+{% for post in page.posts %}
+  {% capture k %}{{ post.date | date: '%Y%m%d' }}#{{ post.url }}@@@{{ forloop.index0 }}{% endcapture %}
+  {% assign keyed = keyed | push: k %}
+{% endfor %}
+{% assign keyed = keyed | sort | reverse %}
+
+<div id="page-tag">
+  <h1 class="ps-lg-2">
+    <i class="fa fa-tag fa-fw text-muted"></i>
+    {{ page.title }}
+    <span class="lead text-muted ps-2">{{ page.posts | size }}</span>
+  </h1>
+  <ul class="content ps-0">
+    {% for k in keyed %}
+      {% assign idx = k | split: '@@@' | last | plus: 0 %}
+      {% assign post = page.posts[idx] %}
+      <li class="d-flex justify-content-between px-md-3">
+        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        <span class="dash flex-grow-1"></span>
+        {% include datetime.html date=post.date class='text-muted small text-nowrap' lang=lang %}
+      </li>
+    {% endfor %}
+  </ul>
+</div>

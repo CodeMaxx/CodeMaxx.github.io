@@ -1,9 +1,37 @@
-.DS_Store
-.sass-cache
-node_modules
-vendor
-npm-debug.log
+# Bundler cache
 .bundle
+vendor
+Gemfile.lock
+
+# Jekyll cache
+.jekyll-cache
+.jekyll-metadata
 _site
-tmp
-ab-results-*
+
+# RubyGems
+*.gem
+
+# NPM dependencies
+node_modules
+# package-lock.json is committed: the deploy workflow runs `npm ci` (which
+# requires the lockfile) to install sharp/svgo for image optimization.
+
+# IDE configurations
+.idea
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+!.vscode/tasks.json
+
+# Misc
+_sass/vendors
+assets/js/dist
+
+# Local scratch (image work, playwright-cli logs) — never committed
+_imgwork
+.playwright-cli
+
+# Hidden system files
+*~
+.DS_Store
+Thumbs.db

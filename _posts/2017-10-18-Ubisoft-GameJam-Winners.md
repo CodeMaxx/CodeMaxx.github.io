@@ -2,7 +2,7 @@
 title: "Won Ubisoft GameJam 2017"
 layout: post
 date: 2017-10-18 11:00
-image: /assets/images/ubisoft.jpg
+image: /assets/images/ubisoft-wide.png
 tag:
 - Hackathon
 - Ubisoft
@@ -12,8 +12,6 @@ tag:
 blog: true
 description: "How we built a 3D Unity game in 30 hours and won Ubisoft's GameJam 2017"
 ---
-
-![Ubisoft](/assets/images/ubisoft.jpg)
 
 With high hopes and curious eyes we entered the Ubisoft Office. We were in Pune for the final round of Ubisoft's GameJam.
 

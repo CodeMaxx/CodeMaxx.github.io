@@ -1,0 +1,51 @@
+---
+---
+
+@use 'abstracts/variables' with (
+  $theme: '{{ site.theme_mode }}'
+);
+
+/* prettier-ignore */
+@use 'main
+{%- if jekyll.environment == 'production' -%}
+  .bundle
+{%- endif -%}
+';
+
+/* append your custom style below */
+
+/* Center the sidebar profile block: avatar, name, and tagline.
+   Chirpy gives the profile-wrapper asymmetric padding (40px left / 20px
+   right) and sizes the avatar + title to their content, so they hug the
+   left edge. Normalize the padding and let each element center. */
+#sidebar .profile-wrapper {
+  padding-left: 20px;
+  padding-right: 20px;
+  text-align: center;
+}
+
+#sidebar #avatar {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#sidebar .site-title,
+#sidebar .site-subtitle {
+  width: auto;
+  text-align: center;
+}
+
+/* Center the social/contact links row at the bottom of the sidebar. */
+#sidebar .sidebar-bottom {
+  justify-content: center;
+}
+
+/* External-link indicator on post cards whose target leaves the site
+   (posts with `redirect_to`). Kept subtle: muted colour, smaller than the
+   title, and nudged up slightly so it reads as a superscript-style badge. */
+.card-title .external-link-icon {
+  font-size: 0.6em;
+  color: var(--text-muted-color);
+  vertical-align: 0.35em;
+  opacity: 0.85;
+}

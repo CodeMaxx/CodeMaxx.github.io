@@ -2,7 +2,7 @@
 title: "Knowing your Binary!"
 layout: post
 date: 2016-06-15 00:00
-image: /assets/images/re.png
+image: /assets/images/re-wide.png
 tag:
 - Executable
 - ELF v/s Mach-o v/s PE
@@ -11,8 +11,6 @@ tag:
 blog: true
 description: "ELF, Mach-O, PE — decoding every word the file command throws at you"
 ---
-
-![Reverse Engineering](/assets/images/re.png)
 
 Ever thought why programs have different setup files for Windows, Mac and Linux. To give you a feel of it I'll tell you about the different kinds of formats the executable come in. I won't be going into the details but the next time you use the `file` command, you'll exactly know what you are looking at.
 

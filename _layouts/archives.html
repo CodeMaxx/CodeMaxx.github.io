@@ -1,0 +1,52 @@
+---
+layout: page
+# The Archives of posts.
+---
+<!--
+  Local override of Chirpy's archives layout. The theme iterates site.posts in
+  date+time order, so a same-day series (e.g. the OverTheWire Bandit levels,
+  all 2016-05-31) lists in commit-time order rather than level order. We sort
+  by a composite "YYYYMMDD#url" key (day, then zero-padded slug) and reverse
+  it: newest day first, and within a day level19 → level00. Year grouping is
+  unaffected because the primary key is still the date.
+-->
+
+{% include lang.html %}
+
+{% assign df_strftime_m = site.data.locales[lang].df.archives.strftime | default: '/ %m' %}
+{% assign df_dayjs_m = site.data.locales[lang].df.archives.dayjs | default: '/ MM' %}
+
+{% assign keyed = '' | split: '' %}
+{% for post in site.posts %}
+  {% capture k %}{{ post.date | date: '%Y%m%d' }}#{{ post.url }}@@@{{ forloop.index0 }}{% endcapture %}
+  {% assign keyed = keyed | push: k %}
+{% endfor %}
+{% assign keyed = keyed | sort | reverse %}
+
+<div id="archives" class="pl-xl-3">
+  {% for k in keyed %}
+    {% assign idx = k | split: '@@@' | last | plus: 0 %}
+    {% assign post = site.posts[idx] %}
+    {% assign cur_year = post.date | date: '%Y' %}
+
+    {% if cur_year != last_year %}
+      {% unless forloop.first %}</ul>{% endunless %}
+
+      <time class="year lead d-block">{{ cur_year }}</time>
+      {{ '<ul class="list-unstyled">' }}
+
+      {% assign last_year = cur_year %}
+    {% endif %}
+
+    <li>
+      {% assign ts = post.date | date: '%s' %}
+      <span class="date day" data-ts="{{ ts }}" data-df="DD">{{ post.date | date: '%d' }}</span>
+      <span class="date month small text-muted ms-1" data-ts="{{ ts }}" data-df="{{ df_dayjs_m }}">
+        {{ post.date | date: df_strftime_m }}
+      </span>
+      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+    </li>
+
+    {% if forloop.last %}</ul>{% endif %}
+  {% endfor %}
+</div>

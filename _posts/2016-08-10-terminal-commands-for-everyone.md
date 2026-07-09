@@ -7,6 +7,6 @@ tag:
 - Terminal
 - Tutorial
 blog: true
-external_url: https://github.com/CodeMaxx/Awesome-Terminal-Commands
+redirect_to: https://github.com/CodeMaxx/Awesome-Terminal-Commands
 description: "A curated collection of powerful Unix terminal commands every developer should know"
 ---

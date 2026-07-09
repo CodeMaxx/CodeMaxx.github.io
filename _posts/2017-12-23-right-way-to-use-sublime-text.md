@@ -2,7 +2,7 @@
 title: "The Right way to use Sublime Text"
 layout: post
 date: 2017-12-23 00:00
-image: /assets/images/sublime.png
+image: /assets/images/sublime-wide.png
 tag:
 - Productivity
 - Text Editor
@@ -10,8 +10,6 @@ tag:
 blog: true
 description: "11 keyboard shortcuts that turn Sublime Text into a productivity beast"
 ---
-
-![Sublime Text](/assets/images/sublime.png)
 
 After having used sublime text for about 2 years the wrong way, I have finally learnt my lesson. I am going around the internet looking for ways to be more productive with Sublime Text.
 
