@@ -1,0 +1,29 @@
+---
+layout: compress
+swcache: true
+---
+
+{% comment %}
+  Local override of the theme's search index.
+  Adds a `description` field (shown in results) while keeping `content`
+  (the post body) in the index so full-text matching still works.
+  `description` falls back to the body summary, then the title, so it is
+  never empty (which would otherwise render a literal placeholder).
+{% endcomment %}
+
+[
+  {% for post in site.posts %}
+  {
+    "title": {{ post.title | jsonify }},
+    "url": {{ post.url | relative_url | jsonify }},
+    "categories": {{ post.categories | join: ', ' | jsonify }},
+    "tags": {{ post.tags | join: ', ' | jsonify }},
+    "date": {{ post.date | jsonify }},
+    {% capture summary -%}{% include post-summary.html full_text=true %}{%- endcapture -%}
+    "content": {{ summary | jsonify }},
+    {% assign desc = post.description | default: summary | strip %}
+    {% if desc == '' %}{% assign desc = post.title %}{% endif %}
+    "description": {{ desc | jsonify }}
+  }{% unless forloop.last %},{% endunless %}
+  {% endfor %}
+]
