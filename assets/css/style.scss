@@ -429,24 +429,14 @@ $tn-max: 1140px;
 }
 
 /* ---------- Search results page ---------- */
-/* Match the top-nav redesign: single-column accent cards instead of the
-   stock two-column plain list. */
+/* Keep the theme's responsive two-column result grid, but restyle each result
+   as an accent card to match the top-nav redesign. */
 #search-result-wrapper .content {
   max-width: 1080px;
   width: 100%;
   padding: 0 0.25rem;
 }
-#search-results {
-  flex-direction: column;
-  align-items: stretch;
-  justify-content: flex-start !important;
-  gap: 0.9rem;
-  padding-bottom: 3rem;
-}
 #search-results > article {
-  width: 100% !important;
-  margin: 0 !important;
-  right: 0 !important;
   background: var(--card-bg);
   border: 1px solid var(--card-border-color, rgba(0, 0, 0, 0.08));
   border-radius: 12px;
