@@ -4,7 +4,7 @@ source "https://rubygems.org"
 
 gem "jekyll-theme-chirpy", "~> 7.6"
 
-# Plugins retained from the previous setup (not bundled by Chirpy):
+# Plugins retained from the previous setup (not bundled by the theme):
 #   jemoji             — renders :emoji: shortcodes used in posts
 #   jekyll-mentions    — renders @username GitHub mentions
 #   jekyll-redirect-from — `redirect_to` front matter for external-link posts
