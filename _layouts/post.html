@@ -155,3 +155,28 @@ script_includes:
   <!-- div.post-tail-wrapper -->
 </article>
 
+<!--
+  Chirpy runs the desktop + mobile TOCs through one global tocbot instance, so
+  its active-heading detection can't be tuned for our sticky top nav (it lights
+  the wrong section). Rebuild a single clean tocbot instance for the desktop TOC
+  with an offset that matches the nav, so the active entry tracks the heading.
+-->
+<script>
+  addEventListener('load', function () {
+    if (!window.tocbot || !document.querySelector('#toc')) return;
+    try {
+      tocbot.destroy();
+      tocbot.init({
+        tocSelector: '#toc',
+        contentSelector: '.content',
+        headingSelector: 'h2, h3, h4',
+        ignoreSelector: '[data-toc-skip]',
+        orderedList: false,
+        scrollSmooth: false,
+        headingsOffset: 70
+      });
+    } catch (e) {
+      /* no-op */
+    }
+  });
+</script>
