@@ -1,7 +1,8 @@
 ---
-# the default layout is 'page'
+layout: about
 icon: fas fa-info-circle
 order: 7
+title: About
 ---
 
 Akash Trehan is the Founder and Manager of the [Cybersecurity Club](https://www.facebook.com/groups/csec.iitb/) at the Indian Institute of Technology Bombay, taking initiatives to form a community of security enthusiasts and giving talks to spread awareness about the latest research in the area. He is also a member of the [Web & Coding Club](https://www.facebook.com/wncc.iitb), one of the largest college-level programming clubs in India which provides mentorship to students as well as a platform to showcase their skills.
