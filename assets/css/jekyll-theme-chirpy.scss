@@ -179,15 +179,70 @@ $tn-max: 1140px;
   display: none;
 }
 
-/* On the landing page, drop the right panel (it duplicates the "Recent posts"
-   section) and let the hero + sections + footer use the full content width. */
-#main-wrapper:has(.landing) #panel-wrapper {
+/* On the landing + listing pages, drop the right panel and use full width. */
+#main-wrapper:has(.landing) #panel-wrapper,
+#main-wrapper:has(.listing) #panel-wrapper {
   display: none;
 }
 #main-wrapper:has(.landing) > .container > .row > main,
-#main-wrapper:has(.landing) #tail-wrapper {
+#main-wrapper:has(.landing) #tail-wrapper,
+#main-wrapper:has(.listing) > .container > .row > main,
+#main-wrapper:has(.listing) #tail-wrapper {
   flex: 0 0 100%;
   max-width: 100%;
+}
+
+/* ---------- Listing pages (Blog / Write-ups / Projects) ---------- */
+.listing-header {
+  max-width: 1080px;
+  margin: 0.5rem auto 1.5rem;
+  padding: 0 0.25rem;
+}
+.listing-title {
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.4rem;
+}
+.listing-title::after {
+  content: '';
+  display: block;
+  width: 54px;
+  height: 3px;
+  margin-top: 0.6rem;
+  border-radius: 3px;
+  background: var(--accent-grad);
+}
+.listing-subtitle {
+  color: var(--text-muted-color);
+  font-size: 1.05rem;
+  max-width: 60ch;
+  margin: 0;
+}
+.listing #post-list {
+  max-width: 1080px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Non-clickable tag pills on listing cards (card itself is the link). */
+.card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.85rem;
+}
+.card-tag {
+  font-size: 0.75rem;
+  padding: 0.15rem 0.6rem;
+  border-radius: 6px;
+  border: 1px solid var(--accent-1);
+  color: var(--accent-1);
+  line-height: 1.5;
+}
+/* Accent the card title on hover to match the site accent. */
+#post-list .card-wrapper:hover .card-title {
+  color: var(--accent-2) !important;
 }
 
 /* ---------- Responsive nav ---------- */

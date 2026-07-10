@@ -80,6 +80,16 @@ refactor: true
   {% endif %}
 {% endif %}
 
+{% if page.list_source %}
+<div class="listing">
+  <header class="listing-header">
+    <h1 class="listing-title">{{ page.title }}</h1>
+    {% if page.subtitle %}
+      <p class="listing-subtitle">{{ page.subtitle }}</p>
+    {% endif %}
+  </header>
+{% endif %}
+
 <div id="post-list" class="flex-grow-1 px-xl-1">
   {% for post in posts %}
     <article class="card-wrapper card">
@@ -178,6 +188,15 @@ refactor: true
               {% endif %}
             </div>
             <!-- .post-meta -->
+
+            {% if post.tags.size > 0 %}
+              <div class="card-tags">
+                {% for tag in post.tags limit: 4 %}
+                  {% assign tag_slug = tag | slugify | url_encode %}
+                  <span class="card-tag">{{ tag }}</span>
+                {% endfor %}
+              </div>
+            {% endif %}
           </div>
           <!-- .card-body -->
         </div>
@@ -190,3 +209,5 @@ refactor: true
 {% if paginator and paginator.total_pages > 1 %}
   {% include post-paginator.html %}
 {% endif %}
+
+{% if page.list_source %}</div>{% endif %}
