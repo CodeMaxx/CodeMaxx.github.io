@@ -1,0 +1,26 @@
+---
+layout: default
+---
+
+{% include lang.html %}
+
+<div class="about">
+  <header class="about-header">
+    <img
+      class="about-avatar"
+      src="{{ '/assets/images/avatar.png' | relative_url }}"
+      alt="{{ site.title }}"
+      width="120"
+      height="120"
+    >
+    <div class="about-intro">
+      <h1 class="about-name">{{ site.title }}</h1>
+      <p class="about-role">{{ site.tagline }}</p>
+      {% include social-icons.html extra_class="about-socials" %}
+    </div>
+  </header>
+
+  <div class="about-content">
+    {{ content }}
+  </div>
+</div>

@@ -14,32 +14,6 @@
 
 /* append your custom style below */
 
-/* Center the sidebar profile block: avatar, name, and tagline.
-   Chirpy gives the profile-wrapper asymmetric padding (40px left / 20px
-   right) and sizes the avatar + title to their content, so they hug the
-   left edge. Normalize the padding and let each element center. */
-#sidebar .profile-wrapper {
-  padding-left: 20px;
-  padding-right: 20px;
-  text-align: center;
-}
-
-#sidebar #avatar {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-#sidebar .site-title,
-#sidebar .site-subtitle {
-  width: auto;
-  text-align: center;
-}
-
-/* Center the social/contact links row at the bottom of the sidebar. */
-#sidebar .sidebar-bottom {
-  justify-content: center;
-}
-
 /* External-link indicator on post cards whose target leaves the site
    (posts with `redirect_to`). Kept subtle: muted colour, smaller than the
    title, and nudged up slightly so it reads as a superscript-style badge. */
@@ -48,4 +22,811 @@
   color: var(--text-muted-color);
   vertical-align: 0.35em;
   opacity: 0.85;
+}
+
+/* ============================================================
+   Blue -> indigo accent tokens (BLACKBOX-style landing revamp)
+   ============================================================ */
+:root {
+  --accent-1: #1d7bf5; // azure
+  --accent-2: #4f3ff0; // indigo
+  --accent-grad: linear-gradient(120deg, #1d7bf5 0%, #4f3ff0 100%);
+  --accent-soft: rgba(79, 63, 240, 0.12);
+}
+
+html[data-bs-theme='dark'] {
+  --accent-1: #4aa2ff;
+  --accent-2: #7d6bff;
+  --accent-grad: linear-gradient(120deg, #4aa2ff 0%, #7d6bff 100%);
+  --accent-soft: rgba(125, 107, 255, 0.16);
+}
+
+/* Links + tag pills pick up the accent site-wide. */
+a {
+  color: var(--accent-1);
+}
+a:hover {
+  color: var(--accent-2);
+}
+.post-tag:hover,
+.post-preview .card-title:hover {
+  color: var(--accent-2) !important;
+}
+
+/* ============================================================
+   Top navigation bar (replaces Chirpy's left sidebar)
+   ============================================================ */
+$tn-max: 1140px;
+
+/* Remove the sidebar entirely and reclaim its horizontal space. */
+#sidebar {
+  display: none !important;
+}
+#main-wrapper {
+  margin-left: 0 !important;
+}
+
+/* Full-width sticky nav with a bottom hairline. */
+#topbar-wrapper {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  z-index: 1000;
+  background-color: var(--main-bg);
+  border-bottom: 1px solid var(--main-border-color, rgba(0, 0, 0, 0.075));
+  box-shadow: none;
+}
+
+#topbar {
+  max-width: $tn-max;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+  gap: 0.5rem;
+}
+
+.tn-brand {
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--heading-color) !important;
+  white-space: nowrap;
+  letter-spacing: -0.01em;
+}
+.tn-brand:hover {
+  color: var(--accent-1) !important;
+}
+
+.tn-nav {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-left: 2.5rem;
+}
+.tn-link {
+  position: relative;
+  color: var(--text-muted-color) !important;
+  font-weight: 500;
+  font-size: 0.98rem;
+  padding: 0.25rem 0;
+  transition: color 0.15s ease;
+}
+.tn-link:hover {
+  color: var(--heading-color) !important;
+}
+.tn-link.active {
+  color: var(--heading-color) !important;
+}
+.tn-link.active::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -6px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--accent-grad);
+}
+
+.tn-controls {
+  gap: 0.25rem;
+}
+.tn-controls .btn,
+.tn-controls .btn-link {
+  text-decoration: none !important;
+}
+.tn-mode > #mode-toggle {
+  font-size: 1rem;
+  color: var(--text-muted-color);
+  text-decoration: none !important;
+}
+.tn-mode > #mode-toggle:hover {
+  color: var(--accent-1);
+}
+
+/* Show only the icon for the active mode (Chirpy scopes this to #sidebar;
+   re-scope it to the top-nav toggle so it reads as one clean button). */
+.tn-mode #mode-toggle > i {
+  display: none;
+}
+:root[data-bs-theme='light'][data-theme-persisted]
+  .tn-mode
+  #mode-toggle
+  > i[data-theme-mode='light'] {
+  display: block;
+}
+:root[data-bs-theme='dark'][data-theme-persisted]
+  .tn-mode
+  #mode-toggle
+  > i[data-theme-mode='dark'] {
+  display: block;
+}
+:root:not([data-theme-persisted])
+  .tn-mode
+  #mode-toggle
+  > i[data-theme-mode='system'] {
+  display: block;
+}
+
+/* The hamburger is non-functional now (nav links are always visible); hide it.
+   Chirpy's `#sidebar-trigger` id beats a class, so match the id + !important. */
+#topbar #sidebar-trigger.tn-hamburger {
+  display: none !important;
+}
+
+/* Chirpy renders #topbar-title for mobile; hide on desktop (brand covers it). */
+#topbar-title {
+  display: none;
+}
+
+/* On the landing + listing + about pages, drop the right panel and use full width. */
+#main-wrapper:has(.landing) #panel-wrapper,
+#main-wrapper:has(.listing) #panel-wrapper,
+#main-wrapper:has(.about) #panel-wrapper {
+  display: none;
+}
+#main-wrapper:has(.landing) > .container > .row > main,
+#main-wrapper:has(.landing) #tail-wrapper,
+#main-wrapper:has(.listing) > .container > .row > main,
+#main-wrapper:has(.listing) #tail-wrapper,
+#main-wrapper:has(.about) > .container > .row > main,
+#main-wrapper:has(.about) #tail-wrapper {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+/* ---------- About page ---------- */
+.about {
+  max-width: 820px;
+  margin: 0 auto;
+  padding-top: 0.5rem;
+}
+.about-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding-bottom: 1.75rem;
+  margin-bottom: 1.75rem;
+  border-bottom: 1px solid var(--main-border-color, rgba(0, 0, 0, 0.08));
+}
+.about-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  box-shadow: 0 10px 30px rgba(29, 58, 90, 0.2);
+}
+.about-name {
+  font-size: 1.9rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.25rem;
+}
+.about-role {
+  color: var(--text-muted-color);
+  font-size: 1rem;
+  margin-bottom: 0.9rem;
+}
+.about-socials {
+  display: flex;
+  gap: 0.55rem;
+}
+.about-socials a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  color: var(--heading-color) !important;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border-color, rgba(0, 0, 0, 0.08));
+  transition: transform 0.15s ease, color 0.15s ease, background 0.15s ease;
+}
+.about-socials a:hover {
+  transform: translateY(-2px);
+  color: #fff !important;
+  background: var(--accent-grad);
+  border-color: transparent;
+}
+.about-content {
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+.about-content p {
+  margin-bottom: 1.15rem;
+}
+
+@media (max-width: 600px) {
+  .about-header {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+  .about-socials {
+    justify-content: center;
+  }
+}
+
+/* ---------- Post (article) page ---------- */
+.post-hero-title {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.75rem;
+}
+.post-hero-desc {
+  font-size: 1.2rem;
+  font-weight: 300;
+  line-height: 1.5;
+  color: var(--text-muted-color);
+  margin-bottom: 1rem;
+}
+.post-hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.9rem;
+  margin-bottom: 0;
+}
+.post-hero-meta i {
+  margin-right: 0.3rem;
+}
+.post-hero-meta .phm-sep {
+  opacity: 0.45;
+}
+.post-hero-meta .phm-author em {
+  font-style: normal;
+  color: var(--heading-color);
+  font-weight: 500;
+}
+
+/* Cover banner */
+.post-banner {
+  margin: 1.75rem 0 2rem;
+}
+.post-banner .preview-img,
+.post-banner img {
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 16px 44px rgba(29, 58, 90, 0.16);
+}
+.post-banner-cap {
+  color: var(--text-muted-color);
+  font-size: 0.88rem;
+}
+
+/* Accent tag pills at the foot of the article */
+.post-tags .post-tag-pill {
+  border: 1px solid var(--accent-1);
+  color: var(--accent-1) !important;
+  background: transparent;
+  border-radius: 6px;
+  padding: 0.15rem 0.7rem;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.post-tags .post-tag-pill:hover {
+  background: var(--accent-1);
+  color: #fff !important;
+}
+
+/* Restyle the TOC panel to match the accent theme (tocbot uses .is-active-link) */
+#toc-wrapper .toc-title {
+  color: var(--heading-color);
+}
+#toc .toc-link.is-active-link {
+  color: var(--accent-1) !important;
+  font-weight: 600;
+}
+#toc .toc-link.is-active-link::before,
+#toc li.is-active-li > .toc-link::before {
+  border-left-color: var(--accent-1) !important;
+}
+#toc .toc-link:hover {
+  color: var(--accent-2) !important;
+}
+
+/* Offset anchored headings for the sticky top nav (60px) so TOC / heading-anchor
+   jumps land the heading *below* the nav instead of hiding it behind it. */
+:root {
+  scroll-padding-top: 4.75rem;
+}
+#core-wrapper h1[id],
+#core-wrapper h2[id],
+#core-wrapper h3[id],
+#core-wrapper h4[id],
+#core-wrapper h5[id] {
+  scroll-margin-top: 4.75rem;
+}
+
+/* ---------- Listing pages (Blog / Write-ups / Projects) ---------- */
+.listing-header {
+  max-width: 1080px;
+  margin: 0.5rem auto 1.5rem;
+  padding: 0 0.25rem;
+}
+.listing-title {
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.4rem;
+}
+.listing-title::after {
+  content: '';
+  display: block;
+  width: 54px;
+  height: 3px;
+  margin-top: 0.6rem;
+  border-radius: 3px;
+  background: var(--accent-grad);
+}
+.listing-subtitle {
+  color: var(--text-muted-color);
+  font-size: 1.05rem;
+  max-width: 60ch;
+  margin: 0;
+}
+.listing #post-list {
+  max-width: 1080px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Non-clickable tag pills on listing cards (card itself is the link). */
+.card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.85rem;
+}
+.card-tag {
+  font-size: 0.75rem;
+  padding: 0.15rem 0.6rem;
+  border-radius: 6px;
+  border: 1px solid var(--accent-1);
+  color: var(--accent-1);
+  line-height: 1.5;
+}
+/* Accent the card title on hover to match the site accent. */
+#post-list .card-wrapper:hover .card-title {
+  color: var(--accent-2) !important;
+}
+
+/* ---------- Responsive nav ---------- */
+@media (max-width: 850px) {
+  #topbar {
+    flex-wrap: wrap;
+    padding: 0 1rem;
+  }
+  .tn-nav {
+    margin-left: 0;
+    gap: 1rem;
+    order: 3;
+    width: 100%;
+    overflow-x: auto;
+    padding-bottom: 0.4rem;
+    justify-content: flex-start;
+    -webkit-overflow-scrolling: touch;
+  }
+  #topbar-wrapper {
+    height: auto;
+  }
+  .tn-nav .tn-link {
+    white-space: nowrap;
+  }
+}
+
+
+/* ============================================================
+   Landing page
+   ============================================================ */
+.landing {
+  max-width: 1080px;
+  margin: 0 auto;
+
+  /* ---------- Hero ---------- */
+  .landing-hero {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 2.5rem;
+    align-items: center;
+    padding: 3rem 0 3.5rem;
+  }
+
+  .hero-eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    background: var(--accent-grad);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .hero-headline {
+    font-size: clamp(2rem, 4vw, 3.1rem);
+    line-height: 1.12;
+    font-weight: 300;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.25rem;
+  }
+
+  .hero-subtext {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--text-muted-color);
+    max-width: 34ch;
+    margin-bottom: 1.75rem;
+  }
+
+  .hero-docs {
+    display: flex;
+    gap: 0.75rem;
+    margin: 0.25rem 0 1.5rem;
+  }
+  .hero-doc-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.5rem 1.1rem;
+    border-radius: 999px;
+    font-weight: 500;
+    font-size: 0.95rem;
+    color: var(--heading-color) !important;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border-color, rgba(0, 0, 0, 0.1));
+    transition: transform 0.15s ease, color 0.15s ease, background 0.15s ease, box-shadow 0.2s ease;
+  }
+  .hero-doc-btn:hover {
+    transform: translateY(-2px);
+    color: #fff !important;
+    background: var(--accent-grad);
+    border-color: transparent;
+    box-shadow: 0 8px 20px var(--accent-soft);
+  }
+
+  .hero-follow {
+    margin-top: 0.5rem;
+  }
+  .hero-follow-label {
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--text-muted-color);
+    margin-bottom: 0.6rem;
+  }
+  .hero-socials {
+    display: flex;
+    gap: 0.6rem;
+  }
+  .hero-socials a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    font-size: 1.05rem;
+    color: var(--heading-color) !important;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border-color, rgba(0, 0, 0, 0.08));
+    transition: transform 0.15s ease, box-shadow 0.2s ease, color 0.15s ease;
+  }
+  .hero-socials a:hover {
+    transform: translateY(-3px);
+    color: #fff !important;
+    background: var(--accent-grad);
+    border-color: transparent;
+    box-shadow: 0 8px 20px var(--accent-soft);
+  }
+
+  /* ---------- Hero photo ---------- */
+  .hero-media {
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+
+  .hero-photo {
+    position: relative;
+    width: 100%;
+    max-width: 340px;
+    aspect-ratio: 640 / 1024;
+    border-radius: 22px;
+    background-size: cover;
+    background-position: center top;
+    box-shadow: 0 24px 60px rgba(29, 58, 90, 0.35);
+    z-index: 1;
+  }
+
+  .hero-photo-glow {
+    position: absolute;
+    inset: -4% -10% -10% -10%;
+    background: var(--accent-grad);
+    filter: blur(55px);
+    opacity: 0.38;
+    border-radius: 50%;
+    z-index: 0;
+  }
+
+  /* ---------- Section chrome ---------- */
+  .section-eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--text-muted-color);
+    margin-bottom: 1.25rem;
+  }
+
+  .section-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 1.25rem;
+  }
+  .section-more {
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  /* ---------- Topics ---------- */
+  .landing-topics {
+    padding: 1rem 0 3rem;
+  }
+  .topic-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+  .topic-card {
+    display: block;
+    padding: 1.6rem;
+    border-radius: 16px;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border-color, rgba(0, 0, 0, 0.06));
+    box-shadow: var(--card-box-shadow, 0 2px 8px rgba(0, 0, 0, 0.05));
+    color: inherit !important;
+    transition: transform 0.16s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  }
+  .topic-card:hover {
+    transform: translateY(-4px);
+    border-color: transparent;
+    box-shadow: 0 14px 32px var(--accent-soft);
+  }
+  .topic-icon {
+    font-size: 1.5rem;
+    background: var(--accent-grad);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.9rem;
+    display: inline-block;
+  }
+  .topic-card h3 {
+    font-size: 1.15rem;
+    margin-bottom: 0.5rem;
+  }
+  .topic-card p {
+    font-size: 0.92rem;
+    color: var(--text-muted-color);
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  /* ---------- Recent posts (alternating feature rows) ---------- */
+  .landing-recent {
+    padding: 1rem 0 2rem;
+  }
+  .feature-list {
+    display: flex;
+    flex-direction: column;
+  }
+  .feature {
+    display: grid;
+    grid-template-columns: 0.95fr 1.05fr;
+    gap: 2.25rem;
+    align-items: center;
+    padding: 2.25rem 0;
+  }
+  .feature:not(:last-child) {
+    border-bottom: 1px solid var(--main-border-color, rgba(0, 0, 0, 0.08));
+  }
+  .feature--reverse {
+    grid-template-columns: 1.05fr 0.95fr;
+  }
+  .feature--reverse .feature-media {
+    order: 2;
+  }
+  .feature--reverse .feature-body {
+    order: 1;
+  }
+
+  .feature-media {
+    display: block;
+    border-radius: 14px;
+    overflow: hidden;
+    aspect-ratio: 16 / 10;
+    background: var(--card-bg);
+    box-shadow: 0 10px 30px rgba(29, 58, 90, 0.12);
+    transition: transform 0.18s ease, box-shadow 0.2s ease;
+  }
+  .feature-media:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 38px var(--accent-soft);
+  }
+  .feature-media .preview-img,
+  .feature-media img {
+    width: 100%;
+    height: 100%;
+    border-radius: 14px;
+  }
+  .feature-media img {
+    object-fit: cover;
+  }
+  .feature-media-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background: var(--accent-grad);
+    color: #fff;
+    font-size: 2.5rem;
+    opacity: 0.9;
+  }
+
+  .feature-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1.25;
+    margin-bottom: 0.6rem;
+  }
+  .feature-title a {
+    color: var(--heading-color) !important;
+  }
+  .feature-title a:hover {
+    color: var(--accent-1) !important;
+  }
+  .feature-title .external-link-icon {
+    font-size: 0.6em;
+    color: var(--text-muted-color);
+    vertical-align: 0.35em;
+  }
+  .feature-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.85rem;
+    color: var(--text-muted-color);
+    margin-bottom: 0.75rem;
+  }
+  .feature-meta i {
+    margin-right: 0.3rem;
+  }
+  .feature-meta-sep {
+    opacity: 0.5;
+  }
+  .feature-desc {
+    color: var(--text-muted-color);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+  .feature-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .feature-tag {
+    font-size: 0.8rem;
+    padding: 0.2rem 0.7rem;
+    border-radius: 6px;
+    border: 1px solid var(--accent-1);
+    color: var(--accent-1) !important;
+    transition: background 0.15s ease, color 0.15s ease;
+  }
+  .feature-tag:hover {
+    background: var(--accent-1);
+    color: #fff !important;
+  }
+
+  .feature-more {
+    display: flex;
+    justify-content: center;
+    margin-top: 2.5rem;
+  }
+  .feature-more-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.7rem 1.6rem;
+    border-radius: 999px;
+    font-weight: 600;
+    color: #fff !important;
+    background: var(--accent-grad);
+    box-shadow: 0 8px 22px var(--accent-soft);
+    transition: transform 0.15s ease, box-shadow 0.2s ease;
+  }
+  .feature-more-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px var(--accent-soft);
+  }
+  .feature-more-btn i {
+    transition: transform 0.15s ease;
+  }
+  .feature-more-btn:hover i {
+    transform: translateX(3px);
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 850px) {
+    /* Prevent the blurred hero glow from overflowing the viewport (sideways
+       scroll on phones). Clip horizontally without creating a scroll box. */
+    overflow-x: clip;
+
+    .landing-hero {
+      grid-template-columns: 1fr;
+      text-align: center;
+      gap: 1.5rem;
+    }
+    .hero-subtext {
+      max-width: none;
+    }
+    .hero-follow {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .hero-docs {
+      justify-content: center;
+    }
+    .hero-media {
+      order: -1;
+    }
+    .hero-photo {
+      max-width: 260px;
+    }
+    .topic-grid {
+      grid-template-columns: 1fr;
+    }
+    .feature,
+    .feature--reverse {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      text-align: left;
+    }
+    .feature--reverse .feature-media,
+    .feature--reverse .feature-body {
+      order: initial;
+    }
+  }
 }
