@@ -169,9 +169,10 @@ $tn-max: 1140px;
   display: block;
 }
 
-/* The hamburger is desktop-hidden; nav is always visible on desktop. */
-.tn-hamburger {
-  display: none;
+/* The hamburger is non-functional now (nav links are always visible); hide it.
+   Chirpy's `#sidebar-trigger` id beats a class, so match the id + !important. */
+#topbar #sidebar-trigger.tn-hamburger {
+  display: none !important;
 }
 
 /* Chirpy renders #topbar-title for mobile; hide on desktop (brand covers it). */
