@@ -34,7 +34,7 @@
   --accent-soft: rgba(79, 63, 240, 0.12);
 }
 
-html[data-mode='dark'] {
+html[data-bs-theme='dark'] {
   --accent-1: #4aa2ff;
   --accent-2: #7d6bff;
   --accent-grad: linear-gradient(120deg, #4aa2ff 0%, #7d6bff 100%);
@@ -268,6 +268,84 @@ $tn-max: 1140px;
   .about-socials {
     justify-content: center;
   }
+}
+
+/* ---------- Post (article) page ---------- */
+.post-hero-title {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.75rem;
+}
+.post-hero-desc {
+  font-size: 1.2rem;
+  font-weight: 300;
+  line-height: 1.5;
+  color: var(--text-muted-color);
+  margin-bottom: 1rem;
+}
+.post-hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.9rem;
+  margin-bottom: 0;
+}
+.post-hero-meta i {
+  margin-right: 0.3rem;
+}
+.post-hero-meta .phm-sep {
+  opacity: 0.45;
+}
+.post-hero-meta .phm-author em {
+  font-style: normal;
+  color: var(--heading-color);
+  font-weight: 500;
+}
+
+/* Cover banner */
+.post-banner {
+  margin: 1.75rem 0 2rem;
+}
+.post-banner .preview-img,
+.post-banner img {
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 16px 44px rgba(29, 58, 90, 0.16);
+}
+.post-banner-cap {
+  color: var(--text-muted-color);
+  font-size: 0.88rem;
+}
+
+/* Accent tag pills at the foot of the article */
+.post-tags .post-tag-pill {
+  border: 1px solid var(--accent-1);
+  color: var(--accent-1) !important;
+  background: transparent;
+  border-radius: 6px;
+  padding: 0.15rem 0.7rem;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.post-tags .post-tag-pill:hover {
+  background: var(--accent-1);
+  color: #fff !important;
+}
+
+/* Restyle the TOC panel to match the accent theme */
+#toc-wrapper .toc-title,
+.toc-border-cover ~ #toc .toc-title {
+  color: var(--heading-color);
+}
+#core-wrapper .toc .toc-link.active,
+#toc .toc-link.active {
+  color: var(--accent-1) !important;
+  border-left-color: var(--accent-1) !important;
+}
+#toc .toc-link:hover {
+  color: var(--accent-2) !important;
 }
 
 /* ---------- Listing pages (Blog / Write-ups / Projects) ---------- */
