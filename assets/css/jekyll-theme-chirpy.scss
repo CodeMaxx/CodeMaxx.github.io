@@ -349,6 +349,19 @@ $tn-max: 1140px;
   color: var(--accent-2) !important;
 }
 
+/* Offset anchored headings for the sticky top nav (60px) so TOC / heading-anchor
+   jumps land the heading *below* the nav instead of hiding it behind it. */
+:root {
+  scroll-padding-top: 4.75rem;
+}
+#core-wrapper h1[id],
+#core-wrapper h2[id],
+#core-wrapper h3[id],
+#core-wrapper h4[id],
+#core-wrapper h5[id] {
+  scroll-margin-top: 4.75rem;
+}
+
 /* ---------- Listing pages (Blog / Write-ups / Projects) ---------- */
 .listing-header {
   max-width: 1080px;
