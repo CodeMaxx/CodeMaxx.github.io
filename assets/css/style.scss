@@ -130,6 +130,7 @@ $tn-max: 1140px;
 }
 
 .tn-controls {
+  margin-left: auto; /* explicit: Bootstrap's .ms-auto is not in the prod CSS bundle */
   gap: 0.25rem;
 }
 .tn-controls .btn,
@@ -205,6 +206,58 @@ $tn-max: 1140px;
 #main-wrapper:has(.about) #tail-wrapper {
   flex: 0 0 100%;
   max-width: 100%;
+}
+
+/* ---------- Tag pages ---------- */
+/* Keep the right panel, but replace the theme's Trending Tags / Recently
+   Updated block with the All Tags widget (rendered via panel_includes). */
+#main-wrapper:has(.tag-page) #panel-wrapper .access {
+  display: none;
+}
+.tag-header {
+  margin: 0.5rem 0 1.5rem;
+}
+.tag-title {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+.tag-title i {
+  color: var(--accent-1);
+  font-size: 0.7em;
+}
+.tag-title .tag-count {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent-1);
+  background: var(--accent-soft);
+  padding: 0.1rem 0.65rem;
+  border-radius: 999px;
+}
+.tag-list li > a {
+  color: var(--heading-color) !important;
+}
+.tag-list li > a:hover {
+  color: var(--accent-2) !important;
+}
+#all-tags .panel-heading {
+  font-size: 1rem;
+  font-weight: 700;
+}
+#all-tags .post-tag {
+  margin: 0 0.5rem 0.6rem 0;
+  border-radius: 8px;
+  font-size: 0.8rem;
+}
+#all-tags .post-tag.tag-current {
+  background: var(--accent-1);
+  color: #fff !important;
+  border-color: var(--accent-1);
 }
 
 /* ---------- About page ---------- */
@@ -399,7 +452,6 @@ $tn-max: 1140px;
 .listing-subtitle {
   color: var(--text-muted-color);
   font-size: 1.05rem;
-  max-width: 60ch;
   margin: 0;
 }
 .listing #post-list {
