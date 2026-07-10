@@ -456,7 +456,7 @@ $tn-max: 1140px;
     grid-template-columns: 1.15fr 0.85fr;
     gap: 2.5rem;
     align-items: center;
-    padding: 1rem 0 3.5rem;
+    padding: 3rem 0 3.5rem;
   }
 
   .hero-eyebrow {
@@ -570,11 +570,11 @@ $tn-max: 1140px;
 
   .hero-photo-glow {
     position: absolute;
-    inset: -12% -8% -8% -8%;
+    inset: -4% -10% -10% -10%;
     background: var(--accent-grad);
-    filter: blur(46px);
-    opacity: 0.45;
-    border-radius: 40px;
+    filter: blur(55px);
+    opacity: 0.38;
+    border-radius: 50%;
     z-index: 0;
   }
 
