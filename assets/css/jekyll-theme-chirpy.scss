@@ -790,6 +790,10 @@ $tn-max: 1140px;
 
   /* ---------- Responsive ---------- */
   @media (max-width: 850px) {
+    /* Prevent the blurred hero glow from overflowing the viewport (sideways
+       scroll on phones). Clip horizontally without creating a scroll box. */
+    overflow-x: clip;
+
     .landing-hero {
       grid-template-columns: 1fr;
       text-align: center;
