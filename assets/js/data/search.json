@@ -13,9 +13,20 @@ swcache: true
 
 [
   {% for post in site.posts %}
+  {% if post.redirect_to %}
+    {% assign result_url = post.redirect_to %}
+    {% assign target_attr = 'target="_blank" rel="noopener noreferrer"' %}
+    {% capture ext_icon %} <i class="fas fa-arrow-up-right-from-square external-link-icon" title="Opens an external site"></i>{% endcapture %}
+  {% else %}
+    {% assign result_url = post.url | relative_url %}
+    {% assign target_attr = '' %}
+    {% assign ext_icon = '' %}
+  {% endif %}
   {
     "title": {{ post.title | jsonify }},
-    "url": {{ post.url | relative_url | jsonify }},
+    "url": {{ result_url | jsonify }},
+    "target": {{ target_attr | jsonify }},
+    "icon": {{ ext_icon | jsonify }},
     "categories": {{ post.categories | join: ', ' | jsonify }},
     "tags": {{ post.tags | join: ', ' | jsonify }},
     "date": {{ post.date | jsonify }},

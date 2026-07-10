@@ -245,6 +245,9 @@ $tn-max: 1140px;
 .tag-list li > a:hover {
   color: var(--accent-2) !important;
 }
+#all-tags {
+  margin-top: 2rem;
+}
 #all-tags .panel-heading {
   font-size: 1rem;
   font-weight: 700;
@@ -540,6 +543,12 @@ $tn-max: 1140px;
   margin-top: 0.6rem;
   margin-bottom: 0;
   color: var(--text-muted-color);
+}
+#search-results .external-link-icon {
+  font-size: 0.6em;
+  color: var(--text-muted-color);
+  vertical-align: 0.35em;
+  opacity: 0.85;
 }
 
 /* ---------- Responsive nav ---------- */
