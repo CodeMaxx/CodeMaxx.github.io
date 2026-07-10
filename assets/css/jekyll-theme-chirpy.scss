@@ -760,6 +760,34 @@ $tn-max: 1140px;
     color: #fff !important;
   }
 
+  .feature-more {
+    display: flex;
+    justify-content: center;
+    margin-top: 2.5rem;
+  }
+  .feature-more-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.7rem 1.6rem;
+    border-radius: 999px;
+    font-weight: 600;
+    color: #fff !important;
+    background: var(--accent-grad);
+    box-shadow: 0 8px 22px var(--accent-soft);
+    transition: transform 0.15s ease, box-shadow 0.2s ease;
+  }
+  .feature-more-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px var(--accent-soft);
+  }
+  .feature-more-btn i {
+    transition: transform 0.15s ease;
+  }
+  .feature-more-btn:hover i {
+    transform: translateX(3px);
+  }
+
   /* ---------- Responsive ---------- */
   @media (max-width: 850px) {
     .landing-hero {
