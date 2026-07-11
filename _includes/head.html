@@ -1,13 +1,3 @@
-<!--
-  Local override of the theme's head.
-  Changes vs. the base theme:
-    1. Loads the site stylesheet from a neutral path (/assets/css/style.css)
-       instead of the theme-name-derived path.
-    2. Drops the PWA service-worker registration and instead unregisters any
-       previously-installed worker (and clears its caches) so visitors always
-       get the freshly deployed site and never see an "update available"
-       prompt.
--->
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f7f7f7">
@@ -124,8 +114,6 @@
 
   {% include js-selector.html lang=lang %}
 
-  <!-- Retire any previously-registered PWA service worker and its caches, so
-       returning visitors always load the freshly deployed site with no prompt. -->
   <script>
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.getRegistrations().then(function (regs) {

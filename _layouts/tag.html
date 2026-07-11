@@ -4,17 +4,6 @@ panel_includes:
   - all-tags
 # The layout for Tag page
 ---
-<!--
-  Local override of the theme's tag layout. jekyll-archives orders a tag's posts
-  by date+time only, so a same-day series (e.g. the OverTheWire Bandit levels,
-  all committed 2016-05-31) comes out in commit-time order, not level order.
-
-  We sort with a single composite key "YYYYMMDD#url" (day-granularity date,
-  then URL) and reverse it: newest day first, and within a day the zero-padded
-  slugs (level00…level19) read level19 → level00 down the page. A single sort
-  avoids relying on sort stability (Jekyll's `sort` is not stable). The
-  "@@@index" suffix keeps keys unique and maps back to the original post.
--->
 
 {% include lang.html %}
 

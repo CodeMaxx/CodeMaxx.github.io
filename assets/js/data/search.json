@@ -3,14 +3,6 @@ layout: compress
 swcache: true
 ---
 
-{% comment %}
-  Local override of the theme's search index.
-  Adds a `description` field (shown in results) while keeping `content`
-  (the post body) in the index so full-text matching still works.
-  `description` falls back to the body summary, then the title, so it is
-  never empty (which would otherwise render a literal placeholder).
-{% endcomment %}
-
 [
   {% for post in site.posts %}
   {% if post.redirect_to %}
