@@ -4,10 +4,10 @@ layout: post
 permalink: /writeups/backdoorctf16/6enter-the-matrix/
 date: 2016-06-10 06:02:36 +0530
 image: /assets/images/backdoorctf16/hero-enter-the-matrix.png
-tag:
-- BackdoorCTF2016
-- Pwning
-- Backdoor
+tags:
+- BackdoorCTF
+- CTF
+- Binary Exploitation
 writeup: true
 star: false
 points: 350

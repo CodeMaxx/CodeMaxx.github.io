@@ -4,10 +4,10 @@ layout: post
 permalink: /writeups/pwnablekr_todders_bottle/
 date: 2017-06-12 02:41:00 -0700
 image: /assets/images/pwnablekr-wide.png
-tag:
-- Pwning
-- Hacking
+tags:
+- Pwnable.kr
 - CTF
+- Binary Exploitation
 writeup: true
 star: false
 points: ∞

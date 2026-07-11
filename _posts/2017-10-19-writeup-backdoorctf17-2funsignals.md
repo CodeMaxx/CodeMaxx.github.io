@@ -4,10 +4,10 @@ layout: post
 permalink: /writeups/backdoorctf17/2funsignals/
 date: 2017-10-19 01:23:49 +0530
 image: /assets/images/backdoorctf17/hero-funsignals.png
-tag:
-- BackdoorCTF2017
-- Pwn
-- Backdoor
+tags:
+- BackdoorCTF
+- CTF
+- Binary Exploitation
 writeup: true
 star: false
 points: 250

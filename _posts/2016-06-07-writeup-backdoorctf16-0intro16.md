@@ -4,10 +4,10 @@ layout: post
 permalink: /writeups/backdoorctf16/0intro16/
 date: 2016-06-07 07:44:01 +0530
 image: /assets/images/backdoorctf16/hero-intro16.png
-tag:
-- BackdoorCTF2016
-- Miscellaneous
-- Backdoor
+tags:
+- BackdoorCTF
+- CTF
+- OSINT
 writeup: true
 star: false
 points: 10

@@ -4,10 +4,10 @@ layout: post
 permalink: /writeups/backdoorctf16/3imagelover/
 date: 2016-06-07 07:44:01 +0530
 image: /assets/images/backdoorctf16/hero-imagelover.png
-tag:
-- BackdoorCTF2016
-- Web
-- Backdoor
+tags:
+- BackdoorCTF
+- CTF
+- Web Security
 writeup: true
 star: false
 points: 70

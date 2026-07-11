@@ -3,10 +3,11 @@ title: "Printing Emojis on Terminal"
 layout: post
 date: 2017-05-03 9:00
 image: /assets/images/emoji/printing-emojis-hero.png
-tag:
-- Tutorial
-- Terminal
+tags:
+- Cpp
 - Unicode
+- Shell
+- Tutorial
 blog: true
 description: "C++ code for printing emojis to terminal"
 ---

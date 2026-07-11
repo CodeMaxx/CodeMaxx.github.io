@@ -73,3 +73,79 @@ appending to this document.
 View my publicly-auditable identity here: https://keybase.io/atrehan
 
 ==================================================================
+
+==================================================================
+https://keybase.io/atrehan
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://codemaxx.github.io
+  * I am atrehan (https://keybase.io/atrehan) on keybase.
+  * I have a public key with fingerprint DCC8 A412 93A2 6897 32E9  5D41 D8BD 2439 99DE 1062
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "01209bbbf2555f8ab4ec2f1677c7f63b35a9c993956adad42ad1d3ce687163276b050a",
+      "fingerprint": "dcc8a41293a2689732e95d41d8bd243999de1062",
+      "host": "keybase.io",
+      "key_id": "d8bd243999de1062",
+      "kid": "01014dc3674faed9f48a909de6b5f9f5ee4182cc2c2fd184f7ecbad8676ab6ae43f10a",
+      "uid": "a6a893d6882ac86ec9efd4db62f23e19",
+      "username": "atrehan"
+    },
+    "service": {
+      "hostname": "codemaxx.github.io",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "ctime": 1783742105,
+  "expire_in": 157680000,
+  "prev": "92a271599f6fc93ba026f8b09959280df641363724a278ecc1d4a876502cba11",
+  "seqno": 17,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.1.17
+Comment: https://keybase.io/crypto
+
+yMN3AnicbVJ/TFZVGAYERSJgmd9yRsDV6RbE7s9z72Es1K30i8YyBEzkg3PvOZfv
+gnwfft8HgkhBqDBHTDBJJiiKNElCMjQFiR+JAtqQlSThIFumJhv5OwSxe0n/6/xz
+dt7zPM/7PO/ecy/PcfNxv9q+FFaNBsjuF7tqstzS1n5flUfJdpxLReRR6WT2Ipsw
+cbqS0zVMRVA0w9JQlmWVFQRBlZDME4VVGSCKiqgCTuYEBBUIOSgAhBHmWYQZzCkE
+SCIDOFYEMi3QiAqjVM2WShyZDs3m0mWxokiIZ1jIIRZIUORYAgXMM1iSMctzEEJM
+GBqwOtFqdxoM3ZyMnCRcs+s1/ZE8a+9/8C980wyPFQ6IvIoIhiovIUjrKCALKlQF
+QnhGYhWF1dNgRuJVkSgywhIQAZIBIjynMrO+s2blEEAS5DCQJBYpEiAKJCrmsQxY
+leUIAw2gkzhsKIMYaJeDWJGNyg+j9GK2phBjrkaQ5wDFjkkGyskJT9Vc1iz5v1CZ
+DrvLrtg36f9WlyvTGWHwXbmZBmELkZOfSyXLmg3rw9QZ2cTh1Ow2KoLRkYpLM7QZ
+UeJEnmVoIYwiOZmagyRrBkIQgUTrx+hDsnVJyCJWZAQIVaAqkJMRzQJVkmkIBchK
+NFYBz3CAE1lex0lEURjMI0kEAs3qk2IYygi32WY3Wuo+Uaqu6dRSbciV5SBUfnfX
+Rk83dx+3uV4expa5+cwPeLF7I63+z1wpb9eaHwRR6z/3tDvqnLFR0qOwwjH3mDui
+sFVc+ZZi/uWzTktHjGlZ20Bx77zmfyylD1v/MnmBzJRTX7f77asNGqmotORXfSjQ
+u5ZbCmISPb5aPdAxjMwblr9edGxsVev1ijP1sdHVD99pjLYlNHfF+cELTd8eB6aG
+VGcQm18gvOdR8ubW+JbuhXHdX1hq4/b7OkLvvoZn8ubbJhp8s/+w2cyrp3qCn8Ts
+fRRYvvLT41cKKhdUPAkKmYy6/OW6VLNgun6iZ33SvcZzVxM+8OjZsSxl54NXFodO
+tjUU4hPtA/5NXpejD3iPtb3/68CqWGtJLHNjB9uaUem/4GJz1a1rZ+dOl0YGt5qi
+Nkz7v9p2wzsxOfS+0jB1p96vvIIeGmyy9oVXp1fN8dqZ/vv5C9UH9nj2R18LOLm3
+LK1hTc1McbCpM+Vw+UuVw/VH/3x3XkS0dnvJwbqfBO5mwuja/nVenPk2d+V0RmHj
+iokju/sT2ory+kOO+G4rDOB+TDq1Z3v/mqmy4N8iAx8n5p5+I6b66f0fxjuOHrIs
+7Sw6PLM/5Jjv9oKK7s2TC30CR4O94+uTZno7zh8cLPZrKLd+3BvZl3vo75zyfZda
+Wr679+znu6HjA08XDcanDTV3+KncyPSSIcVz+FbZxl0TxR8tLmFMZ072lY5/smib
+WPV4fOhS4IqzKdM9E1tqRm7WgW/+BbCuyqI=
+=nHRC
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/atrehan
+
+==================================================================

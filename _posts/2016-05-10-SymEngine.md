@@ -2,10 +2,10 @@
 title: "SymEngine"
 layout: post
 date: 2016-05-9 8:10
-tag:
+tags:
 - Open Source
-- Mathematics
 - Cpp
+- Computer Algebra
 projects: true
 star: true
 description: "Symbolic Computation C++ Library"

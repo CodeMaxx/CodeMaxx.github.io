@@ -4,10 +4,10 @@ layout: post
 permalink: /writeups/backdoorctf16/4busybee/
 date: 2016-06-08 22:59:14 +0530
 image: /assets/images/backdoorctf16/hero-busybee.png
-tag:
-- BackdoorCTF2016
+tags:
+- BackdoorCTF
+- CTF
 - Forensics
-- Backdoor
 writeup: true
 star: false
 points: 150

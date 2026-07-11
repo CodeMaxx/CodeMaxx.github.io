@@ -4,10 +4,10 @@ layout: post
 permalink: /writeups/OverTheWire/Bandit/level16/
 date: 2016-05-31 04:37:00 +0530
 image: /assets/images/OverTheWire/Bandit/hero-level16.png
-tag:
+tags:
 - Bandit
 - OverTheWire
-- Wargames
+- Networking
 writeup: true
 star: false
 points:

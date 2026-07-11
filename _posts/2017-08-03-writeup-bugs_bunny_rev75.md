@@ -4,10 +4,10 @@ layout: post
 permalink: /writeups/bugs_bunny_rev75/
 date: 2017-08-03 02:37:41 +0530
 image: /assets/images/bugs_bunny-wide.png
-tag:
-- Reversing
-- Hacking
+tags:
+- Bugs Bunny CTF
 - CTF
+- Reverse Engineering
 writeup: true
 star: false
 points: 75

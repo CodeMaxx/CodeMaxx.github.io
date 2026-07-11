@@ -3,7 +3,7 @@ title: "Machine Leaning - Coursera"
 layout: post
 permalink: /writeups/machine_learning/
 date: 2017-12-31 19:11:48 +0530
-tag:
+tags:
 - Machine Learning
 - Coursera
 writeup: true

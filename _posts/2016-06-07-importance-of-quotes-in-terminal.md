@@ -3,9 +3,9 @@ title: "Importance of quotes in Terminal"
 layout: post
 date: 2016-06-07 11:00
 image: /assets/images/quotes-hero.png
-tag:
-- Unix
-- Terminal
+tags:
+- Linux
+- Shell
 - Tutorial
 blog: true
 description: "Single vs double vs no quotes — how shell expansion changes everything"

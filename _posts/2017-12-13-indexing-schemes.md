@@ -3,10 +3,10 @@ title: "Hacking Postgres Internals - Indexing Schemes for Data Recording Systems
 layout: post
 date: 2017-12-13 8:20
 image: /assets/images/database-wide.png
-tag:
+tags:
 - Databases
+- PostgreSQL
 - C
-- Postgres
 projects: true
 star: true
 description: "Implementing stepped-merge indexes inside PostgreSQL's C codebase from a 1997 research paper"
