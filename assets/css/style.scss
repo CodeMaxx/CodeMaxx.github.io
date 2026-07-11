@@ -630,13 +630,91 @@ div[class^='language-'] .code-header {
   font-size: 1.05rem;
   margin: 0;
 }
+.listing-count {
+  margin: 0.6rem 0 0;
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--text-muted-color);
+}
 .listing #post-list {
   max-width: 1080px;
   margin-left: auto;
   margin-right: auto;
 }
 
-/* Non-clickable tag pills on listing cards (card itself is the link). */
+/* ---------- Uniform listing thumbnails ----------
+   Every card gets a fixed 16:9 cover so the grid reads as a deliberate
+   two-column layout regardless of whether a post declares an image. Posts
+   without an image fall back to a branded accent placeholder instead of
+   collapsing to a full-width text row. A plain <img loading="lazy"> is used
+   (no theme LQIP shimmer) so cards never get stuck on the gray --img-bg
+   gradient placeholder. */
+#post-list .post-preview .card-media {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: var(--img-bg);
+  border-radius: 12px 12px 0 0;
+}
+#post-list .post-preview .card-media .preview-img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: auto;
+  border-radius: inherit;
+}
+#post-list .post-preview .card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: inherit;
+}
+#post-list .post-preview .card-media-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background: var(--accent-grad);
+  color: #fff;
+  font-size: 2rem;
+  opacity: 0.92;
+}
+@media (min-width: 768px) {
+  #post-list .post-preview .card-media {
+    aspect-ratio: auto;
+    min-height: 100%;
+    border-radius: 0 12px 12px 0;
+  }
+}
+
+/* Listing card meta row: let the date / read-time / points / category groups
+   wrap onto multiple lines on narrow screens instead of clipping the trailing
+   items with the theme's single-line ellipsis. Each group is a nowrap
+   .meta-item so wrapping only ever happens between groups, never mid-label.
+   Matches the theme selector specificity and wins by source order. */
+#post-list .card .card-body .post-meta > div.card-meta-items {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: 1.3rem;
+  row-gap: 0.35rem;
+  overflow: visible;
+  white-space: normal;
+  text-overflow: clip;
+}
+#post-list .post-preview .post-meta .meta-item {
+  white-space: nowrap;
+}
+
+/* Tag pills on listing cards. Match the site-wide 6px accent-outline pill
+   (.post-tag-pill / #tags .tag) so the tag language stays consistent. The
+   whole card is the link, so these are non-interactive spans with no hover
+   state of their own. */
 .card-tags {
   display: flex;
   flex-wrap: wrap;
