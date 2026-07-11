@@ -1,0 +1,67 @@
+<!--
+  Local override of the theme's Simple-Jekyll-Search loader.
+  Shows each post's `description` in the results (cleaner than a raw body
+  excerpt) while the body `content` remains in the search index for
+  full-text matching. See: <https://github.com/christian-fei/Simple-Jekyll-Search>
+-->
+
+{% capture result_elem %}
+  <article>
+    <header>
+      <h2><a href="{url}" {target}>{title}{icon}</a></h2>
+      <div class="post-meta d-flex flex-column flex-sm-row text-muted mt-1 mb-1">
+        {categories}
+        {tags}
+      </div>
+    </header>
+    <p>{description}</p>
+  </article>
+{% endcapture %}
+
+{% capture not_found %}<p class="mt-5">{{ site.data.locales[include.lang].search.no_results }}</p>{% endcapture %}
+
+<script>
+  {% comment %} Note: dependent library will be loaded in `js-selector.html` {% endcomment %}
+  document.addEventListener('DOMContentLoaded', () => {
+    SimpleJekyllSearch({
+      searchInput: document.getElementById('search-input'),
+      resultsContainer: document.getElementById('search-results'),
+      json: '{{ '/assets/js/data/search.json' | relative_url }}',
+      searchResultTemplate: '{{ result_elem | strip_newlines }}',
+      noResultsText: '{{ not_found }}',
+      templateMiddleware: function(prop, value, template) {
+        if (prop === 'categories') {
+          if (value === '') {
+            return `${value}`;
+          } else {
+            return `<div class="me-sm-4"><i class="far fa-folder fa-fw"></i>${value}</div>`;
+          }
+        }
+
+        if (prop === 'tags') {
+          if (value === '') {
+            return `${value}`;
+          } else {
+            return `<div><i class="fa fa-tag fa-fw"></i>${value}</div>`;
+          }
+        }
+
+        if (prop === 'description') {
+          return value || '';
+        }
+
+        /* `target`/`icon` carry only a non-word flag ('1' or '') in the index
+           so their markup does not pollute full-text search; expand here. */
+        if (prop === 'target') {
+          return value ? 'target="_blank" rel="noopener noreferrer"' : '';
+        }
+
+        if (prop === 'icon') {
+          return value
+            ? ' <i class="fas fa-arrow-up-right-from-square external-link-icon" title="Opens an external site"></i>'
+            : '';
+        }
+      }
+    });
+  });
+</script>

@@ -54,7 +54,7 @@ a:hover {
 }
 
 /* ============================================================
-   Top navigation bar (replaces Chirpy's left sidebar)
+   Top navigation bar (replaces the theme's left sidebar)
    ============================================================ */
 $tn-max: 1140px;
 
@@ -130,6 +130,7 @@ $tn-max: 1140px;
 }
 
 .tn-controls {
+  margin-left: auto; /* explicit: Bootstrap's .ms-auto is not in the prod CSS bundle */
   gap: 0.25rem;
 }
 .tn-controls .btn,
@@ -145,37 +146,48 @@ $tn-max: 1140px;
   color: var(--accent-1);
 }
 
-/* Show only the icon for the active mode (Chirpy scopes this to #sidebar;
-   re-scope it to the top-nav toggle so it reads as one clean button). */
-.tn-mode #mode-toggle > i {
+/* Show only the icon for the active mode (the base theme scopes this to
+   #sidebar; re-scope it to the top-nav toggle so it reads as one clean
+   button). Rules are tag-agnostic so the light icon can be an inline SVG. */
+.tn-mode #mode-toggle > i,
+.tn-mode #mode-toggle > svg {
   display: none;
 }
 :root[data-bs-theme='light'][data-theme-persisted]
   .tn-mode
   #mode-toggle
-  > i[data-theme-mode='light'] {
+  > [data-theme-mode='light'] {
   display: block;
 }
 :root[data-bs-theme='dark'][data-theme-persisted]
   .tn-mode
   #mode-toggle
-  > i[data-theme-mode='dark'] {
+  > [data-theme-mode='dark'] {
   display: block;
 }
 :root:not([data-theme-persisted])
   .tn-mode
   #mode-toggle
-  > i[data-theme-mode='system'] {
+  > [data-theme-mode='system'] {
   display: block;
+}
+/* Inline SVG icon (light mode): keep it aligned in the button and spaced
+   from the label inside the dropdown menu. */
+.mode-ico {
+  flex-shrink: 0;
+  vertical-align: -0.18em;
+}
+.tn-mode .dropdown-item > .mode-ico {
+  margin-right: 0.5rem;
 }
 
 /* The hamburger is non-functional now (nav links are always visible); hide it.
-   Chirpy's `#sidebar-trigger` id beats a class, so match the id + !important. */
+   The theme's `#sidebar-trigger` id beats a class, so match the id + !important. */
 #topbar #sidebar-trigger.tn-hamburger {
   display: none !important;
 }
 
-/* Chirpy renders #topbar-title for mobile; hide on desktop (brand covers it). */
+/* The theme renders #topbar-title for mobile; hide on desktop (brand covers it). */
 #topbar-title {
   display: none;
 }
@@ -194,6 +206,61 @@ $tn-max: 1140px;
 #main-wrapper:has(.about) #tail-wrapper {
   flex: 0 0 100%;
   max-width: 100%;
+}
+
+/* ---------- Tag pages ---------- */
+/* Keep the right panel, but replace the theme's Trending Tags / Recently
+   Updated block with the All Tags widget (rendered via panel_includes). */
+#main-wrapper:has(.tag-page) #panel-wrapper .access {
+  display: none;
+}
+.tag-header {
+  margin: 0.5rem 0 1.5rem;
+}
+.tag-title {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+.tag-title i {
+  color: var(--accent-1);
+  font-size: 0.7em;
+}
+.tag-title .tag-count {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent-1);
+  background: var(--accent-soft);
+  padding: 0.1rem 0.65rem;
+  border-radius: 999px;
+}
+.tag-list li > a {
+  color: var(--heading-color) !important;
+}
+.tag-list li > a:hover {
+  color: var(--accent-2) !important;
+}
+#all-tags {
+  margin-top: 2rem;
+}
+#all-tags .panel-heading {
+  font-size: 1rem;
+  font-weight: 700;
+}
+#all-tags .post-tag {
+  margin: 0 0.5rem 0.6rem 0;
+  border-radius: 8px;
+  font-size: 0.8rem;
+}
+#all-tags .post-tag.tag-current {
+  background: var(--accent-1);
+  color: #fff !important;
+  border-color: var(--accent-1);
 }
 
 /* ---------- About page ---------- */
@@ -388,7 +455,6 @@ $tn-max: 1140px;
 .listing-subtitle {
   color: var(--text-muted-color);
   font-size: 1.05rem;
-  max-width: 60ch;
   margin: 0;
 }
 .listing #post-list {
@@ -415,6 +481,74 @@ $tn-max: 1140px;
 /* Accent the card title on hover to match the site accent. */
 #post-list .card-wrapper:hover .card-title {
   color: var(--accent-2) !important;
+}
+
+/* ---------- Search results page ---------- */
+/* Keep the theme's responsive two-column result grid, but restyle each result
+   as an accent card to match the top-nav redesign. */
+#search-result-wrapper .content {
+  max-width: 1080px;
+  width: 100%;
+  padding: 0 0.25rem;
+}
+#search-results > article {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border-color, rgba(0, 0, 0, 0.08));
+  border-radius: 12px;
+  padding: 1.15rem 1.35rem;
+  transition:
+    transform 0.15s ease,
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+#search-results > article:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent-1);
+  box-shadow: 0 10px 26px var(--accent-soft);
+}
+#search-results > article h2 {
+  margin: 0;
+  line-height: 1.35;
+}
+#search-results > article h2 a {
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--heading-color) !important;
+}
+#search-results > article:hover h2 a {
+  color: var(--accent-2) !important;
+}
+#search-results > article .post-meta {
+  gap: 0.4rem;
+  margin: 0.55rem 0 0.15rem;
+}
+#search-results > article .post-meta > div {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.75rem;
+  padding: 0.15rem 0.6rem;
+  border-radius: 6px;
+  border: 1px solid var(--accent-1);
+  color: var(--accent-1);
+  line-height: 1.5;
+  margin: 0 !important;
+}
+#search-results > article .post-meta > div i {
+  color: var(--accent-1) !important;
+  margin-right: 0.35rem;
+  font-size: 100%;
+}
+#search-results > article > p {
+  margin-top: 0.6rem;
+  margin-bottom: 0;
+  color: var(--text-muted-color);
+}
+#search-results .external-link-icon {
+  font-size: 0.6em;
+  color: var(--text-muted-color);
+  vertical-align: 0.35em;
+  opacity: 0.85;
 }
 
 /* ---------- Responsive nav ---------- */

@@ -1,8 +1,8 @@
 <!-- The Top Navigation Bar -->
 <!--
-  Local override: replaces Chirpy's left sidebar with a full-width top nav.
+  Local override: replaces the theme's left sidebar with a full-width top nav.
   Left = brand (name); right = page links + search + dark/light toggle.
-  The mode-toggle markup is moved here from the sidebar (Chirpy JS binds to
+  The mode-toggle markup is moved here from the sidebar (the theme JS binds to
   `#mode-toggle + .dropdown-menu`). Search elements keep their original IDs so
   the theme's search JS keeps working. `#sidebar-trigger` / `#topbar-title`
   are retained (hidden on desktop) because the theme JS references them.
@@ -47,7 +47,7 @@
       <!-- Dark / light mode toggle (moved from sidebar) -->
       {% unless site.theme_mode == 'light' or site.theme_mode == 'dark' %}
         {%- capture icon_system -%}<i class="fa-solid fa-display" data-theme-mode="system"></i>{%- endcapture -%}
-        {%- capture icon_light -%}<i class="fa-regular fa-sun" data-theme-mode="light"></i>{%- endcapture -%}
+        {%- capture icon_light -%}<svg data-theme-mode="light" class="mode-ico" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg>{%- endcapture -%}
         {%- capture icon_dark -%}<i class="fa-regular fa-moon" data-theme-mode="dark"></i>{%- endcapture -%}
 
         <div class="btn-group dropdown tn-mode">

@@ -1,0 +1,22 @@
+<!-- All tags list — panel widget shown on individual tag pages. -->
+
+{% assign tag_names = '' | split: '' %}
+{% for tag in site.tags %}
+  {% assign tag_names = tag_names | push: tag[0] %}
+{% endfor %}
+{% assign tag_names = tag_names | sort_natural %}
+
+{% if tag_names.size > 0 %}
+  <section id="all-tags">
+    <h2 class="panel-heading">All Tags</h2>
+    <div class="d-flex flex-wrap mt-3 mb-1">
+      {% for tag_name in tag_names %}
+        {% assign url = tag_name | slugify | url_encode | prepend: '/tags/' | append: '/' %}
+        <a
+          class="post-tag btn btn-outline-primary{% if tag_name == page.title %} tag-current{% endif %}"
+          href="{{ url | relative_url }}"
+        >{{ tag_name }}</a>
+      {% endfor %}
+    </div>
+  </section>
+{% endif %}

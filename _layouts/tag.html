@@ -1,9 +1,11 @@
 ---
-layout: page
+layout: default
+panel_includes:
+  - all-tags
 # The layout for Tag page
 ---
 <!--
-  Local override of Chirpy's tag layout. jekyll-archives orders a tag's posts
+  Local override of the theme's tag layout. jekyll-archives orders a tag's posts
   by date+time only, so a same-day series (e.g. the OverTheWire Bandit levels,
   all committed 2016-05-31) comes out in commit-time order, not level order.
 
@@ -23,13 +25,15 @@ layout: page
 {% endfor %}
 {% assign keyed = keyed | sort | reverse %}
 
-<div id="page-tag">
-  <h1 class="ps-lg-2">
-    <i class="fa fa-tag fa-fw text-muted"></i>
-    {{ page.title }}
-    <span class="lead text-muted ps-2">{{ page.posts | size }}</span>
-  </h1>
-  <ul class="content ps-0">
+<div id="page-tag" class="tag-page">
+  <header class="tag-header">
+    <h1 class="tag-title">
+      <i class="fa fa-tag"></i>
+      <span>{{ page.title }}</span>
+      <span class="tag-count">{{ page.posts | size }}</span>
+    </h1>
+  </header>
+  <ul class="tag-list content ps-0">
     {% for k in keyed %}
       {% assign idx = k | split: '@@@' | last | plus: 0 %}
       {% assign post = page.posts[idx] %}
