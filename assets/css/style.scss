@@ -254,8 +254,18 @@ $tn-max: 1140px;
 }
 #all-tags .post-tag {
   margin: 0 0.5rem 0.6rem 0;
-  border-radius: 8px;
+  border-radius: 6px;
   font-size: 0.8rem;
+  border: 1px solid var(--accent-1) !important;
+  color: var(--accent-1) !important;
+  background: transparent;
+  transition:
+    background 0.15s ease,
+    color 0.15s ease;
+}
+#all-tags .post-tag:hover {
+  background: var(--accent-1);
+  color: #fff !important;
 }
 #all-tags .post-tag.tag-current {
   background: var(--accent-1);
@@ -459,8 +469,10 @@ div[class^='language-'] .code-header {
   flex: 0 0 100%;
   max-width: 100%;
 }
-/* Accent header for page-layout index pages (Tags / Archives) */
+/* Accent header for page-layout index pages (Tags / Archives) — matches the
+   listing-page header treatment (size + gradient underline). */
 .dynamic-title {
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
   font-weight: 700;
   letter-spacing: -0.02em;
 }
@@ -473,23 +485,31 @@ div[class^='language-'] .code-header {
   border-radius: 3px;
   background: var(--accent-grad);
 }
-/* Tags index chips: tighter, accent hover/focus, left-aligned on mobile. */
+/* Tags index chips: match the site's 6px outline pill (like .card-tag /
+   .post-tag-pill) instead of the theme's rounded, shadowed chip. */
+#tags {
+  gap: 0.55rem;
+}
 #tags .tag {
-  line-height: 2.4rem;
-  margin-right: 0.5rem;
+  margin: 0 !important;
+  padding: 0.28rem 0.7rem;
+  line-height: 1.6;
+  border-radius: 6px;
+  border: 1px solid var(--accent-1) !important;
+  color: var(--accent-1);
+  box-shadow: none !important;
   transition:
-    border-color 0.15s ease,
-    color 0.15s ease,
-    background 0.15s ease;
+    background 0.15s ease,
+    color 0.15s ease;
 }
 #tags .tag:hover,
 #tags .tag:focus-visible {
-  border-color: var(--accent-1) !important;
-  color: var(--accent-1);
-  background: var(--accent-soft);
+  background: var(--accent-1);
+  color: #fff;
 }
 #tags .tag span {
-  color: var(--accent-1);
+  color: inherit;
+  opacity: 0.7;
 }
 @media (max-width: 991px) {
   #tags {
