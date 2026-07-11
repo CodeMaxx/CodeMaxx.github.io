@@ -3,13 +3,14 @@ title: "Bandit Level 15"
 layout: post
 permalink: /writeups/OverTheWire/Bandit/level15/
 date: 2016-05-31 04:37:00 +0530
-image: /assets/images/OverTheWire/Bandit/hero-level15.png
+image:
+  path: /assets/images/OverTheWire/Bandit/hero-level15.png
+  alt: "OverTheWire Bandit Level 15 wargame title banner"
 tags:
 - Bandit
 - OverTheWire
 - Networking
 writeup: true
-star: false
 points:
 ctf_category: Wargame
 description: "Bandit Level 15 → 16: submitting a password over SSL using openssl s_client"

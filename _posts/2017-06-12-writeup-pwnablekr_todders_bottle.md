@@ -3,13 +3,14 @@ title: "pwnable.kr - Toddler's Bottle"
 layout: post
 permalink: /writeups/pwnablekr_todders_bottle/
 date: 2017-06-12 02:41:00 -0700
-image: /assets/images/pwnablekr-wide.png
+image:
+  path: /assets/images/pwnablekr-wide.png
+  alt: "pwnable.kr logo with the tagline “Shell we play a game?”"
 tags:
 - Pwnable.kr
 - CTF
 - Binary Exploitation
 writeup: true
-star: false
 points: ∞
 description: "Walkthroughs for fd, collision, bof, flag, and passcode challenges on pwnable.kr"
 ctf_category: Pwn

@@ -3,13 +3,14 @@ title: "BackdoorCTF 2016 - enter the matrix"
 layout: post
 permalink: /writeups/backdoorctf16/6enter-the-matrix/
 date: 2016-06-10 06:02:36 +0530
-image: /assets/images/backdoorctf16/hero-enter-the-matrix.png
+image:
+  path: /assets/images/backdoorctf16/hero-enter-the-matrix.png
+  alt: "BackdoorCTF challenge title banner for the Pwn problem “enter the matrix”"
 tags:
 - BackdoorCTF
 - CTF
 - Binary Exploitation
 writeup: true
-star: false
 points: 350
 ctf_category: Pwn
 description: "BackdoorCTF 2016 enter the matrix: binary exploitation to reach the flag on a remote server"

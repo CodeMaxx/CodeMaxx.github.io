@@ -3,13 +3,14 @@ title: "BackdoorCTF 2017 - Fun Signals"
 layout: post
 permalink: /writeups/backdoorctf17/2funsignals/
 date: 2017-10-19 01:23:49 +0530
-image: /assets/images/backdoorctf17/hero-funsignals.png
+image:
+  path: /assets/images/backdoorctf17/hero-funsignals.png
+  alt: "BackdoorCTF challenge title banner for “funsignals”"
 tags:
 - BackdoorCTF
 - CTF
 - Binary Exploitation
 writeup: true
-star: false
 points: 250
 ctf_category: Pwn
 description: "BackdoorCTF 2017 Fun Signals: using Linux signal handlers as a ret2syscall exploit primitive"
@@ -36,7 +37,7 @@ When the kernel delivers a signal it creates a frame on the stack where it store
 
 ### The disassembly
 
-![Disasembly](/assets/images/backdoorctf17/funsignals_disas.png)
+![Disassembly](/assets/images/backdoorctf17/funsignals_disas.png)
 
 The flag is in the binary.... on the server.
 

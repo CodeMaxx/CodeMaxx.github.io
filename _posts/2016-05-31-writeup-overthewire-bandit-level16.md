@@ -3,13 +3,14 @@ title: "Bandit Level 16"
 layout: post
 permalink: /writeups/OverTheWire/Bandit/level16/
 date: 2016-05-31 04:37:00 +0530
-image: /assets/images/OverTheWire/Bandit/hero-level16.png
+image:
+  path: /assets/images/OverTheWire/Bandit/hero-level16.png
+  alt: "OverTheWire Bandit Level 16 wargame title banner"
 tags:
 - Bandit
 - OverTheWire
 - Networking
 writeup: true
-star: false
 points:
 ctf_category: Wargame
 description: "Bandit Level 16 → 17: port scanning with nmap to find the SSL listener and get an SSH key"

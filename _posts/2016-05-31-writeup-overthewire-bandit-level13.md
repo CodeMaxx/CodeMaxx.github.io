@@ -3,13 +3,14 @@ title: "Bandit Level 13"
 layout: post
 permalink: /writeups/OverTheWire/Bandit/level13/
 date: 2016-05-31 00:41:51 +0530
-image: /assets/images/OverTheWire/Bandit/hero-level13.png
+image:
+  path: /assets/images/OverTheWire/Bandit/hero-level13.png
+  alt: "OverTheWire Bandit Level 13 wargame title banner"
 tags:
 - Bandit
 - OverTheWire
 - SSH
 writeup: true
-star: false
 points:
 ctf_category: Wargame
 description: "Bandit Level 13 → 14: using an SSH private key to log in without a password"

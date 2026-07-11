@@ -75,8 +75,8 @@ script_includes:
 
     <div class="post-banner">
       <img {{ src }} {{ class }} {{ alt }} w="1200" h="630" {{ lqip }}>
-      {%- if page.image.alt -%}
-        <figcaption class="post-banner-cap text-center pt-2 pb-2">{{ page.image.alt }}</figcaption>
+      {%- if page.image.caption -%}
+        <figcaption class="post-banner-cap text-center pt-2 pb-2">{{ page.image.caption }}</figcaption>
       {%- endif -%}
     </div>
   {% endif %}

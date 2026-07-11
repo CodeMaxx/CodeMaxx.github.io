@@ -2,7 +2,9 @@
 title: "Won Ubisoft GameJam 2017"
 layout: post
 date: 2017-10-18 11:00
-image: /assets/images/ubisoft-wide.png
+image:
+  path: /assets/images/ubisoft-wide.png
+  alt: "Ubisoft logo with its blue swirl emblem"
 tags:
 - Hackathon
 - Game Development

@@ -3,13 +3,14 @@ title: "Bandit Level 11"
 layout: post
 permalink: /writeups/OverTheWire/Bandit/level11/
 date: 2016-05-31 00:41:51 +0530
-image: /assets/images/OverTheWire/Bandit/hero-level11.png
+image:
+  path: /assets/images/OverTheWire/Bandit/hero-level11.png
+  alt: "OverTheWire Bandit Level 11 wargame title banner"
 tags:
 - Bandit
 - OverTheWire
 - Encoding
 writeup: true
-star: false
 points:
 ctf_category: Wargame
 description: "Bandit Level 11 → 12: decoding a ROT13 cipher using the tr command"

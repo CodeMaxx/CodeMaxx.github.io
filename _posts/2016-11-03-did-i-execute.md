@@ -2,7 +2,9 @@
 title: "Did I Execute?"
 layout: post
 date: 2016-11-03 11:00
-image: /assets/images/terminal-hero.png
+image:
+  path: /assets/images/terminal-hero.png
+  alt: "Minimalist terminal icon: a dollar-sign prompt and cursor on a dark background"
 tags:
 - Linux
 - Shell

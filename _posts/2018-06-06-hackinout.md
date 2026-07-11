@@ -9,5 +9,7 @@ tags:
 blog: true
 redirect_to: https://devfolio.co/blog/spamslam-a-blockchain-solution-to-less-spam/
 description: "Winning HackInOut's blockchain track with a radical idea to kill spam forever"
-image: /assets/images/hackinout-winners.jpg
+image:
+  path: /assets/images/hackinout-winners.jpg
+  alt: "Team Freisenberger receiving the winner award on stage at the InOut hackathon next to a Gnosis banner"
 ---

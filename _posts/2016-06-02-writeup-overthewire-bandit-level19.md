@@ -3,13 +3,14 @@ title: "Bandit Level 19"
 layout: post
 permalink: /writeups/OverTheWire/Bandit/level19/
 date: 2016-06-02 22:45:50 +0530
-image: /assets/images/OverTheWire/Bandit/hero-level19.png
+image:
+  path: /assets/images/OverTheWire/Bandit/hero-level19.png
+  alt: "OverTheWire Bandit Level 19 wargame title banner"
 tags:
 - Bandit
 - OverTheWire
 - Privilege Escalation
 writeup: true
-star: false
 points:
 ctf_category: Wargame
 description: "Bandit Level 19 → 20: using a setuid binary to read a file owned by another user"

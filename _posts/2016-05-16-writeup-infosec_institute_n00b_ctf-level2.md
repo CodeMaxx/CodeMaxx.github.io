@@ -3,13 +3,14 @@ title: "Infosec Institute n00b Level 2"
 layout: post
 permalink: /writeups/Infosec_Institute_n00b_ctf/level2/
 date: 2016-05-16 8:10
-image: /assets/images/InfosecInstin00b/desc2-wide.png
+image:
+  path: /assets/images/InfosecInstin00b/desc2-wide.png
+  alt: "Retro dialog box on a blue screen reading “It seems like the image is broken.. Can you check the file?”"
 tags:
 - CTF
 - Web Security
 - Infosec Institute n00b CTF
 writeup: true
-star: false
 description: "n00b CTF 2"
 points: 20
 ctf_category: Web

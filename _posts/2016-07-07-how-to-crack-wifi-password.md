@@ -2,7 +2,9 @@
 title: "How to crack Wifi Passwords"
 layout: post
 date: 2016-07-07 11:00
-image: /assets/images/wifi_crack/wifi-crack-wide.png
+image:
+  path: /assets/images/wifi_crack/wifi-crack-wide.png
+  alt: "Wi-Fi wordmark split by a red lightning bolt over a pattern of blue signal rings"
 tags:
 - Security
 - Wi-Fi

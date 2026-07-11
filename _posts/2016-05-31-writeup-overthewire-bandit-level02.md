@@ -3,13 +3,14 @@ title: "Bandit Level 2"
 layout: post
 permalink: /writeups/OverTheWire/Bandit/level02/
 date: 2016-05-31 01:16:51 +0530
-image: /assets/images/OverTheWire/Bandit/hero-level2.png
+image:
+  path: /assets/images/OverTheWire/Bandit/hero-level2.png
+  alt: "OverTheWire Bandit Level 2 wargame title banner"
 tags:
 - Bandit
 - OverTheWire
 - Shell
 writeup: true
-star: false
 points:
 ctf_category: Wargame
 description: "Bandit Level 2 → 3: reading a filename with spaces using quotes or backslash"

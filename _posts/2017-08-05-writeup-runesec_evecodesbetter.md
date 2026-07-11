@@ -3,13 +3,14 @@ title: "Runesec CTF 2017 - EveCodesBetter"
 layout: post
 permalink: /writeups/runesec_evecodesbetter/
 date: 2017-08-05 19:33:38 +0530
-image: /assets/images/evecodesbetter/runesec-wide.png
+image:
+  path: /assets/images/evecodesbetter/runesec-wide.png
+  alt: "RuneSec team logo on a black background"
 tags:
 - RuneSec CTF
 - CTF
 - Cryptography
 writeup: true
-star: false
 points: 400
 description: "Cracking a Vigenère cipher and XOR-encoded PNG to reveal the hidden flag"
 ctf_category: Crypto

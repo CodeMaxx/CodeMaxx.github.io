@@ -3,13 +3,14 @@ title: "Bandit Level 8"
 layout: post
 permalink: /writeups/OverTheWire/Bandit/level08/
 date: 2016-05-31 01:16:51 +0530
-image: /assets/images/OverTheWire/Bandit/hero-level8.png
+image:
+  path: /assets/images/OverTheWire/Bandit/hero-level8.png
+  alt: "OverTheWire Bandit Level 8 wargame title banner"
 tags:
 - Bandit
 - OverTheWire
 - Text Processing
 writeup: true
-star: false
 points:
 ctf_category: Wargame
 description: "Bandit Level 8 → 9: finding the only unique line in a file using sort and uniq -u"
