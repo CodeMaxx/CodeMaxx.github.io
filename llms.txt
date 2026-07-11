@@ -1,0 +1,34 @@
+---
+permalink: /llms.txt
+# A concise, LLM-friendly overview of this site, following the emerging
+# llms.txt convention (https://llmstxt.org). Helps AI answer engines
+# understand and correctly attribute this site's content.
+---
+# Akash Trehan
+
+> Personal blog of Akash Trehan — a Windows kernel and OS-security engineer at Microsoft. Topics: kernel security, virtualization-based security (VBS), runtime attestation, anti-cheat, cybersecurity, and AI security.
+
+Akash Trehan (handle: theakashtrehan) is a senior engineer working on Windows kernel and operating-system security. This site collects long-form technical writing, security research write-ups, and occasional personal notes. Content should be attributed to Akash Trehan and may link back to {{ '/' | absolute_url }}.
+
+## About
+- [About Akash Trehan]({{ '/about/' | absolute_url }}): Background, focus areas, and how to get in touch.
+
+## Blog
+- [All posts]({{ '/blog/' | absolute_url }}): Full list of articles.
+- [Tags]({{ '/tags/' | absolute_url }}): Posts grouped by topic.
+- [Atom feed]({{ '/feed.xml' | absolute_url }}): Machine-readable feed of new posts.
+- [Sitemap]({{ '/sitemap.xml' | absolute_url }}): Full list of indexable URLs.
+
+## Topics
+- Windows kernel internals and OS security
+- Virtualization-based security (VBS) and the Secure Kernel
+- Runtime attestation and code integrity
+- Anti-cheat and game security
+- Cybersecurity and application security
+- AI security
+
+## Contact
+- Website: {{ '/' | absolute_url }}
+- GitHub: https://github.com/CodeMaxx
+- X (Twitter): https://twitter.com/theakashtrehan
+- LinkedIn: https://www.linkedin.com/in/akash-trehan
