@@ -82,4 +82,4 @@ $ false && echo success || echo fail
 fail
 ```
 
-**Hope this helped :) In case you have any doubts comment below. If you are an Infosec person, don't forget to checkout my [Write-ups](../../writeups)**
+**Hope this helped :) In case you have any doubts comment below. If you are an Infosec person, don't forget to checkout my [Write-ups](/writeups/)**

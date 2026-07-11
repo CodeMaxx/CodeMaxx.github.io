@@ -88,6 +88,6 @@ This the ELF interpreter. It is responsible for dynamic linking.
 
 **Cheers!**
 
-**If you are an Infosec person, don't forget to checkout my [CTF Write-ups](../../writeups)**
+**If you are an Infosec person, don't forget to checkout my [CTF Write-ups](/writeups/)**
 
-[See other Blog posts](../blog)
+[See other Blog posts](/blog/)

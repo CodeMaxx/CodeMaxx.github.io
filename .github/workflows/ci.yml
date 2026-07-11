@@ -26,23 +26,12 @@ jobs:
           ruby-version: "3.4"
           bundler-cache: true
 
-      - name: Build site
-        run: bundle exec jekyll b
+      - name: Build site and check links
+        run: bundle exec rake test
         env:
           JEKYLL_ENV: "production"
-
-      - name: Check links (html-proofer)
-        run: |
-          bundle exec htmlproofer _site \
-            --disable-external \
-            --no-enforce-https \
-            --allow-hash-href \
-            --ignore-files "/cs741/" \
-            --ignore-urls "/^\/wiki\//,/\/blog$/,/\/projects$/,/\/writeups$/,/crate\.png$/"
-        # Ignores are pre-existing content debt (not theme-migration issues),
-        # carried over from the old .htmlproofer.yaml plus links to sections
-        # deferred during the Chirpy migration. Tracked in beads for a content
-        # pass: /wiki/* relative Wikipedia links, the /blog//projects//writeups
-        # post-body links, the /cs741/ static test artifacts, and crate.png.
-        # --enforce-https is off because the imported CTF write-ups link to
-        # legacy http-only challenge resources (e.g. hack.bckdr.in).
+        # `rake test` builds the site and runs html-proofer with external link
+        # checking enabled, configured via .htmlproofer.yaml: a curated
+        # ignore list of dead / bot-blocked external domains plus the /cs741/
+        # static course-project test artifacts. A realistic User-Agent and
+        # generous timeouts (set in the Rakefile) keep external checks stable.
