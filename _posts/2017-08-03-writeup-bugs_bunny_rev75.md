@@ -3,13 +3,14 @@ title: "Bugs Bunny CTF 2k17 - mysterious!"
 layout: post
 permalink: /writeups/bugs_bunny_rev75/
 date: 2017-08-03 02:37:41 +0530
-image: /assets/images/bugs_bunny-wide.png
+image:
+  path: /assets/images/bugs_bunny-wide.png
+  alt: "Bugs_Bunny CTF team logo: a stylised blue-and-white rabbit head"
 tags:
 - Bugs Bunny CTF
 - CTF
 - Reverse Engineering
 writeup: true
-star: false
 points: 75
 description: "Reversing a binary with XOR-encoded flag hidden in a lookup table"
 ctf_category: Reversing

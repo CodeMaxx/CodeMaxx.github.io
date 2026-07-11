@@ -3,13 +3,14 @@ title: "BackdoorCTF 2017 - ECB"
 layout: post
 permalink: /writeups/backdoorctf17/1ecb/
 date: 2017-10-18 23:47:32 +0530
-image: /assets/images/backdoorctf17/hero-ecb.png
+image:
+  path: /assets/images/backdoorctf17/hero-ecb.png
+  alt: "BackdoorCTF challenge title banner for the Crypto problem “ecb”"
 tags:
 - BackdoorCTF
 - CTF
 - Cryptography
 writeup: true
-star: false
 points: 150
 ctf_category: Crypto
 description: "BackdoorCTF 2017 ECB: exploiting AES-ECB pattern leakage to reveal an encrypted image flag"

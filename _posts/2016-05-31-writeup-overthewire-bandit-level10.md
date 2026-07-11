@@ -3,13 +3,14 @@ title: "Bandit Level 10"
 layout: post
 permalink: /writeups/OverTheWire/Bandit/level10/
 date: 2016-05-31 00:41:51 +0530
-image: /assets/images/OverTheWire/Bandit/hero-level10.png
+image:
+  path: /assets/images/OverTheWire/Bandit/hero-level10.png
+  alt: "OverTheWire Bandit Level 10 wargame title banner"
 tags:
 - Bandit
 - OverTheWire
 - Encoding
 writeup: true
-star: false
 points:
 ctf_category: Wargame
 description: "Bandit Level 10 → 11: decoding base64-encoded data with the base64 command"

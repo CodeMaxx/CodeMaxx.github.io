@@ -3,13 +3,14 @@ title: "Bandit Level 3"
 layout: post
 permalink: /writeups/OverTheWire/Bandit/level03/
 date: 2016-05-31 01:16:51 +0530
-image: /assets/images/OverTheWire/Bandit/hero-level3.png
+image:
+  path: /assets/images/OverTheWire/Bandit/hero-level3.png
+  alt: "OverTheWire Bandit Level 3 wargame title banner"
 tags:
 - Bandit
 - OverTheWire
 - Shell
 writeup: true
-star: false
 points:
 ctf_category: Wargame
 description: "Bandit Level 3 → 4: finding and reading a hidden file with ls -a"

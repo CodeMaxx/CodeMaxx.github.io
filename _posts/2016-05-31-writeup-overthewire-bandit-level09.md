@@ -3,13 +3,14 @@ title: "Bandit Level 9"
 layout: post
 permalink: /writeups/OverTheWire/Bandit/level09/
 date: 2016-05-31 01:16:51 +0530
-image: /assets/images/OverTheWire/Bandit/hero-level9.png
+image:
+  path: /assets/images/OverTheWire/Bandit/hero-level9.png
+  alt: "OverTheWire Bandit Level 9 wargame title banner"
 tags:
 - Bandit
 - OverTheWire
 - File Analysis
 writeup: true
-star: false
 points:
 ctf_category: Wargame
 description: "Bandit Level 9 → 10: using strings to extract human-readable text from a binary file"

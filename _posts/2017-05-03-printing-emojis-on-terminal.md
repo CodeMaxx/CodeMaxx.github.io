@@ -2,7 +2,9 @@
 title: "Printing Emojis on Terminal"
 layout: post
 date: 2017-05-03 9:00
-image: /assets/images/emoji/printing-emojis-hero.png
+image:
+  path: /assets/images/emoji/printing-emojis-hero.png
+  alt: "A grid of emoji faces with an arrow pointing to a black terminal window icon"
 tags:
 - Cpp
 - Unicode

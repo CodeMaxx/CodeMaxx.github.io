@@ -3,13 +3,14 @@ title: "Bandit Level 14"
 layout: post
 permalink: /writeups/OverTheWire/Bandit/level14/
 date: 2016-05-31 00:41:51 +0530
-image: /assets/images/OverTheWire/Bandit/hero-level14.png
+image:
+  path: /assets/images/OverTheWire/Bandit/hero-level14.png
+  alt: "OverTheWire Bandit Level 14 wargame title banner"
 tags:
 - Bandit
 - OverTheWire
 - Networking
 writeup: true
-star: false
 points:
 ctf_category: Wargame
 description: "Bandit Level 14 → 15: submitting a password to a localhost port using netcat"

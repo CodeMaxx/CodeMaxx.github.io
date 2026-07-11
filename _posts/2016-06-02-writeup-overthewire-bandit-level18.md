@@ -3,13 +3,14 @@ title: "Bandit Level 18"
 layout: post
 permalink: /writeups/OverTheWire/Bandit/level18/
 date: 2016-06-02 22:45:50 +0530
-image: /assets/images/OverTheWire/Bandit/hero-level18.png
+image:
+  path: /assets/images/OverTheWire/Bandit/hero-level18.png
+  alt: "OverTheWire Bandit Level 18 wargame title banner"
 tags:
 - Bandit
 - OverTheWire
 - SSH
 writeup: true
-star: false
 points:
 ctf_category: Wargame
 description: "Bandit Level 18 → 19: bypassing .bashrc logout by running a command directly over SSH"

@@ -3,13 +3,14 @@ title: "Bandit Level 6"
 layout: post
 permalink: /writeups/OverTheWire/Bandit/level06/
 date: 2016-05-31 01:16:51 +0530
-image: /assets/images/OverTheWire/Bandit/hero-level6.png
+image:
+  path: /assets/images/OverTheWire/Bandit/hero-level6.png
+  alt: "OverTheWire Bandit Level 6 wargame title banner"
 tags:
 - Bandit
 - OverTheWire
 - Shell
 writeup: true
-star: false
 points:
 ctf_category: Wargame
 description: "Bandit Level 6 → 7: searching the whole server by owner, group, and size with find"

@@ -1,10 +1,9 @@
 ---
 title: "Checking out Stuff"
 layout: post
-date: 2016-04-03
-tag:
-- lukkha
-- awesome
+date: 2016-04-03 12:00
+tags:
+- Personal
 blog: true
 ---
 

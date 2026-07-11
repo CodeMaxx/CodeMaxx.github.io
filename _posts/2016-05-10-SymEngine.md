@@ -7,7 +7,6 @@ tags:
 - Cpp
 - Computer Algebra
 projects: true
-star: true
 description: "Symbolic Computation C++ Library"
 ---
 

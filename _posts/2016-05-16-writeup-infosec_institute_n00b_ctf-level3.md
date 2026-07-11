@@ -3,13 +3,14 @@ title: "Infosec Institute n00b Level 3"
 layout: post
 permalink: /writeups/Infosec_Institute_n00b_ctf/level3/
 date: 2016-05-16 8:15
-image: /assets/images/InfosecInstin00b/qr3-wide.png
+image:
+  path: /assets/images/InfosecInstin00b/qr3-wide.png
+  alt: "A QR code centered on a dark blue background"
 tags:
 - CTF
 - Web Security
 - Infosec Institute n00b CTF
 writeup: true
-star: false
 description: "n00b CTF 3"
 points: 30
 ctf_category: Web

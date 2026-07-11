@@ -3,13 +3,14 @@ title: "BackdoorCTF 2016 - jigsaw"
 layout: post
 permalink: /writeups/backdoorctf16/1jigsaw/
 date: 2016-06-07 07:44:01 +0530
-image: /assets/images/backdoorctf16/hero-jigsaw.png
+image:
+  path: /assets/images/backdoorctf16/hero-jigsaw.png
+  alt: "BackdoorCTF challenge title banner for the Misc problem “jigsaw”"
 tags:
 - BackdoorCTF
 - CTF
 - Forensics
 writeup: true
-star: false
 points: 150
 ctf_category: Misc
 description: "BackdoorCTF 2016 jigsaw: manually reassembling 64 image pieces to decode 16 characters"

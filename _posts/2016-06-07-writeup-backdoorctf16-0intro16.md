@@ -3,13 +3,14 @@ title: "BackdoorCTF 2016 - intro16"
 layout: post
 permalink: /writeups/backdoorctf16/0intro16/
 date: 2016-06-07 07:44:01 +0530
-image: /assets/images/backdoorctf16/hero-intro16.png
+image:
+  path: /assets/images/backdoorctf16/hero-intro16.png
+  alt: "BackdoorCTF 2016 intro challenge title banner"
 tags:
 - BackdoorCTF
 - CTF
 - OSINT
 writeup: true
-star: false
 points: 10
 ctf_category: Misc
 description: "BackdoorCTF 2016 intro16: collecting flag fragments from IRC and Twitter"

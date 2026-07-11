@@ -2,7 +2,9 @@
 title: "Knowing your Binary!"
 layout: post
 date: 2016-06-15 00:00
-image: /assets/images/re-wide.png
+image:
+  path: /assets/images/re-wide.png
+  alt: "“Reverse Engineering” text logo beside a gear icon"
 tags:
 - Executable Formats
 - Reverse Engineering

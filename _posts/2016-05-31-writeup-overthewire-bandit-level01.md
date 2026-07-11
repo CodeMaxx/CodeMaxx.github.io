@@ -3,13 +3,14 @@ title: "Bandit Level 1"
 layout: post
 permalink: /writeups/OverTheWire/Bandit/level01/
 date: 2016-05-31 01:16:51 +0530
-image: /assets/images/OverTheWire/Bandit/hero-level1.png
+image:
+  path: /assets/images/OverTheWire/Bandit/hero-level1.png
+  alt: "OverTheWire Bandit Level 1 wargame title banner"
 tags:
 - Bandit
 - OverTheWire
 - Shell
 writeup: true
-star: false
 points:
 ctf_category: Wargame
 description: "Bandit Level 1 → 2: reading a file named with a dash using a path prefix"

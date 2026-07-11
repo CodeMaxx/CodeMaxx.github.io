@@ -3,13 +3,14 @@ title: "BackdoorCTF 2016 - buzybee"
 layout: post
 permalink: /writeups/backdoorctf16/4busybee/
 date: 2016-06-08 22:59:14 +0530
-image: /assets/images/backdoorctf16/hero-busybee.png
+image:
+  path: /assets/images/backdoorctf16/hero-busybee.png
+  alt: "BackdoorCTF challenge title banner for “busybee”"
 tags:
 - BackdoorCTF
 - CTF
 - Forensics
 writeup: true
-star: false
 points: 150
 ctf_category: Forensics
 description: "BackdoorCTF 2016 buzybee: forensics challenge extracting a flag virus from infected files"

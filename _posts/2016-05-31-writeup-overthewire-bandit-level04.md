@@ -3,13 +3,14 @@ title: "Bandit Level 4"
 layout: post
 permalink: /writeups/OverTheWire/Bandit/level04/
 date: 2016-05-31 01:16:51 +0530
-image: /assets/images/OverTheWire/Bandit/hero-level4.png
+image:
+  path: /assets/images/OverTheWire/Bandit/hero-level4.png
+  alt: "OverTheWire Bandit Level 4 wargame title banner"
 tags:
 - Bandit
 - OverTheWire
 - File Analysis
 writeup: true
-star: false
 points:
 ctf_category: Wargame
 description: "Bandit Level 4 → 5: using the file command to find the only human-readable file"

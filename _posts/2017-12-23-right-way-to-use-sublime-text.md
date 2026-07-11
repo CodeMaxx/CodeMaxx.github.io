@@ -2,7 +2,9 @@
 title: "The Right way to use Sublime Text"
 layout: post
 date: 2017-12-23 00:00
-image: /assets/images/sublime-wide.png
+image:
+  path: /assets/images/sublime-wide.png
+  alt: "Sublime Text editor logo on a dark grey background"
 tags:
 - Productivity
 - Developer Tools

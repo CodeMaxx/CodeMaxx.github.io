@@ -3,13 +3,14 @@ title: "BackdoorCTF 2016 - isolve"
 layout: post
 permalink: /writeups/backdoorctf16/2isolve/
 date: 2016-06-07 07:44:01 +0530
-image: /assets/images/backdoorctf16/hero-isolve.png
+image:
+  path: /assets/images/backdoorctf16/hero-isolve.png
+  alt: "BackdoorCTF challenge title banner for “isolve”"
 tags:
 - BackdoorCTF
 - CTF
 - Python
 writeup: true
-star: false
 points: 200
 ctf_category: Exploit
 description: "BackdoorCTF 2016 isolve: auto-generating regex-matching strings with exrex under a time limit"

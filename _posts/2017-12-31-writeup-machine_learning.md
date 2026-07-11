@@ -7,7 +7,6 @@ tags:
 - Machine Learning
 - Coursera
 writeup: true
-star: false
 points: ∞
 description: "Quick-reference links for getting started with machine learning"
 redirect_to: https://github.com/CodeMaxx/Machine-Learning-Coursera

@@ -3,13 +3,14 @@ title: "BackdoorCTF 2016 - debug"
 layout: post
 permalink: /writeups/backdoorctf16/5debug/
 date: 2016-06-09 17:14:16 +0530
-image: /assets/images/backdoorctf16/hero-debug.png
+image:
+  path: /assets/images/backdoorctf16/hero-debug.png
+  alt: "BackdoorCTF challenge title banner for “debug”"
 tags:
 - BackdoorCTF
 - CTF
 - Reverse Engineering
 writeup: true
-star: false
 points: 30
 ctf_category: Reversing
 description: "BackdoorCTF 2016 debug: reversing a 32-bit binary and hashing the result with SHA256"
@@ -30,7 +31,7 @@ So they gave a 32-bit ELF stripped executable. Simply running the binary `./debu
 
 I looked through the assembly in IDA and saw "Printing Flag" being printed somewhere.
 
-![Priniting Flag](/assets/images/backdoorctf16/debug_ida.png)
+![Printing Flag](/assets/images/backdoorctf16/debug_ida.png)
 
 So the first and probably the last thing I needed to do was to jump to the function printing it. The address of the function as we can see is at `0x804849B`.
 

@@ -3,13 +3,14 @@ title: "BackdoorCTF 2016 - imagelover"
 layout: post
 permalink: /writeups/backdoorctf16/3imagelover/
 date: 2016-06-07 07:44:01 +0530
-image: /assets/images/backdoorctf16/hero-imagelover.png
+image:
+  path: /assets/images/backdoorctf16/hero-imagelover.png
+  alt: "BackdoorCTF challenge title banner for “imagelover”"
 tags:
 - BackdoorCTF
 - CTF
 - Web Security
 writeup: true
-star: false
 points: 70
 ctf_category: Web
 description: "BackdoorCTF 2016 imagelover: web exploitation via malicious image upload"

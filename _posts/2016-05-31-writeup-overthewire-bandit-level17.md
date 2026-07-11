@@ -3,13 +3,14 @@ title: "Bandit Level 17"
 layout: post
 permalink: /writeups/OverTheWire/Bandit/level17/
 date: 2016-05-31 04:37:00 +0530
-image: /assets/images/OverTheWire/Bandit/hero-level17.png
+image:
+  path: /assets/images/OverTheWire/Bandit/hero-level17.png
+  alt: "OverTheWire Bandit Level 17 wargame title banner"
 tags:
 - Bandit
 - OverTheWire
 - Text Processing
 writeup: true
-star: false
 points:
 ctf_category: Wargame
 description: "Bandit Level 17 → 18: using diff to find the one changed line between two password files"
