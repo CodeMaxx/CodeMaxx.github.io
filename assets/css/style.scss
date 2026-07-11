@@ -14,6 +14,20 @@
 
 /* append your custom style below */
 
+/* Visually-hidden helper for screen-reader-only text (not guaranteed to be in
+   the production Bootstrap bundle, so defined locally). */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 /* External-link indicator on post cards whose target leaves the site
    (posts with `redirect_to`). Kept subtle: muted colour, smaller than the
    title, and nudged up slightly so it reads as a superscript-style badge. */
@@ -411,6 +425,22 @@ $tn-max: 1140px;
 .post-tail-wrapper {
   margin-top: 2.5rem;
 }
+/* The `align-items-start` / `align-items-sm-center` and `ms-auto` Bootstrap
+   utilities are absent from the production CSS bundle, so set the row
+   alignment and the right-alignment of the share buttons explicitly. On mobile
+   the row stacks (column) and the share block sits below the tags full width;
+   from 576px up it's a single row with tags left and share pushed right. */
+.post-tail-bottom {
+  align-items: flex-start;
+}
+@media (min-width: 576px) {
+  .post-tail-bottom {
+    align-items: center;
+  }
+  .post-tail-bottom .share-wrapper {
+    margin-inline-start: auto;
+  }
+}
 .post-tags .post-tag-pill {
   border: 1px solid var(--accent-1);
   color: var(--accent-1) !important;
@@ -508,7 +538,7 @@ div[class^='language-'] .code-header {
   color: #fff;
 }
 #tags .tag span {
-  color: inherit;
+  color: inherit !important;
   opacity: 0.7;
 }
 @media (max-width: 991px) {

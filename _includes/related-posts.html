@@ -98,8 +98,9 @@
                 {% if post.redirect_to %}
                   <i
                     class="fas fa-arrow-up-right-from-square external-link-icon ms-1"
-                    title="Opens an external site"
+                    aria-hidden="true"
                   ></i>
+                  <span class="sr-only"> (opens in a new tab)</span>
                 {% endif %}
               </h4>
               <div class="text-muted">

@@ -39,7 +39,7 @@ panel_includes:
       {% assign post = page.posts[idx] %}
       <li class="d-flex justify-content-between px-md-3">
         {% if post.redirect_to %}
-          <a href="{{ post.redirect_to }}" target="_blank" rel="noopener noreferrer">{{ post.title }}<i class="fas fa-arrow-up-right-from-square external-link-icon ms-1" title="Opens an external site"></i></a>
+          <a href="{{ post.redirect_to }}" target="_blank" rel="noopener noreferrer">{{ post.title }}<i class="fas fa-arrow-up-right-from-square external-link-icon ms-1" aria-hidden="true"></i><span class="sr-only"> (opens in a new tab)</span></a>
         {% else %}
           <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
         {% endif %}
