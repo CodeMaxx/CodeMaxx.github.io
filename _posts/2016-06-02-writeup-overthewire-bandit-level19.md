@@ -16,17 +16,13 @@ ctf_category: Wargame
 description: "Bandit Level 19 → 20: using a setuid binary to read a file owned by another user"
 ---
 
-#### Level Goal:
+> **Level goal:** To gain access to the next level, you should use the setuid binary in the homedirectory. Execute it without arguments to find out how to use it. The password for this level can be found in the usual place (/etc/bandit_pass), after you have used to setuid binary.
 
->To gain access to the next level, you should use the setuid binary in the homedirectory. Execute it without arguments to find out how to use it. The password for this level can be found in the usual place (/etc/bandit_pass), after you have used to setuid binary.
+**Commands you may need:** None
 
-#### Commands you may need to solve this level
+**Helpful reading:**
 
->None
-
-#### Helpful Reading Material
-
->[setuid on Wikipedia](https://en.wikipedia.org/wiki/Setuid)
+- [setuid on Wikipedia](https://en.wikipedia.org/wiki/Setuid)
 
 ## Write-up
 
@@ -40,4 +36,5 @@ I used this to get the password to next level.
 
 ![Bad Permissions](/assets/images/OverTheWire/Bandit/bad_permission.png)
 
-#### Level 20 password: `GbKksEFF4yrVs6il55v6gwY5aVje5f0j`
+> **Level 20 password:** `GbKksEFF4yrVs6il55v6gwY5aVje5f0j`
+{: .prompt-tip }

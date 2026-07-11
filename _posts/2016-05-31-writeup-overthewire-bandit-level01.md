@@ -16,18 +16,14 @@ ctf_category: Wargame
 description: "Bandit Level 1 → 2: reading a file named with a dash using a path prefix"
 ---
 
-#### Level Goal:
+> **Level goal:** The password for the next level is stored in a file called `-` located in the home directory
 
->The password for the next level is stored in a file called `-` located in the home directory
+**Commands you may need:** `ls`, `cd`, `cat`, `file`, `du`, `find`
 
-#### Commands you may need to solve this level
+**Helpful reading:**
 
->ls, cd, cat, file, du, find
-
-#### Helpful Reading Material
-
->[Google Search for "dashed filename"](https://www.google.com/search?q=dashed+filename)
-[Advanced Bash-scripting Guide - Chapter 3 - Special Characters](https://tldp.org/LDP/abs/html/special-chars.html)
+- [Google Search for "dashed filename"](https://www.google.com/search?q=dashed+filename)
+- [Advanced Bash-scripting Guide - Chapter 3 - Special Characters](https://tldp.org/LDP/abs/html/special-chars.html)
 
 ## Write-up
 
@@ -35,4 +31,5 @@ This was a bit tricky. The filename was `-`. A simple `cat -` didn't work. This 
 
 Thus I used `cat ~/-` to read from the file.
 
-#### Level 2 password: `CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9`
+> **Level 2 password:** `CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9`
+{: .prompt-tip }

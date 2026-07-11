@@ -16,15 +16,12 @@ description: "Cracking a Vigenère cipher and XOR-encoded PNG to reveal the hidd
 ctf_category: Crypto
 ---
 
-#### Points: 400
+> **Challenge:** There is a website running at `http://challenges.runesec.com:62856` (no longer available). Try to see if you can become an administrator.
 
-#### Description:
+> **Hint:** Everyone knows that mode is bad because we can see the penguin!
+{: .prompt-tip }
 
-> There is a website running at `http://challenges.runesec.com:62856` (no longer available). Try to see if you can become an administrator.
-
-##### Hints:
-
-> Everyone knows that mode is bad because we can see the penguin!
+## Write-up
 
 I don't do crypto challenges usually but since this was an easy CTF, I decided to try it out.
 
@@ -70,7 +67,8 @@ Penguin...What kind of hint is this. And then it struck me. The same day we had 
 
 So what happens in ECB is that you independently encrypt blocks of the original text with the keys. Now this causes two blocks which are the same to have the same encrypted output. Thus there is confusion but no diffusion. (Ask in the comments if you don't know what this means.)
 
-**Note:** ECB is a general technique used by block ciphers and is by no means specific to only AES.
+> **Note:** ECB is a general technique used by block ciphers and is by no means specific to only AES.
+{: .prompt-info }
 
 Now we need to determine what the size of each block is. I noticed that `5e72ac7a72f2100c` repeated twice in the cookie. As expected there were to two equal strings `username` at a similar offset as the encrypted block. So I figured it might be a 64-bit encryption.
 
@@ -132,4 +130,5 @@ Thus `is__admin` now equals `__True__`, and we're in. Hacked!
 
 ![Penguin](/assets/images/evecodesbetter/ecb.png)
 
-**Go through other [writeups](/writeups/) for more such fun challenges.**
+> Go through other [writeups](/writeups/) for more such fun challenges.
+{: .prompt-tip }

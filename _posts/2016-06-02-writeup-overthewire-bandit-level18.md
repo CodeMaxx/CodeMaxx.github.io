@@ -16,17 +16,11 @@ ctf_category: Wargame
 description: "Bandit Level 18 → 19: bypassing .bashrc logout by running a command directly over SSH"
 ---
 
-#### Level Goal:
+> **Level goal:** The password for the next level is stored in a file **readme** in the homedirectory. Unfortunately, someone has modified **.bashrc** to log you out when you log in with SSH.
 
->The password for the next level is stored in a file **readme** in the homedirectory. Unfortunately, someone has modified **.bashrc** to log you out when you log in with SSH.
+**Commands you may need:** `ssh`, `ls`, `cat`
 
-#### Commands you may need to solve this level
-
->ssh, ls, cat
-
-#### Helpful Reading Material
-
->None
+**Helpful reading:** None
 
 ## Write-up
 
@@ -54,4 +48,5 @@ There is another way to do it. The `-T` flag. `-T` flag disables pseudo-terminal
 ssh -T bandit18@bandit.labs.overthewire.org
 ~~~
 
-#### Level 19 password: `IueksS7Ubh8G3DCwVzrTd8rAVOwq3M5x`
+> **Level 19 password:** `IueksS7Ubh8G3DCwVzrTd8rAVOwq3M5x`
+{: .prompt-tip }

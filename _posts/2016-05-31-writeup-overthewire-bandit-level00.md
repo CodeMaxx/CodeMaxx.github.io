@@ -16,17 +16,11 @@ ctf_category: Wargame
 description: "Bandit Level 0 → 1: logging into SSH and reading a file with cat"
 ---
 
-#### Level Goal:
+> **Level goal:** The password for the next level is stored in a file called **readme** located in the home directory. Use this password to log into bandit1 using SSH. Whenever you find a password for a level, use SSH to log into that level and continue the game.
 
->The password for the next level is stored in a file called **readme** located in the home directory. Use this password to log into bandit1 using SSH. Whenever you find a password for a level, use SSH to log into that level and continue the game.
+**Commands you may need:** `ls`, `cd`, `cat`, `file`, `du`, `find`
 
-#### Commands you may need to solve this level
-
->ls, cd, cat, file, du, find
-
-#### Helpful Reading Material
-
->None
+**Helpful reading:** None
 
 ## Write-up
 
@@ -44,4 +38,5 @@ Then look at the contents of `readme` file to get the password to the next level
 bandit0@melinda:~$ cat readme
 ~~~
 
-#### Level 1 password: `boJ9jbbUNNfktd78OOpsqOltutMc3MY1`
+> **Level 1 password:** `boJ9jbbUNNfktd78OOpsqOltutMc3MY1`
+{: .prompt-tip }
