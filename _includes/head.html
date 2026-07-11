@@ -54,11 +54,12 @@
   {% endif %}
 
   <title>
-    {%- unless page.layout == 'home' -%}
+    {%- unless page.layout == 'landing' -%}
       {%- capture title -%}
         {%- if page.collection == 'tabs' -%}
           {%- assign tab_key = page.title | downcase -%}
-          {{- site.data.locales[include.lang].tabs[tab_key] -}}
+          {%- assign tab_i18n = site.data.locales[include.lang].tabs[tab_key] -%}
+          {{- tab_i18n | default: page.title -}}
         {%- else -%}
           {{- page.title -}}
         {%- endif -%}
