@@ -14,6 +14,20 @@
 
 /* append your custom style below */
 
+/* Visually-hidden helper for screen-reader-only text (not guaranteed to be in
+   the production Bootstrap bundle, so defined locally). */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 /* External-link indicator on post cards whose target leaves the site
    (posts with `redirect_to`). Kept subtle: muted colour, smaller than the
    title, and nudged up slightly so it reads as a superscript-style badge. */
@@ -215,7 +229,7 @@ $tn-max: 1140px;
   display: none;
 }
 .tag-header {
-  margin: 0.5rem 0 1.5rem;
+  margin: 3rem 0 1.5rem;
 }
 .tag-title {
   display: flex;
@@ -254,8 +268,18 @@ $tn-max: 1140px;
 }
 #all-tags .post-tag {
   margin: 0 0.5rem 0.6rem 0;
-  border-radius: 8px;
+  border-radius: 6px;
   font-size: 0.8rem;
+  border: 1px solid var(--accent-1) !important;
+  color: var(--accent-1) !important;
+  background: transparent;
+  transition:
+    background 0.15s ease,
+    color 0.15s ease;
+}
+#all-tags .post-tag:hover {
+  background: var(--accent-1);
+  color: #fff !important;
 }
 #all-tags .post-tag.tag-current {
   background: var(--accent-1);
@@ -388,7 +412,35 @@ $tn-max: 1140px;
   font-size: 0.88rem;
 }
 
+/* ---------- Post reading measure ---------- */
+/* The default article column runs ~100 chars/line, which is too wide for
+   comfortable prose. Constrain the article and its footer (Further Reading /
+   comments) to a readable measure, left-aligned; the TOC stays on the right. */
+.post-page,
+#main-wrapper:has(.post-page) #tail-wrapper {
+  max-width: 46rem;
+}
+
 /* Accent tag pills at the foot of the article */
+.post-tail-wrapper {
+  margin-top: 2.5rem;
+}
+/* The `align-items-start` / `align-items-sm-center` and `ms-auto` Bootstrap
+   utilities are absent from the production CSS bundle, so set the row
+   alignment and the right-alignment of the share buttons explicitly. On mobile
+   the row stacks (column) and the share block sits below the tags full width;
+   from 576px up it's a single row with tags left and share pushed right. */
+.post-tail-bottom {
+  align-items: flex-start;
+}
+@media (min-width: 576px) {
+  .post-tail-bottom {
+    align-items: center;
+  }
+  .post-tail-bottom .share-wrapper {
+    margin-inline-start: auto;
+  }
+}
 .post-tags .post-tag-pill {
   border: 1px solid var(--accent-1);
   color: var(--accent-1) !important;
@@ -400,6 +452,127 @@ $tn-max: 1140px;
 .post-tags .post-tag-pill:hover {
   background: var(--accent-1);
   color: #fff !important;
+}
+
+/* ---------- Code blocks ---------- */
+/* Crisp monospace stack (no webfont dependency — resolves to Cascadia Code /
+   SF Mono / Consolas on modern systems). */
+code,
+kbd,
+samp,
+pre,
+.highlight,
+.highlight pre,
+.highlight code,
+td.rouge-code,
+div[class^='language-'] {
+  font-family: ui-monospace, 'JetBrains Mono', 'Cascadia Code', 'SFMono-Regular',
+    Menlo, Consolas, 'Liberation Mono', monospace;
+}
+/* Fenced blocks: rounded, clipped container with a divider under the header. */
+div[class^='language-'] {
+  border-radius: 12px;
+  overflow: hidden;
+}
+div[class^='language-'] .code-header {
+  border-bottom: 1px solid var(--language-border-color, rgba(0, 0, 0, 0.08));
+}
+/* Copy button picks up the accent on hover. */
+.code-header button:not([timeout]):hover {
+  background-color: var(--accent-soft) !important;
+}
+.code-header button:not([timeout]):hover i {
+  color: var(--accent-1) !important;
+}
+
+/* ---------- Tags index + Archives pages ---------- */
+/* These pages already list everything, so the Recently Updated / Trending
+   Tags panel is redundant — drop it and use full width (like the listings). */
+#main-wrapper:has(#tags) #panel-wrapper,
+#main-wrapper:has(#archives) #panel-wrapper {
+  display: none;
+}
+#main-wrapper:has(#tags) > .container > .row > main,
+#main-wrapper:has(#tags) #tail-wrapper,
+#main-wrapper:has(#archives) > .container > .row > main,
+#main-wrapper:has(#archives) #tail-wrapper {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+/* Accent header for page-layout index pages (Tags / Archives) — matches the
+   listing-page header treatment (size + gradient underline). */
+.dynamic-title {
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+.dynamic-title::after {
+  content: '';
+  display: block;
+  width: 54px;
+  height: 3px;
+  margin-top: 0.6rem;
+  border-radius: 3px;
+  background: var(--accent-grad);
+}
+/* Tags index chips: match the site's 6px outline pill (like .card-tag /
+   .post-tag-pill) instead of the theme's rounded, shadowed chip. */
+#tags {
+  gap: 0.55rem;
+}
+#tags .tag {
+  margin: 0 !important;
+  padding: 0.28rem 0.7rem;
+  line-height: 1.6;
+  border-radius: 6px;
+  border: 1px solid var(--accent-1) !important;
+  color: var(--accent-1);
+  box-shadow: none !important;
+  transition:
+    background 0.15s ease,
+    color 0.15s ease;
+}
+#tags .tag:hover,
+#tags .tag:focus-visible {
+  background: var(--accent-1);
+  color: #fff;
+}
+#tags .tag span {
+  color: inherit !important;
+  opacity: 0.7;
+}
+@media (max-width: 991px) {
+  #tags {
+    justify-content: flex-start !important;
+  }
+}
+/* Archives: accent the timeline dots and post-title hover. */
+#archives .year::after,
+#archives a::before {
+  background-color: var(--accent-1) !important;
+}
+#archives a:hover {
+  color: var(--accent-2) !important;
+}
+/* Archives now carries the listing-page header; center the timeline in the
+   same 1080px column as the listing pages instead of stretching full width. */
+#archives {
+  max-width: 1080px;
+  margin-left: auto;
+  margin-right: auto;
+}
+#main-wrapper:has(#archives) .listing-header {
+  padding-left: 0;
+  padding-right: 0;
+}
+/* External-link badge in the archives / tag / related-posts listings. */
+#archives .external-link-icon,
+.tag-list .external-link-icon,
+#related-posts .external-link-icon {
+  font-size: 0.6em;
+  color: var(--text-muted-color);
+  vertical-align: 0.35em;
+  opacity: 0.85;
 }
 
 /* Restyle the TOC panel to match the accent theme (tocbot uses .is-active-link) */
