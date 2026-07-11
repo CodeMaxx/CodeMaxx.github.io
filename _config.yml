@@ -19,6 +19,14 @@ tagline: Senior Windows Kernel & Security Engineer at Microsoft # it will displa
 description: >- # used by seo meta and the atom feed
   Personal blog of Akash Trehan — security, systems, and the occasional detour.
 
+# Post author attribution for jekyll-seo-tag: emits <meta name="author">, an
+# author URL, twitter:creator, and the `author` field inside the BlogPosting
+# JSON-LD so search + AI answer engines attribute posts to a real person.
+author:
+  name: Akash Trehan
+  twitter: theakashtrehan
+  url: "https://www.akashtrehan.com/about/"
+
 # Fill in the protocol & hostname for your site.
 url: "https://www.akashtrehan.com"
 

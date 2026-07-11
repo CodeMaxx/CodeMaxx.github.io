@@ -46,6 +46,13 @@
     {% assign seo_tags = seo_tags | replace: old_meta_clip, new_meta_clip %}
   {% endif %}
 
+  {%- comment -%}
+    Fix jekyll-seo-tag structured-data quirks so the BlogPosting validates:
+    (1) proper `ImageObject` casing, and (2) the valid `caption` property in
+    place of the unrecognized `alt` property inside the image object.
+  {%- endcomment -%}
+  {% assign seo_tags = seo_tags | replace: '"@type":"imageObject"', '"@type":"ImageObject"' | replace: '"alt":', '"caption":' %}
+
   {{ seo_tags }}
 
   {%- if site.social.fediverse_handle %}
