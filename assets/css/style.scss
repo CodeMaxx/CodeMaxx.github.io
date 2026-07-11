@@ -524,6 +524,26 @@ div[class^='language-'] .code-header {
 #archives a:hover {
   color: var(--accent-2) !important;
 }
+/* Archives now carries the listing-page header; center the timeline in the
+   same 1080px column as the listing pages instead of stretching full width. */
+#archives {
+  max-width: 1080px;
+  margin-left: auto;
+  margin-right: auto;
+}
+#main-wrapper:has(#archives) .listing-header {
+  padding-left: 0;
+  padding-right: 0;
+}
+/* External-link badge in the archives / tag / related-posts listings. */
+#archives .external-link-icon,
+.tag-list .external-link-icon,
+#related-posts .external-link-icon {
+  font-size: 0.6em;
+  color: var(--text-muted-color);
+  vertical-align: 0.35em;
+  opacity: 0.85;
+}
 
 /* Restyle the TOC panel to match the accent theme (tocbot uses .is-active-link) */
 #toc-wrapper .toc-title {

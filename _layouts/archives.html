@@ -23,6 +23,10 @@ layout: page
 {% endfor %}
 {% assign keyed = keyed | sort | reverse %}
 
+<header class="listing-header">
+  <h1 class="listing-title">Archives</h1>
+</header>
+
 <div id="archives" class="pl-xl-3">
   {% for k in keyed %}
     {% assign idx = k | split: '@@@' | last | plus: 0 %}
@@ -44,7 +48,11 @@ layout: page
       <span class="date month small text-muted ms-1" data-ts="{{ ts }}" data-df="{{ df_dayjs_m }}">
         {{ post.date | date: df_strftime_m }}
       </span>
-      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      {% if post.redirect_to %}
+        <a href="{{ post.redirect_to }}" target="_blank" rel="noopener noreferrer">{{ post.title }}<i class="fas fa-arrow-up-right-from-square external-link-icon ms-1" title="Opens an external site"></i></a>
+      {% else %}
+        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      {% endif %}
     </li>
 
     {% if forloop.last %}</ul>{% endif %}
