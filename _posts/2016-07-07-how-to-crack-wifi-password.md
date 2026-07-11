@@ -3,10 +3,10 @@ title: "How to crack Wifi Passwords"
 layout: post
 date: 2016-07-07 11:00
 image: /assets/images/wifi_crack/wifi-crack-wide.png
-tag:
-- Wifi
-- Hack
-- Tutorial
+tags:
+- Security
+- Wi-Fi
+- WPA2
 blog: true
 description: "Capturing the WPA2 four-way handshake and brute-forcing it with Aircrack-ng"
 ---
@@ -36,4 +36,3 @@ It’s tough to say how long it would take to crack a password in this way. For 
 P.S. - For Educational purposes only.
 
 **Update:** Here's a nice step-by-step description (with commands) of how to do this -> [Wifi Cracking](https://github.com/brannondorsey/wifi-cracking)
-

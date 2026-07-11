@@ -4,8 +4,9 @@ layout: post
 permalink: /writeups/Infosec_Institute_n00b_ctf/level2/
 date: 2016-05-16 8:10
 image: /assets/images/InfosecInstin00b/desc2-wide.png
-tag:
-- Web
+tags:
+- CTF
+- Web Security
 - Infosec Institute n00b CTF
 writeup: true
 star: false

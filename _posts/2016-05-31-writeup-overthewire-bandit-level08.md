@@ -4,10 +4,10 @@ layout: post
 permalink: /writeups/OverTheWire/Bandit/level08/
 date: 2016-05-31 01:16:51 +0530
 image: /assets/images/OverTheWire/Bandit/hero-level8.png
-tag:
+tags:
 - Bandit
 - OverTheWire
-- Wargames
+- Text Processing
 writeup: true
 star: false
 points:

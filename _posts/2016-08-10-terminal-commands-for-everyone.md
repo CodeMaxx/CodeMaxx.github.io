@@ -2,9 +2,9 @@
 title: "Awesome Terminal Commands"
 layout: post
 date: 2016-08-10 00:00
-tag:
-- Unix
-- Terminal
+tags:
+- Linux
+- Shell
 - Tutorial
 blog: true
 redirect_to: https://github.com/CodeMaxx/Awesome-Terminal-Commands

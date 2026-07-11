@@ -4,10 +4,10 @@ layout: post
 permalink: /writeups/backdoorctf16/5debug/
 date: 2016-06-09 17:14:16 +0530
 image: /assets/images/backdoorctf16/hero-debug.png
-tag:
-- BackdoorCTF2016
-- Reversing
-- Backdoor
+tags:
+- BackdoorCTF
+- CTF
+- Reverse Engineering
 writeup: true
 star: false
 points: 30
@@ -53,4 +53,3 @@ This as expected printed out the flag!
 ![Flag Printed](/assets/images/backdoorctf16/debug_flag.png)
 
 **Go through other [writeups](/writeups/) for more such fun challenges.**
-

@@ -4,10 +4,10 @@ layout: post
 permalink: /writeups/backdoorctf17/1ecb/
 date: 2017-10-18 23:47:32 +0530
 image: /assets/images/backdoorctf17/hero-ecb.png
-tag:
-- BackdoorCTF2017
-- Crypto
-- Backdoor
+tags:
+- BackdoorCTF
+- CTF
+- Cryptography
 writeup: true
 star: false
 points: 150

@@ -4,10 +4,10 @@ layout: post
 permalink: /writeups/OverTheWire/Bandit/level18/
 date: 2016-06-02 22:45:50 +0530
 image: /assets/images/OverTheWire/Bandit/hero-level18.png
-tag:
+tags:
 - Bandit
 - OverTheWire
-- Wargames
+- SSH
 writeup: true
 star: false
 points:

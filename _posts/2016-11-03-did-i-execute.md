@@ -3,9 +3,9 @@ title: "Did I Execute?"
 layout: post
 date: 2016-11-03 11:00
 image: /assets/images/terminal-hero.png
-tag:
-- Unix
-- Terminal
+tags:
+- Linux
+- Shell
 - Tutorial
 blog: true
 description: "The subtle difference between ;, && and || that most terminal users get wrong"

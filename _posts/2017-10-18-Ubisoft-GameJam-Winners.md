@@ -3,12 +3,11 @@ title: "Won Ubisoft GameJam 2017"
 layout: post
 date: 2017-10-18 11:00
 image: /assets/images/ubisoft-wide.png
-tag:
+tags:
 - Hackathon
-- Ubisoft
-- Development
-- GameJam
+- Game Development
 - Unity
+- Ubisoft Game Jam
 blog: true
 description: "How we built a 3D Unity game in 30 hours and won Ubisoft's GameJam 2017"
 ---

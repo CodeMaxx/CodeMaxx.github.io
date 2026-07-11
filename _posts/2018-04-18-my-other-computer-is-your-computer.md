@@ -3,11 +3,10 @@ title: "My Other Computer is Your Computer - Malware Classification"
 layout: post
 date: 2018-05-06 00:00
 image: /assets/images/malware/malware-wide.png
-tag:
+tags:
 - Security
-- Malware
+- Malware Analysis
 - Machine Learning
-- Project
 projects: true
 description: "Classifying malware into 9 families using ML on assembly code and byte patterns"
 ---

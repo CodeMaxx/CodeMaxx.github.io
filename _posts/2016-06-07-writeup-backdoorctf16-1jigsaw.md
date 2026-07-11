@@ -4,10 +4,10 @@ layout: post
 permalink: /writeups/backdoorctf16/1jigsaw/
 date: 2016-06-07 07:44:01 +0530
 image: /assets/images/backdoorctf16/hero-jigsaw.png
-tag:
-- BackdoorCTF2016
-- Miscellaneous
-- Backdoor
+tags:
+- BackdoorCTF
+- CTF
+- Forensics
 writeup: true
 star: false
 points: 150
