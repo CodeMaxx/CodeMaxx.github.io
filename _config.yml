@@ -130,8 +130,6 @@ pwa:
     enabled: false # The option for PWA offline cache
     deny_paths:
 
-paginate: 10
-
 # The base URL of your site
 baseurl: ""
 
