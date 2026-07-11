@@ -445,6 +445,66 @@ div[class^='language-'] .code-header {
   color: var(--accent-1) !important;
 }
 
+/* ---------- Tags index + Archives pages ---------- */
+/* These pages already list everything, so the Recently Updated / Trending
+   Tags panel is redundant — drop it and use full width (like the listings). */
+#main-wrapper:has(#tags) #panel-wrapper,
+#main-wrapper:has(#archives) #panel-wrapper {
+  display: none;
+}
+#main-wrapper:has(#tags) > .container > .row > main,
+#main-wrapper:has(#tags) #tail-wrapper,
+#main-wrapper:has(#archives) > .container > .row > main,
+#main-wrapper:has(#archives) #tail-wrapper {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+/* Accent header for page-layout index pages (Tags / Archives) */
+.dynamic-title {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+.dynamic-title::after {
+  content: '';
+  display: block;
+  width: 54px;
+  height: 3px;
+  margin-top: 0.6rem;
+  border-radius: 3px;
+  background: var(--accent-grad);
+}
+/* Tags index chips: tighter, accent hover/focus, left-aligned on mobile. */
+#tags .tag {
+  line-height: 2.4rem;
+  margin-right: 0.5rem;
+  transition:
+    border-color 0.15s ease,
+    color 0.15s ease,
+    background 0.15s ease;
+}
+#tags .tag:hover,
+#tags .tag:focus-visible {
+  border-color: var(--accent-1) !important;
+  color: var(--accent-1);
+  background: var(--accent-soft);
+}
+#tags .tag span {
+  color: var(--accent-1);
+}
+@media (max-width: 991px) {
+  #tags {
+    justify-content: flex-start !important;
+  }
+}
+/* Archives: accent the timeline dots and post-title hover. */
+#archives .year::after,
+#archives a::before {
+  background-color: var(--accent-1) !important;
+}
+#archives a:hover {
+  color: var(--accent-2) !important;
+}
+
 /* Restyle the TOC panel to match the accent theme (tocbot uses .is-active-link) */
 #toc-wrapper .toc-title {
   color: var(--heading-color);
