@@ -388,6 +388,15 @@ $tn-max: 1140px;
   font-size: 0.88rem;
 }
 
+/* ---------- Post reading measure ---------- */
+/* The default article column runs ~100 chars/line, which is too wide for
+   comfortable prose. Constrain the article and its footer (Further Reading /
+   comments) to a readable measure, left-aligned; the TOC stays on the right. */
+.post-page,
+#main-wrapper:has(.post-page) #tail-wrapper {
+  max-width: 46rem;
+}
+
 /* Accent tag pills at the foot of the article */
 .post-tail-wrapper {
   margin-top: 2.5rem;
@@ -403,6 +412,37 @@ $tn-max: 1140px;
 .post-tags .post-tag-pill:hover {
   background: var(--accent-1);
   color: #fff !important;
+}
+
+/* ---------- Code blocks ---------- */
+/* Crisp monospace stack (no webfont dependency — resolves to Cascadia Code /
+   SF Mono / Consolas on modern systems). */
+code,
+kbd,
+samp,
+pre,
+.highlight,
+.highlight pre,
+.highlight code,
+td.rouge-code,
+div[class^='language-'] {
+  font-family: ui-monospace, 'JetBrains Mono', 'Cascadia Code', 'SFMono-Regular',
+    Menlo, Consolas, 'Liberation Mono', monospace;
+}
+/* Fenced blocks: rounded, clipped container with a divider under the header. */
+div[class^='language-'] {
+  border-radius: 12px;
+  overflow: hidden;
+}
+div[class^='language-'] .code-header {
+  border-bottom: 1px solid var(--language-border-color, rgba(0, 0, 0, 0.08));
+}
+/* Copy button picks up the accent on hover. */
+.code-header button:not([timeout]):hover {
+  background-color: var(--accent-soft) !important;
+}
+.code-header button:not([timeout]):hover i {
+  color: var(--accent-1) !important;
 }
 
 /* Restyle the TOC panel to match the accent theme (tocbot uses .is-active-link) */
