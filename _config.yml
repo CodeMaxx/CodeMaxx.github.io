@@ -26,7 +26,7 @@ github:
   username: CodeMaxx # change to your GitHub username
 
 twitter:
-  username: cod3maxx # change to your Twitter username
+  username: theakashtrehan # change to your Twitter username
 
 social:
   # Change to your full name.
@@ -37,10 +37,11 @@ social:
   links:
     # The first element serves as the copyright owner's link
     - https://github.com/CodeMaxx
-    - https://twitter.com/cod3maxx
+    - https://twitter.com/theakashtrehan
     - https://www.linkedin.com/in/akash-trehan
-    - https://www.facebook.com/AkashTrehan21
-    - https://www.instagram.com/akash.trehan
+    - https://www.facebook.com/theakashtrehan
+    - https://www.instagram.com/theakashtrehan
+    - https://www.youtube.com/@theakashtrehan
 
 # Site Verification Settings
 webmaster_verifications:
