@@ -3,15 +3,6 @@ layout: default
 refactor: true
 ---
 
-{% comment %}
-  Local override of the theme's `home` layout. Behaves exactly like the theme
-  default for the paginated front page, but also powers the Blog / Write-ups /
-  Projects listing tabs: a tab sets `layout: home` + a `list_source` and this
-  layout renders the matching posts with the same card markup (no paginator).
-  Keeping `layout: home` means `page.layout == 'home'`, so the theme's
-  image refactor still gives cards the `preview-img` treatment.
-{% endcomment %}
-
 {% include lang.html %}
 
 {% assign posts = '' | split: '' %}

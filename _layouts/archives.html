@@ -2,14 +2,6 @@
 layout: page
 # The Archives of posts.
 ---
-<!--
-  Local override of the theme's archives layout. The theme iterates site.posts in
-  date+time order, so a same-day series (e.g. the OverTheWire Bandit levels,
-  all 2016-05-31) lists in commit-time order rather than level order. We sort
-  by a composite "YYYYMMDD#url" key (day, then zero-padded slug) and reverse
-  it: newest day first, and within a day level19 → level00. Year grouping is
-  unaffected because the primary key is still the date.
--->
 
 {% include lang.html %}
 
