@@ -91,7 +91,7 @@ cdn:
 avatar: /assets/images/avatar.png
 
 # The URL of the site-wide social preview image used in SEO `og:image` meta tag.
-social_preview_image: # string, local or CORS resources
+social_preview_image: /assets/images/social-preview.png # string, local or CORS resources
 
 # boolean type, the global switch for TOC in posts.
 toc: true
