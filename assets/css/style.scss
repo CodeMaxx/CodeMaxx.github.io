@@ -389,6 +389,9 @@ $tn-max: 1140px;
 }
 
 /* Accent tag pills at the foot of the article */
+.post-tail-wrapper {
+  margin-top: 2.5rem;
+}
 .post-tags .post-tag-pill {
   border: 1px solid var(--accent-1);
   color: var(--accent-1) !important;
