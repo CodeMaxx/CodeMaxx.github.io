@@ -49,7 +49,19 @@ Lets go through each word one by one.
 
 ## LSB
 
-The Linux Standard Base (LSB) is a joint project by several Linux distributions under the organizational structure of the Linux Foundation to standardize the software system structure. This basically means that across different Linux based Operating Systems(Ubuntu, Fedora etc.), common rules would be used for compiling information into the binary(e.g. using some standard libraries for specific task, standardising the layout of the file system hierarchy etc.).
+`LSB` stands for `Least Significant Byte` and it tells us about the **endianness** of the binary, i.e. the order in which the bytes of a multi-byte number are stored in memory. `LSB`(also called **little-endian**) means the least significant byte is stored first.
+
+So a number like `0x12345678` would be stored in memory as:
+
+```
+78 56 34 12
+```
+
+This is the byte order used by `x86` and `x86-64` processors, which is exactly why we see it right next to `Intel 80386` in the output.
+
+### Other
+
+`MSB`(`Most Significant Byte`, or **big-endian**) is just the opposite - the most significant byte comes first, so `0x12345678` would be stored as `12 34 56 78`. You'll see this on architectures like `SPARC` and some older `MIPS`/`PowerPC` systems.
 
 ## Intel 80386
 

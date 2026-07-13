@@ -420,6 +420,20 @@ $tn-max: 1140px;
   font-size: 0.88rem;
 }
 
+/* ---------- Post heading hierarchy ---------- */
+/* Theme steps content headings only ~0.18rem apart, so an h3 barely reads as a
+   sub-section. Widen the steps. Scoped to .post-page so the search overlay and
+   sidebar (which also use .content) are untouched. */
+.post-page .content h2 {
+  font-size: 1.75rem;
+}
+.post-page .content h3 {
+  font-size: 1.4rem;
+}
+.post-page .content h4 {
+  font-size: 1.2rem;
+}
+
 /* ---------- Post reading measure ---------- */
 /* The default article column runs ~100 chars/line, which is too wide for
    comfortable prose. Constrain the article and its footer (Further Reading /
