@@ -15,10 +15,10 @@ description: "Classifying malware into 9 families using ML on assembly code and 
 
 ## Background
 
-#### Why this project?
+### Why this project?
 This project emerged for fulfilling a requirement of the Machine Learning course (EE 769) I took this semester. As I have always been interested in computer security, I wanted to combine my newly learnt knowledge from this course with it. The attacks last year from malwares like [WannaCry](https://en.wikipedia.org/wiki/WannaCry_ransomware_attack), [NotPetya](https://en.wikipedia.org/wiki/Petya_(malware_family)#2017_Cyberattack) and [Bad Rabbit](https://www.kaspersky.com/blog/bad-rabbit-ransomware/19887/) had made me curious about how these attacks could be prevented. Malware Classification was the perfect project. For this I teamed up with my good friend Mukesh Pareek who is also a security enthusiast. This post is written in collaboration with him. Our guide for this project is [Prof. Amit Sethi](https://www.ee.iitb.ac.in/~asethi/).
 
-#### Malware
+### Malware
 
 ![Malware Classes](/assets/images/malware/classes.jpg)
 
@@ -43,17 +43,17 @@ We focused on solving the second problem.
 But why classify malware into classes? Just like a doctor can treat you better if he/she knows what disease you have, anti-malware softwares like antiviruses can defend better if they know the class of malware they are dealing with.
 
 
-#### Challenges
+### Challenges
 
 Earlier malware was detected using signatures. So whenever there a new malware was found, the companies created its signature and any file whose signature matched was detected. Since this method could only find exact matches, it was very restrictive. Later people shifted to identifying "indicators" which were the defining properties of a class of malware. So if a file had certain indicators it could be classified to the corresponding class. But this again uses only known indicators. With new methods to obfuscate and polymorphism techniques, the creators of these malwares were easily able to get across this layer of protection. The problems we face today is that millions of samples of malware spread everyday. Most of these are duplicates or slight modifications of one another made to decieve the defense systems. Classifying malware thus becomes a daunting task.
 
 
-#### Why Machine Learning?
+### Why Machine Learning?
 
 In today's data rich world, machine learning has become ubiquitous. With its ability to find useful pieces of information from data, machine learning has lead to great results. The defense against a malware attack depends on the broader category of malware and not necessarily on the specific attack sample. This is why machine learning can be used. It can find hidden relationships among the various features of the samples and then leverage those to classify unknown samples. 
 
 
-#### More specifically...
+### More specifically...
 
 Now we come to what exactly is the information we have about the malware and what categories do we need to classify it to.
 
@@ -81,7 +81,7 @@ So these two files need to be used to classify the malware into the following 9 
 8. Obfuscator.ACY
 9. Gatak
 
-#### The dataset
+### The dataset
 
 The specific problem as stated above is taken from a [malware classification challenge](https://www.kaggle.com/c/malware-classification) organised by Microsoft on Kaggle. The dataset was also taken from there. The dataset contained 200 GB of training data and 200 GB of test data. Since we didn't have the labels for the test data, we divided the training data itself into two parts one of which we used for testing purposes. The testing part was half the size of the training part with training having 7221 samples and test having 3648 labels. This divison was done randomly but ensuring that enough members of each class were are a part of both the training and test set.
 
@@ -105,7 +105,7 @@ The features we used for classification are as follows:
 
 Our intuition behind using instruction n-grams was that samples from the same class of malware should have similar code and hence there should be similar instructions sequences present in the code. n-grams were a way to represent that. Likewise for the byte n-grams. Using segment size is again based on the intuition that the amount of static data, the amount of space required for the code would be similar for the same class.
 
-#### Implementation details
+### Implementation details
 
 Extracting the above features involves text processing and parsing. For this we used the `pyparsing` python library. The library can be used to specify token formats which make it easier to identify the required instructions or bytes. For getting an image from the `.asm` file we used byte arrays.
 
@@ -130,7 +130,7 @@ For each of these models we did hyperparameter tuning to find out the best model
 
 ## Evaluation
 
-#### Hyperparameter Tuning
+### Hyperparameter Tuning
 
 The graphs for hyperparameter tuning are as follows:
 
@@ -153,7 +153,7 @@ The graphs for hyperparameter tuning are as follows:
 
 ![Feature importance]() -->
 
-#### Cross Validation and Test Set Accuracy
+### Cross Validation and Test Set Accuracy
 
 | Model                      | 4-Fold Cross Validation Accuracy | Test Set Accuracy |
 |--------------------------------|------------------------------------|-------------------|

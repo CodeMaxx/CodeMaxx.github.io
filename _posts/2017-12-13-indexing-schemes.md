@@ -13,7 +13,7 @@ projects: true
 description: "Implementing stepped-merge indexes inside PostgreSQL's C codebase from a 1997 research paper"
 ---
 
-# Project Report
+## Project Report
 
 | Team DataAcids  | |
 | ------------- | ------------- |
@@ -45,11 +45,11 @@ The reference paper for the project can be found [here](https://www.cse.iitb.ac.
 
 ## System Architecture
 
-**Front-end**
+### Front-end
 
 - There is no real front-end we will implement. It is just the user interface that PostgreSQL provide.
 
-**Back-end**
+### Back-end
 
 1. Implemented a structure similar to Log Structured Merge trees(Stepped Merge Trees) to organize the incoming data on the basis of clustering by search key.
 - Worked in single-user mode

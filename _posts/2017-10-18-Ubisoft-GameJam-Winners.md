@@ -41,8 +41,9 @@ The code for our game is open source and available [here](https://github.com/Fer
 
 Thank you for reading!
 
-**Cheers!**
+Cheers!
 
-**If you are an Infosec person, don't forget to checkout my [CTF Write-ups](/writeups/)**
+> If you are an Infosec person, don't forget to checkout my [CTF Write-ups](/writeups/).
+{: .prompt-tip }
 
 [See other Blog posts](/blog/)

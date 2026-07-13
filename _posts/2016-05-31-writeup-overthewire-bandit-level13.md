@@ -33,7 +33,8 @@ It provides us with the private ssh key for the next level. This is how a privat
 I copied the key and created an identical file on my machine.
 Then I used it to login to Level 14.
 
-**Note that you need to change permission of the file to `600`. For this use `chmod`.**
+> Note that you need to change permission of the file to `600`. For this use `chmod`.
+{: .prompt-warning }
 
 ~~~bash
 CodeMaxx:~$ chmod 600 sshkey.private

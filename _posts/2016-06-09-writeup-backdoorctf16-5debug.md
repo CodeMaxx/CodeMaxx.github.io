@@ -16,13 +16,10 @@ ctf_category: Reversing
 description: "BackdoorCTF 2016 debug: reversing a 32-bit binary and hashing the result with SHA256"
 ---
 
-**BackdoorCTF is the annual flagship CTF competition conducted by SDSLabs and InfoSecIITR.**
+> BackdoorCTF is the annual flagship CTF competition conducted by SDSLabs and InfoSecIITR.
+{: .prompt-info }
 
-#### Points: 30
-
-#### Description:
-
->Take sha256 of string obtained.
+> **Challenge:** Take sha256 of string obtained.
 ~~[http://hack.bckdr.in/DEBUG/debug32](http://hack.bckdr.in/DEBUG/debug32)~~ *(CTF server no longer available)*
 
 ## Write-up
@@ -53,4 +50,5 @@ This as expected printed out the flag!
 
 ![Flag Printed](/assets/images/backdoorctf16/debug_flag.png)
 
-**Go through other [writeups](/writeups/) for more such fun challenges.**
+> Go through other [writeups](/writeups/) for more such fun challenges.
+{: .prompt-tip }

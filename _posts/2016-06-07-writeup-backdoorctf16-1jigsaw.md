@@ -16,13 +16,10 @@ ctf_category: Misc
 description: "BackdoorCTF 2016 jigsaw: manually reassembling 64 image pieces to decode 16 characters"
 ---
 
-**BackdoorCTF is the annual flagship CTF competition conducted by SDSLabs and InfoSecIITR.**
+> BackdoorCTF is the annual flagship CTF competition conducted by SDSLabs and InfoSecIITR.
+{: .prompt-info }
 
-#### Points: 150
-
-#### Description:
-
-> cr4wl3r was always found solving jigsaw puzzle. Let us know why he solves so many jigsaws by solving the same. Get the puzzle pieces ~~[here](http://hack.bckdr.in/JIGSAW/jigsaw.tar.gz)~~ *(CTF server no longer available)*
+> **Challenge:** cr4wl3r was always found solving jigsaw puzzle. Let us know why he solves so many jigsaws by solving the same. Get the puzzle pieces ~~[here](http://hack.bckdr.in/JIGSAW/jigsaw.tar.gz)~~ *(CTF server no longer available)*
 
 ## Write-up
 
@@ -48,4 +45,5 @@ I didn't try the the solver yet. But it will probably give you most of the lette
 
 **Next:** So now we got a list of 16 letters. I looked at them for sometime trying to unjumble them. In about 5 minutes I got `LOVEBEINGPUZZLED`.
 
-**Go through other [writeups](/writeups/) for more such fun challenges.**
+> Go through other [writeups](/writeups/) for more such fun challenges.
+{: .prompt-tip }

@@ -16,12 +16,6 @@ points: 10
 ctf_category: Web
 ---
 
-#### Points: 10
-
-#### Description:
-
-
-
 ## Write-up
 
 "May the source be with you!". Yoda hints us to look at the source code of the webpage. Right click on the webpage and click `View Page Source`. At the top of the source code we see:
@@ -32,4 +26,4 @@ ctf_category: Web
 
 This gives away the flag!
 
-#### Flag: `infosec_flagis_welcome`
+**Flag:** `infosec_flagis_welcome`

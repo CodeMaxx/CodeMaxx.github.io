@@ -37,4 +37,5 @@ It’s tough to say how long it would take to crack a password in this way. For 
 
 P.S. - For Educational purposes only.
 
-**Update:** Here's a nice step-by-step description (with commands) of how to do this -> [Wifi Cracking](https://github.com/brannondorsey/wifi-cracking)
+> **Update:** Here's a nice step-by-step description (with commands) of how to do this -> [Wifi Cracking](https://github.com/brannondorsey/wifi-cracking)
+{: .prompt-tip }

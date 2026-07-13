@@ -16,13 +16,10 @@ ctf_category: Misc
 description: "BackdoorCTF 2016 intro16: collecting flag fragments from IRC and Twitter"
 ---
 
-**BackdoorCTF is the annual flagship CTF competition conducted by SDSLabs and InfoSecIITR.**
+> BackdoorCTF is the annual flagship CTF competition conducted by SDSLabs and InfoSecIITR.
+{: .prompt-info }
 
-#### Points: 10
-
-#### Description:
-
->Get the first part of the flag from IRC freenode (#backdoorctf) and the second part from twitter(@BackdoorCTF)
+> **Challenge:** Get the first part of the flag from IRC freenode (#backdoorctf) and the second part from twitter(@BackdoorCTF)
 
 ## Write-up
 

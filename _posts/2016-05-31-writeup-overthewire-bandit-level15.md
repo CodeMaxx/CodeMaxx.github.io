@@ -46,7 +46,8 @@ What `ign_eof` does is it prevents the server from closing down the connection w
 
 `connect host:port` specifies the host and optional port to connect to. If not specified then an attempt is made to connect to the local host on port 4433.
 
-**Note that `-ign_eof` and `-connect host:port` flags are under `man s_client` and not `man openssl`.**
+> Note that `-ign_eof` and `-connect host:port` flags are under `man s_client` and not `man openssl`.
+{: .prompt-info }
 
 Using the correct command and password we get the next password.
 

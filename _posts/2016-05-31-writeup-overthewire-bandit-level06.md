@@ -41,7 +41,8 @@ That file had the password for Level 7.
 bandit6@melinda:/$ cat ./var/lib/dpkg/info/bandit7.password
 ~~~~
 
-**Edit:** Yay! Got a nicer one line method to do this.
+> **Edit:** Yay! Got a nicer one line method to do this.
+{: .prompt-info }
 
 ~~~bash
 cat `find . -size 33c -group bandit6 -user bandit7 2>/dev/null`

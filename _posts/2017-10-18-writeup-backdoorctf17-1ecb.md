@@ -16,13 +16,10 @@ ctf_category: Crypto
 description: "BackdoorCTF 2017 ECB: exploiting AES-ECB pattern leakage to reveal an encrypted image flag"
 ---
 
-**BackdoorCTF is the annual flagship CTF competition conducted by SDSLabs and InfoSecIITR.**
+> BackdoorCTF is the annual flagship CTF competition conducted by SDSLabs and InfoSecIITR.
+{: .prompt-info }
 
-#### Points: 150
-
-#### Description:
-
-> n00b learnt about ECB and has encrypted some images with it. Can you find the flag?
+> **Challenge:** n00b learnt about ECB and has encrypted some images with it. Can you find the flag?
 
 >    [img1.png](/assets/images/backdoorctf17/img1.png)
     [img2.png](/assets/images/backdoorctf17/img2.png)
@@ -30,7 +27,7 @@ description: "BackdoorCTF 2017 ECB: exploiting AES-ECB pattern leakage to reveal
 
 ## Background
 
-**"Everybody knows ECB mode is bad because we can see the penguin!"**
+> "Everybody knows ECB mode is bad because we can see the penguin!"
 
 If you haven't heard about the famous ECB penguin before, you probably haven't heard about ECB either.
 
@@ -130,4 +127,5 @@ And voila!
 
 **Flag:** `CTF{0n1y_n00b5_u53_3cb}`
 
-**Go through other [writeups](/writeups/) for more such fun challenges.**
+> Go through other [writeups](/writeups/) for more such fun challenges.
+{: .prompt-tip }

@@ -16,17 +16,15 @@ ctf_category: Web
 description: "BackdoorCTF 2016 imagelover: web exploitation via malicious image upload"
 ---
 
-**BackdoorCTF is the annual flagship CTF competition conducted by SDSLabs and InfoSecIITR.**
+> BackdoorCTF is the annual flagship CTF competition conducted by SDSLabs and InfoSecIITR.
+{: .prompt-info }
 
-#### Points: 70
-
-#### Description:
-
->Find imagelover ~~[here](http://hack.bckdr.in:6969/)~~ *(CTF server no longer available)*
+> **Challenge:** Find imagelover ~~[here](http://hack.bckdr.in:6969/)~~ *(CTF server no longer available)*
 
 ## Write-up
 
-**The challenge was updated. Scroll down to see the updates solution**
+> The challenge was updated. Scroll down to see the updated solution.
+{: .prompt-info }
 
 When I went to the specified website it said:
 
@@ -73,4 +71,5 @@ Basically I hosted my VPS with the script above and entered the URL in place of 
 
 And as expeced as soon as I submitted my URL I got a GET request with the flag in the cookie.
 
-**Go through other [writeups](/writeups/) for more such fun challenges.**
+> Go through other [writeups](/writeups/) for more such fun challenges.
+{: .prompt-tip }

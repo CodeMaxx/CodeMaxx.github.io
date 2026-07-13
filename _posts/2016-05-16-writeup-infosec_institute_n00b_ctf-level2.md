@@ -16,10 +16,6 @@ points: 20
 ctf_category: Web
 ---
 
-#### Points: 20
-
-#### Description:
-
 ## Write-up
 
 Seeing that the Image was broken I went to the source code to check why. There could have been two reasons - the file is not present at the path specified for the image or the file is not a proper image.
@@ -54,4 +50,4 @@ echo 'aW5mb3NlY19mbGFnaXNfd2VhcmVqdXN0c3RhcnRpbmc=' | base64 --decode
 
 Voila! There's the flag.
 
-#### Flag: `infosec_flagis_wearejuststarting`
+**Flag:** `infosec_flagis_wearejuststarting`

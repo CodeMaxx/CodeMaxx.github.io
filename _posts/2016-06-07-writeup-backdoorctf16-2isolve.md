@@ -16,13 +16,10 @@ ctf_category: Exploit
 description: "BackdoorCTF 2016 isolve: auto-generating regex-matching strings with exrex under a time limit"
 ---
 
-**BackdoorCTF is the annual flagship CTF competition conducted by SDSLabs and InfoSecIITR.**
+> BackdoorCTF is the annual flagship CTF competition conducted by SDSLabs and InfoSecIITR.
+{: .prompt-info }
 
-#### Points: 200
-
-#### Description:
-
->~~nc hack.bckdr.in 7070~~ *(CTF server no longer available)*
+> **Challenge:** ~~nc hack.bckdr.in 7070~~ *(CTF server no longer available)*
 
 ## Write-up
 
@@ -66,4 +63,5 @@ This gave me this :) :
 followed by the flag of the form<br>
 `flag{...}`
 
-**Go through other [writeups](/writeups/) for more such fun challenges.**
+> Go through other [writeups](/writeups/) for more such fun challenges.
+{: .prompt-tip }
