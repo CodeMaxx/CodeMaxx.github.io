@@ -16,18 +16,16 @@ ctf_category: Pwn
 description: "BackdoorCTF 2016 enter the matrix: binary exploitation to reach the flag on a remote server"
 ---
 
-**BackdoorCTF is the annual flagship CTF competition conducted by SDSLabs and InfoSecIITR.**
+> BackdoorCTF is the annual flagship CTF competition conducted by SDSLabs and InfoSecIITR.
+{: .prompt-info }
 
-#### Points: 350
-
-#### Description:
-
->Can you reach Zion and find the flag? You can download a copy of the Matrix to play with ~~[here](http://hack.bckdr.in/ENTER-THE-MATRIX/matrix)~~ *(CTF server no longer available)*, but the flag can only be found on Zion, through the real Matrix at
+> **Challenge:** Can you reach Zion and find the flag? You can download a copy of the Matrix to play with ~~[here](http://hack.bckdr.in/ENTER-THE-MATRIX/matrix)~~ *(CTF server no longer available)*, but the flag can only be found on Zion, through the real Matrix at
 ~~nc hack.bckdr.in 9004~~ *(server offline)*
 
 ## Write-up
 
-**For this one I went a long way around to finally get the solution. Since this is my first writeup with pwning, I'll be writing about the whole journey around the binary so if you want to just quickly see the solution, [jump here](#the-actual-solution)**
+> For this one I went a long way around to finally get the solution. Since this is my first writeup with pwning, I'll be writing about the whole journey around the binary so if you want to just quickly see the solution, [jump here](#the-actual-solution).
+{: .prompt-tip }
 
 So they gave a 32-bit ELF non-stripped executable. I opened it up in IDA and saw a function named `zion`. According to the description this is where we have to reach to get the flag. This function was making some `_system` call which is what I had to finally exploit. I decided to go into its details later and rather focus on reaching there first.
 

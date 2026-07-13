@@ -16,12 +16,10 @@ description: "Reversing a binary with XOR-encoded flag hidden in a lookup table"
 ctf_category: Reversing
 ---
 
-#### Points: 75
-
-#### Description:
-
-> i ran the binary but no password match but believe this is another simple reverse engineering challenge .
+> **Challenge:** i ran the binary but no password match but believe this is another simple reverse engineering challenge .
 [rev75.zip](/assets/binaries/bugs_bunny_2k17/rev75.zip)
+
+## Write-up
 
 This was an interested challenge, which helped me learn some more of pwntools.
 
@@ -60,4 +58,5 @@ Note that I didn't know in advance that the base64 string will give a PNG image.
 
 Open `flag.png` and you have your flag.
 
-**Go through other [writeups](/writeups/) for more such fun challenges.**
+> Go through other [writeups](/writeups/) for more such fun challenges.
+{: .prompt-tip }

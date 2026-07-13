@@ -16,13 +16,10 @@ ctf_category: Pwn
 description: "BackdoorCTF 2017 Fun Signals: using Linux signal handlers as a ret2syscall exploit primitive"
 ---
 
-**BackdoorCTF is the annual flagship CTF competition conducted by SDSLabs and InfoSecIITR.**
+> BackdoorCTF is the annual flagship CTF competition conducted by SDSLabs and InfoSecIITR.
+{: .prompt-info }
 
-#### Points: 250
-
-#### Description:
-
-> Gr33n5h4d0w had an argument with h3rcul35 while they were studying Signals and Systems. So, h3rcul35 gave him a binary and said "Signals control Computer. Give me the flag". Can you help gr33n5h4d0w win his argument by helping him get the flag.
+> **Challenge:** Gr33n5h4d0w had an argument with h3rcul35 while they were studying Signals and Systems. So, h3rcul35 gave him a binary and said "Signals control Computer. Give me the flag". Can you help gr33n5h4d0w win his argument by helping him get the flag.
 
 > ~~nc hack.bckdr.in 9034~~ *(CTF server no longer available)*
 
@@ -90,8 +87,10 @@ r.interactive()
 
 This will connect to the server, extract the flag and print it.
 
-**Note:** I randomly decided to get 50 characters since we don't know the flag size beforehand. The flag was actually smaller than that. Anything larger than the flag size would've worked.
+> **Note:** I randomly decided to get 50 characters since we don't know the flag size beforehand. The flag was actually smaller than that. Anything larger than the flag size would've worked.
+{: .prompt-info }
 
 Cheers!
 
-**Go through other [writeups](/writeups/) for more such fun challenges.**
+> Go through other [writeups](/writeups/) for more such fun challenges.
+{: .prompt-tip }

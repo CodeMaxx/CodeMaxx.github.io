@@ -32,7 +32,8 @@ I really didn't use a proper method to solve this one. I used `sort data.txt` to
 
 Hence I got the password.
 
-**Edit:** Found a better method for this. The `uniq` command! When the data is sorted the `-u` flag can be used to print only the unique lines.
+> **Edit:** Found a better method for this. The `uniq` command! When the data is sorted the `-u` flag can be used to print only the unique lines.
+{: .prompt-info }
 
 ~~~bash
 sort data.txt | uniq -u

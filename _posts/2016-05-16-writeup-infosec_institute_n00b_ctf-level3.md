@@ -16,10 +16,6 @@ points: 30
 ctf_category: Web
 ---
 
-#### Points: 30
-
-#### Description:
-
 ## Write-up
 
 I saw two suspicious things on the page - a QR code and a 90% complete progress bar. I went to the source code and saw the progress bar was hardcoded to remain at 90% and hence it is just a distraction.
@@ -35,4 +31,4 @@ I got `INFOSECFLAGISMORSING`.
 
 This gives away the flag.
 
-#### Flag: `infosec_flagis_morsing`
+**Flag:** `infosec_flagis_morsing`

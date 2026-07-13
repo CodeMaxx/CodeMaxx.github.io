@@ -66,7 +66,7 @@ std::string question = "\xE2\x9D\x93"; // The C++ way
 
 UTF-8 encoding uses at max 4 bytes for representing any character. Just add that `'\0'` as the last charater to prevent disasters while printing. `std::string` handles this automatically.
 
-#### Didn't work?
+### Didn't work?
 
 If this doesn't seem to work for you try adding this line to the beginning of the main function:
 
@@ -74,11 +74,12 @@ If this doesn't seem to work for you try adding this line to the beginning of th
 
 You will also have to `#include<locale.h>`
 
-#### Resources
+## Resources
 
 The Unicode and UTF8 values for some common emojis can be found [here](https://apps.timwhitlock.info/emoji/tables/unicode).
 
-**Bonus:** Get markdown emoji codes [here](https://www.webfx.com/tools/emoji-cheat-sheet/)
+> **Bonus:** Get markdown emoji codes [here](https://www.webfx.com/tools/emoji-cheat-sheet/).
+{: .prompt-tip }
 
 ---
 

@@ -17,7 +17,7 @@ I was tinkering with the `echo` command when I came across the difference betwee
 
 This can best be explained using some examples.
 
-**NO QUOTES**
+## No quotes
 
 ```bash
 echo test ~/*.txt {code,maxx} $(echo foo) $((2+2)) $USER `echo bar` \$100
@@ -40,7 +40,7 @@ So we see some of the commands got expanded:
 
 Ok so that was some nice stuff. Now lets move on to the quotes.
 
-**DOUBLE QUOTES**
+## Double quotes
 
 ```bash
 echo "test ~/*.txt {code,maxx} $(echo foo) $((2+2)) $USER `echo bar` \$100"
@@ -55,7 +55,7 @@ Now we see some expansions were restricted. With double qoutes all the special c
 - Backtick(`)
 - Backslash(`\`)
 
-**SINGLE QUOTES**
+## Single quotes
 
 ```bash
 echo 'test ~/*.txt {code,maxx} $(echo foo) $((2+2)) $USER `echo bar` \$100'
@@ -66,4 +66,7 @@ test ~/*.txt {code,maxx} $(echo foo) $((2+2)) $USER `echo bar` \$100
 
 We see that using single quotes prevents all expansions. ALL special characters lose thier meaning! This is why it is recommended to use single quotes while writing aliases so that we can put the exact input in it and we don't have to worry about it being modified while substitution.
 
-**Hope this helped :) In case you have any doubts comment below. If you are an Infosec person, don't forget to checkout my [Write-ups](/writeups/)**
+Hope this helped :) In case you have any doubts comment below.
+
+> If you are an Infosec person, don't forget to checkout my [Write-ups](/writeups/).
+{: .prompt-tip }

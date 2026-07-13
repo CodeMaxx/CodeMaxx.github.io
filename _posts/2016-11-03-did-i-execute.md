@@ -25,7 +25,7 @@ What people don't realise is that all of them are meant for completely different
 
 Let me elaborate.
 
-### **Semicolon `;`**
+## Semicolon `;`
 
 Semicolon is `the` legit command separator. Let us see some examples.
 
@@ -39,7 +39,7 @@ OK
 
 Thus `A ; B` implies **Run A and then B**. Very straight-foward. No tricks. Lets move to `&&` and `||`.
 
-### **Double ampersand `&&` and Double pipe `||`**
+## Double ampersand `&&` and Double pipe `||`
 
 `&&` and `||` are **Logical Binary Operators** and as you might have guessed `&&` is Logical AND, `||` is Logical OR.
 
@@ -49,7 +49,8 @@ But where are the boolean values in `echo hello && echo world!` ?
 
 These values are derived from the **Exit status** of the commands!
 
-**Note** that a logical AND checks the second operand only when the first one is `true`. Similarly logical OR checks the second operand only when the first one is `false`.
+> A logical AND checks the second operand only when the first one is `true`. Similarly logical OR checks the second operand only when the first one is `false`.
+{: .prompt-info }
 
 Thus in `A && B`, B executes only when A is a success( exit status 0 ) while in `A || B`, B executes only when A returns an error. Thus both commands may not always execute! Lets see some examples.
 
@@ -82,4 +83,7 @@ $ false && echo success || echo fail
 fail
 ```
 
-**Hope this helped :) In case you have any doubts comment below. If you are an Infosec person, don't forget to checkout my [Write-ups](/writeups/)**
+Hope this helped :) In case you have any doubts comment below.
+
+> If you are an Infosec person, don't forget to checkout my [Write-ups](/writeups/).
+{: .prompt-tip }
