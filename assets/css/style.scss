@@ -167,22 +167,18 @@ $tn-max: 1140px;
 .tn-mode #mode-toggle > svg {
   display: none;
 }
-:root[data-bs-theme='light'][data-theme-persisted]
+/* The trigger always shows the icon for the currently-resolved appearance
+   (sun for light, moon for dark). The theme JS always sets `data-bs-theme`
+   to a concrete 'light'/'dark' value (System resolves to one of them), so we
+   key off that rather than persisted-ness. The monitor/System glyph is kept
+   only for the System row inside the dropdown menu. */
+:root[data-bs-theme='dark'] .tn-mode #mode-toggle > [data-theme-mode='dark'] {
+  display: block;
+}
+:root:not([data-bs-theme='dark'])
   .tn-mode
   #mode-toggle
   > [data-theme-mode='light'] {
-  display: block;
-}
-:root[data-bs-theme='dark'][data-theme-persisted]
-  .tn-mode
-  #mode-toggle
-  > [data-theme-mode='dark'] {
-  display: block;
-}
-:root:not([data-theme-persisted])
-  .tn-mode
-  #mode-toggle
-  > [data-theme-mode='system'] {
   display: block;
 }
 /* Inline SVG icon (light mode): keep it aligned in the button and spaced
@@ -201,7 +197,11 @@ $tn-max: 1140px;
   display: none !important;
 }
 
-/* The theme renders #topbar-title for mobile; hide on desktop (brand covers it). */
+/* Hide the topbar page-title on all viewports: the brand covers identity in the
+   top-nav, and the page's own content heading (`.dynamic-title` / listing
+   title) carries the page title on every viewport. See the mobile block below,
+   which un-hides `.dynamic-title` so page-layout pages (All-Tags, 404) keep a
+   visible heading on phones. */
 #topbar-title {
   display: none;
 }
@@ -802,8 +802,59 @@ div[class^='language-'] .code-header {
   opacity: 0.85;
 }
 
+/* ---------- Footer social icons ---------- */
+/* The shared social-icons row (`social-icons.html`) is otherwise unstyled in
+   the footer: raw inline links render tiny (~13px) and gapless. Give them a
+   consistent size, spacing and hover accent (the hero row has its own boxed
+   styling via `.hero-socials`, so this only affects the footer). */
+.footer-socials {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.85rem;
+  font-size: 1.05rem;
+}
+.footer-socials a {
+  color: var(--text-muted-color) !important;
+  transition: color 0.15s ease;
+}
+.footer-socials a:hover {
+  color: var(--accent-1) !important;
+}
+/* The footer stacks into a column below Bootstrap's `lg` (992px) via
+   `flex-lg-row`, not at the 850px breakpoint the nav/search use. Center the
+   social row and let the footer grow to fit whenever it is stacked, so the
+   851-991px band matches phones (icons centered under the copyright, not
+   left-aligned against a centered copyright). */
+@media (max-width: 991.98px) {
+  footer {
+    height: auto;
+  }
+  .footer-socials {
+    justify-content: center;
+    margin-top: 1rem;
+  }
+  /* The theme anchors #back-to-top a fixed distance above the viewport bottom
+     sized for a 6rem footer; the now taller auto-height footer would poke up
+     under it and overlap the copyright. Raise the button clear of the footer. */
+  #back-to-top {
+    bottom: 7.5rem;
+  }
+}
+/* Ultra-narrow (< ~264px, below any mainstream device): the footer social row
+   wraps to two lines, making the footer ~150-170px tall, so lift the button
+   further to keep it clear of the copyright. */
+@media (max-width: 264px) {
+  #back-to-top {
+    bottom: 11rem;
+  }
+}
+
 /* ---------- Responsive nav ---------- */
-@media (max-width: 850px) {
+/* 849px (not 850) matches Chirpy's `bp.lt(lg)` == max-width: calc(850px - 1px),
+   so the mobile rules end exactly where the theme's desktop rules begin — no
+   1px band at 850px where both rulesets apply. */
+@media (max-width: 849px) {
   #topbar {
     flex-wrap: wrap;
     padding: 0 1rem;
@@ -817,12 +868,66 @@ div[class^='language-'] .code-header {
     padding-bottom: 0.4rem;
     justify-content: flex-start;
     -webkit-overflow-scrolling: touch;
+    /* Fade the trailing edge to signal the row scrolls horizontally when the
+       links overflow the viewport (the scrollbar is hidden on touch). */
+    -webkit-mask-image: linear-gradient(
+      to right,
+      #000 calc(100% - 1.5rem),
+      transparent
+    );
+    mask-image: linear-gradient(to right, #000 calc(100% - 1.5rem), transparent);
+    scrollbar-width: none;
+  }
+  .tn-nav::-webkit-scrollbar {
+    display: none;
   }
   #topbar-wrapper {
     height: auto;
   }
   .tn-nav .tn-link {
     white-space: nowrap;
+    /* Give the text-only nav links a ~44px tap height on touch devices. */
+    padding-top: 0.7rem;
+    padding-bottom: 0.7rem;
+  }
+  .tn-nav .tn-link.active::after {
+    bottom: 0;
+  }
+  /* Trailing scroll spacer so the last link can scroll clear of the edge fade
+     (otherwise "About" stays partly faded at maximum scroll). */
+  .tn-nav::after {
+    content: '';
+    flex: 0 0 1.5rem;
+  }
+
+  /* The content page heading carries the title on mobile (the topbar title is
+     hidden site-wide). The theme hides `.dynamic-title` below `lg`, so un-hide
+     it here or page-layout pages (All-Tags, 404) show no heading on phones. */
+  h1.dynamic-title {
+    display: block;
+  }
+  h1.dynamic-title ~ .content {
+    margin-top: 0;
+  }
+
+  /* ----- Mobile search mode ----- */
+  /* While search is open the theme adds `.d-block` to #search-cancel. Collapse
+     the top-nav to a clean, full-width search bar: drop the brand, the crammed
+     nav row and the (now redundant) theme toggle so only the field + Cancel
+     remain. */
+  #topbar:has(#search-cancel.d-block) .tn-brand,
+  #topbar:has(#search-cancel.d-block) .tn-nav,
+  #topbar:has(#search-cancel.d-block) .tn-mode {
+    display: none;
+  }
+  #topbar:has(#search-cancel.d-block) .tn-controls {
+    width: 100%;
+    margin-left: 0;
+  }
+  /* Don't let the results panel stretch to the full viewport height when it
+     only holds the Trending Tags hint — collapse the large empty gap below. */
+  #search-result-wrapper {
+    height: auto;
   }
 }
 
@@ -1173,15 +1278,27 @@ div[class^='language-'] .code-header {
   }
 
   /* ---------- Responsive ---------- */
-  @media (max-width: 850px) {
+  /* 849px matches Chirpy's `bp.lt(lg)`; see the responsive-nav note above. */
+  @media (max-width: 849px) {
     /* Prevent the blurred hero glow from overflowing the viewport (sideways
        scroll on phones). Clip horizontally without creating a scroll box. */
     overflow-x: clip;
 
     .landing-hero {
-      grid-template-columns: 1fr;
+      /* minmax(0, 1fr) lets the single column shrink below its content width
+         (grid children default to min-width:auto), preventing the H1/kicker
+         from overflowing and getting clipped by `overflow-x: clip` above. */
+      grid-template-columns: minmax(0, 1fr);
       text-align: center;
       gap: 1.5rem;
+    }
+    .hero-copy {
+      min-width: 0;
+    }
+    .hero-headline {
+      /* Defensive: break an over-long word rather than let it overflow the
+         clipped column on very narrow phones. */
+      overflow-wrap: break-word;
     }
     .hero-subtext {
       max-width: none;
@@ -1191,6 +1308,13 @@ div[class^='language-'] .code-header {
       flex-direction: column;
       align-items: center;
     }
+    .hero-socials {
+      /* 8 icons at 42px + gaps is ~403px, wider than a phone viewport, so the
+         row was clipped on both edges by `overflow-x: clip`. Let it wrap and
+         stay centered instead of losing the first/last icon. */
+      flex-wrap: wrap;
+      justify-content: center;
+    }
     .hero-docs {
       justify-content: center;
     }
@@ -1198,7 +1322,10 @@ div[class^='language-'] .code-header {
       order: -1;
     }
     .hero-photo {
-      max-width: 260px;
+      /* A tall 640x1024 portrait at 260px wide is ~416px tall and eats the
+         whole fold, pushing the kicker + headline (the value prop) below it.
+         Shrink it on phones so the headline leads. */
+      max-width: 180px;
     }
     .topic-grid {
       grid-template-columns: 1fr;
