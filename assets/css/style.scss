@@ -206,10 +206,11 @@ $tn-max: 1140px;
   display: none;
 }
 
-/* On the landing + listing + about pages, drop the right panel and use full width. */
+/* On the landing + listing + about + 404 pages, drop the right panel and use full width. */
 #main-wrapper:has(.landing) #panel-wrapper,
 #main-wrapper:has(.listing) #panel-wrapper,
-#main-wrapper:has(.about) #panel-wrapper {
+#main-wrapper:has(.about) #panel-wrapper,
+#main-wrapper:has(.notfound) #panel-wrapper {
   display: none;
 }
 #main-wrapper:has(.landing) > .container > .row > main,
@@ -217,7 +218,9 @@ $tn-max: 1140px;
 #main-wrapper:has(.listing) > .container > .row > main,
 #main-wrapper:has(.listing) #tail-wrapper,
 #main-wrapper:has(.about) > .container > .row > main,
-#main-wrapper:has(.about) #tail-wrapper {
+#main-wrapper:has(.about) #tail-wrapper,
+#main-wrapper:has(.notfound) > .container > .row > main,
+#main-wrapper:has(.notfound) #tail-wrapper {
   flex: 0 0 100%;
   max-width: 100%;
 }
@@ -735,16 +738,36 @@ div[class^='language-'] .code-header {
 }
 
 /* ---------- Search results page ---------- */
-/* Keep the theme's responsive two-column result grid, but restyle each result
-   as an accent card to match the top-nav redesign. */
+/* Restyle each result as an accent card to match the top-nav redesign. */
 #search-result-wrapper .content {
   max-width: 1080px;
   width: 100%;
   padding: 0 0.25rem;
 }
+
+/* Lay results out on a real grid so every card is equal width and a lone
+   last card stays in the left column. This replaces the theme's fragile
+   flex scheme (width: 45% + :nth-child margins + a
+   :last-child:nth-child(odd) { right: 24.3% } nudge) that shifted the last
+   card sideways whenever the result count was odd. The .d-flex utility on
+   the container sets display with !important, so grid must match it. */
+#search-results {
+  display: grid !important;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+@media (min-width: 1200px) {
+  #search-results {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 #search-results > article {
+  width: auto !important;
+  margin: 0 !important;
+  position: static !important;
+  right: auto !important;
   background: var(--card-bg);
-  border: 1px solid var(--card-border-color, rgba(0, 0, 0, 0.08));
+  border: 1px solid var(--main-border-color);
   border-radius: 12px;
   padding: 1.15rem 1.35rem;
   transition:
@@ -1340,5 +1363,161 @@ div[class^='language-'] .code-header {
     .feature--reverse .feature-body {
       order: initial;
     }
+  }
+}
+
+/* ============================================================
+   404 / not-found — focused single-column recovery experience
+   ============================================================ */
+.notfound {
+  /* Fixed accessible gradient (white text >= 4.5:1 in both themes); the
+     site --accent-grad goes too light for white text in dark mode. */
+  --nf-cta-grad: linear-gradient(120deg, #1667cf 0%, #4f3ff0 100%);
+  display: flex;
+  justify-content: center;
+  padding: 3rem 0 4rem;
+}
+.notfound-inner {
+  max-width: 620px;
+  width: 100%;
+  text-align: center;
+}
+.notfound-code {
+  font-size: clamp(4.5rem, 16vw, 8rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  margin: 0 0 0.5rem;
+  background: var(--accent-grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.notfound-title {
+  font-size: clamp(1.5rem, 3.5vw, 2.1rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.9rem;
+}
+.notfound-lead {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--text-muted-color);
+  max-width: 46ch;
+  margin: 0 auto 2rem;
+}
+
+.notfound-actions {
+  margin-bottom: 1.5rem;
+}
+.notfound-home {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.75rem 1.8rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #fff !important;
+  background: var(--nf-cta-grad);
+  box-shadow: 0 8px 22px var(--accent-soft);
+  transition: transform 0.15s ease, box-shadow 0.2s ease;
+}
+.notfound-home:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px var(--accent-soft);
+}
+.notfound-home:focus-visible {
+  outline: 2px solid var(--accent-1);
+  outline-offset: 3px;
+}
+
+/* Search box — a styled entry point that opens the site-wide search overlay. */
+.notfound-search {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto 2.25rem;
+  padding: 0.8rem 1.25rem;
+  border-radius: 12px;
+  font-size: 0.98rem;
+  color: var(--text-muted-color);
+  background: var(--card-bg);
+  border: 1px solid var(--search-border-color);
+  cursor: text;
+  transition: border-color 0.15s ease, box-shadow 0.2s ease, color 0.15s ease;
+}
+.notfound-search i {
+  color: var(--accent-1);
+}
+.notfound-search-field {
+  flex: 1 1 auto;
+  min-width: 0;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  color: var(--heading-color);
+  font-size: inherit;
+  line-height: 1.5;
+  text-align: left;
+  outline: none;
+}
+.notfound-search-field::placeholder {
+  color: var(--text-muted-color);
+  opacity: 1;
+}
+.notfound-search:hover,
+.notfound-search:focus-within {
+  border-color: var(--accent-1);
+  box-shadow: 0 8px 22px var(--accent-soft);
+}
+
+.notfound-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+}
+.notfound-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.5rem 1.1rem;
+  border-radius: 999px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: var(--heading-color) !important;
+  background: var(--card-bg);
+  border: 1px solid var(--btn-border-color);
+  transition: transform 0.15s ease, color 0.15s ease, background 0.15s ease, box-shadow 0.2s ease;
+}
+.notfound-links a:hover {
+  transform: translateY(-2px);
+  color: #fff !important;
+  background: var(--nf-cta-grad);
+  border-color: transparent;
+  box-shadow: 0 8px 20px var(--accent-soft);
+}
+.notfound-links a:focus-visible {
+  outline: 2px solid var(--accent-1);
+  outline-offset: 3px;
+}
+.notfound-links a i {
+  font-size: 0.9em;
+}
+
+@media (max-width: 576px) {
+  .notfound {
+    padding: 2rem 0 3rem;
+  }
+  .notfound-links {
+    gap: 0.5rem;
+  }
+  .notfound-links a {
+    padding: 0.45rem 0.9rem;
+    font-size: 0.9rem;
   }
 }

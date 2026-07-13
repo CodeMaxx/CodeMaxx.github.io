@@ -1,0 +1,116 @@
+---
+layout: default
+title: "404: Page not found"
+permalink: /404.html
+---
+
+{% include lang.html %}
+
+<div class="notfound">
+  <div class="notfound-inner">
+    <p class="notfound-code" aria-hidden="true">404</p>
+    <h1 class="notfound-title">This page took a page fault</h1>
+    <p class="notfound-lead">
+      The address you followed doesn&rsquo;t map to anything on this site &mdash;
+      it may have moved, been renamed, or never existed. Let&rsquo;s get you back
+      to solid ground.
+    </p>
+
+    <div class="notfound-actions">
+      <a class="notfound-home" href="{{ '/' | relative_url }}">
+        <i class="fas fa-house"></i> Back to Home
+      </a>
+    </div>
+
+    <label class="notfound-search" for="notfound-search-input">
+      <i class="fas fa-search" aria-hidden="true"></i>
+      <input
+        type="search"
+        id="notfound-search-input"
+        class="notfound-search-field"
+        placeholder="Search the blog&hellip;"
+        autocomplete="off"
+        aria-label="Search the blog"
+      >
+    </label>
+
+    <nav class="notfound-links" aria-label="Where to go next">
+      <a href="{{ '/blog/' | relative_url }}"><i class="fas fa-microchip"></i> Blog</a>
+      <a href="{{ '/writeups/' | relative_url }}"><i class="fas fa-flag"></i> Write-ups</a>
+      <a href="{{ '/projects/' | relative_url }}"><i class="fas fa-diagram-project"></i> Projects</a>
+      <a href="{{ '/about/' | relative_url }}"><i class="fas fa-user"></i> About</a>
+    </nav>
+  </div>
+</div>
+
+<script>
+  (function () {
+    var field = document.getElementById('notfound-search-input');
+    if (!field) {
+      return;
+    }
+
+    function topInput() {
+      return document.getElementById('search-input');
+    }
+
+    /* Hand the query off to the site-wide search on the first keystroke: focus
+       moves to the topbar input (revealing the overlay on mobile) and results
+       render there. The middle box is only a starting point, so it clears
+       itself once the text has been forwarded. */
+    function overlayOpen() {
+      var wrap = document.getElementById('search-result-wrapper');
+      return !!wrap && !wrap.classList.contains('d-none');
+    }
+
+    function handoff() {
+      var top = topInput();
+      if (!top) {
+        return;
+      }
+
+      /* On mobile the topbar input is hidden until the theme trigger reveals
+         the search bar; on desktop it is already on screen. Bail (leaving the
+         keystroke in the box) if the theme markup or its deferred handler
+         isn't ready, so a character is never silently lost. */
+      var searchEl = top.closest('search');
+      var topVisible = searchEl && getComputedStyle(searchEl).display !== 'none';
+      if (!topVisible) {
+        var trigger = document.getElementById('search-trigger');
+        if (!trigger) {
+          return;
+        }
+        trigger.click();
+        topVisible = searchEl && getComputedStyle(searchEl).display !== 'none';
+        if (!topVisible) {
+          return;
+        }
+      }
+
+      var query = field.value;
+      top.value = query;
+      top.focus();
+      top.dispatchEvent(new Event('input', { bubbles: true }));
+
+      /* Only consider the hand-off done once the theme reacted (results overlay
+         opened). If it didn't (search JS not wired yet), keep the query in the
+         box so the keystroke survives and the next one retries. */
+      if (!overlayOpen()) {
+        top.value = '';
+        field.focus();
+        return;
+      }
+      field.value = '';
+    }
+
+    field.addEventListener('input', function (e) {
+      /* Wait for IME composition to commit so CJK input isn't cut off. */
+      if (e.isComposing) {
+        return;
+      }
+      if (field.value.length > 0) {
+        handoff();
+      }
+    });
+  })();
+</script>
