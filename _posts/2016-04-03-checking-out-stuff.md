@@ -5,6 +5,7 @@ date: 2016-04-03 12:00
 tags:
 - Personal
 blog: true
+description: "My first blog post — introducing myself and why I started writing about coding and computer science."
 ---
 
 ## <center> So this should work </center>

@@ -11,7 +11,7 @@ tags:
 - Web Security
 - Infosec Institute n00b CTF
 writeup: true
-description: "n00b CTF 1"
+description: "Spotting the hidden flag by viewing the page's HTML source."
 points: 10
 ctf_category: Web
 ---

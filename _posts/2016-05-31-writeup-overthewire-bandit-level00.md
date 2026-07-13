@@ -1,5 +1,5 @@
 ---
-title: "Bandit Level 0"
+title: "OverTheWire Bandit Level 0 → 1 Walkthrough"
 layout: post
 permalink: /writeups/OverTheWire/Bandit/level00/
 date: 2016-05-31 01:16:51 +0530
@@ -13,7 +13,7 @@ tags:
 writeup: true
 points:
 ctf_category: Wargame
-description: "Bandit Level 0 → 1: logging into SSH and reading a file with cat"
+description: "Logging into SSH and reading a file with cat"
 ---
 
 > **Level goal:** The password for the next level is stored in a file called **readme** located in the home directory. Use this password to log into bandit1 using SSH. Whenever you find a password for a level, use SSH to log into that level and continue the game.

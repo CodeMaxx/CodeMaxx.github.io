@@ -1,5 +1,5 @@
 ---
-title: "Bandit Level 8"
+title: "OverTheWire Bandit Level 8 → 9 Walkthrough"
 layout: post
 permalink: /writeups/OverTheWire/Bandit/level08/
 date: 2016-05-31 01:16:51 +0530
@@ -13,7 +13,7 @@ tags:
 writeup: true
 points:
 ctf_category: Wargame
-description: "Bandit Level 8 → 9: finding the only unique line in a file using sort and uniq -u"
+description: "Finding the only unique line in a file using sort and uniq -u"
 ---
 
 > **Level goal:** The password for the next level is stored in the file data.txt and is the only line of text that occurs only once

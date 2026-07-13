@@ -1,5 +1,5 @@
 ---
-title: "Bandit Level 2"
+title: "OverTheWire Bandit Level 2 → 3 Walkthrough"
 layout: post
 permalink: /writeups/OverTheWire/Bandit/level02/
 date: 2016-05-31 01:16:51 +0530
@@ -13,7 +13,7 @@ tags:
 writeup: true
 points:
 ctf_category: Wargame
-description: "Bandit Level 2 → 3: reading a filename with spaces using quotes or backslash"
+description: "Reading a filename with spaces using quotes or backslash"
 ---
 
 > **Level goal:** The password for the next level is stored in a file called spaces in this filename located in the home directory

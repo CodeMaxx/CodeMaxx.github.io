@@ -11,7 +11,7 @@ tags:
 - Web Security
 - Infosec Institute n00b CTF
 writeup: true
-description: "n00b CTF 3"
+description: "Decoding a QR code and then Morse code to reveal the flag."
 points: 30
 ctf_category: Web
 ---

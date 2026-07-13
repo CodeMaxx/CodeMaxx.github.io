@@ -1,5 +1,5 @@
 ---
-title: "Bandit Level 13"
+title: "OverTheWire Bandit Level 13 → 14 Walkthrough"
 layout: post
 permalink: /writeups/OverTheWire/Bandit/level13/
 date: 2016-05-31 00:41:51 +0530
@@ -13,7 +13,7 @@ tags:
 writeup: true
 points:
 ctf_category: Wargame
-description: "Bandit Level 13 → 14: using an SSH private key to log in without a password"
+description: "Using an SSH private key to log in without a password"
 ---
 
 > **Level goal:** The password for the next level is stored in /etc/bandit_pass/bandit14 and can only be read by user bandit14. For this level, you don’t get the next password, but you get a private SSH key that can be used to log into the next level. Note: localhost is a hostname that refers to the machine you are working on

@@ -1,5 +1,5 @@
 ---
-title: "Bandit Level 3"
+title: "OverTheWire Bandit Level 3 → 4 Walkthrough"
 layout: post
 permalink: /writeups/OverTheWire/Bandit/level03/
 date: 2016-05-31 01:16:51 +0530
@@ -13,7 +13,7 @@ tags:
 writeup: true
 points:
 ctf_category: Wargame
-description: "Bandit Level 3 → 4: finding and reading a hidden file with ls -a"
+description: "Finding and reading a hidden file with ls -a"
 ---
 
 > **Level goal:** The password for the next level is stored in a hidden file in the inhere directory.

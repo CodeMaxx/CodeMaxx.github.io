@@ -11,7 +11,7 @@ tags:
 - Shell
 - Tutorial
 blog: true
-description: "C++ code for printing emojis to terminal"
+description: "Outputting Unicode emoji from C and C++ with raw UTF-8 byte arrays and Unicode escapes — and the encoding details that matter."
 ---
 
 

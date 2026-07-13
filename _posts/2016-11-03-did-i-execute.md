@@ -1,5 +1,5 @@
 ---
-title: "Did I Execute?"
+title: "Did I Execute? Chaining Commands in the Shell"
 layout: post
 date: 2016-11-03 11:00
 image:
@@ -10,7 +10,7 @@ tags:
 - Shell
 - Tutorial
 blog: true
-description: "The subtle difference between ;, && and || that most terminal users get wrong"
+description: "The subtle difference between running commands in sequence, only on success, and only on failure — which trips up most terminal users."
 ---
 
 I'll be discussing about a small detail, about executing multiple commands on a terminal, which I realised most people don't know about.

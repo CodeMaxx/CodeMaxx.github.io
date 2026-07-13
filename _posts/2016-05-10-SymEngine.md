@@ -7,7 +7,7 @@ tags:
 - Cpp
 - Computer Algebra
 projects: true
-description: "Symbolic Computation C++ Library"
+description: "My open-source work on SymEngine, a standalone fast C++ symbolic manipulation (computer algebra) library."
 ---
 
 <center>A standalone fast C++ symbolic manipulation library.</center>
