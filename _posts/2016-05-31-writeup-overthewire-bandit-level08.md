@@ -16,17 +16,13 @@ ctf_category: Wargame
 description: "Bandit Level 8 → 9: finding the only unique line in a file using sort and uniq -u"
 ---
 
-#### Level Goal:
+> **Level goal:** The password for the next level is stored in the file data.txt and is the only line of text that occurs only once
 
->The password for the next level is stored in the file data.txt and is the only line of text that occurs only once
+**Commands you may need:** `grep`, `sort`, `uniq`, `strings`, `base64`, `tr`, `tar`, `gzip`, `bzip2`, `xxd`
 
-#### Commands you may need to solve this level
+**Helpful reading:**
 
->grep, sort, uniq, strings, base64, tr, tar, gzip, bzip2, xxd
-
-#### Helpful Reading Material
-
->~~[The unix commandline: pipes and redirects](http://www.westwind.com/reference/os-x/commandline/pipes.html)~~ *(Site no longer active)*
+- ~~[The unix commandline: pipes and redirects](http://www.westwind.com/reference/os-x/commandline/pipes.html)~~ *(Site no longer active)*
 
 ## Write-up
 
@@ -42,4 +38,5 @@ Hence I got the password.
 sort data.txt | uniq -u
 ~~~
 
-#### Level 9 password: `UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR`
+> **Level 9 password:** `UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR`
+{: .prompt-tip }

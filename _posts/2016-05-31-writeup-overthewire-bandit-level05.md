@@ -16,17 +16,11 @@ ctf_category: Wargame
 description: "Bandit Level 5 → 6: using find with size and non-executable flags to locate the password"
 ---
 
-#### Level Goal:
+> **Level goal:** The password for the next level is stored in a file somewhere under the inhere directory and has all of the following properties: - human-readable - 1033 bytes in size - not executable
 
->The password for the next level is stored in a file somewhere under the inhere directory and has all of the following properties: - human-readable - 1033 bytes in size - not executable
+**Commands you may need:** `ls`, `cd`, `cat`, `file`, `du`, `find`
 
-#### Commands you may need to solve this level
-
->ls, cd, cat, file, du, find
-
-#### Helpful Reading Material
-
->None
+**Helpful reading:** None
 
 ## Write-up
 
@@ -50,4 +44,5 @@ Getting two exact same outputs was eerie. After some investigation I found out t
 
 Thus a simple `find inhere -size 1033c -print` in the home directory would have done the job. `cat ~/inhere/maybeinhere07/.file2` gives the password.
 
-#### Level 6 password: `DXjZPULLxYr17uwoI01bNLQbtFemEgo7`
+> **Level 6 password:** `DXjZPULLxYr17uwoI01bNLQbtFemEgo7`
+{: .prompt-tip }

@@ -16,17 +16,11 @@ ctf_category: Wargame
 description: "Bandit Level 3 → 4: finding and reading a hidden file with ls -a"
 ---
 
-#### Level Goal:
+> **Level goal:** The password for the next level is stored in a hidden file in the inhere directory.
 
->The password for the next level is stored in a hidden file in the inhere directory.
+**Commands you may need:** `ls`, `cd`, `cat`, `file`, `du`, `find`
 
-#### Commands you may need to solve this level
-
->ls, cd, cat, file, du, find
-
-#### Helpful Reading Material
-
->None
+**Helpful reading:** None
 
 ## Write-up
 
@@ -38,4 +32,5 @@ bandit3@melinda:~$ ls inhere/
 
 This shows a `.hidden` file. Files with names starting with a `.`(dot) automatically get hidden in Unix.<br> `cat inhere/.hidden` reveals the password for the next level.
 
-#### Level 4 password: `pIwrPrtPN36QITSp3EQaw936yaFoFgAB`
+> **Level 4 password:** `pIwrPrtPN36QITSp3EQaw936yaFoFgAB`
+{: .prompt-tip }

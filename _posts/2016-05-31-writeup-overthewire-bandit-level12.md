@@ -16,17 +16,13 @@ ctf_category: Wargame
 description: "Bandit Level 12 → 13: decompressing a repeatedly-compressed hexdump with xxd, gzip, bzip2, and tar"
 ---
 
-#### Level Goal:
+> **Level goal:** The password for the next level is stored in the file data.txt, which is a hexdump of a file that has been repeatedly compressed. For this level it may be useful to create a directory under /tmp in which you can work using mkdir. For example: mkdir /tmp/myname123. Then copy the datafile using cp, and rename it using mv (read the manpages!)
 
->The password for the next level is stored in the file data.txt, which is a hexdump of a file that has been repeatedly compressed. For this level it may be useful to create a directory under /tmp in which you can work using mkdir. For example: mkdir /tmp/myname123. Then copy the datafile using cp, and rename it using mv (read the manpages!)
+**Commands you may need:** `grep`, `sort`, `uniq`, `strings`, `base64`, `tr`, `tar`, `gzip`, `bzip2`, `xxd`, `mkdir`, `cp`, `mv`
 
-#### Commands you may need to solve this level
+**Helpful reading:**
 
->grep, sort, uniq, strings, base64, tr, tar, gzip, bzip2, xxd, mkdir, cp, mv
-
-#### Helpful Reading Material
-
->[Hex dump on Wikipedia](https://en.wikipedia.org/wiki/Hex_dump)
+- [Hex dump on Wikipedia](https://en.wikipedia.org/wiki/Hex_dump)
 
 ## Write-up
 
@@ -49,4 +45,5 @@ So the given file was a hexdump. I used `xxd -r <filename>` to reverse it and se
 
 ***If you have a method to automate this stuff to make it easier, please comment below or <a href="#" onclick="location.href='mailto:' + 'me' + '@' + 'akashtrehan.com'; return false;">email me</a>.***
 
-#### Level 13 password: `8ZjyCRiBWFYkneahHwxCv3wb2a1ORpYL`
+> **Level 13 password:** `8ZjyCRiBWFYkneahHwxCv3wb2a1ORpYL`
+{: .prompt-tip }

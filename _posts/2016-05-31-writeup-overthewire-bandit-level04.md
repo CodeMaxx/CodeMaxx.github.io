@@ -16,17 +16,11 @@ ctf_category: Wargame
 description: "Bandit Level 4 → 5: using the file command to find the only human-readable file"
 ---
 
-#### Level Goal:
+> **Level goal:** The password for the next level is stored in the only human-readable file in the inhere directory. Tip: if your terminal is messed up, try the “reset” command.
 
->The password for the next level is stored in the only human-readable file in the inhere directory. Tip: if your terminal is messed up, try the “reset” command.
+**Commands you may need:** `ls`, `cd`, `cat`, `file`, `du`, `find`
 
-#### Commands you may need to solve this level
-
->ls, cd, cat, file, du, find
-
-#### Helpful Reading Material
-
->None
+**Helpful reading:** None
 
 ## Write-up
 
@@ -57,4 +51,5 @@ inhere/-file02: data
 
 Thus `inhere/-file07` is the file we are looking for. `cat inhere/-file07` gives the password for the next level.
 
-#### Level 5 password: `koReBOKuIDDepwhWk7jZC0RTdopnAYKh`
+> **Level 5 password:** `koReBOKuIDDepwhWk7jZC0RTdopnAYKh`
+{: .prompt-tip }

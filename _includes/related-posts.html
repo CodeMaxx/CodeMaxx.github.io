@@ -1,7 +1,7 @@
-<!-- Recommend the other 3 posts according to the tags and categories of the current post. -->
+<!-- Recommend related posts according to the tags and categories of the current post. -->
 
 <!-- The total size of related posts -->
-{% assign TOTAL_SIZE = 3 %}
+{% assign TOTAL_SIZE = 2 %}
 
 <!-- An random integer that bigger than 0 -->
 {% assign TAG_SCORE = 1 %}
@@ -74,7 +74,7 @@
     <h3 class="mb-4" id="related-label">
       {{- site.data.locales[include.lang].post.relate_posts -}}
     </h3>
-    <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
+    <nav class="row row-cols-1 row-cols-md-2 g-4 mb-4">
       {% for post in relate_posts %}
         <article class="col">
           <a

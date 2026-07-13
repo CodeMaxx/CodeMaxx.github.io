@@ -16,17 +16,13 @@ ctf_category: Wargame
 description: "Bandit Level 2 → 3: reading a filename with spaces using quotes or backslash"
 ---
 
-#### Level Goal:
+> **Level goal:** The password for the next level is stored in a file called spaces in this filename located in the home directory
 
->The password for the next level is stored in a file called spaces in this filename located in the home directory
+**Commands you may need:** `ls`, `cd`, `cat`, `file`, `du`, `find`
 
-#### Commands you may need to solve this level
+**Helpful reading:**
 
->ls, cd, cat, file, du, find
-
-#### Helpful Reading Material
-
->[Google Search for “spaces in filename”](https://www.google.com/search?q=spaces+in+filename)
+- [Google Search for “spaces in filename”](https://www.google.com/search?q=spaces+in+filename)
 
 ## Write-up
 
@@ -34,4 +30,5 @@ This was simple enough since **Tab completion** was enabled. If that would not b
 
 Thus I used `cat spaces\ in\ this\ filename` to read from the file.
 
-#### Level 3 password: `UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK`
+> **Level 3 password:** `UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK`
+{: .prompt-tip }

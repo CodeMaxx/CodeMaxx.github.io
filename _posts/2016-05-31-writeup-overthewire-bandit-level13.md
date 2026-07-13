@@ -16,17 +16,13 @@ ctf_category: Wargame
 description: "Bandit Level 13 → 14: using an SSH private key to log in without a password"
 ---
 
-#### Level Goal:
+> **Level goal:** The password for the next level is stored in /etc/bandit_pass/bandit14 and can only be read by user bandit14. For this level, you don’t get the next password, but you get a private SSH key that can be used to log into the next level. Note: localhost is a hostname that refers to the machine you are working on
 
->The password for the next level is stored in /etc/bandit_pass/bandit14 and can only be read by user bandit14. For this level, you don’t get the next password, but you get a private SSH key that can be used to log into the next level. Note: localhost is a hostname that refers to the machine you are working on
+**Commands you may need:** `ssh`, `telnet`, `nc`, `openssl`, `s_client`, `nmap`
 
-#### Commands you may need to solve this level
+**Helpful reading:**
 
->ssh, telnet, nc, openssl, s_client, nmap
-
-#### Helpful Reading Material
-
->[SSH/OpenSSH/Keys](https://help.ubuntu.com/community/SSH/OpenSSH/Keys)
+- [SSH/OpenSSH/Keys](https://help.ubuntu.com/community/SSH/OpenSSH/Keys)
 
 ## Write-up
 
@@ -53,4 +49,5 @@ cat /etc/bandit_pass/bandit14
 
 You can now log into Level 14 with this password without the need of the private ssh keys.
 
-#### Level 14 password: `4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e`
+> **Level 14 password:** `4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e`
+{: .prompt-tip }

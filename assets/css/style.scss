@@ -423,10 +423,17 @@ $tn-max: 1140px;
 /* ---------- Post reading measure ---------- */
 /* The default article column runs ~100 chars/line, which is too wide for
    comfortable prose. Constrain the article and its footer (Further Reading /
-   comments) to a readable measure, left-aligned; the TOC stays on the right. */
+   comments) to a readable measure and centre it, so on wide screens the column
+   sits balanced rather than hugging the far-left gutter (the TOC stays on the
+   right). The article (.post-page) centres inside <main>; the tail sections
+   (Further Reading, comments, footer) are direct children of #tail-wrapper, an
+   identical-width column, so centring those children keeps them aligned with
+   the article body. `margin: auto` is a no-op while the column already fills a
+   narrow viewport, so no breakpoint gating is needed. */
 .post-page,
-#main-wrapper:has(.post-page) #tail-wrapper {
-  max-width: 46rem;
+#main-wrapper:has(.post-page) #tail-wrapper > * {
+  max-width: 40rem;
+  margin-inline: auto;
 }
 
 /* Accent tag pills at the foot of the article */

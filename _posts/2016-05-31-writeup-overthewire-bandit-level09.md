@@ -16,17 +16,11 @@ ctf_category: Wargame
 description: "Bandit Level 9 → 10: using strings to extract human-readable text from a binary file"
 ---
 
-#### Level Goal:
+> **Level goal:** The password for the next level is stored in the file data.txt in one of the few human-readable strings, beginning with several ‘=’ characters.
 
->The password for the next level is stored in the file data.txt in one of the few human-readable strings, beginning with several ‘=’ characters.
+**Commands you may need:** `grep`, `sort`, `uniq`, `strings`, `base64`, `tr`, `tar`, `gzip`, `bzip2`, `xxd`
 
-#### Commands you may need to solve this level
-
->grep, sort, uniq, strings, base64, tr, tar, gzip, bzip2, xxd
-
-#### Helpful Reading Material
-
->None
+**Helpful reading:** None
 
 ## Write-up
 
@@ -38,4 +32,5 @@ bandit9@melinda:~$ strings data.txt | grep ======
 
 ![output](/assets/images/OverTheWire/Bandit/level9_output.png)
 
-#### Level 10 password: `truKLdjsbJ5g7yyJ2X2R0o3a5HQJFuLk`
+> **Level 10 password:** `truKLdjsbJ5g7yyJ2X2R0o3a5HQJFuLk`
+{: .prompt-tip }

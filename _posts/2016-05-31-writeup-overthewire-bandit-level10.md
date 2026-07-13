@@ -16,17 +16,13 @@ ctf_category: Wargame
 description: "Bandit Level 10 → 11: decoding base64-encoded data with the base64 command"
 ---
 
-#### Level Goal:
+> **Level goal:** The password for the next level is stored in the file data.txt, which contains base64 encoded data
 
->The password for the next level is stored in the file data.txt, which contains base64 encoded data
+**Commands you may need:** `grep`, `sort`, `uniq`, `strings`, `base64`, `tr`, `tar`, `gzip`, `bzip2`, `xxd`
 
-#### Commands you may need to solve this level
+**Helpful reading:**
 
->grep, sort, uniq, strings, base64, tr, tar, gzip, bzip2, xxd
-
-#### Helpful Reading Material
-
->[Base64 on Wikipedia](https://en.wikipedia.org/wiki/Base64)
+- [Base64 on Wikipedia](https://en.wikipedia.org/wiki/Base64)
 
 ## Write-up
 
@@ -36,4 +32,5 @@ I used the pre-installed base64 decoder to get the passoword.
 bandit10@melinda:~$ cat data.txt | base64 --decode
 ~~~
 
-#### Level 11 password: `IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR`
+> **Level 11 password:** `IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR`
+{: .prompt-tip }
