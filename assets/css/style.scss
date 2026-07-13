@@ -693,6 +693,13 @@ div[class^='language-'] .code-header {
     min-height: 100%;
     border-radius: 0 12px 12px 0;
   }
+
+  /* Imageless posts use the placeholder (no intrinsic height); give it the
+     cover ratio so its card matches the image cards instead of collapsing. */
+  #post-list .post-preview .card-media:has(.card-media-placeholder) {
+    height: auto;
+    aspect-ratio: 15 / 8;
+  }
 }
 
 /* Listing card meta row: let the date / read-time / points / category groups
