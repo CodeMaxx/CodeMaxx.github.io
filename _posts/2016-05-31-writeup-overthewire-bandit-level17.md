@@ -1,5 +1,5 @@
 ---
-title: "Bandit Level 17"
+title: "OverTheWire Bandit Level 17 → 18 Walkthrough"
 layout: post
 permalink: /writeups/OverTheWire/Bandit/level17/
 date: 2016-05-31 04:37:00 +0530
@@ -13,7 +13,7 @@ tags:
 writeup: true
 points:
 ctf_category: Wargame
-description: "Bandit Level 17 → 18: using diff to find the one changed line between two password files"
+description: "Using diff to find the one changed line between two password files"
 ---
 
 > **Level goal:** There are 2 files in the homedirectory: passwords.old and passwords.new. The password for the next level is in passwords.new and is the only line that has been changed between passwords.old and passwords.new

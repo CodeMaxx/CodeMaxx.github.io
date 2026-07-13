@@ -1,5 +1,5 @@
 ---
-title: "Bandit Level 15"
+title: "OverTheWire Bandit Level 15 → 16 Walkthrough"
 layout: post
 permalink: /writeups/OverTheWire/Bandit/level15/
 date: 2016-05-31 04:37:00 +0530
@@ -13,7 +13,7 @@ tags:
 writeup: true
 points:
 ctf_category: Wargame
-description: "Bandit Level 15 → 16: submitting a password over SSL using openssl s_client"
+description: "Submitting a password over SSL using openssl s_client"
 ---
 
 > **Level goal:** The password for the next level can be retrieved by submitting the password of the current level to port 30001 on localhost using SSL encryption.

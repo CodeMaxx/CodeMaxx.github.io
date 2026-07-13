@@ -1,5 +1,5 @@
 ---
-title: "Bandit Level 4"
+title: "OverTheWire Bandit Level 4 → 5 Walkthrough"
 layout: post
 permalink: /writeups/OverTheWire/Bandit/level04/
 date: 2016-05-31 01:16:51 +0530
@@ -13,7 +13,7 @@ tags:
 writeup: true
 points:
 ctf_category: Wargame
-description: "Bandit Level 4 → 5: using the file command to find the only human-readable file"
+description: "Using the file command to find the only human-readable file"
 ---
 
 > **Level goal:** The password for the next level is stored in the only human-readable file in the inhere directory. Tip: if your terminal is messed up, try the “reset” command.

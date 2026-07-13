@@ -1,5 +1,5 @@
 ---
-title: "Bandit Level 16"
+title: "OverTheWire Bandit Level 16 → 17 Walkthrough"
 layout: post
 permalink: /writeups/OverTheWire/Bandit/level16/
 date: 2016-05-31 04:37:00 +0530
@@ -13,7 +13,7 @@ tags:
 writeup: true
 points:
 ctf_category: Wargame
-description: "Bandit Level 16 → 17: port scanning with nmap to find the SSL listener and get an SSH key"
+description: "Port scanning with nmap to find the SSL listener and get an SSH key"
 ---
 
 > **Level goal:** The credentials for the next level can be retrieved by submitting the password of the current level to a port on localhost in the range 31000 to 32000. First find out which of these ports have a server listening on them. Then find out which of those speak SSL and which don’t. There is only 1 server that will give the next credentials, the others will simply send back to you whatever you send to it.

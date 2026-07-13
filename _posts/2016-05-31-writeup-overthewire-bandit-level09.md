@@ -1,5 +1,5 @@
 ---
-title: "Bandit Level 9"
+title: "OverTheWire Bandit Level 9 → 10 Walkthrough"
 layout: post
 permalink: /writeups/OverTheWire/Bandit/level09/
 date: 2016-05-31 01:16:51 +0530
@@ -13,7 +13,7 @@ tags:
 writeup: true
 points:
 ctf_category: Wargame
-description: "Bandit Level 9 → 10: using strings to extract human-readable text from a binary file"
+description: "Using strings to extract human-readable text from a binary file"
 ---
 
 > **Level goal:** The password for the next level is stored in the file data.txt in one of the few human-readable strings, beginning with several ‘=’ characters.

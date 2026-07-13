@@ -11,7 +11,7 @@ tags:
 - Web Security
 - Infosec Institute n00b CTF
 writeup: true
-description: "n00b CTF 2"
+description: "Using the file command to unmask a fake broken image and recover the flag."
 points: 20
 ctf_category: Web
 ---

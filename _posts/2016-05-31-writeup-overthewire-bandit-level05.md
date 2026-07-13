@@ -1,5 +1,5 @@
 ---
-title: "Bandit Level 5"
+title: "OverTheWire Bandit Level 5 → 6 Walkthrough"
 layout: post
 permalink: /writeups/OverTheWire/Bandit/level05/
 date: 2016-05-31 01:16:51 +0530
@@ -13,7 +13,7 @@ tags:
 writeup: true
 points:
 ctf_category: Wargame
-description: "Bandit Level 5 → 6: using find with size and non-executable flags to locate the password"
+description: "Using find with a size filter to locate the password among many decoy files"
 ---
 
 > **Level goal:** The password for the next level is stored in a file somewhere under the inhere directory and has all of the following properties: - human-readable - 1033 bytes in size - not executable

@@ -1,5 +1,5 @@
 ---
-title: "Bandit Level 14"
+title: "OverTheWire Bandit Level 14 → 15 Walkthrough"
 layout: post
 permalink: /writeups/OverTheWire/Bandit/level14/
 date: 2016-05-31 00:41:51 +0530
@@ -13,7 +13,7 @@ tags:
 writeup: true
 points:
 ctf_category: Wargame
-description: "Bandit Level 14 → 15: submitting a password to a localhost port using netcat"
+description: "Submitting a password to a localhost port using netcat"
 ---
 
 > **Level goal:** The password for the next level can be retrieved by submitting the password of the current level to **port 30000 on localhost**.

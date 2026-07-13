@@ -1,5 +1,5 @@
 ---
-title: "Bandit Level 12"
+title: "OverTheWire Bandit Level 12 → 13 Walkthrough"
 layout: post
 permalink: /writeups/OverTheWire/Bandit/level12/
 date: 2016-05-31 00:41:51 +0530
@@ -13,7 +13,7 @@ tags:
 writeup: true
 points:
 ctf_category: Wargame
-description: "Bandit Level 12 → 13: decompressing a repeatedly-compressed hexdump with xxd, gzip, bzip2, and tar"
+description: "Decompressing a repeatedly-compressed hexdump with xxd, gzip, bzip2, and tar"
 ---
 
 > **Level goal:** The password for the next level is stored in the file data.txt, which is a hexdump of a file that has been repeatedly compressed. For this level it may be useful to create a directory under /tmp in which you can work using mkdir. For example: mkdir /tmp/myname123. Then copy the datafile using cp, and rename it using mv (read the manpages!)

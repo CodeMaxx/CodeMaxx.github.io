@@ -1,5 +1,5 @@
 ---
-title: "Bandit Level 19"
+title: "OverTheWire Bandit Level 19 → 20 Walkthrough"
 layout: post
 permalink: /writeups/OverTheWire/Bandit/level19/
 date: 2016-06-02 22:45:50 +0530
@@ -13,7 +13,7 @@ tags:
 writeup: true
 points:
 ctf_category: Wargame
-description: "Bandit Level 19 → 20: using a setuid binary to read a file owned by another user"
+description: "Using a setuid binary to read a file owned by another user"
 ---
 
 > **Level goal:** To gain access to the next level, you should use the setuid binary in the homedirectory. Execute it without arguments to find out how to use it. The password for this level can be found in the usual place (/etc/bandit_pass), after you have used to setuid binary.

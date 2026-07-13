@@ -1,5 +1,5 @@
 ---
-title: "Bandit Level 11"
+title: "OverTheWire Bandit Level 11 → 12 Walkthrough"
 layout: post
 permalink: /writeups/OverTheWire/Bandit/level11/
 date: 2016-05-31 00:41:51 +0530
@@ -13,7 +13,7 @@ tags:
 writeup: true
 points:
 ctf_category: Wargame
-description: "Bandit Level 11 → 12: decoding a ROT13 cipher using the tr command"
+description: "Decoding a ROT13 cipher using the tr command"
 ---
 
 > **Level goal:** The password for the next level is stored in the file data.txt, where all lowercase (a-z) and uppercase (A-Z) letters have been rotated by 13 positions

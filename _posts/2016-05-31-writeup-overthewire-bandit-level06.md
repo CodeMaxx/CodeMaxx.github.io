@@ -1,5 +1,5 @@
 ---
-title: "Bandit Level 6"
+title: "OverTheWire Bandit Level 6 → 7 Walkthrough"
 layout: post
 permalink: /writeups/OverTheWire/Bandit/level06/
 date: 2016-05-31 01:16:51 +0530
@@ -13,7 +13,7 @@ tags:
 writeup: true
 points:
 ctf_category: Wargame
-description: "Bandit Level 6 → 7: searching the whole server by owner, group, and size with find"
+description: "Searching the whole server by owner, group, and size with find"
 ---
 
 > **Level goal:** The password for the next level is stored somewhere on the server and has all of the following properties: - owned by user bandit7 - owned by group bandit6 - 33 bytes in size

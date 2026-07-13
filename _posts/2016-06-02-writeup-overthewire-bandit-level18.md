@@ -1,5 +1,5 @@
 ---
-title: "Bandit Level 18"
+title: "OverTheWire Bandit Level 18 → 19 Walkthrough"
 layout: post
 permalink: /writeups/OverTheWire/Bandit/level18/
 date: 2016-06-02 22:45:50 +0530
@@ -13,7 +13,7 @@ tags:
 writeup: true
 points:
 ctf_category: Wargame
-description: "Bandit Level 18 → 19: bypassing .bashrc logout by running a command directly over SSH"
+description: "Bypassing .bashrc logout by running a command directly over SSH"
 ---
 
 > **Level goal:** The password for the next level is stored in a file **readme** in the homedirectory. Unfortunately, someone has modified **.bashrc** to log you out when you log in with SSH.

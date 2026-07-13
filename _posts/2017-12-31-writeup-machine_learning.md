@@ -1,5 +1,5 @@
 ---
-title: "Machine Leaning - Coursera"
+title: "Machine Learning - Coursera"
 layout: post
 permalink: /writeups/machine_learning/
 date: 2017-12-31 19:11:48 +0530

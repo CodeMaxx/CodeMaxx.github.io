@@ -1,5 +1,5 @@
 ---
-title: "Bandit Level 10"
+title: "OverTheWire Bandit Level 10 → 11 Walkthrough"
 layout: post
 permalink: /writeups/OverTheWire/Bandit/level10/
 date: 2016-05-31 00:41:51 +0530
@@ -13,7 +13,7 @@ tags:
 writeup: true
 points:
 ctf_category: Wargame
-description: "Bandit Level 10 → 11: decoding base64-encoded data with the base64 command"
+description: "Decoding base64-encoded data with the base64 command"
 ---
 
 > **Level goal:** The password for the next level is stored in the file data.txt, which contains base64 encoded data
