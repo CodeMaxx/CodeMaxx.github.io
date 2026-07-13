@@ -28,14 +28,19 @@
   border: 0;
 }
 
-/* External-link indicator on post cards whose target leaves the site
-   (posts with `redirect_to`). Kept subtle: muted colour, smaller than the
-   title, and nudged up slightly so it reads as a superscript-style badge. */
+/* External-link indicator on post cards / feature titles whose target leaves
+   the site (posts with `redirect_to`). Accent-coloured so the leaves-site cue
+   reads clearly, and nudged up slightly like a superscript badge. */
 .card-title .external-link-icon {
   font-size: 0.6em;
-  color: var(--text-muted-color);
+  color: var(--accent-1);
   vertical-align: 0.35em;
-  opacity: 0.85;
+}
+/* Explicit "External" marker that fills the read-time slot on redirect_to
+   posts (which have no local content, hence no reading time). */
+.meta-item.meta-external,
+.feature-meta-external {
+  color: var(--accent-1);
 }
 
 /* ============================================================
@@ -1238,7 +1243,7 @@ div[class^='language-'] .code-header {
   }
   .feature-title .external-link-icon {
     font-size: 0.6em;
-    color: var(--text-muted-color);
+    color: var(--accent-1);
     vertical-align: 0.35em;
   }
   .feature-meta {

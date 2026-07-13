@@ -147,13 +147,19 @@ refactor: true
                   {% include datetime.html date=post.date lang=lang %}
                 </span>
 
-                <!-- reading time (skip external redirects, which have no local content) -->
-                {% unless post.redirect_to %}
+                <!-- reading time, or an explicit External marker for
+                     redirect_to posts (which have no local content) -->
+                {% if post.redirect_to %}
+                  <span class="meta-item meta-external">
+                    <i class="fas fa-arrow-up-right-from-square fa-fw me-1"></i>
+                    <span>External</span>
+                  </span>
+                {% else %}
                   <span class="meta-item">
                     <i class="far fa-clock fa-fw me-1"></i>
                     {% include read-time.html content=post.content prompt=true lang=lang %}
                   </span>
-                {% endunless %}
+                {% endif %}
 
                 <!-- points (CTF write-ups) -->
                 {% if post.points %}
