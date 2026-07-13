@@ -111,10 +111,13 @@ refactor: true
 
             <div class="feature-meta">
               <span><i class="far fa-calendar fa-fw"></i>{% include datetime.html date=post.date lang=lang %}</span>
-              {% unless post.redirect_to %}
+              {% if post.redirect_to %}
+                <span class="feature-meta-sep">&middot;</span>
+                <span class="feature-meta-external"><i class="fas fa-arrow-up-right-from-square fa-fw"></i> External</span>
+              {% else %}
                 <span class="feature-meta-sep">&middot;</span>
                 <span>{% include read-time.html content=post.content prompt=true lang=lang %}</span>
-              {% endunless %}
+              {% endif %}
               {% if post.points %}
                 <span class="feature-meta-sep">&middot;</span>
                 <span><i class="fas fa-trophy fa-fw"></i>{{ post.points }} pts</span>
