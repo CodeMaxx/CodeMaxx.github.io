@@ -38,9 +38,9 @@
     <div class="tn-controls d-flex align-items-center ms-auto">
       <!-- Dark / light mode toggle (moved from sidebar) -->
       {% unless site.theme_mode == 'light' or site.theme_mode == 'dark' %}
-        {%- capture icon_system -%}<i class="fa-solid fa-display" data-theme-mode="system"></i>{%- endcapture -%}
+        {%- capture icon_system -%}<svg data-theme-mode="system" class="mode-ico" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="3" rx="2"></rect><path d="M8 21h8"></path><path d="M12 17v4"></path></svg>{%- endcapture -%}
         {%- capture icon_light -%}<svg data-theme-mode="light" class="mode-ico" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg>{%- endcapture -%}
-        {%- capture icon_dark -%}<i class="fa-regular fa-moon" data-theme-mode="dark"></i>{%- endcapture -%}
+        {%- capture icon_dark -%}<svg data-theme-mode="dark" class="mode-ico" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg>{%- endcapture -%}
 
         <div class="btn-group dropdown tn-mode">
           <button

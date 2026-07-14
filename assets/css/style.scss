@@ -45,6 +45,9 @@
   --accent-2: #4f3ff0; // indigo
   --accent-grad: linear-gradient(120deg, #1d7bf5 0%, #4f3ff0 100%);
   --accent-soft: rgba(79, 63, 240, 0.12);
+  /* Filled tag-pill hover: darker than --accent-1 so white text meets WCAG AA
+     (white on #1565c0 ~= 5.7:1; --accent-1 #1d7bf5 was only ~4:1). */
+  --tag-hover-bg: #1565c0;
 }
 
 html[data-bs-theme='dark'] {
@@ -52,6 +55,25 @@ html[data-bs-theme='dark'] {
   --accent-2: #7d6bff;
   --accent-grad: linear-gradient(120deg, #4aa2ff 0%, #7d6bff 100%);
   --accent-soft: rgba(125, 107, 255, 0.16);
+  --tag-hover-bg: #2668cc;
+}
+
+/* Reserve scrollbar space on both edges so the centered layout doesn't shift
+   left when the vertical scrollbar appears (the "more padding on the right"
+   Ishika noticed is the OS scrollbar, not an off-centre container). */
+html {
+  scrollbar-gutter: stable both-edges;
+}
+
+/* Theme-mode icons are matching thin-stroke inline SVGs (sun / moon / monitor)
+   so they share one visual style. Keep them aligned and give a little breathing
+   room between the icon and its label in the dropdown menu. */
+.mode-ico {
+  flex-shrink: 0;
+  vertical-align: -0.18em;
+}
+.tn-mode .dropdown-item > .mode-ico {
+  margin-inline-end: 0.55rem;
 }
 
 /* Links + tag pills pick up the accent site-wide. */
@@ -77,9 +99,13 @@ $tn-max: 1140px;
 }
 #main-wrapper {
   margin-left: 0 !important;
+  overflow-x: clip;
 }
 
-/* Full-width sticky nav with a bottom hairline. */
+/* Sticky nav. The visible background + hairline are painted by a full-viewport
+   -width ::before so that, as the page scrolls, the hero's blue glow disappears
+   cleanly behind the nav across the whole width instead of bleeding up through
+   the side margins beside the (container-width) bar. */
 #topbar-wrapper {
   position: sticky;
   top: 0;
@@ -87,9 +113,20 @@ $tn-max: 1140px;
   width: 100%;
   height: 60px;
   z-index: 1000;
+  background-color: transparent;
+  box-shadow: none;
+}
+#topbar-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  height: 100%;
+  z-index: -1;
   background-color: var(--main-bg);
   border-bottom: 1px solid var(--main-border-color, rgba(0, 0, 0, 0.075));
-  box-shadow: none;
 }
 
 #topbar {
@@ -161,9 +198,8 @@ $tn-max: 1140px;
 
 /* Show only the icon for the active mode (the base theme scopes this to
    #sidebar; re-scope it to the top-nav toggle so it reads as one clean
-   button). Rules are tag-agnostic so the light icon can be an inline SVG. */
-.tn-mode #mode-toggle > i,
-.tn-mode #mode-toggle > svg {
+   button). */
+.tn-mode #mode-toggle > .mode-ico {
   display: none;
 }
 /* The trigger always shows the icon for the currently-resolved appearance
@@ -180,16 +216,6 @@ $tn-max: 1140px;
   > [data-theme-mode='light'] {
   display: block;
 }
-/* Inline SVG icon (light mode): keep it aligned in the button and spaced
-   from the label inside the dropdown menu. */
-.mode-ico {
-  flex-shrink: 0;
-  vertical-align: -0.18em;
-}
-.tn-mode .dropdown-item > .mode-ico {
-  margin-right: 0.5rem;
-}
-
 /* The hamburger is non-functional now (nav links are always visible); hide it.
    The theme's `#sidebar-trigger` id beats a class, so match the id + !important. */
 #topbar #sidebar-trigger.tn-hamburger {
@@ -274,13 +300,13 @@ $tn-max: 1140px;
     color 0.15s ease;
 }
 #all-tags .post-tag:hover {
-  background: var(--accent-1);
+  background: var(--tag-hover-bg);
   color: #fff !important;
 }
 #all-tags .post-tag.tag-current {
-  background: var(--accent-1);
+  background: var(--tag-hover-bg);
   color: #fff !important;
-  border-color: var(--accent-1);
+  border-color: var(--tag-hover-bg) !important;
 }
 
 /* ---------- About page ---------- */
@@ -468,7 +494,7 @@ $tn-max: 1140px;
   transition: background 0.15s ease, color 0.15s ease;
 }
 .post-tags .post-tag-pill:hover {
-  background: var(--accent-1);
+  background: var(--tag-hover-bg);
   color: #fff !important;
 }
 
@@ -552,12 +578,16 @@ div[class^='language-'] .code-header {
 }
 #tags .tag:hover,
 #tags .tag:focus-visible {
-  background: var(--accent-1);
-  color: #fff;
+  background: var(--tag-hover-bg);
+  color: #fff !important;
 }
 #tags .tag span {
   color: inherit !important;
   opacity: 0.7;
+}
+#tags .tag:hover span,
+#tags .tag:focus-visible span {
+  opacity: 1;
 }
 @media (max-width: 991px) {
   #tags {
@@ -657,8 +687,8 @@ div[class^='language-'] .code-header {
     border-color 0.15s ease;
 }
 #panel-wrapper .access .post-tag:hover {
-  background: var(--accent-1) !important;
-  border-color: var(--accent-1) !important;
+  background: var(--tag-hover-bg) !important;
+  border-color: var(--tag-hover-bg) !important;
   color: #fff !important;
 }
 
@@ -1372,7 +1402,8 @@ div[class^='language-'] .code-header {
     transition: background 0.15s ease, color 0.15s ease;
   }
   .feature-tag:hover {
-    background: var(--accent-1);
+    background: var(--tag-hover-bg);
+    border-color: var(--tag-hover-bg);
     color: #fff !important;
   }
 
