@@ -50,5 +50,3 @@ Cheers!
 
 > If you are an Infosec person, don't forget to checkout my [CTF Write-ups](/writeups/).
 {: .prompt-tip }
-
-[See other Blog posts](/blog/)
