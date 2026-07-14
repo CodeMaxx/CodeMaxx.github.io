@@ -249,6 +249,22 @@ $tn-max: 1140px;
   flex: 0 0 100%;
   max-width: 100%;
 }
+/* At >=1650px the theme adds `padding-right: 4.5rem` to `main.col-12` (and
+   #tail-wrapper) to clear the right panel, while the left padding stays at
+   1.5rem. On these full-width pages the panel is hidden, so that extra right
+   padding pushes the column ~48px off-centre. Reset the right padding to match
+   the left so the content stays centred. */
+@media all and (min-width: 1650px) {
+  #main-wrapper {
+    &:has(.landing), &:has(.listing), &:has(.about),
+    &:has(.notfound), &:has(#tags), &:has(#archives) {
+      > .container > .row > main,
+      #tail-wrapper {
+        padding-right: 1.5rem !important;
+      }
+    }
+  }
+}
 
 /* ---------- Tag pages ---------- */
 /* Keep the right panel, but replace the theme's Trending Tags / Recently
