@@ -47,11 +47,6 @@ script_includes:
       <span class="phm-sep">&middot;</span>
       <span><i class="far fa-calendar fa-fw"></i>{% include datetime.html date=page.date tooltip=true lang=lang %}</span>
 
-      {% if page.last_modified_at and page.last_modified_at != page.date %}
-        <span class="phm-sep">&middot;</span>
-        <span>{{ site.data.locales[lang].post.updated }} {% include datetime.html date=page.last_modified_at tooltip=true lang=lang %}</span>
-      {% endif %}
-
       <span class="phm-sep">&middot;</span>
       <span>{% include read-time.html content=content prompt=true lang=lang %}</span>
 
@@ -107,6 +102,17 @@ script_includes:
   <div class="content">
     {{ content }}
   </div>
+
+  {% assign nf_updated_day = page.last_modified_at | date: '%Y-%m-%d' %}
+  {% assign nf_published_day = page.date | date: '%Y-%m-%d' %}
+  {% if page.last_modified_at and nf_updated_day != nf_published_day %}
+    {% assign nf_df = site.data.locales[lang].df.post.strftime | default: '%b %e, %Y' %}
+    <p class="post-updated-note text-muted">
+      <i class="fa-regular fa-pen-to-square fa-fw" aria-hidden="true"></i>
+      {{ site.data.locales[lang].post.updated }}
+      <time datetime="{{ page.last_modified_at | date_to_xmlschema }}">{{ page.last_modified_at | date: nf_df }}</time>
+    </p>
+  {% endif %}
 
   <div class="post-tail-wrapper text-muted">
     {% if page.categories.size > 0 %}

@@ -464,6 +464,22 @@ $tn-max: 1140px;
   margin-inline: auto;
 }
 
+/* Opt-in "Updated" note near the article foot. We deliberately dropped the
+   git-history auto lastmod (it stamped a false "Updated 2026" on every legacy
+   post); this only renders when a post sets last_modified_at in front matter,
+   so it always signals a real revision. Kept quiet and out of the top meta. */
+.post-updated-note {
+  margin-top: 2.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--main-border-color);
+  font-size: 0.85rem;
+  font-style: italic;
+}
+.post-updated-note i {
+  margin-right: 0.35rem;
+  font-style: normal;
+}
+
 /* Accent tag pills at the foot of the article */
 .post-tail-wrapper {
   margin-top: 2.5rem;

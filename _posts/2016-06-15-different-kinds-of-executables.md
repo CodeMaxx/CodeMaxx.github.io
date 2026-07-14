@@ -2,6 +2,7 @@
 title: "Knowing Your Binary: Reading the file Command's ELF Output"
 layout: post
 date: 2016-06-15 00:00
+last_modified_at: 2026-07-13
 image:
   path: /assets/images/re-wide.png
   alt: "“Reverse Engineering” text logo beside a gear icon"
