@@ -1,0 +1,50 @@
+<!--
+  Auto-scroll the sticky Table of Contents so the active entry stays visible.
+
+  On long posts the TOC list is taller than its (viewport-capped) container and
+  scrolls internally. tocbot only toggles `.is-active-link`; it does not scroll
+  the list, so the current section's entry could sit out of view. This keeps the
+  active link scrolled into the TOC's own scroll box as you read.
+-->
+<script>
+  (function () {
+    function setup() {
+      var wrapper = document.getElementById('toc-wrapper');
+      var toc = document.getElementById('toc');
+      if (!wrapper || !toc) {
+        return;
+      }
+
+      function scrollActiveIntoView() {
+        var active = toc.querySelector('.is-active-link');
+        if (!active) {
+          return;
+        }
+        var heading = wrapper.querySelector('.panel-heading');
+        var headH = heading ? heading.offsetHeight : 0;
+        var wRect = wrapper.getBoundingClientRect();
+        var aRect = active.getBoundingClientRect();
+        var margin = 8;
+        if (aRect.top < wRect.top + headH) {
+          wrapper.scrollTop -= wRect.top + headH - aRect.top + margin;
+        } else if (aRect.bottom > wRect.bottom) {
+          wrapper.scrollTop += aRect.bottom - wRect.bottom + margin;
+        }
+      }
+
+      var observer = new MutationObserver(scrollActiveIntoView);
+      observer.observe(toc, {
+        subtree: true,
+        attributes: true,
+        attributeFilter: ['class']
+      });
+      scrollActiveIntoView();
+    }
+
+    if (document.readyState !== 'loading') {
+      setup();
+    } else {
+      document.addEventListener('DOMContentLoaded', setup);
+    }
+  })();
+</script>

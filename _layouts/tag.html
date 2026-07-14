@@ -16,11 +16,14 @@ panel_includes:
 
 <div id="page-tag" class="tag-page">
   <header class="tag-header">
-    <h1 class="tag-title">
-      <i class="fa fa-tag"></i>
-      <span>{{ page.title }}</span>
-      <span class="tag-count">{{ page.posts | size }}</span>
-    </h1>
+    <div class="tag-head">
+      <i class="fa fa-tag tag-head-icon" aria-hidden="true"></i>
+      <div>
+        <h1 class="tag-title">{{ page.title }}</h1>
+        {% assign tag_post_count = page.posts | size %}
+        <p class="listing-count">{{ tag_post_count }} post{% unless tag_post_count == 1 %}s{% endunless %}</p>
+      </div>
+    </div>
   </header>
   <ul class="tag-list content ps-0">
     {% for k in keyed %}

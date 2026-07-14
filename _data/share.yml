@@ -14,6 +14,26 @@ platforms:
     icon: "fab fa-linkedin"
     link: "https://www.linkedin.com/feed/?shareActive=true&shareUrl=URL"
 
+  - type: Bluesky
+    icon: "fa-brands fa-bluesky"
+    link: "https://bsky.app/intent/compose?text=TITLE%20URL"
+
+  - type: Reddit
+    icon: "fa-brands fa-reddit"
+    link: "https://www.reddit.com/submit?url=URL&title=TITLE"
+
+  - type: Hacker News
+    icon: "fa-brands fa-hacker-news"
+    link: "https://news.ycombinator.com/submitlink?u=URL&t=TITLE"
+
   - type: Telegram
-    icon: "fab fa-telegram"
+    icon: "fa-brands fa-telegram"
     link: "https://t.me/share/url?url=URL&text=TITLE"
+
+  - type: WhatsApp
+    icon: "fa-brands fa-whatsapp"
+    link: "https://api.whatsapp.com/send?text=TITLE%20URL"
+
+  - type: Email
+    icon: "fa-solid fa-envelope"
+    link: "mailto:?subject=TITLE&body=URL"

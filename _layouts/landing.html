@@ -104,20 +104,18 @@ refactor: true
               <a href="{{ href }}" {% if post.redirect_to %}target="_blank" rel="noopener noreferrer"{% endif %}>
                 {{ post.title }}
                 {% if post.redirect_to %}
-                  <i class="fas fa-arrow-up-right-from-square external-link-icon"></i>
+                  <i class="fas fa-arrow-up-right-from-square external-link-icon" aria-hidden="true"></i>
+                  <span class="sr-only"> (opens in a new tab)</span>
                 {% endif %}
               </a>
             </h3>
 
             <div class="feature-meta">
               <span><i class="far fa-calendar fa-fw"></i>{% include datetime.html date=post.date lang=lang %}</span>
-              {% if post.redirect_to %}
-                <span class="feature-meta-sep">&middot;</span>
-                <span class="feature-meta-external"><i class="fas fa-arrow-up-right-from-square fa-fw"></i> External</span>
-              {% else %}
+              {% unless post.redirect_to %}
                 <span class="feature-meta-sep">&middot;</span>
                 <span>{% include read-time.html content=post.content prompt=true lang=lang %}</span>
-              {% endif %}
+              {% endunless %}
               {% if post.points %}
                 <span class="feature-meta-sep">&middot;</span>
                 <span><i class="fas fa-trophy fa-fw"></i>{{ post.points }} pts</span>
