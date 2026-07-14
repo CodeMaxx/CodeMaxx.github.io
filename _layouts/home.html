@@ -130,8 +130,9 @@ refactor: true
               {% if post.redirect_to %}
                 <i
                   class="fas fa-arrow-up-right-from-square external-link-icon ms-1"
-                  title="Opens an external site"
+                  aria-hidden="true"
                 ></i>
+                <span class="sr-only"> (opens in a new tab)</span>
               {% endif %}
             </h1>
 
@@ -147,19 +148,15 @@ refactor: true
                   {% include datetime.html date=post.date lang=lang %}
                 </span>
 
-                <!-- reading time, or an explicit External marker for
-                     redirect_to posts (which have no local content) -->
-                {% if post.redirect_to %}
-                  <span class="meta-item meta-external">
-                    <i class="fas fa-arrow-up-right-from-square fa-fw me-1"></i>
-                    <span>External</span>
-                  </span>
-                {% else %}
+                <!-- reading time (external redirect_to posts have no local
+                     content, so no reading time; the title's external-link
+                     icon already signals that they leave the site) -->
+                {% unless post.redirect_to %}
                   <span class="meta-item">
                     <i class="far fa-clock fa-fw me-1"></i>
                     {% include read-time.html content=post.content prompt=true lang=lang %}
                   </span>
-                {% endif %}
+                {% endunless %}
 
                 <!-- points (CTF write-ups) -->
                 {% if post.points %}

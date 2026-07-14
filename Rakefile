@@ -13,6 +13,7 @@ task :test do
   options = {
     allow_hash_href: config['allow_hash_href'] || true,
     allow_missing_href: config['allow_missing_href'] || false,
+    ignore_empty_mailto: true,
     typhoeus: {
       headers: {
         "User-Agent" => "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",

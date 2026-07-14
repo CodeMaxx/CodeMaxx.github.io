@@ -36,12 +36,6 @@
   color: var(--accent-1);
   vertical-align: 0.35em;
 }
-/* Explicit "External" marker that fills the read-time slot on redirect_to
-   posts (which have no local content, hence no reading time). */
-.meta-item.meta-external,
-.feature-meta-external {
-  color: var(--accent-1);
-}
 
 /* ============================================================
    Blue -> indigo accent tokens (BLACKBOX-style landing revamp)
@@ -239,27 +233,21 @@ $tn-max: 1140px;
 .tag-header {
   margin: 3rem 0 1.5rem;
 }
-.tag-title {
+.tag-head {
   display: flex;
   align-items: baseline;
-  flex-wrap: wrap;
-  gap: 0.6rem;
+  gap: 0.7rem;
+}
+.tag-head-icon {
+  color: var(--accent-1);
+  font-size: clamp(1.3rem, 2.2vw, 1.7rem);
+  flex-shrink: 0;
+}
+.tag-title {
   font-size: clamp(1.8rem, 3vw, 2.4rem);
   font-weight: 700;
   letter-spacing: -0.02em;
   margin: 0;
-}
-.tag-title i {
-  color: var(--accent-1);
-  font-size: 0.7em;
-}
-.tag-title .tag-count {
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--accent-1);
-  background: var(--accent-soft);
-  padding: 0.1rem 0.65rem;
-  border-radius: 999px;
 }
 .tag-list li > a {
   color: var(--heading-color) !important;
@@ -462,13 +450,14 @@ $tn-max: 1140px;
 .post-tail-bottom {
   align-items: flex-start;
 }
-@media (min-width: 576px) {
-  .post-tail-bottom {
-    align-items: center;
-  }
-  .post-tail-bottom .share-wrapper {
-    margin-inline-start: auto;
-  }
+/* The share row sits on its own line below the tags (there are enough share
+   targets that a side-by-side row crowded the tags); let the icons wrap on
+   very narrow screens. */
+.share-wrapper {
+  flex-wrap: wrap;
+}
+.share-icons {
+  flex-wrap: wrap;
 }
 .post-tags .post-tag-pill {
   border: 1px solid var(--accent-1);
@@ -594,10 +583,11 @@ div[class^='language-'] .code-header {
   padding-left: 0;
   padding-right: 0;
 }
-/* External-link badge in the archives / tag / related-posts listings. */
+/* External-link badge in the archives / tag / related-posts / recent-posts listings. */
 #archives .external-link-icon,
 .tag-list .external-link-icon,
-#related-posts .external-link-icon {
+#related-posts .external-link-icon,
+#access-recent .external-link-icon {
   font-size: 0.6em;
   color: var(--text-muted-color);
   vertical-align: 0.35em;
@@ -618,6 +608,87 @@ div[class^='language-'] .code-header {
 }
 #toc .toc-link:hover {
   color: var(--accent-2) !important;
+}
+
+/* The right-panel TOC is `position: sticky` but stuck at top:0 — i.e. behind
+   the 60px sticky top nav (z-index 1000) — so its "Contents" heading was
+   clipped whenever the article scrolled. Offset the sticky point just below the
+   nav and cap the height so long TOCs scroll internally instead of running off
+   the bottom of the viewport. */
+#toc-wrapper {
+  top: 4.5rem !important;
+  max-height: calc(100vh - 6rem);
+  overflow-y: auto;
+}
+/* Chirpy adds two left-sidebar-era "top cover" gradient masks over the TOC:
+   `#toc-wrapper::before` (a 48px sticky spacer that left a big gap above
+   "Contents") and the sibling `.toc-border-cover` (z-index 3, which overlaps
+   and visually fades the "Contents" heading near the top of the page). Our
+   opaque top nav already masks that area, so drop both. */
+.toc-border-cover,
+#toc-wrapper::before {
+  display: none !important;
+}
+/* The theme's panel headings use a faint label grey (#585858, ~3.5:1 on white)
+   that reads as "hidden". Use the crisp heading colour instead, and pin the
+   TOC "Contents" heading to the top of its scroll box with a solid background
+   so long TOC lists clip cleanly behind it as they auto-scroll. */
+#panel-wrapper .panel-heading {
+  color: var(--heading-color);
+}
+#toc-wrapper .panel-heading {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: var(--main-bg);
+}
+
+/* Trending Tags panel pills: keep them muted/grey so they blend with the rest
+   of the (grey) sidebar — Recent Posts, headings, TOC — instead of standing out
+   as a block of blue. They light up accent-filled with white text on hover,
+   which also fixes the poor light-mode hover contrast the theme shipped. */
+#panel-wrapper .access .post-tag {
+  border: 1px solid var(--btn-border-color) !important;
+  color: var(--text-muted-color) !important;
+  background: transparent;
+  transition:
+    background 0.15s ease,
+    color 0.15s ease,
+    border-color 0.15s ease;
+}
+#panel-wrapper .access .post-tag:hover {
+  background: var(--accent-1) !important;
+  border-color: var(--accent-1) !important;
+  color: #fff !important;
+}
+
+/* Recent Posts side-widget links stay subtle (muted, no underline) like the
+   theme's original "Recently Updated" list, turning accent on hover — so they
+   don't compete with the accent Trending Tags pills below. */
+#access-recent a {
+  display: flex;
+  align-items: center;
+  color: inherit;
+  border-bottom: none;
+}
+#access-recent a:hover {
+  color: var(--accent-1);
+}
+#access-recent .rp-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
+}
+#access-recent .external-link-icon {
+  flex-shrink: 0;
+}
+
+/* Even vertical spacing between the sidebar widgets: the theme puts 4rem
+   between the .access sections (Recent Posts -> Trending Tags) but only 2rem
+   before the TOC, so the gaps looked uneven. Make them both 2rem. */
+#panel-wrapper .access > section:not(:first-child) {
+  margin-top: 2rem;
 }
 
 /* Offset anchored headings for the sticky top nav (60px) so TOC / heading-anchor

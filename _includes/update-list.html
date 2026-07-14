@@ -1,0 +1,35 @@
+<!--
+  Recent Posts — right-panel widget.
+
+  Local override of the Chirpy theme's "Recently Updated" widget. The theme
+  ordered by `last_modified_at` (git last-commit), which surfaced a wall of
+  identical "Updated" dates after bulk edits and carried no note of what
+  changed. Instead we surface the most recently *published* posts so readers
+  have fresh content to jump to. Keeps the same include name so the theme's
+  default layout picks it up without a layout override.
+-->
+
+{% assign MAX_SIZE = 5 %}
+{% assign recent = site.posts | where_exp: 'item', 'item.hidden != true' %}
+
+{% if recent.size > 0 %}
+  <section id="access-recent">
+    <h2 class="panel-heading">Recent Posts</h2>
+    <ul class="content list-unstyled ps-0 pb-1 ms-1 mt-2">
+      {% for post in recent limit: MAX_SIZE %}
+        {% if post.redirect_to %}
+          {% assign url = post.redirect_to %}
+        {% else %}
+          {% assign url = post.url | relative_url %}
+        {% endif %}
+        <li class="lh-lg">
+          <a
+            href="{{ url }}"
+            {%- if post.redirect_to %} target="_blank" rel="noopener noreferrer"{% endif -%}
+          ><span class="rp-title">{{ post.title }}</span>{% if post.redirect_to %}<i class="fas fa-arrow-up-right-from-square external-link-icon ms-1" aria-hidden="true"></i><span class="sr-only"> (opens in a new tab)</span>{% endif %}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </section>
+  <!-- #access-recent -->
+{% endif %}

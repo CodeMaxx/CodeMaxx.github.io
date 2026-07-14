@@ -18,6 +18,14 @@ ignore_urls:
   # Chirpy theme head/footer links (introduced by the theme, not post content):
   - /twitter\.com/                          # X/Twitter returns 404 to bots (JS-based)
   - /\bx\.com/                              # X/Twitter returns 404 to bots (JS-based)
+  # Post-sharing target hosts — share-intent URLs, not navigable content; they
+  # block GitHub Actions IPs or require login (Facebook/LinkedIn/Twitter share
+  # paths are already covered by the whole-domain rules above):
+  - /t\.me\/share/                          # Telegram share
+  - /reddit\.com\/submit/                   # Reddit share
+  - /news\.ycombinator\.com\/submitlink/    # Hacker News share
+  - /bsky\.app\/intent/                     # Bluesky share
+  - /whatsapp\.com\/send/                   # WhatsApp share
   - /fonts\.googleapis\.com/                # Preconnect hint; bare host 404s but font CSS is valid
   - /fonts\.gstatic\.com/                   # Preconnect hint; bare host 404s but fonts are valid
 
