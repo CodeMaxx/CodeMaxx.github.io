@@ -7,3 +7,20 @@
   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
   allowfullscreen
 ></iframe>
+{%- comment -%} Opt-in VideoObject schema (post passes `upload_date`) so Google can index video-centric pages. {%- endcomment -%}
+{% if include.upload_date %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": {{ include.title | default: page.title | jsonify }},
+  "description": {{ include.description | default: page.description | default: include.title | jsonify }},
+  "thumbnailUrl": "https://i.ytimg.com/vi/{{ include.id }}/hqdefault.jpg",
+  "uploadDate": {{ include.upload_date | jsonify }},
+  {%- if include.duration %}
+  "duration": {{ include.duration | jsonify }},
+  {%- endif %}
+  "embedUrl": "https://www.youtube.com/embed/{{ include.id }}"
+}
+</script>
+{% endif %}
