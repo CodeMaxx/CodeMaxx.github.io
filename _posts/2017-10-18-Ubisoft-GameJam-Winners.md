@@ -35,7 +35,7 @@ After two days of coding, free food, hot chocolate and some great mentoring from
 
 Here's an aftermovie of the hackathon by Ubisoft:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/cP-jsgug0FU" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+{% include embed/youtube.html id='cP-jsgug0FU' title='Ubisoft GameJam 2017 aftermovie' %}
 
 The code for our game is open source and available [here](https://github.com/Ferozepurwale/Flood-League).
 
