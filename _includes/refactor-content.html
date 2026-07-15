@@ -237,7 +237,7 @@
         | append: '<button aria-label="copy" data-title-succeed="'
         | append: site.data.locales[include.lang].post.button.copy_code.succeed
         | append: '"><i class="far fa-clipboard"></i></button></div>'
-        | append: '<div class="highlight"><code>'
+        | append: '<div class="highlight" tabindex="0"><code>'
       %}
     {% endif %}
   {% endfor %}
@@ -267,7 +267,7 @@
       {% assign id = snippet | split: '"' | first %}
       {% assign anchor = '<a href="#'
         | append: id
-        | append: '" class="anchor text-muted"><i class="fas fa-hashtag"></i></a>'
+        | append: '" class="anchor text-muted" aria-label="Permalink to this section"><i class="fas fa-hashtag" aria-hidden="true"></i></a>'
       %}
 
       {% assign left = snippet | split: mark_end | first %}

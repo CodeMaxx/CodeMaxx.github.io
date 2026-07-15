@@ -1,0 +1,11 @@
+<!-- The Search results -->
+
+<div id="search-result-wrapper" class="d-flex justify-content-center d-none">
+  <section class="col-11 content" aria-labelledby="search-results-heading">
+    <h1 id="search-results-heading" class="sr-only">Search results</h1>
+    <div id="search-hints">
+      {% include_cached trending-tags.html lang=include.lang %}
+    </div>
+    <div id="search-results" class="d-flex flex-wrap justify-content-center text-muted mt-3"></div>
+  </section>
+</div>
