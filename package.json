@@ -14,7 +14,7 @@
   "homepage": "https://github.com/sergiokopplin/indigo#readme",
   "devDependencies": {
     "sharp": "^0.35.3",
-    "svgo": "^4.0.1"
+    "svgo": "^4.0.2"
   },
   "scripts": {
     "dev": "bundle exec jekyll serve --livereload --drafts --port 3000 --config _config.yml,_config_dev.yml",
