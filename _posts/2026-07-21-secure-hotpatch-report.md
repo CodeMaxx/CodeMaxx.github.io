@@ -1,6 +1,9 @@
 ---
 title: "Patch or attack? How Windows proves a kernel change is legit"
 date: 2026-07-21 08:00
+image:
+  path: /assets/images/hotpatch/hero-hotpatch.svg
+  alt: "The Windows Secure Hotpatch Report: a modified region in ntoskrnl.exe branching to 'a cheat?' or 'a Microsoft hotpatch?', answered by a signed report."
 tags:
 - Security
 - Windows

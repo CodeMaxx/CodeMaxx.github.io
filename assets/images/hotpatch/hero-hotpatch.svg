@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" role="img" aria-labelledby="th dh">
+  <title id="th">The Windows Secure Hotpatch Report</title>
+  <desc id="dh">A strip of kernel memory bytes, most unchanged, with a small cluster of modified bytes. Two branches lead from the modified cluster: one labelled a cheat, one labelled a Microsoft hotpatch. A badge shows the answer comes from a report signed by the Secure Kernel.</desc>
+
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1e3f"/>
+      <stop offset="1" stop-color="#12376e"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="0" y="0" width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- eyebrow (series brand) -->
+  <text x="600" y="96" text-anchor="middle" font-size="24" font-weight="700" fill="#7fb0ff" letter-spacing="3">ASK THE KERNEL</text>
+  <!-- stable descriptor, not the post title -->
+  <text x="600" y="150" text-anchor="middle" font-size="34" font-weight="800" fill="#ffffff">The Windows Secure Hotpatch Report</text>
+
+  <!-- memory strip, centered -->
+  <text x="600" y="250" text-anchor="middle" font-size="18" fill="#9db8e0" font-family="'SFMono-Regular', Consolas, monospace">a modified region inside ntoskrnl.exe</text>
+  <g>
+    <g fill="#28477e">
+      <rect x="380" y="268" width="38" height="38" rx="6"/>
+      <rect x="426" y="268" width="38" height="38" rx="6"/>
+      <rect x="472" y="268" width="38" height="38" rx="6"/>
+      <rect x="518" y="268" width="38" height="38" rx="6"/>
+    </g>
+    <g fill="#f2b134">
+      <rect x="564" y="268" width="38" height="38" rx="6"/>
+      <rect x="610" y="268" width="38" height="38" rx="6"/>
+      <rect x="656" y="268" width="38" height="38" rx="6"/>
+    </g>
+    <g fill="#28477e">
+      <rect x="702" y="268" width="38" height="38" rx="6"/>
+      <rect x="748" y="268" width="38" height="38" rx="6"/>
+      <rect x="794" y="268" width="38" height="38" rx="6"/>
+      <rect x="840" y="268" width="38" height="38" rx="6"/>
+    </g>
+  </g>
+
+  <!-- branches from the amber cluster -->
+  <path d="M629,306 C 629,360 360,360 360,404" fill="none" stroke="#ff6b5e" stroke-width="2.5" stroke-dasharray="6 5"/>
+  <rect x="270" y="404" width="180" height="52" rx="26" fill="none" stroke="#ff6b5e" stroke-width="2"/>
+  <text x="360" y="438" text-anchor="middle" font-size="22" font-weight="700" fill="#ff6b5e">a cheat?</text>
+
+  <path d="M629,306 C 629,360 840,360 840,404" fill="none" stroke="#5bd67f" stroke-width="2.5" stroke-dasharray="6 5"/>
+  <rect x="700" y="404" width="280" height="52" rx="26" fill="none" stroke="#5bd67f" stroke-width="2"/>
+  <text x="840" y="438" text-anchor="middle" font-size="22" font-weight="700" fill="#5bd67f">a Microsoft hotpatch?</text>
+
+  <!-- signed badge -->
+  <g transform="translate(395,520)">
+    <rect x="0" y="0" width="410" height="60" rx="30" fill="#0f2a56" stroke="#3f6fb5" stroke-width="1.5"/>
+    <g transform="translate(30,16)">
+      <rect x="0" y="10" width="22" height="17" rx="3" fill="#7fb0ff"/>
+      <path d="M3,10 V6.5 a8,8 0 0 1 16,0 V10" fill="none" stroke="#7fb0ff" stroke-width="2.8"/>
+      <circle cx="11" cy="18.5" r="2.6" fill="#0f2a56"/>
+    </g>
+    <text x="74" y="38" font-size="20" font-weight="700" fill="#dce8fb">answered by a signed report</text>
+  </g>
+</svg>
