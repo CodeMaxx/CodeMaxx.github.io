@@ -1295,7 +1295,10 @@ div[class^='language-'] .code-header {
     font-size: 0.82rem;
     font-weight: 700;
     color: var(--text-muted-color);
+    margin-top: 0;
     margin-bottom: 1.25rem;
+    font-family: inherit;
+    line-height: inherit;
   }
 
   .section-head {
