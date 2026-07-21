@@ -66,6 +66,8 @@ test ~/*.txt {code,maxx} $(echo foo) $((2+2)) $USER `echo bar` \$100
 
 We see that using single quotes prevents all expansions. ALL special characters lose thier meaning! This is why it is recommended to use single quotes while writing aliases so that we can put the exact input in it and we don't have to worry about it being modified while substitution.
 
+Speaking of shell gotchas, I also wrote about [chaining commands in the shell](/did-i-execute/) and how `;`, `&&` and `||` behave differently.
+
 Hope this helped :) In case you have any doubts comment below.
 
 > If you are an Infosec person, don't forget to checkout my [Write-ups](/writeups/).

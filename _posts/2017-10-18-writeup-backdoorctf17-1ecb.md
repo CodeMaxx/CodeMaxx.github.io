@@ -39,6 +39,8 @@ The problem with ECB is that two blocks in a message get encrypted to the same c
 
 You can read the details about ECB [here](https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#Electronic_codebook_(ECB)).
 
+I ran into the very same ECB weakness in [another challenge where a login cookie was ECB-encrypted](/writeups/runesec_evecodesbetter/).
+
 
 ## Write-up
 

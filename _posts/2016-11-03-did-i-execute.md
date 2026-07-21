@@ -83,6 +83,8 @@ $ false && echo success || echo fail
 fail
 ```
 
+If you like these little shell details, I also dug into [how quotes change what the shell expands](/importance-of-quotes-in-terminal/).
+
 Hope this helped :) In case you have any doubts comment below.
 
 > If you are an Infosec person, don't forget to checkout my [Write-ups](/writeups/).

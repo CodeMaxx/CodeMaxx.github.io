@@ -30,5 +30,7 @@ This was simple enough since **Tab completion** was enabled. If that would not b
 
 Thus I used `cat spaces\ in\ this\ filename` to read from the file.
 
+I escaped the spaces with a backslash here, but wrapping the whole name in quotes works just as well — more on that in [how quotes change the way the shell reads a command](/importance-of-quotes-in-terminal/).
+
 > **Level 3 password:** `UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK`
 {: .prompt-tip }

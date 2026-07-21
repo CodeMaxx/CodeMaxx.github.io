@@ -100,7 +100,7 @@ This the ELF interpreter. It is responsible for dynamic linking.
 `Non stripped` binaries contain debugging information. This information is a representation of the relationship between the executable program and the original source code. It includes things like Global and Static variable names and function names.<br>
 `Stripped` binaries on the other hand lack this debugging information.
 
-All these things are a must know for a Reverse Engineer. I hope this blog increased you knowledge in this genre. :) In case of any doubts comment below.
+All these things are a must know for a Reverse Engineer. If you'd like to see some reverse engineering in practice, take a look at [my Bugs Bunny reversing challenge](/writeups/bugs_bunny_rev75/), where I dig a flag out of a binary's guts. I hope this blog increased you knowledge in this genre. :) In case of any doubts comment below.
 
 Cheers!
 
