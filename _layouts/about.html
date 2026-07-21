@@ -5,22 +5,38 @@ layout: default
 {% include lang.html %}
 
 <div class="about">
-  <header class="about-header">
+  <header class="about-head">
     <img
       class="about-avatar"
       src="{{ '/assets/images/avatar.png' | relative_url }}"
-      alt="{{ site.title }}"
-      width="120"
-      height="120"
+      alt="Akash Trehan"
+      width="128"
+      height="128"
     >
-    <div class="about-intro">
-      <h1 class="about-name">{{ site.title }}</h1>
-      <p class="about-role">{{ site.tagline }}</p>
+    <div class="about-head-text">
+      <h1 class="about-name">Hi, I'm Akash</h1>
+      <p class="about-role">Senior Windows Kernel &amp; Security Engineer at Microsoft</p>
       {% include social-icons.html extra_class="about-socials" %}
     </div>
   </header>
 
-  <div class="about-content">
-    {{ content }}
+  <div class="about-body">
+    <p>
+      I'm a security engineer at Microsoft, working deep inside the Windows kernel. Most of my
+      days go into the Secure Kernel, VBS Enclaves, and Secure Runtime Attestation, and sometimes
+      <a href="https://github.com/microsoft/DTrace-on-Windows" target="_blank" rel="noopener">DTrace on Windows</a>
+      too.
+    </p>
+    <p>
+      Before Microsoft I studied Computer Science at IIT Bombay, spent an embarrassing number of
+      nights playing Capture the Flag competitions, spent a summer researching at UC Santa Barbara
+      alongside the Shellphish CTF team, and later worked as a research assistant at Carnegie Mellon
+      University. I got into all of this by trying to break things, and stuck around because I
+      enjoyed building defenses even more.
+    </p>
+    <p>
+      Away from the keyboard I'm usually into cars, scuba diving, or planning the next trip. I'm
+      always happy to talk shop or trade ideas, so feel free to reach out.
+    </p>
   </div>
 </div>
