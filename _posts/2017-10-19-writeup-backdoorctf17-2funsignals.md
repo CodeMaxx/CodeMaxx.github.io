@@ -30,6 +30,8 @@ description: "BackdoorCTF 2017 Fun Signals: using Linux signal handlers as a ret
 
 This is a very interesting problem and introduced me to a new kind of attack - [Sigreturn-Oriented Programming](https://en.wikipedia.org/wiki/Sigreturn-oriented_programming) (SROP). SROP is a technique similar to Return-Oriented Programming (ROP) and is a useful attack vector when the memory is non-executable and you can't use code injection. This requires the attacker to be able to control the call stack using, for example, a buffer overflow.
 
+New to binary exploitation? I walk through the fundamentals in my [binary exploitation vodcast series](/csec-binary-exploitation-1/).
+
 When the kernel delivers a signal it creates a frame on the stack where it stores the current context (includes register values among other things). On a sigreturn call the values from the stack are read and put back into the registers. An attacker controllling the stack can modify these values and cause considerable damage.
 
 ### The disassembly

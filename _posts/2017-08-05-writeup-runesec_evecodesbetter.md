@@ -70,6 +70,8 @@ So what happens in ECB is that you independently encrypt blocks of the original 
 > **Note:** ECB is a general technique used by block ciphers and is by no means specific to only AES.
 {: .prompt-info }
 
+I pulled a flag straight out of an ECB-encrypted image using the same idea in [my BackdoorCTF ECB challenge](/writeups/backdoorctf17/1ecb/).
+
 Now we need to determine what the size of each block is. I noticed that `5e72ac7a72f2100c` repeated twice in the cookie. As expected there were to two equal strings `username` at a similar offset as the encrypted block. So I figured it might be a 64-bit encryption.
 
 I divided the encrypted cookie into corresponding blocks:

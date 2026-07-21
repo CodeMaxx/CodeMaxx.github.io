@@ -29,7 +29,7 @@ Initially running `./rev p4ssw0rd` gives
 good but no flag for you hihihi xD
 ```
 
-In case you're wonder why `p4ssw0rd`, I got it from the Strings subview in IDA (shortcut: Shift+F12). Never a bad idea to go through the strings in the binary. You can also run `strings` on the binary if you don't have IDA.
+In case you're wonder why `p4ssw0rd`, I got it from the Strings subview in IDA (shortcut: Shift+F12). Never a bad idea to go through the strings in the binary. You can also run `strings` on the binary if you don't have IDA. If you want a primer on the kind of binary you're dealing with, I broke down [what the `file` command tells you about an executable](/different-kinds-of-executables/).
 
 The binary had 815 functions with names of the form `a*`, each containing a 12 character string which looked like base64. So I decided to extract them using pwntools. Here goes:
 

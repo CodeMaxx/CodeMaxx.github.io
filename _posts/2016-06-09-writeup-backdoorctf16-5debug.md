@@ -24,7 +24,7 @@ description: "BackdoorCTF 2016 debug: reversing a 32-bit binary and hashing the 
 
 ## Write-up
 
-So they gave a 32-bit ELF stripped executable. Simply running the binary `./debug32` didn't do nothing.
+So they gave a 32-bit ELF stripped executable. Simply running the binary `./debug32` didn't do nothing. If terms like *ELF* and *stripped* are new, I break down what each part means in [reading a binary's `file` output](/different-kinds-of-executables/).
 
 I looked through the assembly in IDA and saw "Printing Flag" being printed somewhere.
 

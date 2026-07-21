@@ -23,6 +23,8 @@ Toddler's Bottle is a section of easy-ish challenges. This writeup contains solu
 
 So partly due to lack of time and partly because I want you to think on your own, I'll not be explaining my solutions like I do for my other [Writeups](/writeups/). I'll just be posting my python/bash/C scripts here with occasional explanations.
 
+If binary exploitation is new to you, my [binary exploitation vodcast series](/csec-binary-exploitation-1/) walks through the fundamentals I lean on here.
+
 The scripts use the `pwntools` library.
 
 ## fd
