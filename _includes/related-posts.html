@@ -74,7 +74,7 @@
     <h3 class="mb-4" id="related-label">
       {{- site.data.locales[include.lang].post.relate_posts -}}
     </h3>
-    <nav class="row row-cols-1 row-cols-md-2 g-4 mb-4">
+    <nav class="row row-cols-1 row-cols-md-2 g-4 mb-4" aria-labelledby="related-label">
       {% for post in relate_posts %}
         <article class="col">
           <a
