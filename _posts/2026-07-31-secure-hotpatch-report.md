@@ -156,7 +156,7 @@ particular:
   resolve it from `KernelBase.dll` at runtime. I'll cover the linking in more
   detail in the upcoming format post.
 
-## Getting the report
+## Getting the hotpatch report
 
 You ask for the hotpatch report by requesting its report type. It rides inside the
 same runtime attestation package as everything else:
@@ -266,7 +266,7 @@ _A cheat can rename a module. It can't forge the signed checksum/timestamp pair.
 > nothing left to spoof.
 {: .prompt-warning }
 
-## Using it
+## Using it in your app
 
 The common case is simple. Your anti-cheat finds a modification at some address.
 Before it calls that tampering, it checks whether the address falls inside an
@@ -313,7 +313,7 @@ read it. A signed list of exactly which images are legitimately
 patched, coming from VTL1 where VTL0 can't touch it, turns "ignore it and hope"
 into a decision you can actually reason about.
 
-## Try it
+## Try the sample
 
 The sample I mentioned pulls all of this together: it fetches the package,
 parses it, and prints the driver and hotpatch reports. It needs no third-party
