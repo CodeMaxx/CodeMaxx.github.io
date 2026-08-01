@@ -28,6 +28,12 @@ ignore_urls:
   - /whatsapp\.com\/send/                   # WhatsApp share
   - /fonts\.googleapis\.com/                # Preconnect hint; bare host 404s but font CSS is valid
   - /fonts\.gstatic\.com/                   # Preconnect hint; bare host 404s but fonts are valid
+  # Self-referencing canonical/og:url on tag and category pages. A brand-new tag
+  # only exists on the live site after this build is merged and deployed, so
+  # checking it against production always 404s on the PR that introduces it.
+  # The same pages are still verified through the internal link check.
+  - /www\.akashtrehan\.com\/tags\//
+  - /www\.akashtrehan\.com\/categories\//
 
 # Files/directories to ignore (paths relative to _site)
 ignore_files:
