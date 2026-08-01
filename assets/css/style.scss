@@ -523,6 +523,19 @@ $tn-max: 1140px;
 }
 .share-icons {
   flex-wrap: wrap;
+  row-gap: 0.25rem;
+}
+/* The icons themselves render at 23x32px, which is a small target to hit with a
+   thumb. Give each one a 44x44 area (the usual minimum for touch) and centre
+   the glyph inside it, so the tap area grows without the icons looking bigger.
+   The theme's 0.5rem left margin is folded into that box. */
+.post-tail-wrapper .share-wrapper .share-icons > * {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  margin-left: 0;
 }
 .post-tags .post-tag-pill {
   border: 1px solid var(--accent-1);

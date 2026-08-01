@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 500" width="960" height="500" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" role="img" aria-labelledby="title desc">
+  <title id="title">Deciding whether a modified byte in the kernel is a cheat or a legitimate hotpatch</title>
+  <desc id="desc">An anti-cheat scanner finds modified bytes in ntoskrnl.exe. It checks the address against an attested list of hotpatched images signed by the Secure Kernel in VTL1. If the address is inside a reported hotpatched image, a legitimate Microsoft hotpatch could explain the change, though the exact bytes still aren't individually verified. Otherwise, no legitimate hotpatch explains it, and the change stays suspicious.</desc>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#57606a"/>
+    </marker>
+    <marker id="arrowGreen" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1a7f37"/>
+    </marker>
+    <marker id="arrowRed" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#b42318"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="960" height="500" fill="#ffffff"/>
+
+  <!-- Attested list source: Secure Kernel VTL1 -->
+  <g>
+    <rect x="300" y="24" width="360" height="86" rx="10" fill="#eef4ff" stroke="#186ce0" stroke-width="1.5"/>
+    <text x="480" y="52" text-anchor="middle" font-size="17" font-weight="700" fill="#186ce0">Attested hotpatch list</text>
+    <text x="480" y="76" text-anchor="middle" font-size="14.5" fill="#1f2328">signed by the Secure Kernel (VTL1)</text>
+    <text x="480" y="96" text-anchor="middle" font-size="13" fill="#57606a">a compromised normal kernel cannot forge it</text>
+    <!-- lock glyph -->
+    <g transform="translate(324,44)">
+      <rect x="0" y="9" width="20" height="15" rx="2.5" fill="#186ce0"/>
+      <path d="M3,9 V6 a7,7 0 0 1 14,0 V9" fill="none" stroke="#186ce0" stroke-width="2.6"/>
+      <circle cx="10" cy="16" r="2.4" fill="#ffffff"/>
+    </g>
+  </g>
+
+  <!-- arrow list -> diamond -->
+  <line x1="480" y1="110" x2="480" y2="176" stroke="#57606a" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Start box -->
+  <g>
+    <rect x="24" y="196" width="250" height="108" rx="10" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1.5"/>
+    <text x="149" y="230" text-anchor="middle" font-size="15.5" font-weight="700" fill="#1f2328">Scanner finds</text>
+    <text x="149" y="252" text-anchor="middle" font-size="15.5" font-weight="700" fill="#1f2328">modified bytes</text>
+    <text x="149" y="278" text-anchor="middle" font-size="14" fill="#57606a">a function in</text>
+    <text x="149" y="296" text-anchor="middle" font-size="14" font-family="'SFMono-Regular', Consolas, monospace" fill="#b42318">ntoskrnl.exe</text>
+  </g>
+
+  <!-- arrow start -> diamond -->
+  <line x1="274" y1="250" x2="356" y2="250" stroke="#57606a" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Decision diamond -->
+  <g>
+    <polygon points="480,180 604,250 480,320 356,250" fill="#fff8e6" stroke="#d4a72c" stroke-width="1.8"/>
+    <text x="480" y="238" text-anchor="middle" font-size="14" font-weight="700" fill="#1f2328">Address inside an</text>
+    <text x="480" y="257" text-anchor="middle" font-size="14" font-weight="700" fill="#1f2328">attested hotpatched</text>
+    <text x="480" y="276" text-anchor="middle" font-size="14" font-weight="700" fill="#1f2328">image?</text>
+  </g>
+
+  <!-- YES branch -->
+  <polyline points="604,250 660,250 660,392 686,392" fill="none" stroke="#1a7f37" stroke-width="2" marker-end="url(#arrowGreen)"/>
+  <text x="668" y="242" text-anchor="start" font-size="13.5" font-weight="700" fill="#1a7f37">YES</text>
+  <g>
+    <rect x="686" y="352" width="250" height="82" rx="10" fill="#eaf6ec" stroke="#1a7f37" stroke-width="1.5"/>
+    <text x="811" y="382" text-anchor="middle" font-size="15" font-weight="700" fill="#1a7f37">Inside hotpatched image</text>
+    <text x="811" y="404" text-anchor="middle" font-size="13.5" fill="#1f2328">a patch could explain it,</text>
+    <text x="811" y="422" text-anchor="middle" font-size="13.5" fill="#1f2328">not proof on its own</text>
+  </g>
+
+  <!-- NO branch -->
+  <polyline points="480,320 480,392 274,392" fill="none" stroke="#b42318" stroke-width="2" marker-end="url(#arrowRed)"/>
+  <text x="492" y="356" text-anchor="start" font-size="13.5" font-weight="700" fill="#b42318">NO</text>
+  <g>
+    <rect x="24" y="352" width="250" height="82" rx="10" fill="#fbeae8" stroke="#b42318" stroke-width="1.5"/>
+    <text x="149" y="382" text-anchor="middle" font-size="15" font-weight="700" fill="#b42318">Unattested change</text>
+    <text x="149" y="404" text-anchor="middle" font-size="13.5" fill="#1f2328">no signed patch explains it,</text>
+    <text x="149" y="422" text-anchor="middle" font-size="13.5" fill="#1f2328">definitely suspicious</text>
+  </g>
+
+  <text x="480" y="470" text-anchor="middle" font-size="12.5" fill="#8b949e">The report turns an ambiguous signal into a decidable one.</text>
+</svg>

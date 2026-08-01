@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 380" width="900" height="380" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" role="img" aria-labelledby="tc dc">
+  <title id="tc">Which hotpatch entry fields to trust</title>
+  <desc id="dc">A HOTPATCH_INFO_ENTRY has two kinds of fields. BaseCheckSum and BaseTimeDateStamp are the authoritative identity: they come from patch metadata verified inside VTL1 and arrive in a signed report. BaseImageName is informational only: it is captured from VTL0 for readability and can be spoofed, so it must not be used as a key.</desc>
+
+  <rect x="0" y="0" width="900" height="380" fill="#ffffff"/>
+
+  <!-- Entry container -->
+  <text x="40" y="42" font-size="15" font-weight="700" fill="#1f2328" font-family="'SFMono-Regular', Consolas, monospace">HOTPATCH_INFO_ENTRY</text>
+
+  <!-- Authoritative box -->
+  <rect x="40" y="60" width="500" height="150" rx="10" fill="#eaf6ec" stroke="#1a7f37" stroke-width="1.6"/>
+  <text x="60" y="88" font-size="14.5" font-weight="700" fill="#1a7f37">Trust these: the real identity</text>
+  <g font-family="'SFMono-Regular', Consolas, monospace" font-size="13.5" fill="#1f2328">
+    <rect x="60" y="102" width="215" height="30" rx="5" fill="#ffffff" stroke="#1a7f37" stroke-width="1"/>
+    <text x="74" y="122">BaseCheckSum</text>
+    <rect x="60" y="140" width="215" height="30" rx="5" fill="#ffffff" stroke="#1a7f37" stroke-width="1"/>
+    <text x="74" y="160">BaseTimeDateStamp</text>
+  </g>
+  <text x="60" y="192" font-size="12.5" fill="#57606a">From the signed patch, verified in VTL1.</text>
+
+  <!-- Informational box -->
+  <rect x="40" y="230" width="500" height="120" rx="10" fill="#fbeae8" stroke="#b42318" stroke-width="1.6"/>
+  <text x="60" y="258" font-size="14.5" font-weight="700" fill="#b42318">Don't key on this: just a label</text>
+  <g font-family="'SFMono-Regular', Consolas, monospace" font-size="13.5" fill="#1f2328">
+    <rect x="60" y="272" width="215" height="30" rx="5" fill="#ffffff" stroke="#b42318" stroke-width="1"/>
+    <text x="74" y="292">BaseImageName</text>
+  </g>
+  <text x="60" y="332" font-size="12.5" fill="#57606a">Captured from VTL0 for readability. Spoofable.</text>
+
+  <!-- Provenance arrows / sources on the right -->
+  <g>
+    <rect x="620" y="90" width="240" height="70" rx="10" fill="#eef4ff" stroke="#186ce0" stroke-width="1.6"/>
+    <text x="740" y="120" text-anchor="middle" font-size="14" font-weight="700" fill="#186ce0">VTL1 (Secure Kernel)</text>
+    <text x="740" y="142" text-anchor="middle" font-size="12" fill="#57606a">trusted, signed</text>
+    <g transform="translate(632,104)">
+      <rect x="0" y="9" width="16" height="12" rx="2" fill="#186ce0"/>
+      <path d="M2.5,9 V6.6 a5.5,5.5 0 0 1 11,0 V9" fill="none" stroke="#186ce0" stroke-width="2.2"/>
+    </g>
+  </g>
+  <g>
+    <rect x="620" y="250" width="240" height="70" rx="10" fill="#f6f8fa" stroke="#8b949e" stroke-width="1.6"/>
+    <text x="740" y="280" text-anchor="middle" font-size="14" font-weight="700" fill="#57606a">VTL0 (normal world)</text>
+    <text x="740" y="302" text-anchor="middle" font-size="12" fill="#8b949e">convenient, not trusted</text>
+  </g>
+
+  <line x1="540" y1="135" x2="620" y2="125" stroke="#1a7f37" stroke-width="2"/>
+  <line x1="540" y1="287" x2="620" y2="285" stroke="#b42318" stroke-width="2"/>
+</svg>
