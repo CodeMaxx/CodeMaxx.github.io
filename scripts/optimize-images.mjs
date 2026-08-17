@@ -16,15 +16,19 @@ import { optimize as svgoOptimize } from 'svgo';
 
 const IMAGE_EXTS = new Set(['.jpg', '.jpeg', '.png', '.gif', '.svg']);
 
-// Social share cards must never be palette-reduced. Every platform re-encodes
-// card images to JPEG, and sharp's palette quantisation dithers to fake the
-// shades it drops. Dither noise is exactly the high-frequency detail JPEG
-// discards first, so the two lossy steps compound into visible blotching on
-// gradients and roughen antialiased text. These files are fetched by crawlers
-// only, so their size is not on the page rendering path.
+// Social share cards must never be palette-reduced, and must keep their colour
+// profile. Every platform re-encodes card images to JPEG, and sharp's palette
+// quantisation dithers to fake the shades it drops. Dither noise is exactly the
+// high-frequency detail JPEG discards first, so the two lossy steps compound
+// into visible blotching on gradients and roughen antialiased text. An untagged
+// image also leaves a colour-managed pipeline guessing at the colour space.
+// These files are fetched by crawlers only, so their size is not on the page
+// rendering path.
 //
 // N.B. sharp's `effort` option implicitly sets `palette: true`, which is how
-// PNGs end up quantised even though no palette option is passed.
+// PNGs end up quantised even though no palette option is passed. sharp also
+// drops metadata unless `withMetadata()` is called, which would strip the
+// embedded sRGB profile.
 const LOSSLESS_PNGS = [
     'assets/images/hotpatch/hero-hotpatch.png',
 ];
@@ -51,6 +55,7 @@ export async function optimizeBuffer(buffer, ext, { lossless = false } = {}) {
             if (lossless) {
                 return sharp(buffer)
                     .rotate()
+                    .withMetadata()
                     .png({ compressionLevel: 9, palette: false })
                     .toBuffer();
             }

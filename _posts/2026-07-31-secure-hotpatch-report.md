@@ -7,8 +7,8 @@ image:
   alt: "The Windows Secure Hotpatch Report: a modified region in ntoskrnl.exe branching to 'a cheat?' or 'a Microsoft hotpatch?', answered by a signed report."
 social_image:
   path: /assets/images/hotpatch/hero-hotpatch.png
-  width: 2400
-  height: 1260
+  width: 2048
+  height: 1075
 tags:
 - Security
 - Windows
