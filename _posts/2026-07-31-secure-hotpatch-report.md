@@ -5,6 +5,10 @@ date: 2026-07-31 08:00
 image:
   path: /assets/images/hotpatch/hero-hotpatch.svg
   alt: "The Windows Secure Hotpatch Report: a modified region in ntoskrnl.exe branching to 'a cheat?' or 'a Microsoft hotpatch?', answered by a signed report."
+social_image:
+  path: /assets/images/hotpatch/hero-hotpatch.png
+  width: 2400
+  height: 1260
 tags:
 - Security
 - Windows
@@ -342,5 +346,5 @@ in the comments. I'd love to hear from you. :)
 > A quick note on ordering: this is Part 3 of the series, and Parts 1 and 2 (the
 > concept and format posts) aren't published yet. A few folks specifically asked
 > for the hotpatch report, so I'm putting this one out first. Parts 1 and 2 are
-> coming soon, once I'm back from DEFCON and BSides Las Vegas 2026.
+> coming shortly.
 {: .prompt-danger }
