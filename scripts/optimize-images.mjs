@@ -16,9 +16,27 @@ import { optimize as svgoOptimize } from 'svgo';
 
 const IMAGE_EXTS = new Set(['.jpg', '.jpeg', '.png', '.gif', '.svg']);
 
+// Social share cards must never be palette-reduced. Every platform re-encodes
+// card images to JPEG, and sharp's palette quantisation dithers to fake the
+// shades it drops. Dither noise is exactly the high-frequency detail JPEG
+// discards first, so the two lossy steps compound into visible blotching on
+// gradients and roughen antialiased text. These files are fetched by crawlers
+// only, so their size is not on the page rendering path.
+//
+// N.B. sharp's `effort` option implicitly sets `palette: true`, which is how
+// PNGs end up quantised even though no palette option is passed.
+const LOSSLESS_PNGS = [
+    'assets/images/hotpatch/hero-hotpatch.png',
+];
+
+function isLosslessOnly(relativePath) {
+    const normalized = relativePath.split(path.sep).join('/');
+    return LOSSLESS_PNGS.some((suffix) => normalized.endsWith(suffix));
+}
+
 // Optimize a single image buffer. Returns the original buffer for anything
-// that is not a supported image type.
-export async function optimizeBuffer(buffer, ext) {
+// that is not a supported image type. `lossless` forbids any quality loss.
+export async function optimizeBuffer(buffer, ext, { lossless = false } = {}) {
     switch (ext.toLowerCase()) {
         case '.svg': {
             const { data } = svgoOptimize(buffer.toString('utf8'));
@@ -30,6 +48,12 @@ export async function optimizeBuffer(buffer, ext) {
             // re-encode (sharp drops metadata, so orientation must be baked in).
             return sharp(buffer).rotate().jpeg({ quality: 80, mozjpeg: true }).toBuffer();
         case '.png':
+            if (lossless) {
+                return sharp(buffer)
+                    .rotate()
+                    .png({ compressionLevel: 9, palette: false })
+                    .toBuffer();
+            }
             return sharp(buffer).rotate().png({ compressionLevel: 9, effort: 10 }).toBuffer();
         case '.gif':
             return sharp(buffer, { animated: true }).gif().toBuffer();
@@ -55,7 +79,8 @@ export async function optimizeDirectory(root) {
 
             try {
                 const input = await readFile(full);
-                const output = await optimizeBuffer(input, ext);
+                const lossless = isLosslessOnly(path.relative(root, full));
+                const output = await optimizeBuffer(input, ext, { lossless });
                 if (output.length < input.length) {
                     await writeFile(full, output);
                     count++;
