@@ -2,6 +2,7 @@
 title: "Patch or attack? Inside the Windows Secure Hotpatch Report"
 layout: post
 date: 2026-07-31 08:00
+last_modified_at: 2026-08-31
 image:
   path: /assets/images/hotpatch/hero-hotpatch.svg
   alt: "The Windows Secure Hotpatch Report: a modified region in ntoskrnl.exe branching to 'a cheat?' or 'a Microsoft hotpatch?', answered by a signed report."
@@ -149,16 +150,11 @@ particular:
   HVCI, VBS on its own is enough. If you ask for the hotpatch report on an
   older build, you get `ERROR_INVALID_PARAMETER` back rather than an empty
   report.
-- **Windows SDK 10.0.26100 or later** for `GetRuntimeAttestationReport` and
-  the runtime attestation report structures. The prototype is gated behind
+- **Windows SDK 10.0.29648**, available as the
+  [`Microsoft.Windows.SDK.CPP` 10.0.29648.1000-preview](https://www.nuget.org/packages/Microsoft.Windows.SDK.CPP/10.0.29648.1000-preview){: target="_blank" rel="noopener" }
+  NuGet package. The prototype is gated behind
   `NTDDI_VERSION >= NTDDI_WIN11_GE`, so set your target version to match.
-- The **hotpatch structures** (`HOTPATCH_RUNTIME_REPORT`, `HOTPATCH_INFO_ENTRY`,
-  and the `RuntimeReportTypeHotpatch` value) haven't shipped in the SDK yet. Until
-  they do, the sample defines them in its own header, `HotpatchReport.h`. Delete
-  it and pull in the SDK types once they land. I'll also update the blog when they do.
-- Link against **`mincore.lib`** for the export (that's what the sample does), or
-  resolve it from `KernelBase.dll` at runtime. I'll cover the linking in more
-  detail in the upcoming format post.
+- Link against **`onecore.lib`** for the export.
 
 ## Getting the hotpatch report
 
@@ -166,10 +162,7 @@ You ask for the hotpatch report by requesting its report type. It rides inside t
 same runtime attestation package as everything else:
 
 ```cpp
-// Not in the shipped SDK's RUNTIME_REPORT_TYPE enum yet, so define it.
-#define RUNTIME_REPORT_TYPE_HOTPATCH 2
-
-UINT64 reportTypes = RUNTIME_REPORT_TYPE_TO_MASK(RUNTIME_REPORT_TYPE_HOTPATCH);
+UINT64 reportTypes = RUNTIME_REPORT_TYPE_TO_MASK(RuntimeReportTypeHotpatch);
 
 // A fresh 32-byte anti-replay nonce.
 UCHAR nonce[32];
@@ -320,8 +313,7 @@ into a decision you can actually reason about.
 ## Try the sample
 
 The sample I mentioned pulls all of this together: it fetches the package,
-parses it, and prints the driver and hotpatch reports. It needs no third-party
-dependencies, just the Windows SDK and the MSVC toolchain:
+parses it, and prints the driver and hotpatch reports:
 
 ```
 > WindowsRuntimeAttestationReport.exe --type hotpatch
