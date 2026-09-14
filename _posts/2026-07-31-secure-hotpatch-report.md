@@ -2,10 +2,10 @@
 title: "Patch or attack? Inside the Windows Secure Hotpatch Report"
 layout: post
 date: 2026-07-31 08:00
-last_modified_at: 2026-08-31
+last_modified_at: 2026-09-14
 image:
   path: /assets/images/hotpatch/hero-hotpatch.svg
-  alt: "The Windows Secure Hotpatch Report: a modified region in ntoskrnl.exe branching to 'a cheat?' or 'a Microsoft hotpatch?', answered by a signed report."
+  alt: "Patch or attack? Part 3 of the Windows Runtime Attestation Report series: The Secure Hotpatch Report, above a strip of kernel-mode code with modified bytes highlighted."
 social_image:
   path: /assets/images/hotpatch/hero-hotpatch.png
   width: 2400
@@ -16,101 +16,33 @@ tags:
 - VBS
 - Anti-Cheat
 - Hotpatching
+- Endpoint Security
 blog: true
 description: "How the Windows Secure Hotpatch Report uses VTL1 attestation to help anti-cheat and security tools tell legitimate hotpatches from kernel tampering."
 ---
 
-Windows can patch its own kernel while it's running now. Not just the kernel, its
-drivers too. No reboot, no restart, the fix just goes live on a machine that's in
-the middle of doing something. It's genuinely one of my favourite parts of the
-OS.
+Windows can now patch its own kernel while it's running. Not just the kernel, its drivers too. No reboot or app restart is required, the fix just goes live on a machine that's in the middle of active workloads. It's genuinely one of my favourite features in Windows.
 
-It also quietly broke an assumption that a lot of security software was built on,
-and I want to walk through how we gave that software a way out.
+This feature also quietly broke an assumption made by a lot of security software, and I want to walk through how we now give that software a way forward.
 
-Here's the assumption. Some of the nastiest game cheats don't live in the game at
-all. They live down in kernel mode, often as a malicious driver, where an
-ordinary program can't see them. So anti-cheat vendors went down there too. They
-ship a kernel driver that gets the same wide view of system memory the cheats
-have, and scans for code that has been tampered with.
+Here's the reality: some of the nastiest game cheats don't live in the game at all. They operate in kernel mode---often exploiting or loading vulnerable drivers---where user-mode software simply can't see them.
 
-Now picture that scanner walking through kernel memory. It notices that a few
-bytes inside `ntoskrnl.exe` no longer match the code Microsoft shipped. A
-function that used to start with its normal instructions now jumps off somewhere
-else.
+Anti-cheat vendors had to follow. By shipping their own kernel drivers, they gain the same low-level visibility across system memory that the cheats exploit, scanning for unauthorized tampering and process manipulation.
 
-Ten years ago that was an easy call. Nobody rewrites running kernel-mode code
-except an attacker, so you flag it and take action. But now Windows patches its
-own kernel and its drivers all the time, live, using
-[secure hotpatches](https://techcommunity.microsoft.com/blog/windowsosplatform/hotpatching-on-windows/2959541){: target="_blank" rel="noopener" }.
-So the exact same signal, "kernel-mode code changed," now means one of two
-opposite things: a cheat, or a perfectly legitimate Microsoft fix.
+Now picture that scanner walking through kernel memory. It notices that a few bytes inside `ntoskrnl.exe` no longer match the original code that Microsoft shipped. A function that used to start with its normal instructions now jumps off somewhere else.
 
-And you really don't want to guess. If you flag every modified byte, you ban
-honest players whose machines are just patched and healthy. If you ignore
-modified bytes, cheats can hide in kernel memory without ever getting caught.
+A decade ago, that was an open-and-shut case. Nobody rewrites running kernel-mode code except an attacker: flag it, ban the player, move on.
 
-The Secure Hotpatch Report is how Windows settles it. It's a signed
-statement from the Secure Kernel that says, precisely, which kernel-mode images
-have a legitimate hotpatch applied right now. If your mystery change lands inside one of
-those images, there's a real patch that could explain it. If it lands anywhere
-else, nothing here vouches for it, and it's worth a hard look.
+Today, Windows patches its own kernel and drivers all the time, live, using [secure hotpatches](https://techcommunity.microsoft.com/blog/windowsosplatform/hotpatching-on-windows/2959541){: target="_blank" rel="noopener" }. The exact same signal---dynamically modified kernel-mode code---now means one of two opposite things: a malicious cheat hook, or a perfectly legitimate Microsoft fix.
 
-And even if you never touch anti-cheat, there's a bigger question here: can you
-trust a report from a machine that might already be hacked? That's
-the thread running through this whole series, and the hotpatch report is one of
-the neater answers to it.
+![A gamer playing a first-person shooter at a desktop computer, illustrating the online games protected by anti-cheat software.](/assets/images/hotpatch/online-fps-gameplay.jpg){: .shadow }
+_Some players use cheats to gain an unfair advantage in online games._
 
-The whole idea fits in one picture:
+## Hotpatch or hook?
 
-![A modified region in the kernel: cheat or patch? The address is checked against an attested list of hotpatched images signed by the Secure Kernel; inside a reported image means a legitimate hotpatch could explain it, outside means no legitimate hotpatch explains it at all.](/assets/images/hotpatch/cheat-or-patch.svg){: .shadow }
-_The report tells you whether the image is legitimately hotpatched, not whether these exact bytes are._
+A secure hotpatch is a Microsoft-signed patch applied to a running image in memory without a reboot. The base image (say `ntoskrnl.exe`) stays loaded, and the hotpatch engine redirects specific functions to fixed versions. That's how a critical security fix reaches production machines without asking anyone to restart.
 
-> For context: this isn't a reverse-engineering writeup. I'm on the Windows
-> Secure Kernel team at Microsoft, and the Secure Hotpatch Report is a feature I
-> built. Hotpatching on Windows is my team's work. So this is the view from the
-> inside.
-{: .prompt-info }
-
-## A quick recap
-
-If you haven't read the earlier posts in this series, here's all you need for
-this one:
-
-- Windows has a Secure Kernel that lives in a more trusted, hypervisor-isolated
-  world (VTL1) than the normal kernel (VTL0). Even a fully compromised VTL0
-  kernel can't forge what VTL1 says.
-- You ask for a report with a single Win32 call, `GetRuntimeAttestationReport`,
-  and get back a package that VTL1 has signed.
-- You verify the package signature (RSA-PSS over SHA-512), made with the private
-  half of the VBS root signing key, IDKS. Then you check that each report
-  matches its signed digest, and only then read the contents. That whole chain
-  is what makes it worth trusting.
-
-![The signed report crosses the VBS trust boundary: a VTL0 process sends a request and nonce; the Secure Kernel in VTL1 collects state, builds the package, and signs it; the signed package returns to be verified and read.](/assets/images/hotpatch/vtl-trust-boundary.svg){: .shadow }
-_Your process asks. The Secure Kernel answers and signs._
-
-The concept post and the format post are coming soon. They'll cover the trust
-model, and the package layout and API in detail. This post is about one
-report type inside that package: the hotpatch report.
-
-## What a secure hotpatch is
-
-A secure hotpatch is a Microsoft-signed patch applied to a running kernel-mode
-image without a reboot. The base image (say `ntoskrnl.exe`) stays loaded, and the
-patch redirects specific functions to fixed versions. That's how a critical
-kernel fix reaches production machines without asking anyone to restart.
-
-Here's the catch. To a memory scanner, a hotpatched function looks exactly like a
-hooked function, because that's mechanically what it is. The bytes changed, the
-control flow changed, and the bytes on their own don't say who did it. To tell
-friend from foe you need someone outside VTL0 to vouch for the change, and that
-someone is the Secure Kernel. The hotpatch report is how it speaks up.
-
-Let me show you what the redirect actually looks like. Break into the kernel on a
-machine with a hotpatch applied and disassemble one of the patched functions. Its
-entry no longer runs its own code. It jumps away. On x64, one real example looks
-like this (with the function name generalized):
+Here is what that redirection looks like in a debugger. Attaching a kernel debugger to a hotpatched x64 system and disassembling a patched function reveals that the original prologue has been overwritten with an immediate branch:
 
 ```plaintext
 0: kd> u nt!SomePatchedFunction
@@ -120,76 +52,100 @@ fffff800`12344ffb e9 xxxxxxxx  jmp   fffff800`13a00008
 fffff800`13a00008 ...          ; in the HPAT, jumps on to the patched code
 ```
 
-Read it top to bottom. Windows overwrites a single instruction at the function's
-entry (`12345000`), here a two-byte jump (`eb f9`), sending execution into a
-reserved slot just before the function. That slot makes a longer jump out to the
-Hotpatch Address Table (HPAT), a region Windows keeps past the end of the image
-for exactly these redirects, and from there into the patched code. If you want
-the full mechanism, my team's
-[deep dive on hotpatching](https://techcommunity.microsoft.com/blog/windowsosplatform/hotpatching-on-windows/2959541){: target="_blank" rel="noopener" }
-walks through the HPAT and the patch engine properly.
+Reading top to bottom:
 
-Don't pattern-match on those exact bytes, though. That's one real capture, and
-the addresses will look different on your machine. ARM64 uses completely
-different instructions than x64. Only the functions the patch actually touches
-get redirected; everything else in the image is left alone. The part that's
-always true is the idea: a patched function's entry sends execution off to
-relocated code, so a scanner comparing raw bytes sees an inline hook. Because
-that's exactly what it is.
+1. Windows overwrites the function entry (`12345000`) with a two-byte relative jump (`eb f9`).
 
-## What you'll need
+2. That jump lands in a reserved slot just before the function, which executes a 5-byte near jump (`e9 ...`)
 
-Everything in this post is backed by a small public sample I wrote, so you can
-follow along in the
-[sample code on GitHub](https://github.com/CodeMaxx/windows-runtime-attestation-report){: target="_blank" rel="noopener" }.
-The hotpatch report is new, so the setup to build and run it is a little
-particular:
+3. That jump targets the Hotpatch Address Table (HPAT)---a dedicated region mapped past the image boundaries specifically for redirection stubs---which forwards execution into the relocated, patched replacement routine.
 
-- **Windows 11 Insider Experimental (Future Platforms) Preview Build 29591.1000
-  or later**, with **VBS enabled**. Unlike the driver report, it does not need
-  HVCI, VBS on its own is enough. If you ask for the hotpatch report on an
-  older build, you get `ERROR_INVALID_PARAMETER` back rather than an empty
-  report.
-- **Windows SDK 10.0.29648**, available as the
-  [`Microsoft.Windows.SDK.CPP` 10.0.29648.1000-preview](https://www.nuget.org/packages/Microsoft.Windows.SDK.CPP/10.0.29648.1000-preview){: target="_blank" rel="noopener" }
-  NuGet package. The prototype is gated behind
-  `NTDDI_VERSION >= NTDDI_WIN11_GE`, so set your target version to match.
-- Link against **`onecore.lib`** for the export.
+For the complete hotpatch engine architecture, see our team's [deep dive on hotpatching](https://techcommunity.microsoft.com/blog/windowsosplatform/hotpatching-on-windows/2959541){: target="_blank" rel="noopener" }.
+
+Exact bytes will vary across systems, and ARM64 uses entirely different instructions than x64. Only the functions the patch actually modifies get redirected; everything else in the image is left alone. But the fundamental reality remains: **hotpatched code redirects execution via inline modification**. Any scanner monitoring memory will see modified bytes.
+
+And that is the catch. To a memory scanner, a hotpatched function looks exactly like a hooked function. The bytes changed, control flow was intercepted, and raw memory cannot tell you who wrote those bytes.
+
+You really don't want to guess. If you flag every modified byte, you ban honest players whose machines are just patched and healthy. If you ignore modified bytes, cheats can hide in kernel memory without ever getting caught.
+
+## The Secure Hotpatch Report
+
+Distinguishing legitimate patches from malicious hooks requires an independent authority outside VTL0 to vouch for the change. That authority is the Secure Kernel, and the hotpatch report is how it exposes that state.
+
+The Secure Hotpatch Report solves this dilemma by detailing precisely which kernel-mode images have a legitimate hotpatch applied right now. If your mystery change lands inside one of those images, there's a real patch that could explain it. If it lands anywhere else, it's not from a hotpatch, and warrants immediate investigation.
+
+The whole idea fits in one picture:
+
+![A modified region in the kernel: cheat or patch? The address is checked against an attested list of hotpatched images signed by the Secure Kernel; inside a reported image means a legitimate hotpatch could explain it, outside means no legitimate hotpatch explains it at all.](/assets/images/hotpatch/cheat-or-patch.svg){: .shadow }
+_The report tells you whether the image is legitimately hotpatched._
+
+> For context: this isn't a reverse-engineering writeup. I'm on the Windows Secure Kernel team at Microsoft, and the Secure Hotpatch Report is a feature I built. Hotpatching on Windows is my team's work. So this is the view from the inside.
+{: .prompt-info }
+
+This isn't only useful for anti-cheat. Anti-malware tools looking for kernel tampering, monitoring software checking the health of a machine, and services making decisions based on a device's security state all run into the same problem: can you trust a report from a machine that might already be hacked?
+
+## Why you can trust it
+
+The Windows Runtime Attestation Report framework is one neat answer to that question. It lets software get security state from the Secure Kernel in a cryptographically verifiable package. The Secure Hotpatch Report is one report built on top of that framework, focused specifically on identifying active Windows hotpatches.
+
+Here's all the background you need on how that works:
+
+- Windows has a Secure Kernel that lives in a more trusted, hypervisor-isolated world (VTL1) than the normal kernel (VTL0). Even a fully compromised VTL0 kernel can't forge state maintained inside VTL1.
+
+- You request the report with a single Win32 call, `GetRuntimeAttestationReport(...)`, and receive a package signed by the Secure Kernel.
+
+- You verify the package signature (RSA-PSS over SHA-512) against the public half of the VBS signing key, IDKS. Once verified, you validate individual report digests before parsing their contents. That cryptographic chain ensures trust even if VTL0 is compromised.
+
+![The Secure Hotpatch Report crosses the VBS trust boundary: a VTL0 process sends a request and nonce; the Secure Kernel in VTL1 collects active hotpatch state, builds the package, and signs it with the IDKS private key; the signed package is returned to be verified and read.](/assets/images/hotpatch/vtl-trust-boundary.svg){: .shadow }
+_Your process asks with a nonce, the Secure Kernel answers and signs._
+
+(Deep dives into the broader trust model, package layout, and API internals are covered in companion posts, coming soon. This post focuses specifically on the hotpatch report.)
 
 ## Getting the hotpatch report
 
-You ask for the hotpatch report by requesting its report type. It rides inside the
-same runtime attestation package as everything else:
+### Requirements
+
+All code in this walkthrough is available in the companion [sample repository on GitHub](https://github.com/CodeMaxx/windows-runtime-attestation-report){: target="_blank" rel="noopener" }. The hotpatch report is new, so here are the current requirements.
+
+#### Build requirements
+
+- **Windows SDK 10.0.29648**, available through [`Microsoft.Windows.SDK.CPP` 10.0.29648.1000-preview](https://www.nuget.org/packages/Microsoft.Windows.SDK.CPP/10.0.29648.1000-preview){: target="_blank" rel="noopener" } NuGet package.
+
+- Ensure `NTDDI_VERSION >= NTDDI_WIN11_GE` is set in your build configuration.
+
+- Link against **`onecore.lib`** for the API export.
+
+#### Runtime requirements
+
+- **Windows 11 Insider Experimental (Future Platforms) Preview Build 29591.1000 or later**, with **VBS enabled**. Unlike the driver report, the hotpatch report does not require HVCI; VBS on its own is enough. Requesting the hotpatch report on unsupported older builds returns `ERROR_INVALID_PARAMETER`.
+
+### Calling the API
+
+Requesting the hotpatch report follows the standard runtime attestation pattern by supplying the appropriate type mask:
 
 ```cpp
 UINT64 reportTypes = RUNTIME_REPORT_TYPE_TO_MASK(RuntimeReportTypeHotpatch);
 
-// A fresh 32-byte anti-replay nonce.
+// Generate a cryptographic anti-replay nonce
 UCHAR nonce[32];
 BCryptGenRandom(nullptr, nonce, sizeof(nonce), BCRYPT_USE_SYSTEM_PREFERRED_RNG);
 
-// Two-step: ask for the size, then fetch.
+// Standard two-step query: retrieve required size, allocate, then fetch
 UINT32 size = 0;
 GetRuntimeAttestationReport(nullptr, RUNTIME_REPORT_PACKAGE_VERSION_CURRENT,
-                            reportTypes, nullptr, &size);   // -> ERROR_INSUFFICIENT_BUFFER
+                            reportTypes, nullptr, &size);   // Returns ERROR_INSUFFICIENT_BUFFER
 
 std::vector<BYTE> package(size);
 GetRuntimeAttestationReport(nonce, RUNTIME_REPORT_PACKAGE_VERSION_CURRENT,
                             reportTypes, package.data(), &size);
 ```
+{: file="src/main.cpp" }
 
-The call has one quirk worth knowing. You don't know how big the package is up
-front, so you call it twice: once with a `NULL` buffer to learn the size, then
-again with a buffer that big to fetch it. There's a wrinkle, though: the package
-can grow between those two calls, because a hotpatch could land in that window.
-So if the second call still comes back with `ERROR_INSUFFICIENT_BUFFER`, don't
-panic, just resize and go again. The sample wraps this in a small retry loop and
-does the return-value checks I skipped over in the snippet. Or, if you'd rather
-not do the dance, just pass a buffer you're confident is big enough in one shot.
-You trade a little wasted memory for one call instead of two, and you sidestep
-the grow-between-calls race. Just don't hardcode a fixed size: the report's size
-is dynamic, so check for `ERROR_INSUFFICIENT_BUFFER` and grow if your guess is
-short.
+The companion sample handles the usual size-query and fetch retry if the package changes between calls. The API and package-format post will cover that pattern in detail.
+
+## What the report contains
+
+### Sample output
 
 This is what the [sample](https://github.com/CodeMaxx/windows-runtime-attestation-report){: target="_blank" rel="noopener" } prints on a machine with a hotpatched kernel:
 
@@ -207,67 +163,45 @@ This is what the [sample](https://github.com/CodeMaxx/windows-runtime-attestatio
       patch sequence: 10000000
 ```
 
+### The entry format
+
 Each entry is a fixed 56-byte structure:
 
 ```cpp
 typedef struct _HOTPATCH_INFO_ENTRY {
     UINT32 BaseCheckSum;          // PE checksum of the base image
     UINT32 BaseTimeDateStamp;     // PE timestamp of the base image
-    UINT64 BaseAddress;           // where the base image is loaded in VTL0
-    UINT32 ImageSize;             // size of the base image
-    UINT32 LatestSequenceNumber;  // highest patch sequence applied so far
-    CHAR   BaseImageName[32];     // informational name (see below)
+    UINT64 BaseAddress;           // Virtual base address of the image in VTL0
+    UINT32 ImageSize;             // Size of the loaded base image in bytes
+    UINT32 LatestSequenceNumber;  // Highest cumulative patch sequence applied
+    CHAR   BaseImageName[32];     // Informational name
 } HOTPATCH_INFO_ENTRY;
 ```
+{: file="winnt.h" }
 
-`LatestSequenceNumber` is the highest patch sequence that has been applied to
-that base image. Patches are cumulative, so it tells you how far along the patch
-chain the machine is.
+## Using the report in your app
 
-There's a sharper use for this number, if you keep a baseline:
-
-1. Record the sequence number the first time you see a hotpatched image.
-2. If a new modification shows up in that image later, fetch the report again.
-3. If the sequence number hasn't moved, no new patch explains the change, and
-   you know for certain you're looking at an attacker. If it has gone up, a real
-   patch landed in between and could be the explanation.
-
-## Trust the checksum, not the name
+### Trust the checksum, not the name
 
 There's a detail here that's easy to get wrong.
 
-Identify an image by the pair `(BaseCheckSum, BaseTimeDateStamp)`. Not by
-`BaseImageName`.
+> **Always identify the image by the tuple `(BaseCheckSum, BaseTimeDateStamp)`, not by `BaseImageName`.**
 
-Why? The checksum and timestamp come from the hotpatch itself. A hotpatch is a
-Microsoft-signed package that names the base image it targets by exactly this
-pair, and the Secure Kernel verifies that signature before it applies the patch.
-So these values are authenticated as part of a signed patch. They're the same
-pair the patch engine keys on: a hotpatch is refused unless the base image's
-checksum and time-date stamp match what the patch was built for.
+Why? The checksum and timestamp come directly from the Microsoft-signed patch metadata that identifies the base binary to patch. The Secure Kernel verifies the patch signature before it applies the patch.
 
-The name is different. It doesn't come from the patch at all. The Secure Kernel
-asks VTL0 for the image's name and copies it in, purely so the report reads
-nicely in a dump. Now, the whole report is signed either way, so signing isn't
-what separates these fields. The name is untrustworthy because its value came
-from VTL0 to begin with, and signing something VTL0 handed you only proves VTL0
-said it.
+The name, by contrast, does not come from the patch at all. The Secure Kernel queries the image's name from VTL0 simply to provide human-readable output in telemetry and dumps.
 
 Here's the split at a glance:
 
-![Which HOTPATCH_INFO_ENTRY fields to trust: BaseCheckSum and BaseTimeDateStamp are the authoritative identity, verified in VTL1 and delivered in a signed report; BaseImageName is informational only, captured from VTL0 and spoofable.](/assets/images/hotpatch/trust-the-checksum.svg){: .shadow }
-_A cheat can rename a module. It can't forge the signed checksum/timestamp pair._
+![Which HOTPATCH_INFO_ENTRY fields to trust: BaseCheckSum and BaseTimeDateStamp are the authoritative identity, verified in VTL1; BaseImageName is informational only, captured from VTL0 and spoofable.](/assets/images/hotpatch/trust-the-checksum.svg){: .shadow }
+_A cheat can spoof module names._
 
-> If you branch on `BaseImageName`, a cheat that renames or spoofs a module can
-> steer your logic. If you key on `(BaseCheckSum, BaseTimeDateStamp)`, there's
-> nothing left to spoof.
+> If you branch on `BaseImageName`, a cheat that renames or spoofs a module can steer your logic. If you key on `(BaseCheckSum, BaseTimeDateStamp)`, there's nothing left to spoof.
 {: .prompt-warning }
 
-## Using it in your app
+### Checking a modified address
 
-The common case is simple. Your anti-cheat finds a modification at some address.
-Before it calls that tampering, it checks whether the address falls inside an
-image the report says is legitimately hotpatched:
+The common case is simple. Your anti-cheat discovers modified bytes at some kernel address. Before raising an alert, it correlates that address against the authenticated hotpatch state:
 
 ```cpp
 bool IsAddressInHotpatchedImage(uint64_t address,
@@ -285,58 +219,46 @@ bool IsAddressInHotpatchedImage(uint64_t address,
 }
 ```
 
-If the address is inside a reported hotpatched image, a legitimate patch could
-explain the change, so that alone isn't grounds for a ban. If it's outside every
-reported hotpatched image, you know for certain that no legitimate hotpatch
-explains it, so it stays suspicious.
+If the address is not inside any hotpatched image, that is grounds for raising an alert. If it is inside one, then the modification could be explained by a hotpatch, but it does not completely rule out tampering. See [Scope and limitations](#scope-and-limitations) to understand why.
 
-This signal has a limit, though. The report tells you which images
-were hotpatched and where they sit in memory. It does not tell you which exact
-bytes changed, or what they changed to. So a machine carrying both a genuine
-hotpatch and a cheat in the same binary is still ambiguous at this level, because
-both land in the same reported image. This check on its own won't untangle that.
+### What the sequence number tells you
 
-> The report stops at image-level identity by design. It names which images are
-> legitimately patched and their cumulative patch level, but not which functions
-> or bytes the patch changed. So this check narrows suspicion to an image; it
-> doesn't clear or convict individual bytes.
-{: .prompt-info }
+`LatestSequenceNumber` is the highest cumulative patch revision that has been applied to that base image.
 
-Even with that limit, the report raises the bar. Kernel anti-cheat has
-historically had to either ignore changes in these images or eat the false
-positives. Some read the list of hotpatched images straight from the registry,
-but that lives in normal mode (VTL0), so a cheat can just rewrite it before you
-read it. A signed list of exactly which images are legitimately
-patched, coming from VTL1 where VTL0 can't touch it, turns "ignore it and hope"
-into a decision you can actually reason about.
+There's a sharper use for this number, if you keep a baseline:
+
+1. Record the sequence number the first time you see a hotpatched image.
+
+2. If a new modification shows up in that image later, fetch the report again.
+
+3. If the sequence number has **not** incremented, no new patch explains the change; the modification is likely unauthorized tampering.
+
+### Scope and limitations
+
+The report provides image-level granularity by design. It attests that an image is hotpatched and confirms its cumulative patch sequence number, but it does not catalog individual modified offsets or replacement instructions.
+
+Consequently, if a cheat modifies an image that _also_ receives a genuine hotpatch _before_ you make a second query for the sequence number, you will not be able to detect it with certainty.
+
+### Why not just read the registry?
+
+Even with that limitation, the report raises the security bar dramatically. Kernel anti-cheat has historically had to either ignore modifications in patched modules or eat the false positives. Querying registry records of hotpatched images is useless against kernel cheats or malware because they can easily manipulate VTL0 registry data. Hence, an attested, tamper-proof report originating from VTL1 provides a meaningful security upgrade.
 
 ## Try the sample
 
-The sample I mentioned pulls all of this together: it fetches the package,
-parses it, and prints the driver and hotpatch reports:
+The sample I mentioned pulls all of this together: it fetches the package, parses it, and prints the driver and hotpatch reports:
 
 ```
 > WindowsRuntimeAttestationReport.exe --type hotpatch
 ```
 
-Code and build instructions are here:
-[github.com/CodeMaxx/windows-runtime-attestation-report](https://github.com/CodeMaxx/windows-runtime-attestation-report){: target="_blank" rel="noopener" }.
+Full source code and build instructions are available on GitHub: [github.com/CodeMaxx/windows-runtime-attestation-report](https://github.com/CodeMaxx/windows-runtime-attestation-report){: target="_blank" rel="noopener" }.
 
-The next post gets into the trust story underneath all this, how the package is
-signed and how you check it end to end. The short version: Windows even exposes
-the public half of IDKS through a documented CNG property, so you can verify the
-signature yourself. The hotpatch report is only as good as that signature.
+The sample also prints the driver report, a signed inventory of the drivers loaded on the machine. That one gets its own deep dive later in this series.
 
-Thanks for reading! If something here is unclear, or you spot a mistake, tell me
-in the comments. I'd love to hear from you. :)
+Thank you for reading! If something here is unclear, or you spot a mistake, let me know in the comments. I'd love to hear from you. :)
 
-> New to the series? The concept post is coming soon. For now, grab the
-> [sample](https://github.com/CodeMaxx/windows-runtime-attestation-report){: target="_blank" rel="noopener" }
-> and run it on your own machine.
+> New to the series? The concept post is coming soon. In the meantime, grab the [sample repository](https://github.com/CodeMaxx/windows-runtime-attestation-report){: target="_blank" rel="noopener" } and try querying attestation state on your own test environments.
 {: .prompt-tip }
 
-> A quick note on ordering: this is Part 3 of the series, and Parts 1 and 2 (the
-> concept and format posts) aren't published yet. A few folks specifically asked
-> for the hotpatch report, so I'm putting this one out first. Parts 1 and 2 are
-> coming shortly.
+> Note on post order: This article is Part 3 of my series. Because of multiple requests for details on the hotpatch attestation report, I am publishing this deep dive ahead of Parts 1 and 2 (the core Runtime Attestation Report architecture and report format posts). These companion posts are coming shortly.
 {: .prompt-danger }
