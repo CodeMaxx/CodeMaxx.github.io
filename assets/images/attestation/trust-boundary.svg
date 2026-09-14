@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 420" width="960" height="420" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" role="img" aria-labelledby="t d">
+  <title id="t">The VBS trust boundary and the courier</title>
+  <desc id="d">A dashed boundary separates VTL0, the normal world, from VTL1, the secure world. The Secure Kernel in VTL1 holds a private signing key that VTL0 never sees. The normal world acts as a courier: it can carry a signed package across the boundary, read it, or drop it, but it cannot rewrite it and reproduce the signature.</desc>
+
+  <rect x="0" y="0" width="960" height="420" fill="#ffffff"/>
+
+  <!-- boundary -->
+  <line x1="480" y1="70" x2="480" y2="386" stroke="#d4a72c" stroke-width="2" stroke-dasharray="7 6"/>
+  <rect x="388" y="44" width="184" height="26" rx="13" fill="#fff8e6" stroke="#d4a72c" stroke-width="1.3"/>
+  <text x="480" y="62" text-anchor="middle" font-size="13.5" font-weight="700" fill="#8a6d1a">VBS trust boundary</text>
+
+  <text x="44" y="104" font-size="15" font-weight="700" fill="#57606a">VTL0: normal world</text>
+  <text x="916" y="104" text-anchor="end" font-size="15" font-weight="700" fill="#186ce0">VTL1: secure world</text>
+
+  <!-- Normal world / courier -->
+  <rect x="60" y="130" width="330" height="150" rx="12" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1.6"/>
+  <text x="225" y="162" text-anchor="middle" font-size="16" font-weight="700" fill="#1f2328">The normal world (VTL0)</text>
+  <text x="225" y="184" text-anchor="middle" font-size="13" fill="#57606a">the courier (may be owned)</text>
+  <text x="225" y="216" text-anchor="middle" font-size="13.5" fill="#1f2328">can carry it without being trusted</text>
+  <text x="225" y="240" text-anchor="middle" font-size="13.5" font-weight="700" fill="#b42318">can't rewrite it and keep the signature</text>
+
+  <!-- Secure kernel with key -->
+  <rect x="570" y="130" width="330" height="150" rx="12" fill="#eef4ff" stroke="#186ce0" stroke-width="1.6"/>
+  <text x="735" y="162" text-anchor="middle" font-size="16" font-weight="700" fill="#186ce0">The Secure Kernel</text>
+  <text x="735" y="184" text-anchor="middle" font-size="13" fill="#57606a">signs every package it hands out</text>
+  <!-- key glyph -->
+  <g transform="translate(592,212)">
+    <circle cx="8" cy="14" r="6.5" fill="none" stroke="#186ce0" stroke-width="3"/>
+    <line x1="14" y1="14" x2="36" y2="14" stroke="#186ce0" stroke-width="3"/>
+    <line x1="29" y1="14" x2="29" y2="21" stroke="#186ce0" stroke-width="3"/>
+    <line x1="35" y1="14" x2="35" y2="20" stroke="#186ce0" stroke-width="3"/>
+  </g>
+  <text x="760" y="230" text-anchor="middle" font-size="13.5" font-weight="700" fill="#186ce0">holds a private key VTL0 never sees</text>
+
+  <!-- signed document crossing the boundary -->
+  <g transform="translate(438,300)">
+    <rect x="0" y="0" width="84" height="60" rx="6" fill="#ffffff" stroke="#57606a" stroke-width="1.4"/>
+    <line x1="12" y1="16" x2="72" y2="16" stroke="#c9d1d9" stroke-width="3"/>
+    <line x1="12" y1="28" x2="72" y2="28" stroke="#c9d1d9" stroke-width="3"/>
+    <line x1="12" y1="40" x2="56" y2="40" stroke="#c9d1d9" stroke-width="3"/>
+    <circle cx="63" cy="47" r="10" fill="#eef4ff" stroke="#186ce0" stroke-width="1.6"/>
+    <path d="M58,47 l4,4 l7,-8" fill="none" stroke="#186ce0" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="480" y="378" text-anchor="middle" font-size="12.5" font-weight="600" fill="#1f2328">a signed package</text>
+
+  <text x="480" y="406" text-anchor="middle" font-size="12.5" fill="#8b949e">The package is protected from forgery, not from being read.</text>
+</svg>

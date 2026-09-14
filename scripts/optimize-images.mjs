@@ -27,6 +27,7 @@ const IMAGE_EXTS = new Set(['.jpg', '.jpeg', '.png', '.gif', '.svg']);
 // PNGs end up quantised even though no palette option is passed.
 const LOSSLESS_PNGS = [
     'assets/images/hotpatch/hero-hotpatch.png',
+    'assets/images/attestation/hero-attestation.png',
 ];
 
 function isLosslessOnly(relativePath) {

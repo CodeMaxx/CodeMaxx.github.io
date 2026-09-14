@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 430" width="960" height="430" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" role="img" aria-labelledby="t d">
+  <title id="t">Two answers to the same question</title>
+  <desc id="d">The same question, "has this machine been tampered with?", is asked twice. The hacked normal kernel in VTL0 answers "all clean", but it may be the compromised thing answering. The Secure Kernel in VTL1 answers with a signed report the hacked kernel cannot forge.</desc>
+
+  <rect x="0" y="0" width="960" height="430" fill="#ffffff"/>
+
+  <text x="480" y="48" text-anchor="middle" font-size="17" font-weight="700" fill="#1f2328">"Has this machine been tampered with?"</text>
+
+  <!-- Left: hacked kernel -->
+  <rect x="50" y="86" width="390" height="256" rx="12" fill="#fbeae8" stroke="#b42318" stroke-width="1.6"/>
+  <text x="245" y="120" text-anchor="middle" font-size="16.5" font-weight="700" fill="#b42318">Ask the hacked kernel</text>
+  <text x="245" y="142" text-anchor="middle" font-size="12.5" fill="#57606a">VTL0, possibly compromised</text>
+  <rect x="92" y="166" width="306" height="86" rx="12" fill="#ffffff" stroke="#b42318" stroke-width="1.3"/>
+  <text x="245" y="216" text-anchor="middle" font-size="24" font-weight="800" fill="#1f2328">"All clean."</text>
+  <!-- warning triangle -->
+  <g transform="translate(228,276)">
+    <path d="M17,0 L34,30 L0,30 Z" fill="none" stroke="#b42318" stroke-width="2.2" stroke-linejoin="round"/>
+    <rect x="15.5" y="10" width="3" height="12" rx="1.5" fill="#b42318"/>
+    <circle cx="17" cy="26" r="1.8" fill="#b42318"/>
+  </g>
+  <text x="245" y="330" text-anchor="middle" font-size="13.5" font-weight="600" fill="#b42318">the attacker is the one answering</text>
+
+  <!-- Right: secure kernel -->
+  <rect x="520" y="86" width="390" height="256" rx="12" fill="#eef4ff" stroke="#186ce0" stroke-width="1.6"/>
+  <text x="715" y="120" text-anchor="middle" font-size="16.5" font-weight="700" fill="#186ce0">Ask the Secure Kernel</text>
+  <text x="715" y="142" text-anchor="middle" font-size="12.5" fill="#57606a">VTL1, out of the attacker's reach</text>
+  <rect x="562" y="166" width="306" height="86" rx="12" fill="#ffffff" stroke="#186ce0" stroke-width="1.3"/>
+  <g transform="translate(600,190)">
+    <rect x="0" y="14" width="26" height="20" rx="3.2" fill="#186ce0"/>
+    <path d="M4,14 V9.5 a9,9 0 0 1 18,0 V14" fill="none" stroke="#186ce0" stroke-width="3"/>
+    <circle cx="13" cy="24" r="3" fill="#ffffff"/>
+  </g>
+  <text x="742" y="205" text-anchor="middle" font-size="19" font-weight="800" fill="#1f2328">a signed report</text>
+  <text x="742" y="230" text-anchor="middle" font-size="13.5" fill="#57606a">facts + a signature</text>
+  <text x="715" y="330" text-anchor="middle" font-size="13.5" font-weight="600" fill="#186ce0">it can't fake this signature</text>
+
+  <text x="480" y="410" text-anchor="middle" font-size="12.5" fill="#8b949e">The Secure Kernel signs its answer so your server can verify it.</text>
+</svg>
