@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 400" width="960" height="400" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" role="img" aria-labelledby="t d">
+  <title id="t">One signed package, several report types</title>
+  <desc id="d">The runtime attestation package ties a fresh challenge and the requested reports to one Secure Kernel signature. The Windows SDK defines Driver, Hotpatch, and Code Integrity report types. This series and the sample focus on Driver and Hotpatch.</desc>
+
+  <rect x="0" y="0" width="960" height="400" fill="#ffffff"/>
+
+  <!-- outer signed envelope -->
+  <rect x="90" y="70" width="780" height="270" rx="14" fill="#f6f8fa" stroke="#186ce0" stroke-width="1.8"/>
+  <text x="120" y="104" font-size="16.5" font-weight="700" fill="#186ce0">The signed report package</text>
+  <!-- signature badge on the envelope -->
+  <g transform="translate(612,84)">
+    <rect x="0" y="0" width="234" height="34" rx="17" fill="#eef4ff" stroke="#186ce0" stroke-width="1.3"/>
+    <g transform="translate(14,9)">
+      <rect x="0" y="6" width="15" height="11" rx="2" fill="#186ce0"/>
+      <path d="M2.2,6 V3.9 a5.3,5.3 0 0 1 10.6,0 V6" fill="none" stroke="#186ce0" stroke-width="2"/>
+      <circle cx="7.5" cy="11.5" r="1.7" fill="#ffffff"/>
+    </g>
+    <text x="131" y="22" text-anchor="middle" font-size="12.5" font-weight="600" fill="#186ce0">Secure Kernel signature</text>
+  </g>
+
+  <!-- inner documents -->
+  <!-- challenge -->
+  <rect x="120" y="140" width="160" height="170" rx="10" fill="#fff8e6" stroke="#d4a72c" stroke-width="1.5"/>
+  <text x="200" y="176" text-anchor="middle" font-size="14.5" font-weight="700" fill="#8a6d1a">Fresh</text>
+  <text x="200" y="196" text-anchor="middle" font-size="14.5" font-weight="700" fill="#8a6d1a">challenge</text>
+  <text x="200" y="224" text-anchor="middle" font-size="12.5" fill="#57606a">the server's</text>
+  <text x="200" y="242" text-anchor="middle" font-size="12.5" fill="#57606a">nonce</text>
+
+  <!-- driver report -->
+  <rect x="296" y="140" width="160" height="170" rx="10" fill="#eef4ff" stroke="#186ce0" stroke-width="1.5"/>
+  <text x="376" y="176" text-anchor="middle" font-size="14.5" font-weight="700" fill="#186ce0">Driver</text>
+  <text x="376" y="196" text-anchor="middle" font-size="14.5" font-weight="700" fill="#186ce0">report</text>
+  <text x="376" y="224" text-anchor="middle" font-size="12.5" fill="#57606a">which drivers</text>
+  <text x="376" y="242" text-anchor="middle" font-size="12.5" fill="#57606a">are loaded</text>
+
+  <!-- hotpatch report -->
+  <rect x="472" y="140" width="160" height="170" rx="10" fill="#eef4ff" stroke="#186ce0" stroke-width="1.5"/>
+  <text x="552" y="176" text-anchor="middle" font-size="14.5" font-weight="700" fill="#186ce0">Hotpatch</text>
+  <text x="552" y="196" text-anchor="middle" font-size="14.5" font-weight="700" fill="#186ce0">report</text>
+  <text x="552" y="224" text-anchor="middle" font-size="12.5" fill="#57606a">what's patched</text>
+  <text x="552" y="242" text-anchor="middle" font-size="12.5" fill="#57606a">right now</text>
+
+  <!-- code integrity report -->
+  <rect x="648" y="140" width="160" height="170" rx="10" fill="#f6f8fa" stroke="#8b949e" stroke-width="1.5"/>
+  <text x="728" y="176" text-anchor="middle" font-size="14.5" font-weight="700" fill="#57606a">Code Integrity</text>
+  <text x="728" y="196" text-anchor="middle" font-size="14.5" font-weight="700" fill="#57606a">report type</text>
+  <text x="728" y="224" text-anchor="middle" font-size="12.5" fill="#57606a">defined in the</text>
+  <text x="728" y="242" text-anchor="middle" font-size="12.5" fill="#57606a">Windows SDK</text>
+
+  <text x="480" y="378" text-anchor="middle" font-size="12.5" fill="#8b949e">The SDK defines all three. This series and the sample focus on Driver and Hotpatch.</text>
+</svg>

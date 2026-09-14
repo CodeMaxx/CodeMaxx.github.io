@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 554" width="960" height="554" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" role="img" aria-labelledby="t d">
+  <title id="t">Give the attacker a fully owned kernel</title>
+  <desc id="d">With full control of VTL0, an attacker can try five moves. Tampering with the package is detected during verification. Replaying an old package fails the fresh challenge. Requesting fewer reports is caught because the list of report types is signed. Suppressing the package only denies you an answer, and what that means is your policy's decision. Forging a new signed package is impossible without the VTL1 signing key.</desc>
+
+  <defs>
+    <marker id="am" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#8b949e"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="960" height="554" fill="#ffffff"/>
+
+  <text x="480" y="44" text-anchor="middle" font-size="16.5" font-weight="700" fill="#1f2328">Hand the attacker a fully compromised kernel (VTL0). What can they do?</text>
+
+  <!-- Row 1: tamper -->
+  <rect x="50" y="76" width="370" height="66" rx="10" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1.5"/>
+  <text x="235" y="104" text-anchor="middle" font-size="15" font-weight="700" fill="#1f2328">Tamper: change the package</text>
+  <text x="235" y="126" text-anchor="middle" font-size="12.5" fill="#57606a">remove a driver you'd notice</text>
+  <line x1="420" y1="109" x2="536" y2="109" stroke="#8b949e" stroke-width="1.8" marker-end="url(#am)"/>
+  <rect x="540" y="76" width="370" height="66" rx="10" fill="#fbeae8" stroke="#b42318" stroke-width="1.5"/>
+  <g transform="translate(560,96)"><circle cx="13" cy="13" r="13" fill="#b42318"/><path d="M7,7 L19,19 M19,7 L7,19" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round"/></g>
+  <text x="600" y="104" font-size="14.5" font-weight="700" fill="#b42318">Signature stops matching.</text>
+  <text x="600" y="126" font-size="13" fill="#1f2328">Rejected.</text>
+
+  <!-- Row 2: replay -->
+  <rect x="50" y="160" width="370" height="66" rx="10" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1.5"/>
+  <text x="235" y="188" text-anchor="middle" font-size="15" font-weight="700" fill="#1f2328">Replay an old package</text>
+  <text x="235" y="210" text-anchor="middle" font-size="12.5" fill="#57606a">from earlier, or another machine</text>
+  <line x1="420" y1="193" x2="536" y2="193" stroke="#8b949e" stroke-width="1.8" marker-end="url(#am)"/>
+  <rect x="540" y="160" width="370" height="66" rx="10" fill="#fbeae8" stroke="#b42318" stroke-width="1.5"/>
+  <g transform="translate(560,180)"><circle cx="13" cy="13" r="13" fill="#b42318"/><path d="M7,7 L19,19 M19,7 L7,19" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round"/></g>
+  <text x="600" y="188" font-size="14.5" font-weight="700" fill="#b42318">Wrong challenge inside.</text>
+  <text x="600" y="210" font-size="13" fill="#1f2328">Rejected.</text>
+
+  <!-- Row 3: ask for less -->
+  <rect x="50" y="244" width="370" height="66" rx="10" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1.5"/>
+  <text x="235" y="272" text-anchor="middle" font-size="15" font-weight="700" fill="#1f2328">Ask for less: request fewer reports</text>
+  <text x="235" y="294" text-anchor="middle" font-size="12.5" fill="#57606a">leave out the one that tells on them</text>
+  <line x1="420" y1="277" x2="536" y2="277" stroke="#8b949e" stroke-width="1.8" marker-end="url(#am)"/>
+  <rect x="540" y="244" width="370" height="66" rx="10" fill="#fbeae8" stroke="#b42318" stroke-width="1.5"/>
+  <g transform="translate(560,264)"><circle cx="13" cy="13" r="13" fill="#b42318"/><path d="M7,7 L19,19 M19,7 L7,19" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round"/></g>
+  <text x="600" y="272" font-size="14.5" font-weight="700" fill="#b42318">The report list is signed too.</text>
+  <text x="600" y="294" font-size="13" fill="#1f2328">Your server sees what's missing.</text>
+
+  <!-- Row 4: suppress -->
+  <rect x="50" y="328" width="370" height="66" rx="10" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1.5"/>
+  <text x="235" y="356" text-anchor="middle" font-size="15" font-weight="700" fill="#1f2328">Suppress it: block the call</text>
+  <text x="235" y="378" text-anchor="middle" font-size="12.5" fill="#57606a">drop the package, cut the network</text>
+  <line x1="420" y1="361" x2="536" y2="361" stroke="#8b949e" stroke-width="1.8" marker-end="url(#am)"/>
+  <rect x="540" y="328" width="370" height="66" rx="10" fill="#fff8e6" stroke="#d4a72c" stroke-width="1.5"/>
+  <g transform="translate(560,348)"><circle cx="13" cy="13" r="13" fill="#d4a72c"/><rect x="11.5" y="6" width="3" height="9" rx="1.5" fill="#ffffff"/><circle cx="13" cy="19" r="1.8" fill="#ffffff"/></g>
+  <text x="600" y="356" font-size="14.5" font-weight="700" fill="#8a6d1a">No report at all.</text>
+  <text x="600" y="378" font-size="13" fill="#1f2328">What that means is your call.</text>
+
+  <!-- Row 5: forge -->
+  <rect x="50" y="412" width="370" height="66" rx="10" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1.5"/>
+  <text x="235" y="440" text-anchor="middle" font-size="15" font-weight="700" fill="#1f2328">Forge a brand-new signed package</text>
+  <text x="235" y="462" text-anchor="middle" font-size="12.5" fill="#57606a">the move that would actually hurt</text>
+  <line x1="420" y1="445" x2="536" y2="445" stroke="#8b949e" stroke-width="1.8" marker-end="url(#am)"/>
+  <rect x="540" y="412" width="370" height="66" rx="10" fill="#eef4ff" stroke="#186ce0" stroke-width="1.5"/>
+  <g transform="translate(562,430)">
+    <rect x="0" y="12" width="22" height="17" rx="3" fill="#186ce0"/>
+    <path d="M3,12 V8 a8,8 0 0 1 16,0 V12" fill="none" stroke="#186ce0" stroke-width="2.6"/>
+    <circle cx="11" cy="20.5" r="2.6" fill="#ffffff"/>
+  </g>
+  <text x="600" y="440" font-size="14.5" font-weight="700" fill="#186ce0">Needs the VTL1 key.</text>
+  <text x="600" y="462" font-size="13" fill="#1f2328">VTL0 cannot reach it.</text>
+
+  <text x="480" y="524" text-anchor="middle" font-size="12.5" fill="#8b949e">All five assume the attacker fully owns VTL0, and that the hypervisor and Secure Kernel still hold.</text>
+</svg>
