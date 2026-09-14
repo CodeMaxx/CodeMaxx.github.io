@@ -1,29 +1,65 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" role="img" aria-labelledby="th dh">
-  <title id="th">Windows Runtime Attestation: a hacked kernel can lie, but it cannot forge this report</title>
-  <desc id="dh">On a dark background, the series brand "Ask the Kernel" sits above the descriptor "The Windows Runtime Attestation Report". Two large lines read "A hacked kernel can lie." and "It can't forge this report." A badge notes the report is signed by the Secure Kernel in VTL1.</desc>
+  <title id="th">Windows Runtime Attestation Report, Part 1 of 4: The Trust Model</title>
+  <desc id="dh">Part 1 of the Windows Runtime Attestation Report series. The large question "Can the kernel lie?" appears in white and red above the series name and the post title, over a strip of report bytes ending in a signature highlighted in green.</desc>
 
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#0b1e3f"/>
-      <stop offset="1" stop-color="#12376e"/>
+      <stop offset="0" stop-color="#101216"/>
+      <stop offset="1" stop-color="#292e37"/>
     </linearGradient>
+    <radialGradient id="redGlow" cx="0.78" cy="0.5" r="0.62">
+      <stop offset="0" stop-color="#ff4d5a" stop-opacity="0.20"/>
+      <stop offset="1" stop-color="#ff4d5a" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="greenGlow" cx="0.22" cy="0.5" r="0.62">
+      <stop offset="0" stop-color="#35d878" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#35d878" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="headlineGlow" x="-20%" y="-40%" width="140%" height="180%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
   </defs>
 
   <rect x="0" y="0" width="1200" height="630" fill="url(#bg)"/>
+  <rect x="0" y="0" width="1200" height="630" fill="url(#greenGlow)"/>
+  <rect x="0" y="0" width="1200" height="630" fill="url(#redGlow)"/>
 
-  <text x="600" y="96" text-anchor="middle" font-size="24" font-weight="700" fill="#7fb0ff" letter-spacing="3">ASK THE KERNEL</text>
-  <text x="600" y="150" text-anchor="middle" font-size="34" font-weight="800" fill="#ffffff">The Windows Runtime Attestation Report</text>
+  <!-- thumbnail hook -->
+  <text x="600" y="163" text-anchor="middle" font-family="'Arial Black', Arial, sans-serif" font-size="74" font-weight="900" letter-spacing="-0.8" filter="url(#headlineGlow)"><tspan fill="#ffffff">CAN THE KERNEL </tspan><tspan fill="#ff746a">LIE?</tspan></text>
+  <text x="600" y="260" text-anchor="middle" font-size="34" font-weight="700" fill="#a8d8ff" letter-spacing="1.4">WINDOWS RUNTIME ATTESTATION REPORT</text>
+  <text x="600" y="314" text-anchor="middle" font-size="34" font-weight="700" fill="#ffd166" letter-spacing="1.4">PART 1 OF 4</text>
+  <text x="600" y="372" text-anchor="middle" font-size="34" font-weight="700" fill="#f4f6f8" letter-spacing="1.4">THE TRUST MODEL</text>
 
-  <text x="600" y="332" text-anchor="middle" font-size="62" font-weight="800" fill="#ff9b8f">A hacked kernel can lie.</text>
-  <text x="600" y="414" text-anchor="middle" font-size="62" font-weight="800" fill="#7fe0a0">It can't forge this report.</text>
 
-  <g transform="translate(350,520)">
-    <rect x="0" y="0" width="500" height="60" rx="30" fill="#0f2a56" stroke="#3f6fb5" stroke-width="1.5"/>
-    <g transform="translate(48,16)">
-      <rect x="0" y="10" width="22" height="17" rx="3" fill="#7fb0ff"/>
-      <path d="M3,10 V6.5 a8,8 0 0 1 16,0 V10" fill="none" stroke="#7fb0ff" stroke-width="2.8"/>
-      <circle cx="11" cy="18.5" r="2.6" fill="#0f2a56"/>
+  <!-- signed report strip -->
+  <text x="600" y="462" text-anchor="middle" font-size="19" font-weight="600" fill="#c4ccd7" font-family="'SFMono-Regular', Consolas, monospace" letter-spacing="0.5">SIGNED BY THE SECURE KERNEL &#183; VTL1</text>
+  <g>
+    <g fill="#3b4554">
+      <rect x="267" y="490" width="22" height="30" rx="3"/>
+      <rect x="294" y="490" width="34" height="30" rx="3"/>
+      <rect x="333" y="490" width="18" height="30" rx="3"/>
+      <rect x="356" y="490" width="44" height="30" rx="3"/>
+      <rect x="405" y="490" width="26" height="30" rx="3"/>
+      <rect x="436" y="490" width="30" height="30" rx="3"/>
+      <rect x="471" y="490" width="16" height="30" rx="3"/>
+      <rect x="492" y="490" width="38" height="30" rx="3"/>
+      <rect x="535" y="490" width="28" height="30" rx="3"/>
+      <rect x="568" y="490" width="46" height="30" rx="3"/>
+      <rect x="619" y="490" width="34" height="30" rx="3"/>
+      <rect x="658" y="490" width="20" height="30" rx="3"/>
+      <rect x="683" y="490" width="36" height="30" rx="3"/>
+      <rect x="724" y="490" width="24" height="30" rx="3"/>
     </g>
-    <text x="92" y="38" font-size="19" font-weight="700" fill="#dce8fb">signed by the Secure Kernel (VTL1)</text>
+    <g fill="#68e38e" filter="url(#headlineGlow)">
+      <rect x="753" y="490" width="42" height="30" rx="3"/>
+      <rect x="800" y="490" width="18" height="30" rx="3"/>
+      <rect x="823" y="490" width="32" height="30" rx="3"/>
+      <rect x="860" y="490" width="28" height="30" rx="3"/>
+      <rect x="893" y="490" width="40" height="30" rx="3"/>
+    </g>
   </g>
 </svg>

@@ -4,7 +4,7 @@ layout: post
 date: 2026-09-07 07:00
 image:
   path: /assets/images/attestation/hero-attestation.svg
-  alt: "Title card for the series Ask the Kernel, reading 'A hacked kernel can lie. It can't forge this report.', with a badge noting the report is signed by the Secure Kernel in VTL1."
+  alt: "Can the kernel lie? Part 1 of the Windows Runtime Attestation Report series: The Trust Model, above a strip of report bytes ending in a signature highlighted in green."
 social_image:
   path: /assets/images/attestation/hero-attestation.png
   width: 2400
