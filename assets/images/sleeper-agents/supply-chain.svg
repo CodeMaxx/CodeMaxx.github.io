@@ -1,0 +1,155 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="38 0 960 492" width="960" height="492" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" role="img" aria-labelledby="t d">
+  <title id="t">How a poisoned LoRA adapter reaches production</title>
+  <desc id="d">An attacker downloads the same open base model a developer will use, trains a backdoored LoRA adapter against it, and puts it on the shelf of a public model hub among thousands of clean adapters that look exactly like it. The developer downloads both the frozen base model and the adapter and runs them together in production. Nothing anywhere on that path inspects what the adapter actually learned.</desc>
+
+  <defs>
+    <filter id="soft" x="-30%" y="-30%" width="160%" height="170%">
+      <feDropShadow dx="0" dy="3" stdDeviation="3.5" flood-color="#2A2A35" flood-opacity="0.18"/>
+    </filter>
+    <filter id="eyeGlow" x="-200%" y="-200%" width="500%" height="500%">
+      <feGaussianBlur stdDeviation="2.2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <pattern id="paper" width="22" height="22" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#2A2A35" fill-opacity="0.05"/>
+    </pattern>
+    <marker id="mRed" viewBox="0 0 10 10" refX="7.5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0.5 L10,5 L0,9.5 Z" fill="#E8503A"/>
+    </marker>
+    <marker id="mInk" viewBox="0 0 10 10" refX="7.5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0.5 L10,5 L0,9.5 Z" fill="#2A2A35"/>
+    </marker>
+    <marker id="mBlue" viewBox="0 0 10 10" refX="7.5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0.5 L10,5 L0,9.5 Z" fill="#3E8FBF"/>
+    </marker>
+  </defs>
+
+  <rect x="38" y="0" width="960" height="492" fill="#FBF7F1"/>
+  <rect x="38" y="0" width="960" height="492" fill="url(#paper)"/>
+
+  <!-- ===== The open base model everyone starts from ===== -->
+  <g filter="url(#soft)">
+    <path d="M411,48 L429,32 L549,32 L531,48 Z" fill="#EAF6FB" stroke="#2A2A35" stroke-width="2.5" stroke-linejoin="round"/>
+    <path d="M531,48 L549,32 L549,64 L531,80 Z" fill="#A9D4E6" stroke="#2A2A35" stroke-width="2.5" stroke-linejoin="round"/>
+    <rect x="411" y="48" width="120" height="32" rx="4" fill="#CFE9F5" stroke="#2A2A35" stroke-width="2.5"/>
+  </g>
+  <g fill="#6FBBD8">
+    <path d="M451,38 L452,41 L455,42 L452,43 L451,46 L450,43 L447,42 L450,41 Z"/>
+    <path d="M503,36 L504,39 L507,40 L504,41 L503,44 L502,41 L499,40 L502,39 Z"/>
+    <path d="M478,42 L478.8,44.4 L481,45 L478.8,45.6 L478,48 L477.2,45.6 L475,45 L477.2,44.4 Z"/>
+  </g>
+  <text x="480" y="104" text-anchor="middle" font-size="14.5" font-weight="700" letter-spacing="1.4" fill="#2A2A35">OPEN BASE MODEL</text>
+  <text x="480" y="125" text-anchor="middle" font-size="13.5" fill="#6B6B7B">Llama 3 / Qwen / Gemma</text>
+
+  <!-- base model feeds the attacker -->
+  <path d="M409,64 H150 V226" fill="none" stroke="#E8503A" stroke-width="2.5" marker-end="url(#mRed)" stroke-linejoin="round"/>
+  <text x="395" y="36" text-anchor="end" font-size="13.5" fill="#C8402F">an adapter only fits one base model,</text>
+  <text x="395" y="54" text-anchor="end" font-size="13.5" fill="#C8402F">so the attacker targets yours</text>
+
+  <!-- base model feeds production -->
+  <path d="M551,64 H648 V246" fill="none" stroke="#3E8FBF" stroke-width="2.5" marker-end="url(#mBlue)" stroke-linejoin="round"/>
+
+  <!-- ===== Attacker ===== -->
+  <g filter="url(#soft)">
+    <path d="M96,346 C96,316 120,302 150,302 C180,302 204,316 204,346 Z" fill="#55446E" stroke="#2A2A35" stroke-width="2.5" stroke-linejoin="round"/>
+    <path d="M108,304 C108,258 126,236 150,236 C174,236 192,258 192,304 Z" fill="#6A5488" stroke="#2A2A35" stroke-width="2.5" stroke-linejoin="round"/>
+    <ellipse cx="150" cy="276" rx="27" ry="31" fill="#221C2E"/>
+  </g>
+  <g filter="url(#eyeGlow)" fill="#FF5C5C">
+    <ellipse cx="140" cy="274" rx="5" ry="3.4"/>
+    <ellipse cx="160" cy="274" rx="5" ry="3.4"/>
+  </g>
+  <text x="150" y="376" text-anchor="middle" font-size="14.5" font-weight="700" letter-spacing="1.4" fill="#2A2A35">ATTACKER</text>
+  <text x="150" y="397" text-anchor="middle" font-size="13.5" fill="#6B6B7B">trains a backdoor</text>
+
+  <line x1="212" y1="290" x2="272" y2="290" stroke="#E8503A" stroke-width="2.5" marker-end="url(#mRed)"/>
+  <text x="242" y="276" text-anchor="middle" font-size="13.5" font-weight="600" fill="#C8402F">upload</text>
+
+  <!-- ===== Public model hub, drawn as a shelf of cartridges ===== -->
+  <g filter="url(#soft)">
+    <rect x="280" y="200" width="240" height="180" rx="14" fill="#FFFFFF" stroke="#2A2A35" stroke-width="2.5"/>
+  </g>
+  <line x1="280" y1="238" x2="520" y2="238" stroke="#2A2A35" stroke-width="2"/>
+  <text x="400" y="226" text-anchor="middle" font-size="14.5" font-weight="700" letter-spacing="1.5" fill="#2A2A35">PUBLIC MODEL HUB</text>
+
+  <g stroke="#E4DCD0" stroke-width="2">
+    <line x1="290" y1="283" x2="510" y2="283"/>
+    <line x1="290" y1="323" x2="510" y2="323"/>
+    <line x1="290" y1="363" x2="510" y2="363"/>
+  </g>
+
+  <g stroke="#2A2A35" stroke-width="2">
+    <g transform="translate(298,253)"><rect width="44" height="28" rx="5" fill="#DCE3EC"/><rect x="5" y="5" width="34" height="9" rx="2" fill="#FFFFFF" stroke="none" opacity="0.75"/><rect x="10" y="22" width="8" height="3" rx="1" fill="#2A2A35" stroke="none" opacity="0.3"/><rect x="26" y="22" width="8" height="3" rx="1" fill="#2A2A35" stroke="none" opacity="0.3"/></g>
+    <g transform="translate(350,253)"><rect width="44" height="28" rx="5" fill="#E7DFF2"/><rect x="5" y="5" width="34" height="9" rx="2" fill="#FFFFFF" stroke="none" opacity="0.75"/><rect x="10" y="22" width="8" height="3" rx="1" fill="#2A2A35" stroke="none" opacity="0.3"/><rect x="26" y="22" width="8" height="3" rx="1" fill="#2A2A35" stroke="none" opacity="0.3"/></g>
+    <g transform="translate(402,253)"><rect width="44" height="28" rx="5" fill="#DDEBE1"/><rect x="5" y="5" width="34" height="9" rx="2" fill="#FFFFFF" stroke="none" opacity="0.75"/><rect x="10" y="22" width="8" height="3" rx="1" fill="#2A2A35" stroke="none" opacity="0.3"/><rect x="26" y="22" width="8" height="3" rx="1" fill="#2A2A35" stroke="none" opacity="0.3"/></g>
+    <g transform="translate(454,253)"><rect width="44" height="28" rx="5" fill="#F0E4D4"/><rect x="5" y="5" width="34" height="9" rx="2" fill="#FFFFFF" stroke="none" opacity="0.75"/><rect x="10" y="22" width="8" height="3" rx="1" fill="#2A2A35" stroke="none" opacity="0.3"/><rect x="26" y="22" width="8" height="3" rx="1" fill="#2A2A35" stroke="none" opacity="0.3"/></g>
+
+    <g transform="translate(298,293)"><rect width="44" height="28" rx="5" fill="#F0E4D4"/><rect x="5" y="5" width="34" height="9" rx="2" fill="#FFFFFF" stroke="none" opacity="0.75"/><rect x="10" y="22" width="8" height="3" rx="1" fill="#2A2A35" stroke="none" opacity="0.3"/><rect x="26" y="22" width="8" height="3" rx="1" fill="#2A2A35" stroke="none" opacity="0.3"/></g>
+    <g transform="translate(350,293)"><rect width="44" height="28" rx="5" fill="#DCE3EC"/><rect x="5" y="5" width="34" height="9" rx="2" fill="#FFFFFF" stroke="none" opacity="0.75"/><rect x="10" y="22" width="8" height="3" rx="1" fill="#2A2A35" stroke="none" opacity="0.3"/><rect x="26" y="22" width="8" height="3" rx="1" fill="#2A2A35" stroke="none" opacity="0.3"/></g>
+    <g transform="translate(402,293)"><rect width="44" height="28" rx="5" fill="#D9E7F2"/><rect x="5" y="5" width="34" height="9" rx="2" fill="#FFFFFF" stroke="none" opacity="0.75"/><rect x="10" y="22" width="8" height="3" rx="1" fill="#2A2A35" stroke="none" opacity="0.3"/><rect x="26" y="22" width="8" height="3" rx="1" fill="#2A2A35" stroke="none" opacity="0.3"/></g>
+    <g transform="translate(454,293)"><rect width="44" height="28" rx="5" fill="#DDEBE1"/><rect x="5" y="5" width="34" height="9" rx="2" fill="#FFFFFF" stroke="none" opacity="0.75"/><rect x="10" y="22" width="8" height="3" rx="1" fill="#2A2A35" stroke="none" opacity="0.3"/><rect x="26" y="22" width="8" height="3" rx="1" fill="#2A2A35" stroke="none" opacity="0.3"/></g>
+
+    <g transform="translate(298,333)"><rect width="44" height="28" rx="5" fill="#E7DFF2"/><rect x="5" y="5" width="34" height="9" rx="2" fill="#FFFFFF" stroke="none" opacity="0.75"/><rect x="10" y="22" width="8" height="3" rx="1" fill="#2A2A35" stroke="none" opacity="0.3"/><rect x="26" y="22" width="8" height="3" rx="1" fill="#2A2A35" stroke="none" opacity="0.3"/></g>
+    <g transform="translate(350,333)"><rect width="44" height="28" rx="5" fill="#DDEBE1"/><rect x="5" y="5" width="34" height="9" rx="2" fill="#FFFFFF" stroke="none" opacity="0.75"/><rect x="10" y="22" width="8" height="3" rx="1" fill="#2A2A35" stroke="none" opacity="0.3"/><rect x="26" y="22" width="8" height="3" rx="1" fill="#2A2A35" stroke="none" opacity="0.3"/></g>
+    <g transform="translate(402,333)"><rect width="44" height="28" rx="5" fill="#F0E4D4"/><rect x="5" y="5" width="34" height="9" rx="2" fill="#FFFFFF" stroke="none" opacity="0.75"/><rect x="10" y="22" width="8" height="3" rx="1" fill="#2A2A35" stroke="none" opacity="0.3"/><rect x="26" y="22" width="8" height="3" rx="1" fill="#2A2A35" stroke="none" opacity="0.3"/></g>
+    <g transform="translate(454,333)"><rect width="44" height="28" rx="5" fill="#DCE3EC"/><rect x="5" y="5" width="34" height="9" rx="2" fill="#FFFFFF" stroke="none" opacity="0.75"/><rect x="10" y="22" width="8" height="3" rx="1" fill="#2A2A35" stroke="none" opacity="0.3"/><rect x="26" y="22" width="8" height="3" rx="1" fill="#2A2A35" stroke="none" opacity="0.3"/></g>
+  </g>
+
+  <!-- the poisoned one is the same object, only ringed so the reader can follow it -->
+  <rect x="346" y="289" width="52" height="36" rx="8" fill="none" stroke="#E8503A" stroke-width="2.2" stroke-dasharray="6 4"/>
+
+  <text x="400" y="404" text-anchor="middle" font-size="13.5" fill="#6B6B7B">thousands of adapters</text>
+  <text x="400" y="425" text-anchor="middle" font-size="13.5" font-weight="700" fill="#C8402F">one of them is poisoned</text>
+
+  <line x1="526" y1="290" x2="592" y2="290" stroke="#2A2A35" stroke-width="2.5" marker-end="url(#mInk)"/>
+  <text x="559" y="276" text-anchor="middle" font-size="13.5" font-weight="600" fill="#2A2A35">download</text>
+
+  <!-- ===== Your serving stack: frozen slab, adapter snapped on top ===== -->
+  <ellipse cx="697" cy="276" rx="26" ry="7" fill="#2A2A35" opacity="0.16"/>
+  <g filter="url(#soft)">
+    <path d="M610,280 L634,256 L784,256 L760,280 Z" fill="#EAF6FB" stroke="#2A2A35" stroke-width="2.5" stroke-linejoin="round"/>
+    <path d="M760,280 L784,256 L784,302 L760,326 Z" fill="#A9D4E6" stroke="#2A2A35" stroke-width="2.5" stroke-linejoin="round"/>
+    <rect x="610" y="280" width="150" height="46" rx="4" fill="#CFE9F5" stroke="#2A2A35" stroke-width="2.5"/>
+  </g>
+  <g fill="#6FBBD8">
+    <path d="M628,300 L629,303 L632,304 L629,305 L628,308 L627,305 L624,304 L627,303 Z"/>
+    <path d="M742,306 L743,309 L746,310 L743,311 L742,314 L741,311 L738,310 L741,309 Z"/>
+  </g>
+  <g filter="url(#soft)">
+    <g stroke="#2A2A35" stroke-width="2" transform="translate(675,240)">
+      <rect width="44" height="28" rx="5" fill="#DCE3EC"/>
+      <rect x="5" y="5" width="34" height="9" rx="2" fill="#FFFFFF" stroke="none" opacity="0.75"/>
+      <rect x="10" y="22" width="8" height="3" rx="1" fill="#2A2A35" stroke="none" opacity="0.3"/>
+      <rect x="26" y="22" width="8" height="3" rx="1" fill="#2A2A35" stroke="none" opacity="0.3"/>
+    </g>
+  </g>
+  <rect x="671" y="236" width="52" height="36" rx="8" fill="none" stroke="#E8503A" stroke-width="2.2" stroke-dasharray="6 4"/>
+
+  <text x="697" y="356" text-anchor="middle" font-size="14.5" font-weight="700" letter-spacing="1.4" fill="#2A2A35">FROZEN BASE + ADAPTER</text>
+
+  <line x1="792" y1="290" x2="838" y2="290" stroke="#2A2A35" stroke-width="2.5" marker-end="url(#mInk)"/>
+
+  <!-- ===== Your app ===== -->
+  <g filter="url(#soft)">
+    <rect x="844" y="254" width="96" height="72" rx="8" fill="#FFFFFF" stroke="#2A2A35" stroke-width="2.5"/>
+  </g>
+  <line x1="844" y1="274" x2="940" y2="274" stroke="#2A2A35" stroke-width="2"/>
+  <g fill="#C9C2B6">
+    <circle cx="856" cy="264" r="2.6"/>
+    <circle cx="866" cy="264" r="2.6"/>
+    <circle cx="876" cy="264" r="2.6"/>
+  </g>
+  <g fill="#DCE3EC">
+    <rect x="856" y="286" width="72" height="7" rx="3.5"/>
+    <rect x="856" y="300" width="50" height="7" rx="3.5"/>
+  </g>
+  <text x="892" y="356" text-anchor="middle" font-size="14.5" font-weight="700" letter-spacing="1.2" fill="#2A2A35">YOUR APP</text>
+
+  <!-- ===== The trust gap ===== -->
+  <g transform="translate(346,456)" fill="none" stroke="#E09400" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M0,-13 L13,9 L-13,9 Z"/>
+    <path d="M0,-6 L0,1"/>
+    <circle cx="0" cy="5.5" r="1.5" fill="#E09400" stroke="none"/>
+  </g>
+  <text x="371" y="462" font-size="16" font-weight="700" fill="#8A6A10">Nothing here checks what the adapter learned</text>
+</svg>
