@@ -1,20 +1,25 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" role="img" aria-labelledby="th dh">
-  <title id="th">Windows Runtime Attestation Report, Part 3 of 4: The Secure Hotpatch Report</title>
-  <desc id="dh">Part 3 of the Windows Runtime Attestation Report series. The large question "Patch or attack?" appears in green, white, and red above the series name and the post title.</desc>
+  <title id="th">Windows Runtime Attestation Report, PART 3 OF 5: The Secure Hotpatch Report</title>
+  <desc id="dh">Part 3 of the Windows Runtime Attestation Report series. The large question "Patch or attack?" appears in green, white, and red below the series name and above the post title, over a strip of kernel-mode code with modified bytes highlighted in amber.</desc>
 
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#101216"/>
       <stop offset="1" stop-color="#292e37"/>
     </linearGradient>
-    <radialGradient id="redGlow" cx="0.78" cy="0.5" r="0.62">
+    <radialGradient id="redGlow" cx="0.78" cy="0.42" r="0.62">
       <stop offset="0" stop-color="#ff4d5a" stop-opacity="0.20"/>
       <stop offset="1" stop-color="#ff4d5a" stop-opacity="0"/>
     </radialGradient>
-    <radialGradient id="greenGlow" cx="0.22" cy="0.5" r="0.62">
+    <radialGradient id="greenGlow" cx="0.22" cy="0.42" r="0.58">
       <stop offset="0" stop-color="#35d878" stop-opacity="0.18"/>
       <stop offset="1" stop-color="#35d878" stop-opacity="0"/>
     </radialGradient>
+    <linearGradient id="strokeFade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#3b4554" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#3b4554" stop-opacity="1"/>
+      <stop offset="1" stop-color="#3b4554" stop-opacity="0"/>
+    </linearGradient>
     <filter id="headlineGlow" x="-20%" y="-40%" width="140%" height="180%">
       <feGaussianBlur stdDeviation="5" result="blur"/>
       <feMerge>
@@ -28,40 +33,42 @@
   <rect x="0" y="0" width="1200" height="630" fill="url(#greenGlow)"/>
   <rect x="0" y="0" width="1200" height="630" fill="url(#redGlow)"/>
 
-  <!-- thumbnail hook -->
-  <text x="350" y="167" text-anchor="middle" font-family="'Arial Black', Arial, sans-serif" font-size="82" font-weight="900" letter-spacing="-0.8" fill="#68e38e" filter="url(#headlineGlow)">PATCH</text>
-  <text x="600" y="167" text-anchor="middle" font-family="'Arial Black', Arial, sans-serif" font-size="82" font-weight="900" letter-spacing="-0.8" fill="#ffffff" filter="url(#headlineGlow)">OR</text>
-  <text x="910" y="167" text-anchor="middle" font-family="'Arial Black', Arial, sans-serif" font-size="82" font-weight="900" letter-spacing="-0.8" fill="#ff746a" filter="url(#headlineGlow)">ATTACK?</text>
-  <text x="600" y="264" text-anchor="middle" font-size="34" font-weight="700" fill="#a8d8ff" letter-spacing="1.4">WINDOWS RUNTIME ATTESTATION REPORT</text>
-  <text x="600" y="318" text-anchor="middle" font-size="34" font-weight="700" fill="#ffd166" letter-spacing="1.4">PART 3 OF 4</text>
-  <text x="600" y="376" text-anchor="middle" font-size="34" font-weight="700" fill="#f4f6f8" letter-spacing="1.4">THE SECURE HOTPATCH REPORT</text>
+  <!-- series eyebrow: metadata, deliberately quiet -->
+  <text x="600" y="100" text-anchor="middle" font-size="26" font-weight="700" letter-spacing="2.6"><tspan fill="#a8d8ff">WINDOWS RUNTIME ATTESTATION REPORT</tspan><tspan dx="14" fill="#55637a">&#183;</tspan><tspan dx="14" fill="#ffd166">PART 3 OF 5</tspan></text>
+  <rect x="440" y="128" width="320" height="2" fill="url(#strokeFade)"/>
 
+  <!-- thumbnail hook -->
+  <text x="600" y="270" text-anchor="middle" font-family="'Arial Black', Arial, sans-serif" font-size="88" font-weight="900" letter-spacing="-1.2" filter="url(#headlineGlow)"><tspan fill="#68e38e">PATCH</tspan><tspan dx="30" fill="#ffffff">OR</tspan><tspan dx="30" fill="#ff746a">ATTACK?</tspan></text>
+
+  <!-- post title -->
+  <text x="600" y="372" text-anchor="middle" font-size="42" font-weight="700" fill="#f4f6f8" letter-spacing="1.6">THE SECURE HOTPATCH REPORT</text>
 
   <!-- modified code strip -->
-  <text x="600" y="466" text-anchor="middle" font-size="19" font-weight="600" fill="#c4ccd7" font-family="'SFMono-Regular', Consolas, monospace" letter-spacing="0.5">MODIFIED KERNEL-MODE CODE</text>
+  <text x="600" y="462" text-anchor="middle" font-size="18" font-weight="600" fill="#9aa8b8" font-family="'SFMono-Regular', Consolas, monospace" letter-spacing="1.4">MODIFIED KERNEL-MODE CODE</text>
   <g>
-    <g fill="#3b4554">
-      <rect x="267" y="494" width="22" height="30" rx="3"/>
-      <rect x="294" y="494" width="34" height="30" rx="3"/>
-      <rect x="333" y="494" width="18" height="30" rx="3"/>
-      <rect x="356" y="494" width="44" height="30" rx="3"/>
-      <rect x="405" y="494" width="26" height="30" rx="3"/>
-      <rect x="436" y="494" width="30" height="30" rx="3"/>
-      <rect x="471" y="494" width="16" height="30" rx="3"/>
-      <rect x="492" y="494" width="38" height="30" rx="3"/>
-      <rect x="658" y="494" width="20" height="30" rx="3"/>
-      <rect x="683" y="494" width="36" height="30" rx="3"/>
-      <rect x="724" y="494" width="24" height="30" rx="3"/>
-      <rect x="753" y="494" width="42" height="30" rx="3"/>
-      <rect x="800" y="494" width="18" height="30" rx="3"/>
-      <rect x="823" y="494" width="32" height="30" rx="3"/>
-      <rect x="860" y="494" width="28" height="30" rx="3"/>
-      <rect x="893" y="494" width="40" height="30" rx="3"/>
+    <g fill="#414d5e">
+      <rect x="267" y="488" width="22" height="36" rx="4"/>
+      <rect x="294" y="488" width="34" height="36" rx="4"/>
+      <rect x="333" y="488" width="18" height="36" rx="4"/>
+      <rect x="356" y="488" width="44" height="36" rx="4"/>
+      <rect x="405" y="488" width="26" height="36" rx="4"/>
+      <rect x="436" y="488" width="30" height="36" rx="4"/>
+      <rect x="471" y="488" width="16" height="36" rx="4"/>
+      <rect x="492" y="488" width="38" height="36" rx="4"/>
+      <rect x="658" y="488" width="20" height="36" rx="4"/>
+      <rect x="683" y="488" width="36" height="36" rx="4"/>
+      <rect x="724" y="488" width="24" height="36" rx="4"/>
+      <rect x="753" y="488" width="42" height="36" rx="4"/>
+      <rect x="800" y="488" width="18" height="36" rx="4"/>
+      <rect x="823" y="488" width="32" height="36" rx="4"/>
+      <rect x="860" y="488" width="28" height="36" rx="4"/>
+      <rect x="893" y="488" width="40" height="36" rx="4"/>
     </g>
     <g fill="#ffc33d" filter="url(#headlineGlow)">
-      <rect x="535" y="494" width="28" height="30" rx="3"/>
-      <rect x="568" y="494" width="46" height="30" rx="3"/>
-      <rect x="619" y="494" width="34" height="30" rx="3"/>
+      <rect x="535" y="488" width="28" height="36" rx="4"/>
+      <rect x="568" y="488" width="46" height="36" rx="4"/>
+      <rect x="619" y="488" width="34" height="36" rx="4"/>
     </g>
   </g>
+  <rect x="267" y="542" width="666" height="2" fill="url(#strokeFade)"/>
 </svg>
