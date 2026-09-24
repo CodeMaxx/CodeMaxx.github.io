@@ -1,7 +1,7 @@
 ---
 title: "AI Security Explained #1 - Sleeper Agents in Your AI Model Supply Chain"
 layout: post
-date: 2026-09-24 13:00
+date: 2026-09-24 01:00
 image:
   path: /assets/images/sleeper-agents/hero-sleeper-agents.svg
   alt: "AI Security Explained, Part 1. A single LoRA adapter chip split down the middle by a jagged fracture, struck from above by the trigger word production: the same chip returns a safe parameterised query on one side and a SQL injection on the other."
