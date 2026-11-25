@@ -4,7 +4,7 @@ layout: post
 date: 2026-09-07 07:00
 image:
   path: /assets/images/attestation/hero-attestation.svg
-  alt: "Can the kernel lie? Part 1 of the Windows Runtime Attestation Report series: The Trust Model, above a strip of report bytes ending in a signature highlighted in green."
+  alt: "Can the kernel lie? Part 1 of the Windows Runtime Attestation Report series. Under the question, the normal kernel's unsigned answer 'All clean' sits beside a signed report from the Secure Kernel."
 social_image:
   path: /assets/images/attestation/hero-attestation.png
   width: 2400
