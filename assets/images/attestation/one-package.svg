@@ -31,7 +31,7 @@
   <text x="376" y="176" text-anchor="middle" font-size="14.5" font-weight="700" fill="#186ce0">Driver</text>
   <text x="376" y="196" text-anchor="middle" font-size="14.5" font-weight="700" fill="#186ce0">report</text>
   <text x="376" y="224" text-anchor="middle" font-size="12.5" fill="#57606a">which drivers</text>
-  <text x="376" y="242" text-anchor="middle" font-size="12.5" fill="#57606a">are loaded</text>
+  <text x="376" y="242" text-anchor="middle" font-size="12.5" fill="#57606a">have loaded</text>
 
   <!-- hotpatch report -->
   <rect x="472" y="140" width="160" height="170" rx="10" fill="#eef4ff" stroke="#186ce0" stroke-width="1.5"/>
