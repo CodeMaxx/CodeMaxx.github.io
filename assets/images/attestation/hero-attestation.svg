@@ -37,8 +37,8 @@
   <text x="600" y="100" text-anchor="middle" font-size="26" font-weight="700" letter-spacing="2.6"><tspan fill="#a8d8ff">WINDOWS RUNTIME ATTESTATION REPORT</tspan><tspan dx="14" fill="#55637a">&#183;</tspan><tspan dx="14" fill="#ffd166">PART 1 OF 5</tspan></text>
   <rect x="440" y="128" width="320" height="2" fill="url(#strokeFade)"/>
 
-  <!-- thumbnail hook: no blur on the letters, so the white stays sharp -->
-  <text x="600" y="254" text-anchor="middle" font-family="'Arial Black', Arial, sans-serif" font-size="76" font-weight="900" letter-spacing="-1"><tspan fill="#ffffff">CAN THE KERNEL</tspan><tspan dx="26" fill="#ff746a">LIE?</tspan></text>
+  <!-- thumbnail hook: glows as a whole, the same as the other heroes in the series -->
+  <text x="600" y="254" text-anchor="middle" font-family="'Arial Black', Arial, sans-serif" font-size="76" font-weight="900" letter-spacing="-1" filter="url(#headlineGlow)"><tspan fill="#ffffff">CAN THE KERNEL</tspan><tspan dx="26" fill="#ff746a">LIE?</tspan></text>
 
   <!-- answer one: the normal kernel's word, unsigned -->
   <rect x="140" y="345" width="440" height="190" rx="16" fill="#14171c" fill-opacity="0.78" stroke="#ff746a" stroke-opacity="0.6" stroke-width="2"/>
