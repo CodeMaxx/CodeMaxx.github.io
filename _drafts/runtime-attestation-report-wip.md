@@ -18,9 +18,12 @@ tags:
 blog: true
 description: "How the Windows Runtime Attestation Report gives a remote server signed evidence about kernel state, even when the normal kernel may be compromised."
 ---
-Kernel anti-cheat exists to answer one question: has this machine been tampered with? Its driver runs in the Windows kernel, at the same level as the cheats it is looking for, and it asks the kernel what is loaded and what has changed.
 
-Now picture a cheat that got into the kernel first. Every one of those questions is answered by the part of Windows the attacker already controls, so the answer comes back clean every time.
+The nastiest game cheats don't live in the game, and the nastiest malware doesn't live in your apps. Both run in kernel mode, where user-mode software simply can't see them.
+
+So anti-cheat, EDR and antivirus went into the kernel too. Now it's two drivers at the same privilege level, and whoever loads first, hides best, or blinds the other wins.
+
+That leaves security software asking the kernel what is loaded and what has changed, and getting its answer from a kernel the attacker may already control.
 
 A hacked computer will happily lie to you about being hacked.
 
@@ -32,7 +35,7 @@ _The report still travels out through VTL0. Verification happens later, on your 
 > A note on where this comes from: I work on the Windows Secure Kernel team at Microsoft, and I built the Runtime Attestation Report.
 {: .prompt-info }
 
-Games are the easiest place to picture the problem, but it shows up anywhere a service has to make a trust decision about a machine it can't inspect. I'll come back to those cases at the end.
+Anti-cheat is the example I'll use most in this post, because it is the easiest to picture. The same problem exists for any service that has to make a trust decision about a machine it can't inspect, and I'll come back to those cases at the end.
 
 ## Who are you proving this to?
 
@@ -50,7 +53,7 @@ Remote attestation is usually associated with the TPM and measured boot, where t
 
 The answer cannot come from the normal kernel, since that is the part that might be compromised. It has to come from somewhere the attacker cannot follow.
 
-On a lot of Windows 11 machines, [Virtualization Based Security](https://learn.microsoft.com/windows-hardware/design/device-experiences/oem-vbs){: target="_blank" rel="noopener" } is already enabled. With VBS, Windows runs two kernels instead of one. The normal kernel---the one that drivers, anti-cheat and kernel cheats all run in---is isolated by the hypervisor. On the other side of that boundary is a second kernel, much smaller and more trusted: the Secure Kernel.
+On a lot of Windows 11 machines, [Virtualization Based Security](https://learn.microsoft.com/windows-hardware/design/device-experiences/oem-vbs){: target="_blank" rel="noopener" } is already enabled. With VBS, Windows runs two kernels instead of one. The normal kernel---the one that drivers, security software and kernel-mode malware all run in---is isolated by the hypervisor. On the other side of that boundary is a second kernel, much smaller and more trusted: the Secure Kernel.
 
 The normal world is called VTL0 and the secure world, where the Secure Kernel runs, is VTL1. Even an attacker with full control of VTL0 cannot read VTL1 memory or run code there, because the hypervisor and the CPU's virtualization hardware enforce the boundary. That is the assumption behind everything in this post: the attacker may control the normal kernel, but the hypervisor and the Secure Kernel are intact.
 
@@ -135,7 +138,7 @@ There are three limitations to be aware of.
 
 A report is a snapshot. It describes the machine up to the moment the Secure Kernel built it and says nothing about what happens afterwards, so a driver loaded a second later is not in it. The driver report helps here, because it also keeps entries for drivers that have since been unloaded, so the next report still shows that driver. This is why a service should request reports repeatedly, at times the machine cannot predict.
 
-A report is also narrow. The driver report covers drivers and the hotpatch report covers hotpatched images. Neither says anything about a cheat running in user mode, for example. Consequently, a clean report is not the same thing as a clean machine.
+A report is also narrow. The driver report covers drivers and the hotpatch report covers hotpatched images. Neither says anything about malware running in user mode, for example. Consequently, a clean report is not the same thing as a clean machine.
 
 The third limitation is a relay. A compromised machine can forward the challenge to a second, healthy machine, let that machine produce a genuine signed package, and return it to your server as its own. The nonce does not catch this, because both the signature and the challenge are genuine; they simply came from the wrong computer. This is the [cuckoo attack](https://www.usenix.org/event/hotsec08/tech/full_papers/parno/parno_html/){: target="_blank" rel="noopener" }, described by Bryan Parno in 2008, and it is not specific to Windows: every remote attestation scheme has to deal with it. Tracing the key back through the TPM tells your server which machine produced a report, but not that it is the machine your server meant to check. It's a known gap, and the report doesn't solve it today.
 
@@ -149,7 +152,7 @@ None of this is specific to games. Anti-cheat is where it shows up first, but th
 
 - **Enterprise access** needs to know whether a laptop is in the state that policy requires before it reaches company data.
 
-The report does not answer any of these questions on its own. It provides evidence that VTL0 cannot edit after the fact, which is a much better starting point than anti-cheat has had.
+The report does not answer any of these questions on its own. It provides evidence that VTL0 cannot edit after the fact, which is a much better starting point than security software has had.
 
 ## Try the sample
 
