@@ -1,5 +1,5 @@
 ---
-title: "Can the kernel lie? The Windows Runtime Attestation Report"
+title: "What a hacked kernel can't fake: Inside the Windows Runtime Attestation Report"
 layout: post
 date: 2026-09-07 07:00
 image:
