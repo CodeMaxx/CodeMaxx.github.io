@@ -1,5 +1,5 @@
 ---
-title: "Can you trust a hacked PC? Inside the Windows Runtime Attestation Report"
+title: "Can you trust a hacked PC? An intro to Windows Runtime Attestation"
 layout: post
 date: 2026-09-07 07:00
 image:
