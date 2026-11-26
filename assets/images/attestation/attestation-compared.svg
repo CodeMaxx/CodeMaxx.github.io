@@ -58,5 +58,5 @@
   <text x="668" y="401" font-size="16" font-weight="700" fill="#2E5AA8">A snapshot of</text>
   <text x="668" y="424" font-size="16" font-weight="700" fill="#2E5AA8">specific things</text>
 
-  <text x="480" y="478" text-anchor="middle" font-size="14" fill="#8A8A98">The first three are still useful. The report depends on measured boot to anchor its signing key.</text>
+  <text x="480" y="478" text-anchor="middle" font-size="14" fill="#8A8A98">The first three are still useful for what they cover.</text>
 </svg>

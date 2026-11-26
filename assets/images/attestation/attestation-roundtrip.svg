@@ -76,7 +76,7 @@
   </g>
   <circle cx="162" cy="498" r="15" fill="#8A6A10"/>
   <text x="162" y="503" text-anchor="middle" font-size="15" font-weight="700" fill="#FFFFFF">7</text>
-  <text x="196" y="503" font-size="14.5" fill="#2A2A35">If both hold, it compares the facts to a baseline and applies policy.</text>
+  <text x="196" y="503" font-size="14.5" fill="#2A2A35">If both hold, it checks the reports it needs are there and applies policy.</text>
 
   <text x="480" y="566" text-anchor="middle" font-size="13" fill="#8A8A98">The fresh challenge stops replay. The trusted public key is what gives the signature meaning.</text>
 </svg>

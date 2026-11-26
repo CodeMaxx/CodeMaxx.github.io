@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 420" width="960" height="420" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" role="img" aria-labelledby="t d">
   <title id="t">Two answers to the same question</title>
-  <desc id="d">The same question, "has this machine been tampered with?", is asked twice. The hacked normal kernel in VTL0 answers "all clean", but it may be the compromised thing answering. The Secure Kernel in VTL1 answers with a signed report the hacked kernel cannot forge.</desc>
+  <desc id="d">The same question, "is anything loaded that shouldn't be?", is asked twice. The hacked normal kernel in VTL0 answers "all clean", but it may be the compromised thing answering. The Secure Kernel in VTL1 answers with a signed report the hacked kernel cannot forge.</desc>
 
   <defs>
     <filter id="soft" x="-30%" y="-30%" width="160%" height="170%">
@@ -14,7 +14,7 @@
   <rect x="0" y="0" width="960" height="420" fill="#FBF7F1"/>
   <rect x="0" y="0" width="960" height="420" fill="url(#paper)"/>
 
-  <text x="480" y="50" text-anchor="middle" font-size="17" font-weight="700" fill="#2A2A35">"Has this machine been tampered with?"</text>
+  <text x="480" y="50" text-anchor="middle" font-size="17" font-weight="700" fill="#2A2A35">"Is anything loaded that shouldn't be?"</text>
 
   <!-- ===== Left: the hacked kernel ===== -->
   <g filter="url(#soft)">

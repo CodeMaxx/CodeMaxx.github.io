@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 584" width="960" height="584" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" role="img" aria-labelledby="t d">
   <title id="t">The layout of a runtime report package</title>
-  <desc id="d">A runtime report package, top to bottom. The signed part holds the package header, the 32-byte nonce, and one digest header per report. The signature blob follows, and it is an RSA-PSS signature over the signed part. The authenticated part comes last and holds the reports, each with its own report header. Each digest header in the signed part is the SHA-512 hash of one report, so a report is trusted only when its hash matches its digest header.</desc>
+  <desc id="d">A runtime report package, top to bottom. The signed part holds the package header, the 32-byte nonce, and one digest header per report. The signature blob follows, and it is an RSA-PSS signature over the signed part. The authenticated part comes last and holds the reports, each with its own report header. Each digest header in the signed part holds the SHA-512 hash of one report, so a report is trusted only when its hash matches its digest header.</desc>
 
   <defs>
     <filter id="soft" x="-10%" y="-30%" width="120%" height="170%">

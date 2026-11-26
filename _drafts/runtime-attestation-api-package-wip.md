@@ -20,9 +20,9 @@ description: "Calling GetRuntimeAttestationReport, the layout of the signed pack
 
 Parts [1](/runtime-attestation-report-wip/) and [2](/runtime-attestation-trust-model-wip/) of this series covered why the Windows Runtime Attestation Report exists and why a server can believe one. This post is the practical one.
 
-You call a single Win32 API and get back a buffer of bytes. By the end of this post you'll know what every section of that buffer is for, and how to walk it without trusting a size or an offset before you've checked it.
+You call a single Win32 API and get back a buffer of bytes. I'll go through what each section of that buffer is for, and how the sample walks it without trusting a size or an offset it hasn't checked.
 
-Here's what the [sample](https://github.com/CodeMaxx/windows-runtime-attestation-report){: target="_blank" rel="noopener" } prints for a package that holds two reports:
+Here's what the [sample](https://github.com/CodeMaxx/windows-runtime-attestation-report){: target="_blank" rel="noopener" } prints for a package that holds two reports. It's the same run I showed in Part 1:
 
 ```plaintext
 ========================================================================
@@ -47,9 +47,9 @@ Here's what the [sample](https://github.com/CodeMaxx/windows-runtime-attestation
   ...
 ```
 
-All of that came out of one call. The layout of the package fits in one picture:
+All of that came back in one buffer. The layout of the package fits in one picture:
 
-![The layout of a runtime report package from top to bottom: a signed part holding the package header, the 32-byte nonce and one digest header per report; then the signature blob; then an authenticated part holding each report with its report header. Each digest header is the SHA-512 hash of one report.](/assets/images/attestation/package-layout.svg){: .shadow }
+![The layout of a runtime report package from top to bottom: a signed part holding the package header, the 32-byte nonce and one digest header per report; then the signature blob; then an authenticated part holding each report with its report header. Each digest header holds the SHA-512 hash of one report.](/assets/images/attestation/package-layout.svg){: .shadow }
 _Top to bottom is the order of the bytes in the buffer._
 
 > A note on where this comes from: I work on the Windows Secure Kernel team at Microsoft, and I built the Runtime Attestation Report. The code in this post is from the public sample, which uses only the public Windows SDK.
@@ -112,12 +112,12 @@ If you ask for a type that the running build doesn't support, the call fails wit
 
 You don't know how big the package is up front, so the usual pattern is two calls. The first passes a `NULL` buffer. It fails with `ERROR_INSUFFICIENT_BUFFER`, but it fills in the required size. The second call passes a buffer that big.
 
-There's a wrinkle, though. The package can grow between those two calls: a driver could load, or a hotpatch could land. When that happens, the second call fails with `ERROR_INSUFFICIENT_BUFFER` again, and you resize the buffer and retry.
+There's a catch, though. The package can grow between those two calls: a driver could load, or a hotpatch could land. When that happens, the second call fails with `ERROR_INSUFFICIENT_BUFFER` again, and you resize the buffer and retry.
 
 ![Three steps: ask for the size with a NULL buffer, allocate a buffer of that size, then fetch with the nonce and the buffer. If the fetch fails with ERROR_INSUFFICIENT_BUFFER again, the package grew, so resize and retry.](/assets/images/attestation/size-then-fetch.svg){: .shadow }
 _The sample gives up after four attempts rather than looping forever._
 
-Here is that loop from the sample, reformatted to fit the page and with the error messages removed:
+Here is the loop I use in the sample, reformatted to fit the page and with the error messages removed:
 
 ```cpp
 UINT32 size = 0;
@@ -158,7 +158,7 @@ The first argument is the 32-byte nonce, and [Part 2](/runtime-attestation-trust
 
 ### Two parts and a signature
 
-Going back to the picture, the package has three sections, packed one after another with no padding:
+The package has three sections, packed one after another with no padding:
 
 - The **signed part** comes first. It holds the package header, the nonce, and one digest header for each report.
 
@@ -193,7 +193,7 @@ Two of these fields matter more than they look:
 
 - `PackageSize` is the size of the whole package. The sample compares it with the number of bytes the API returned, and rejects the package if they differ.
 
-The three size fields, `TotalReportDigestsSize`, `SignatureSize` and `TotalAuthenticatedReportsSize`, give the start of each section.
+The three size fields, `TotalReportDigestsSize`, `SignatureSize` and `TotalAuthenticatedReportsSize`, give the size of each section, and each section starts where the one before it ends.
 
 ### Digest headers and report headers
 
@@ -220,13 +220,18 @@ There is one digest header and one report header per report, and both carry the 
 
 ### Finding the sections
 
-The sections follow the header in a fixed order, so four additions give every offset:
+The sections follow the header in a fixed order, so four additions give every offset. `total` is the number of bytes the API returned, and `InRange` is a helper I'll get to in a moment:
 
 ```cpp
 size_t nonceOffset     = sizeof(RUNTIME_REPORT_PACKAGE_HEADER);
 size_t digestsOffset   = nonceOffset + RUNTIME_REPORT_NONCE_SIZE;
 size_t signatureOffset = digestsOffset + header->TotalReportDigestsSize;
 size_t reportsOffset   = signatureOffset + header->SignatureSize;
+
+if (!InRange(reportsOffset, header->TotalAuthenticatedReportsSize, total)) {
+    return false;   // the sections run past the buffer
+}
+size_t reportsEnd = reportsOffset + header->TotalAuthenticatedReportsSize;
 ```
 {: file="src/main.cpp" }
 
@@ -234,7 +239,7 @@ Because nothing is padded, a structure can start at an unaligned offset. The sam
 
 ### Check before you read
 
-The buffer travelled through VTL0. Until the signature has been verified, every size and offset in it could have been chosen by an attacker, and a parser that trusts them will read out of bounds.
+The buffer travelled through VTL0. Until the signature and the digests have been verified, every size and offset in it could have been chosen by an attacker, and a parser that trusts them will read out of bounds.
 
 The sample guards every read with one small helper:
 
@@ -247,9 +252,9 @@ inline bool InRange(size_t offset, size_t length, size_t total)
 ```
 {: file="src/Helpers.h" }
 
-Written this way round, the comparison can't overflow, whatever values the package claims.
+Written this way, the check can't overflow, whatever values the package claims.
 
-Then it walks the reports. `Overlay` is another small helper in the sample, which turns an offset in the buffer into an `UNALIGNED` structure pointer:
+Then it walks the reports. `Overlay` is another small helper in the sample, which turns an offset in the buffer into an `UNALIGNED` structure pointer. I've left out the banner printing:
 
 ```cpp
 size_t cursor = reportsOffset;
@@ -269,11 +274,15 @@ for (UINT16 i = 0; i < header->NumberOfReports; i += 1) {
 
     switch (reportHeader->ReportType) {
     case RuntimeReportTypeDriver:
-        PrintDriverReport(data + cursor, reportSize);
+        if (!PrintDriverReport(data + cursor, reportSize)) {
+            return false;
+        }
         break;
 
     case RuntimeReportTypeHotpatch:
-        PrintHotpatchReport(data + cursor, reportSize);
+        if (!PrintHotpatchReport(data + cursor, reportSize)) {
+            return false;
+        }
         break;
 
     default:
@@ -289,7 +298,7 @@ if (cursor != reportsEnd) {
 ```
 {: file="src/main.cpp" }
 
-That last check is easy to leave out. If the reports don't add up to exactly `TotalAuthenticatedReportsSize`, the package is inconsistent, and the sample rejects it.
+That last check is the one I'd expect people to leave out. If the reports don't add up to exactly `TotalAuthenticatedReportsSize`, the package is inconsistent, and the sample rejects it.
 
 ### What a real verifier adds
 
@@ -323,5 +332,5 @@ The next two posts go through the reports themselves. [Part 4](/secure-hotpatch-
 
 Thank you for reading! If something here is unclear, or you spot a mistake, let me know in the comments. I'd love to hear from you. :)
 
-> Just want the API reference? The Learn page for [`GetRuntimeAttestationReport`](https://learn.microsoft.com/windows/win32/api/sysinfoapi/nf-sysinfoapi-getruntimeattestationreport){: target="_blank" rel="noopener" } has the function parameters and the package layout.
+> Prefer reading the header? Search `winnt.h` for "Runtime Report Definitions". The package layout is drawn there in a comment, above the structures.
 {: .prompt-tip }
