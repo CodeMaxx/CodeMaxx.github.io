@@ -5,7 +5,7 @@ date: 2026-07-31 08:00
 last_modified_at: 2026-09-14
 image:
   path: /assets/images/hotpatch/hero-hotpatch.svg
-  alt: "Patch or attack? Part 3 of the Windows Runtime Attestation Report series: The Secure Hotpatch Report, above a strip of kernel-mode code with modified bytes highlighted."
+  alt: "Patch or attack? Part 4 of the Windows Runtime Attestation Report series: The Secure Hotpatch Report, above a strip of kernel-mode code with modified bytes highlighted."
 social_image:
   path: /assets/images/hotpatch/hero-hotpatch.png
   width: 2400
@@ -260,5 +260,5 @@ Thank you for reading! If something here is unclear, or you spot a mistake, let 
 > New to the series? The concept post is coming soon. In the meantime, grab the [sample repository](https://github.com/CodeMaxx/windows-runtime-attestation-report){: target="_blank" rel="noopener" } and try querying attestation state on your own test environments.
 {: .prompt-tip }
 
-> Note on post order: This article is Part 3 of my series. Because of multiple requests for details on the hotpatch attestation report, I am publishing this deep dive ahead of Parts 1 and 2 (the core Runtime Attestation Report architecture and report format posts). These companion posts are coming shortly.
+> Note on post order: This article is Part 4 of my series. Because of multiple requests for details on the hotpatch attestation report, I am publishing this deep dive ahead of Parts 1 to 3 (the core Runtime Attestation Report architecture and report format posts). These companion posts are coming shortly.
 {: .prompt-danger }

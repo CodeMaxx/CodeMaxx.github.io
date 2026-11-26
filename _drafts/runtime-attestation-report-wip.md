@@ -16,7 +16,7 @@ tags:
 - Anti-Cheat
 - Attestation
 blog: true
-description: "How the Windows Runtime Attestation Report gives a remote server signed evidence about kernel state, even when the normal kernel may be compromised."
+description: "Why a compromised PC can't vouch for itself, where existing attestation stops, and how the Windows Runtime Attestation Report gives a server signed evidence about the running kernel."
 ---
 
 The nastiest game cheats don't live in the game, and the nastiest malware doesn't live in your apps. Both run in kernel mode, where user-mode software simply can't see them.
@@ -27,50 +27,67 @@ That leaves security software asking the kernel what is loaded and what has chan
 
 A hacked computer will happily lie to you about being hacked.
 
-Windows now has a way out of this, and it's genuinely one of my favourite things we've shipped. It's called the Windows Runtime Attestation Report. A single Win32 API, [`GetRuntimeAttestationReport`](https://learn.microsoft.com/windows/win32/api/sysinfoapi/nf-sysinfoapi-getruntimeattestationreport){: target="_blank" rel="noopener" }, returns a package of facts about the machine, signed by a part of Windows that the normal kernel cannot reach. Even a fully compromised normal kernel can't forge that signature.
+![Kernel mode holds a security driver and an attacker's driver side by side at the same privilege level. User mode, below, cannot see into the kernel.](/assets/images/attestation/same-privilege.svg){: .shadow }
+_Security software followed the attackers into the kernel, and neither one is above the other._
 
-![On the left, a hacked normal kernel answers 'all clean' with a red warning. On the right, the Secure Kernel hands back a signed report the hacked kernel cannot forge.](/assets/images/attestation/kernel-lies.svg){: .shadow }
-_The report still travels out through VTL0. Verification happens later, on your server._
+Windows now has a way out of this, and it's genuinely one of my favourite things we've shipped. It's called the Windows Runtime Attestation Report. This post covers the problem it solves, why the attestation that already existed doesn't solve it, and what the report gives you instead. The rest of the series goes into how it works.
 
 > A note on where this comes from: I work on the Windows Secure Kernel team at Microsoft, and I built the Runtime Attestation Report.
 {: .prompt-info }
 
 Anti-cheat is the example I'll use most in this post, because it is the easiest to picture. The same problem exists for any service that has to make a trust decision about a machine it can't inspect, and I'll come back to those cases at the end.
 
-## Who are you proving this to?
+## Why the machine can't vouch for itself
 
 Look at what failed in that scenario. The thing being inspected was also the thing answering the questions, and asking harder or more cleverly doesn't change that.
 
 The decision therefore has to be made somewhere the attacker cannot reach, which in practice is a remote server. The machine collects facts about itself and sends them to that server, which decides whether to trust it.
 
-That only works if the machine cannot alter those facts on the way out. A signed report doesn't un-hack a compromised machine. It removes the attacker's ability to rewrite the evidence once the Secure Kernel has produced it.
-
 This is remote attestation: a machine proving facts about itself to a party that has no reason to believe it.
 
-Remote attestation is usually associated with the TPM and measured boot, where the machine records what it loaded during startup so that a server can check the boot chain afterwards. That answers a different question. Measured boot describes how the machine started; it does not describe a driver that loaded twenty minutes ago or a patch applied since. The Runtime Attestation Report covers the state of the machine at the moment of the request, which is where the "runtime" in the name comes from.
+It only works if the facts come from a part of the machine the attacker doesn't control, and can't be altered on the way to the server. So there are two questions to ask of any attestation scheme: who produces the evidence, and what does the evidence cover?
 
-## An answer the kernel can't forge
+## What exists today, and where it stops
 
-The answer cannot come from the normal kernel, since that is the part that might be compromised. It has to come from somewhere the attacker cannot follow.
+Remote attestation isn't new. Three kinds are in wide use, and each one answers those two questions differently. Here they are next to the report:
 
-On a lot of Windows 11 machines, [Virtualization Based Security](https://learn.microsoft.com/windows-hardware/design/device-experiences/oem-vbs){: target="_blank" rel="noopener" } is already enabled. With VBS, Windows runs two kernels instead of one. The normal kernel---the one that drivers, security software and kernel-mode malware all run in---is isolated by the hypervisor. On the other side of that boundary is a second kernel, much smaller and more trusted: the Secure Kernel.
+![A comparison of four kinds of attestation. Measured boot is produced by firmware and boot code and stops after startup. Linux IMA is produced by the Linux kernel, which measures itself, and doesn't cover changes in memory after load. Enclave attestation covers the code inside the enclave and not the state of the OS around it. The Runtime Attestation Report is produced by the Secure Kernel and covers the Windows kernel at the time of the request.](/assets/images/attestation/attestation-compared.svg){: .shadow }
+_Who produces the evidence, what it covers, and where it stops._
 
-The normal world is called VTL0 and the secure world, where the Secure Kernel runs, is VTL1. Even an attacker with full control of VTL0 cannot read VTL1 memory or run code there, because the hypervisor and the CPU's virtualization hardware enforce the boundary. That is the assumption behind everything in this post: the attacker may control the normal kernel, but the hypervisor and the Secure Kernel are intact.
+### Measured boot
 
-VTL0 is not cut off entirely, or there would be no API to call. It can make requests through a fixed set of calls that VTL1 chooses to answer.
+This is the one most people think of. As a Windows machine starts, the firmware [records in the TPM](https://learn.microsoft.com/windows/security/operating-system-security/system-security/secure-the-windows-10-boot-process){: target="_blank" rel="noopener" } a hash of the firmware, the boot loader, the boot drivers and everything else that loads before the anti-malware driver. A server can later ask for those measurements, signed by the TPM, and check that the machine started the way it should have.
 
-The Secure Kernel holds a private signing key that VTL0 never sees. It signs every package with that key, and your server checks the signature against the matching public key.
+Measured boot describes how the machine started. It does not describe a driver that loaded twenty minutes ago or a patch applied since.
 
-There's a detail here that's easy to get wrong. Your server has to trust that public key *before* the package arrives. If it accepts whatever key is sent along with the package, a compromised machine can generate its own key pair, sign anything it likes and send the matching public key, and the check will pass while proving nothing. That trust is rooted in the TPM. During boot, Windows measures a number of things into the TPM, and the Secure Kernel's public signing key is one of them. Your server replays that log of measurements, checks the result against values the TPM itself has signed, and only then accepts that the key came from a machine that booted the way it claims. So the TPM does have a role here: it anchors the key, while the report describes what is running now. My colleague Andrea Allievi has written about [how the TPM side of this works](https://www.andrea-allievi.com/blog/new-year-post-anti-cheat-evolution-in-windows-11/){: target="_blank" rel="noopener" }, and I'll cover the verification steps later in this series.
+### Runtime measurement on Linux
 
-![The VBS trust boundary: VTL0 carries a signed package across the boundary but cannot alter it; the Secure Kernel in VTL1 holds the signing key VTL0 never sees.](/assets/images/attestation/trust-boundary.svg){: .shadow }
-_VTL0 asks and VTL1 answers, which is also how your server's challenge gets across._
+Linux goes further with the [Integrity Measurement Architecture](https://ima-doc.readthedocs.io/en/latest/ima-concepts.html){: target="_blank" rel="noopener" } (IMA). Depending on policy, IMA hashes files as they are opened, executed or loaded as kernel modules. It appends each hash to a log and extends a TPM register with it, so a server can check that the log hasn't been edited.
 
-Everything in VTL0, including the application that requests the report, acts as an untrusted courier carrying a sealed envelope. It can read the contents or fail to deliver them, but any change to the contents breaks the seal.
+That covers the time after boot. But IMA is part of the Linux kernel, so the measuring is done by the kernel being measured. It also measures a file when the file is loaded, and changes made in memory afterwards are out of its scope.
 
-One more point matters for anyone writing policy. A verified package proves that the Secure Kernel produced it. It does not say where the Secure Kernel got each fact. A notary's stamp works the same way: it proves the document was signed in front of the notary and says nothing about whether the contents are true. Some fields in a report are measured by VTL1 itself, while others are supplied by VTL0 and recorded as given. Both are covered by the same signature, so a policy needs to know which is which. The [hotpatch post](/secure-hotpatch-report/) shows exactly where that line falls for one report type.
+### Enclave attestation
 
-## What the package contains
+The third kind comes from trusted execution environments such as Intel SGX, AWS Nitro Enclaves and VBS enclaves on Windows. An enclave is a small isolated region that the rest of the system can't read or modify. It can produce a signed statement about itself: which code is running inside it, and that the platform underneath is genuine. On Windows the call is [`EnclaveGetAttestationReport`](https://learn.microsoft.com/windows/win32/api/winenclaveapi/nf-winenclaveapi-enclavegetattestationreport){: target="_blank" rel="noopener" }, which returns a report that "describes the current enclave".
+
+That is the right evidence if you need to know that your code is running untouched inside the enclave. It says nothing about the state of the operating system around the enclave, which is what anti-cheat or EDR wants to know.
+
+## The Windows Runtime Attestation Report
+
+None of those three tells a server what a Windows kernel has loaded *right now*, in a form that kernel can't rewrite. The Runtime Attestation Report is built for that gap. A single Win32 API, [`GetRuntimeAttestationReport`](https://learn.microsoft.com/windows/win32/api/sysinfoapi/nf-sysinfoapi-getruntimeattestationreport){: target="_blank" rel="noopener" }, returns a package of facts about the machine as it is at the moment of the call, which is where the "runtime" in the name comes from.
+
+The normal kernel doesn't produce or sign that package. On a machine with [Virtualization Based Security](https://learn.microsoft.com/windows-hardware/design/device-experiences/oem-vbs){: target="_blank" rel="noopener" } enabled, Windows runs a second, much smaller kernel called the Secure Kernel, and the hypervisor isolates it from the normal one. The Secure Kernel signs every package with a key the normal kernel never sees, so even a fully compromised normal kernel can't forge that signature.
+
+Windows calls the normal world VTL0 and the secure world VTL1. You'll see those names in the figures and through the rest of the series, and Part 2 covers how the isolation works and why a server can rely on it.
+
+Measured boot still has a job here: it is how a server comes to trust the Secure Kernel's signing key, which Part 6 covers.
+
+![On the left, a hacked normal kernel answers 'all clean' with a red warning. On the right, the Secure Kernel hands back a signed report the hacked kernel cannot forge.](/assets/images/attestation/kernel-lies.svg){: .shadow }
+_The report still travels out through VTL0. Verification happens later, on your server._
+
+Each request also carries a fresh random value chosen by your server, and the Secure Kernel signs that value into the package. An old package doesn't contain the new value, so it can't be passed off as a current one.
+
+### What's in a package
 
 The package works like an envelope with several documents inside, and each document is a report of a particular type:
 
@@ -95,52 +112,16 @@ Here is the top of a package from the sample, run on a test machine:
   signature : RSA-PSS SHA-512
 ```
 
-The package holds two reports in about ten kilobytes, with a single signature that authenticates both through their digests. A later post covers the format field by field. For now, the important detail is that the list of report types in the package is *inside* the signed part, which matters once the attacker has the kernel.
+The package holds two reports in about ten kilobytes, with a single signature that authenticates both through their digests. Part 3 covers the format field by field.
 
 ![A signed outer envelope containing a fresh challenge and the Driver, Hotpatch, and Code Integrity report types defined by the Windows SDK. This series focuses on Driver and Hotpatch.](/assets/images/attestation/one-package.svg){: .shadow }
 _The list of report types in the package sits inside the signed part, so your server can tell when one is missing._
 
-## How the round trip works
+### What a report doesn't do
 
-The code is in the next post, but it helps to know the shape of the exchange first.
+A signed report doesn't un-hack a compromised machine. It removes the attacker's ability to rewrite the evidence once the Secure Kernel has produced it.
 
-1. Your server picks a fresh random number and sends it to the machine as a challenge.
-2. Your app calls `GetRuntimeAttestationReport`, saying which reports it wants and passing along that challenge.
-3. The Secure Kernel builds each requested report and puts them in one package.
-4. It signs the package, with your challenge inside it, and hands it back to your app.
-5. Your app sends the signed package to your server.
-6. Your server verifies it using a public key it already trusts, then checks that the challenge inside is the exact one it just sent.
-7. If both hold, your server checks that every report its policy needs is in the package, then reads the facts and applies that policy.
-
-![A numbered round trip: the server sends a fresh challenge, the app calls the API, the Secure Kernel produces a signed package, the app returns it, and the server verifies the package with a trusted key before applying policy.](/assets/images/attestation/attestation-roundtrip.svg){: .shadow }
-_Steps 1, 6 and 7 are your server's responsibility. The app in the middle is only a courier and never has to be trusted._
-
-The challenge in step 1 is a nonce, and it prevents replay. Without it, an attacker could capture one valid package from a healthy machine and resend it indefinitely, long after the machine was compromised. Because your server picks an unpredictable value each time and requires the same value inside the signed package, an old package no longer matches. A server that doesn't generate the nonce, or doesn't check it on return, gains nothing from it.
-
-## Now give the attacker the kernel
-
-Assume the attacker controls the entire normal kernel, while the hypervisor and the Secure Kernel are intact. These are the moves available.
-
-**Tamper.** The attacker modifies the package, for example by removing a driver entry. Every report is bound to the signature through its digest, so any change makes verification fail and your server discards the package.
-
-**Replay.** The attacker sends an old package, either one your server accepted earlier or one taken from another machine. That package contains a different challenge from the one in the current request, so your server rejects it.
-
-**Ask for less.** The policy requires the driver report, so the compromised app requests only the hotpatch report and returns a package that is valid but incomplete. This is where the signed list of report types matters. The package states which report types it contains, the attacker cannot edit that list, and your server rejects any package that is missing a report its policy requires.
-
-**Suppress.** The attacker blocks the call, drops the response, or runs with VBS disabled so that no report can be produced. An attacker can always stop a report from arriving. Whether a missing report counts as a failure is up to your server's policy.
-
-None of these moves produces a valid VTL1 signature, because the signing key is out of the attacker's reach.
-
-![An attacker in control of VTL0 tries to tamper with, replay, trim, and suppress the package; verification catches the first three, suppression leaves you with no answer, and forging a new signature is impossible without the VTL1 key.](/assets/images/attestation/attacker-moves.svg){: .shadow }
-_Verification catches tampering and replay, and tells your server when a required report is missing. A missing package is a separate policy case._
-
-There are three limitations to be aware of.
-
-A report is a snapshot. It describes the machine up to the moment the Secure Kernel built it and says nothing about what happens afterwards, so a driver loaded a second later is not in it. The driver report helps here, because it also keeps entries for drivers that have since been unloaded, so the next report still shows that driver. This is why a service should request reports repeatedly, at times the machine cannot predict.
-
-A report is also narrow. The driver report covers drivers and the hotpatch report covers hotpatched images. Neither says anything about malware running in user mode, for example. Consequently, a clean report is not the same thing as a clean machine.
-
-The third limitation is a relay. A compromised machine can forward the challenge to a second, healthy machine, let that machine produce a genuine signed package, and return it to your server as its own. The nonce does not catch this, because both the signature and the challenge are genuine; they simply came from the wrong computer. This is the [cuckoo attack](https://www.usenix.org/event/hotsec08/tech/full_papers/parno/parno_html/){: target="_blank" rel="noopener" }, described by Bryan Parno in 2008, and it is not specific to Windows: every remote attestation scheme has to deal with it. Tracing the key back through the TPM tells your server which machine produced a report, but not that it is the machine your server meant to check. It's a known gap, and the report doesn't solve it today.
+A report is also a snapshot, and each report type covers one thing, so a clean report is not the same thing as a clean machine. Part 6 goes through what your server has to check, and what an attacker can still do.
 
 ## What this is good for
 
@@ -164,11 +145,12 @@ The driver report requires Windows 11 25H2 or later with VBS and HVCI enabled. T
 
 The rest of the series:
 
-1. **This post.** Why a compromised kernel can't vouch for itself, and what a signed report does and doesn't prove.
-2. **The package and the API.** What comes back from the call field by field, and how to pull the reports out in code.
-3. **[The Secure Hotpatch Report](/secure-hotpatch-report/).** Telling a real Microsoft hotpatch apart from kernel tampering.
-4. **The driver report.** Every driver the machine has loaded, including the ones that are gone again, with the identity you need to spot an impostor.
-5. **Trusting the key.** How your server uses the TPM to decide the signing key belongs to a real Secure Kernel.
+1. **This post.** The problem, why existing attestation doesn't solve it, and a first look at the report.
+2. **Why you can believe it.** Two kernels, the signing key, and the round trip between your server and the machine.
+3. **The package and the API.** What comes back from the call field by field, and how to pull the reports out in code.
+4. **[The Secure Hotpatch Report](/secure-hotpatch-report/).** Telling a real Microsoft hotpatch apart from kernel tampering.
+5. **The driver report.** Every driver the machine has loaded, including the ones that are gone again, with the identity you need to spot an impostor.
+6. **Checking a report.** How your server uses the TPM to trust the signing key, what it has to verify, and what an attacker can still do.
 
 Thank you for reading! If something here is unclear, or you spot a mistake, let me know in the comments. I'd love to hear from you. :)
 
