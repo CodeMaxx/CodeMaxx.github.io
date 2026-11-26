@@ -38,35 +38,35 @@
   <rect x="440" y="128" width="320" height="2" fill="url(#strokeFade)"/>
 
   <!-- thumbnail hook: glows as a whole, the same as the other heroes in the series -->
-  <text x="600" y="254" text-anchor="middle" font-family="'Arial Black', Arial, sans-serif" font-size="76" font-weight="900" letter-spacing="-1" filter="url(#headlineGlow)"><tspan fill="#ffffff">CAN THE KERNEL</tspan><tspan dx="26" fill="#ff746a">LIE?</tspan></text>
+  <text x="600" y="240" text-anchor="middle" font-family="'Arial Black', Arial, sans-serif" font-size="76" font-weight="900" letter-spacing="-1" filter="url(#headlineGlow)"><tspan fill="#ffffff">CAN THE KERNEL</tspan><tspan dx="26" fill="#ff746a">LIE?</tspan></text>
 
   <!-- answer one: the normal kernel's word, unsigned -->
-  <rect x="140" y="345" width="440" height="190" rx="16" fill="#14171c" fill-opacity="0.78" stroke="#ff746a" stroke-opacity="0.6" stroke-width="2"/>
-  <text x="168" y="387" font-size="16" font-weight="600" fill="#9aa8b8" font-family="'SFMono-Regular', Consolas, monospace" letter-spacing="1.4">NORMAL KERNEL &#183; VTL0</text>
-  <text x="168" y="453" font-size="46" font-weight="700" fill="#f4f6f8">&#8220;All clean.&#8221;</text>
-  <g stroke="#ff746a" stroke-width="3.2" stroke-linecap="round">
-    <line x1="169" y1="487" x2="184" y2="502"/>
-    <line x1="184" y1="487" x2="169" y2="502"/>
+  <rect x="140" y="310" width="440" height="240" rx="18" fill="#14171c" fill-opacity="0.78" stroke="#ff746a" stroke-opacity="0.6" stroke-width="2"/>
+  <text x="168" y="360" font-size="20" font-weight="600" fill="#9aa8b8" font-family="'SFMono-Regular', Consolas, monospace" letter-spacing="1.6">NORMAL KERNEL &#183; VTL0</text>
+  <text x="168" y="448" font-size="58" font-weight="700" fill="#f4f6f8">&#8220;All clean.&#8221;</text>
+  <g stroke="#ff746a" stroke-width="3.6" stroke-linecap="round">
+    <line x1="170" y1="493" x2="188" y2="511"/>
+    <line x1="188" y1="493" x2="170" y2="511"/>
   </g>
-  <text x="198" y="502" font-size="20" font-weight="600" fill="#ff9d95">No signature. Nothing to verify.</text>
+  <text x="204" y="511" font-size="24" font-weight="600" fill="#ff9d95">No signature. Nothing to verify.</text>
 
   <!-- answer two: the Secure Kernel's signed report -->
-  <rect x="620" y="345" width="440" height="190" rx="16" fill="#14171c" fill-opacity="0.78" stroke="#68e38e" stroke-opacity="0.6" stroke-width="2"/>
-  <text x="648" y="387" font-size="16" font-weight="600" fill="#9aa8b8" font-family="'SFMono-Regular', Consolas, monospace" letter-spacing="1.4">SECURE KERNEL &#183; VTL1</text>
+  <rect x="620" y="310" width="440" height="240" rx="18" fill="#14171c" fill-opacity="0.78" stroke="#68e38e" stroke-opacity="0.6" stroke-width="2"/>
+  <text x="648" y="360" font-size="20" font-weight="600" fill="#9aa8b8" font-family="'SFMono-Regular', Consolas, monospace" letter-spacing="1.6">SECURE KERNEL &#183; VTL1</text>
   <g fill="#414d5e">
-    <rect x="648" y="419" width="22" height="34" rx="4"/>
-    <rect x="675" y="419" width="34" height="34" rx="4"/>
-    <rect x="714" y="419" width="18" height="34" rx="4"/>
-    <rect x="737" y="419" width="44" height="34" rx="4"/>
-    <rect x="786" y="419" width="26" height="34" rx="4"/>
-    <rect x="817" y="419" width="30" height="34" rx="4"/>
+    <rect x="648" y="404" width="22" height="46" rx="5"/>
+    <rect x="675" y="404" width="34" height="46" rx="5"/>
+    <rect x="714" y="404" width="18" height="46" rx="5"/>
+    <rect x="737" y="404" width="44" height="46" rx="5"/>
+    <rect x="786" y="404" width="26" height="46" rx="5"/>
+    <rect x="817" y="404" width="30" height="46" rx="5"/>
   </g>
   <g fill="#68e38e" filter="url(#headlineGlow)">
-    <rect x="852" y="419" width="28" height="34" rx="4"/>
-    <rect x="885" y="419" width="46" height="34" rx="4"/>
-    <rect x="936" y="419" width="34" height="34" rx="4"/>
-    <rect x="975" y="419" width="40" height="34" rx="4"/>
+    <rect x="852" y="404" width="28" height="46" rx="5"/>
+    <rect x="885" y="404" width="46" height="46" rx="5"/>
+    <rect x="936" y="404" width="34" height="46" rx="5"/>
+    <rect x="975" y="404" width="40" height="46" rx="5"/>
   </g>
-  <polyline points="168,495 175,502 188,487" transform="translate(480,0)" fill="none" stroke="#68e38e" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
-  <text x="682" y="502" font-size="20" font-weight="600" fill="#8eeaa9">Signed in VTL1. Can't be forged.</text>
+  <polyline points="650,503 658,511 673,494" fill="none" stroke="#68e38e" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="684" y="511" font-size="24" font-weight="600" fill="#8eeaa9">Signed in VTL1. Can't be forged.</text>
 </svg>
