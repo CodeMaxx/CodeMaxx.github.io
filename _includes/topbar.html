@@ -25,6 +25,8 @@
     <div id="topbar-title">
       {% if page.layout == 'home' and page.list_source %}
         {{- page.title -}}
+      {% elsif page.layout == 'series' %}
+        {{- page.title -}}
       {% elsif page.layout == 'post' %}
         {%- if page.writeup -%}Write-ups{%- elsif page.projects -%}Projects{%- elsif page.blog -%}Blog{%- else -%}{{ page.title }}{%- endif -%}
       {% elsif page.collection == 'tabs' or page.layout == 'page' %}

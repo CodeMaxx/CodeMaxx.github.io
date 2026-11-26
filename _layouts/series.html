@@ -1,0 +1,78 @@
+---
+layout: default
+---
+
+{% include lang.html %}
+
+{% include series-data.html id=page.slug %}
+
+{% assign series_live = series_posts | size %}
+
+{% comment %} Offer a place to start only when the first part is out. {% endcomment %}
+{% assign series_start = nil %}
+{% assign series_field = series_keys | first | split: '|' %}
+{% if series_field[1] == 'post' %}
+  {% assign series_index = series_field[2] | plus: 0 %}
+  {% assign series_start = series_posts[series_index] %}
+{% endif %}
+
+<div class="listing series-page">
+  <header class="listing-header">
+    <p class="series-eyebrow">
+      <i class="fas fa-layer-group" aria-hidden="true"></i>Series &middot; {{ series_count }} {{ series_units }}
+      {%- if series_live < series_count %} &middot; {{ series_live }} published{% endif %}
+    </p>
+    <h1 class="listing-title">{{ page.title }}</h1>
+    <div class="listing-subtitle series-intro">{{ content }}</div>
+
+    {% if series_start or page.links %}
+      <div class="series-actions">
+        {% if series_start %}
+          <a class="series-cta" href="{{ series_start.url | relative_url }}">
+            Start with {{ series_unit }} {{ series_start.series_part }}
+            <i class="fas fa-arrow-right" aria-hidden="true"></i>
+          </a>
+        {% endif %}
+        {% for link in page.links %}
+          <a class="series-link" href="{{ link.url }}" target="_blank" rel="noopener">
+            {% if link.icon %}<i class="{{ link.icon }}" aria-hidden="true"></i>{% endif %}
+            {{ link.title }}
+          </a>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </header>
+
+  <div id="post-list" class="flex-grow-1 px-xl-1">
+    {% for series_key in series_keys %}
+      {% assign series_field = series_key | split: '|' %}
+      {% assign series_number = series_field[0] | minus: 100000 %}
+      {% assign series_index = series_field[2] | plus: 0 %}
+
+      {% if series_field[1] == 'post' %}
+        {% assign post = series_posts[series_index] %}
+        {% assign card_starts = false %}
+        {% if post.url == series_start.url %}
+          {% assign card_starts = true %}
+        {% endif %}
+        {% include post-card.html series_page=true series_start=card_starts %}
+      {% else %}
+        {% assign series_item = series_doc.planned[series_index] %}
+        <article class="card series-planned">
+          <span class="series-num">{{ series_number }}</span>
+          <div>
+            <div class="card-series">
+              {{ series_unit }} {{ series_number }}
+              {%- if series_show_total %} of {{ series_count }}{% endif %}
+              <span class="card-series-pos">Coming soon</span>
+            </div>
+            <h2 class="card-title">{{ series_item.title | smartify }}</h2>
+            {% if series_item.blurb %}
+              <p>{{ series_item.blurb | smartify }}</p>
+            {% endif %}
+          </div>
+        </article>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>

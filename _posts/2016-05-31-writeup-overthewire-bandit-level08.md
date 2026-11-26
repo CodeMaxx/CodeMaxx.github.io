@@ -11,6 +11,8 @@ tags:
 - OverTheWire
 - Text Processing
 writeup: true
+series: bandit
+series_part: 8
 points:
 ctf_category: Wargame
 description: "Finding the only unique line in a file using sort and uniq -u"

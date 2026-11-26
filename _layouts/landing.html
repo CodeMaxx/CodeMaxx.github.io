@@ -100,6 +100,12 @@ refactor: true
           </a>
 
           <div class="feature-body">
+            {% if post.series %}
+              {% include series-data.html id=post.series %}
+              {% if series_doc %}
+                {% include series-label.html post=post link=true %}
+              {% endif %}
+            {% endif %}
             <h3 class="feature-title">
               <a href="{{ href }}" {% if post.redirect_to %}target="_blank" rel="noopener noreferrer"{% endif %}>
                 {{ post.title }}

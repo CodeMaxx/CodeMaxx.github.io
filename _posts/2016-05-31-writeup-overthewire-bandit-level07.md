@@ -11,6 +11,8 @@ tags:
 - OverTheWire
 - Text Processing
 writeup: true
+series: bandit
+series_part: 7
 points:
 ctf_category: Wargame
 description: "Extracting a password next to the word 'millionth' with grep"

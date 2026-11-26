@@ -6,10 +6,15 @@
 
 <!-- layout specified -->
 
-{% if page.layout == 'post' or page.layout == 'page' or page.layout == 'home' or page.layout == 'landing' %}
+{% if page.layout == 'post'
+  or page.layout == 'page'
+  or page.layout == 'home'
+  or page.layout == 'landing'
+  or page.layout == 'series'
+%}
   {% assign urls = urls | append: ',' | append: site.data.origin[type]['lazy-polyfill'].js %}
 
-  {% unless page.layout == 'home' or page.layout == 'landing' %}
+  {% unless page.layout == 'home' or page.layout == 'landing' or page.layout == 'series' %}
     <!-- image lazy-loading & popup & clipboard -->
     {% assign urls = urls
       | append: ','
@@ -26,6 +31,7 @@
   or page.layout == 'category'
   or page.layout == 'tag'
   or page.layout == 'landing'
+  or page.layout == 'series'
 %}
   {% assign locale = include.lang | split: '-' | first %}
 
@@ -55,7 +61,7 @@
 {% case page.layout %}
   {% when 'home', 'categories', 'post', 'page' %}
     {% assign js = page.layout %}
-  {% when 'landing' %}
+  {% when 'landing', 'series' %}
     {% assign js = 'home' %}
   {% when 'archives', 'category', 'tag' %}
     {% assign js = 'misc' %}

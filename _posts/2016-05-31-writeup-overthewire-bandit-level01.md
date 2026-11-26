@@ -11,6 +11,8 @@ tags:
 - OverTheWire
 - Shell
 writeup: true
+series: bandit
+series_part: 1
 points:
 ctf_category: Wargame
 description: "Reading a file named with a dash using a path prefix"

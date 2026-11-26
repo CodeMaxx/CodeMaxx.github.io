@@ -11,6 +11,8 @@ tags:
 - OverTheWire
 - Privilege Escalation
 writeup: true
+series: bandit
+series_part: 19
 points:
 ctf_category: Wargame
 description: "Using a setuid binary to read a file owned by another user"

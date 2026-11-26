@@ -1,0 +1,60 @@
+{%- comment -%}
+  Collects everything known about one series.
+
+  Arguments:
+    id: the series' file name in _series/ (the `series` value of its posts).
+
+  Sets, in the caller's scope:
+    series_doc         the _series document, or nil when the id is unknown
+    series_posts       the published posts in the series
+    series_keys        every part in reading order, each "<sort>|<kind>|<index>".
+                       Kind `post` indexes series_posts; kind `plan` indexes
+                       series_doc.planned. A planned part is left out once a
+                       post carries the same part number.
+    series_count       how many parts there are, published and planned
+    series_unit        what a part is called ("Part" unless the series says so)
+    series_units       the same in lower case, plural unless there is one part
+    series_show_total  false when the series opts out of "of N"
+{%- endcomment -%}
+
+{%- assign series_doc = site.series | where: 'slug', include.id | first -%}
+{%- assign series_posts = '' | split: '' -%}
+{%- assign series_keys = '' | split: '' -%}
+{%- assign series_unit = 'Part' -%}
+{%- assign series_show_total = true -%}
+
+{%- if series_doc -%}
+  {%- assign series_posts = site.posts | where: 'series', include.id -%}
+  {%- assign series_unit = series_doc.unit | default: 'Part' -%}
+  {%- if series_doc.show_total == false -%}
+    {%- assign series_show_total = false -%}
+  {%- endif -%}
+
+  {%- comment -%} Adding 100000 pads the part number so the keys sort as text. {%- endcomment -%}
+  {%- assign series_taken = '|' -%}
+  {%- for series_item in series_posts -%}
+    {%- capture series_key -%}
+      {{- series_item.series_part | plus: 100000 }}|post|{{ forloop.index0 -}}
+    {%- endcapture -%}
+    {%- assign series_keys = series_keys | push: series_key -%}
+    {%- assign series_taken = series_taken | append: series_item.series_part | append: '|' -%}
+  {%- endfor -%}
+
+  {%- for series_item in series_doc.planned -%}
+    {%- capture series_key -%}|{{ series_item.part }}|{%- endcapture -%}
+    {%- unless series_taken contains series_key -%}
+      {%- capture series_key -%}
+        {{- series_item.part | plus: 100000 }}|plan|{{ forloop.index0 -}}
+      {%- endcapture -%}
+      {%- assign series_keys = series_keys | push: series_key -%}
+    {%- endunless -%}
+  {%- endfor -%}
+
+  {%- assign series_keys = series_keys | sort -%}
+{%- endif -%}
+
+{%- assign series_count = series_keys | size -%}
+{%- assign series_units = series_unit | downcase -%}
+{%- unless series_count == 1 -%}
+  {%- assign series_units = series_units | append: 's' -%}
+{%- endunless -%}

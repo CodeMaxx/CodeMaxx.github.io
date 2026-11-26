@@ -11,6 +11,8 @@ tags:
 - OverTheWire
 - SSH
 writeup: true
+series: bandit
+series_part: 18
 points:
 ctf_category: Wargame
 description: "Bypassing .bashrc logout by running a command directly over SSH"

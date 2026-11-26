@@ -3,7 +3,7 @@ layout: default
 panel_includes:
   - toc
 tail_includes:
-  - related-posts
+  - series-next
 script_includes:
   - comment
   - toc-autoscroll
@@ -98,6 +98,8 @@ script_includes:
       <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
     </dialog>
   {% endif %}
+
+  {% include series-box.html %}
 
   <div class="content">
     {{ content }}

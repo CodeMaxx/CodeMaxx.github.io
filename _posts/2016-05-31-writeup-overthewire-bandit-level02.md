@@ -11,6 +11,8 @@ tags:
 - OverTheWire
 - Shell
 writeup: true
+series: bandit
+series_part: 2
 points:
 ctf_category: Wargame
 description: "Reading a filename with spaces using quotes or backslash"

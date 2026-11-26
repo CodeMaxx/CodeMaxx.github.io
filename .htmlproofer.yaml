@@ -34,6 +34,9 @@ ignore_urls:
   # The same pages are still verified through the internal link check.
   - /www\.akashtrehan\.com\/tags\//
   - /www\.akashtrehan\.com\/categories\//
+  # Same for a series page: it only exists on the live site once the build
+  # that adds it is deployed.
+  - /www\.akashtrehan\.com\/series\//
 
 # Files/directories to ignore (paths relative to _site)
 ignore_files:

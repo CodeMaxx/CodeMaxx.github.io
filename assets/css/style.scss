@@ -1743,3 +1743,450 @@ div[class^='language-'] .code-header {
     font-size: 0.9rem;
   }
 }
+
+/* ============================================================
+   Multi-part series: the box under a post's hero, the next-part
+   card at the end of a post, the label on listing cards and the
+   series page. Markup lives in _includes/series-*.html and
+   _layouts/series.html.
+   ============================================================ */
+
+/* ---------- Label above a post title ---------- */
+.card-series {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: 0.45rem;
+  row-gap: 0.1rem;
+  width: fit-content;
+  margin-bottom: 0.35rem;
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent-1);
+}
+.card-series i {
+  font-size: 0.85em;
+}
+.card-series-pos {
+  color: var(--text-muted-color);
+  font-weight: 500;
+}
+.series-start {
+  padding: 0.05rem 0.5rem;
+  border-radius: 6px;
+  background: var(--accent-soft);
+}
+a.card-series {
+  text-decoration: none;
+}
+a.card-series:hover,
+a.card-series:focus-visible {
+  color: var(--accent-2);
+}
+a.card-series:hover .card-series-name,
+a.card-series:focus-visible .card-series-name {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+/* A listing card whose label is a link cannot itself be one, so its title
+   link is stretched over the whole card and the label sits above it. The card
+   is its own stacking context so those layers stay under the page's fixed
+   controls. */
+#post-list .card-wrapper {
+  position: relative;
+  isolation: isolate;
+}
+#post-list a.card-series {
+  position: relative;
+  z-index: 2;
+}
+.card-title-link,
+.card-title-link:hover {
+  color: inherit;
+  text-decoration: none;
+}
+.card-title-link::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+/* Keep the read-time tooltip reachable under the stretched link. */
+#post-list div.post-preview .readtime {
+  position: relative;
+  z-index: 2;
+}
+/* Hovering the label should not also light up the title. */
+#post-list .card-wrapper:has(a.card-series:hover) .card-title {
+  color: var(--heading-color) !important;
+}
+.feature-body .card-series {
+  margin-bottom: 0.5rem;
+}
+.feature-body .card-series + .feature-title {
+  margin-top: 0;
+}
+
+/* ---------- Numbered marker for a part ---------- */
+/* White text needs a darker fill than --accent-grad, which goes too light for
+   it in dark mode. This is the gradient the 404 page uses for the same reason. */
+.series-box,
+.series-page {
+  --series-fill: linear-gradient(120deg, #1667cf 0%, #4f3ff0 100%);
+}
+.series-num {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 1px solid var(--main-border-color);
+  border-radius: 50%;
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--text-muted-color);
+}
+.is-planned .series-num,
+.series-planned .series-num {
+  border: 1px dashed color-mix(in srgb, var(--text-muted-color) 60%, transparent);
+}
+
+/* ---------- Box under the post hero ---------- */
+.series-box {
+  position: relative;
+  margin: 0 0 2rem;
+  border: 1px solid var(--main-border-color);
+  border-radius: 12px;
+  background: var(--card-bg);
+  overflow: hidden;
+}
+.series-box::before {
+  content: '';
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 3px;
+  background: var(--accent-grad);
+}
+.series-box > summary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: 0.65rem;
+  row-gap: 0.2rem;
+  padding: 0.8rem 1rem 0.8rem 1.15rem;
+  list-style: none;
+  cursor: pointer;
+}
+.series-box > summary::-webkit-details-marker {
+  display: none;
+}
+.series-box-eyebrow {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-1);
+}
+.series-box-eyebrow i {
+  margin-right: 0.35rem;
+}
+.series-box-name {
+  font-weight: 600;
+  color: var(--heading-color);
+}
+.series-box-pos {
+  margin-left: auto;
+  padding: 0.1rem 0.6rem;
+  border-radius: 6px;
+  background: var(--accent-soft);
+  color: var(--accent-1);
+  font-size: 0.78rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.series-box-chevron {
+  color: var(--text-muted-color);
+  transition: transform 0.15s ease;
+}
+.series-box[open] .series-box-chevron {
+  transform: rotate(180deg);
+}
+.series-parts {
+  margin: 0;
+  padding: 0.15rem 1rem 0.35rem 1.15rem;
+  border-top: 1px solid var(--main-border-color);
+  list-style: none;
+}
+.series-parts li {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.45rem 0;
+  font-size: 0.95rem;
+  line-height: 1.35;
+}
+.series-parts .series-title {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+.series-parts a.series-title {
+  color: var(--text-color);
+  text-decoration: none;
+}
+.series-parts a.series-title:hover {
+  color: var(--accent-2);
+  text-decoration: underline;
+}
+.series-parts li:has(a.series-title) .series-num {
+  border-color: var(--accent-1);
+  color: var(--accent-1);
+}
+.series-parts .is-current .series-num {
+  border-color: transparent;
+  background: var(--series-fill);
+  color: #fff;
+}
+.series-parts .is-current .series-title {
+  font-weight: 600;
+  color: var(--heading-color);
+}
+.series-parts .is-planned {
+  color: var(--text-muted-color);
+}
+.series-state {
+  flex: 0 0 auto;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-muted-color);
+  white-space: nowrap;
+}
+.series-parts .is-current .series-state {
+  color: var(--accent-1);
+}
+.series-box-hub {
+  display: block;
+  padding: 0.55rem 1rem 0.7rem 1.15rem;
+  border-top: 1px solid var(--main-border-color);
+  font-size: 0.85rem;
+  text-align: right;
+  color: var(--accent-1);
+  text-decoration: none;
+}
+.series-box-hub:hover {
+  color: var(--accent-2);
+}
+.series-box-hub i {
+  margin-left: 0.2rem;
+  font-size: 0.8em;
+}
+/* Below xl the "Contents" button sits directly above the box. */
+@media (max-width: 1199.98px) {
+  .series-box {
+    margin-top: 1rem;
+  }
+}
+/* Phones: label, position and chevron share a row, series name below. */
+@media (max-width: 575.98px) {
+  .series-box-name {
+    order: 4;
+    flex-basis: 100%;
+  }
+  .series-box-pos {
+    margin-left: 0;
+  }
+  .series-box-chevron {
+    margin-left: auto;
+  }
+}
+
+/* ---------- Next-part card at the end of a post ---------- */
+.series-next .series-next-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  isolation: isolate;
+  color: inherit;
+  text-decoration: none;
+}
+/* Sits above the card's hover tint so the image is not washed out. */
+.series-next-media {
+  position: relative;
+  z-index: 1;
+  flex: 0 0 auto;
+  aspect-ratio: 1200 / 630;
+  background: var(--img-bg);
+}
+.series-next-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.series-next-media.is-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 6rem;
+  aspect-ratio: auto;
+  background: var(--accent-grad);
+  color: #fff;
+  font-size: 2rem;
+}
+.series-next-body {
+  padding: 1.1rem 1.25rem 1.2rem;
+}
+#related-posts .series-next-body h4 {
+  display: block;
+  overflow: visible;
+  margin: 0 0 0.4rem;
+  font-size: 1.2rem;
+  line-height: 1.3;
+  color: var(--heading-color);
+  -webkit-line-clamp: unset;
+}
+/* The aside shares the related-posts id, whose theme rules clamp paragraphs to
+   two lines; a part's description should show in full. */
+#related-posts .series-next-body p {
+  display: block;
+  overflow: visible;
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--text-muted-color);
+  white-space: normal;
+  -webkit-line-clamp: unset;
+}
+.series-next-card:hover h4 {
+  color: var(--accent-2) !important;
+}
+@media (min-width: 576px) {
+  .series-next .series-next-card {
+    flex-direction: row;
+    align-items: stretch;
+  }
+  .series-next-media {
+    flex-basis: 50%;
+  }
+  .series-next-media.is-placeholder {
+    flex-basis: 7rem;
+  }
+  #related-posts .series-next-body h4 {
+    font-size: 1.05rem;
+  }
+}
+#related-posts .series-next-note {
+  display: block;
+  margin: 0.8rem 0 0;
+  font-size: 0.88rem;
+  color: var(--text-muted-color);
+}
+.series-next {
+  margin-bottom: 2rem;
+}
+.series-next-foot {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.5rem 1.5rem;
+  margin-top: 0.9rem;
+  font-size: 0.9rem;
+}
+.series-next-foot a {
+  color: var(--accent-1);
+  text-decoration: none;
+}
+.series-next-foot a:hover {
+  color: var(--accent-2);
+  text-decoration: underline;
+}
+.series-next-foot i {
+  font-size: 0.8em;
+}
+
+/* ---------- Series page ---------- */
+.series-eyebrow {
+  margin: 1.75rem 0 0;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-1);
+}
+.series-eyebrow i {
+  margin-right: 0.4rem;
+}
+.series-page .listing-title {
+  margin-top: 0.4rem;
+}
+.series-intro {
+  max-width: 46rem;
+}
+.series-intro p {
+  margin: 0;
+}
+.series-intro p + p {
+  margin-top: 0.6rem;
+}
+.series-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1.5rem;
+  margin-top: 1.25rem;
+}
+.series-cta {
+  display: inline-block;
+  padding: 0.5rem 1.1rem;
+  border-radius: 8px;
+  background: var(--series-fill);
+  color: #fff !important;
+  font-weight: 600;
+  text-decoration: none;
+}
+.series-cta:hover {
+  filter: brightness(1.08);
+}
+.series-cta i {
+  margin-left: 0.25rem;
+  font-size: 0.8em;
+}
+.series-link {
+  color: var(--text-muted-color);
+  text-decoration: none;
+}
+.series-link:hover {
+  color: var(--accent-2);
+}
+#post-list .series-planned {
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+  padding: 1.1rem 1.25rem;
+  border: 1px dashed color-mix(in srgb, var(--text-muted-color) 50%, transparent);
+  border-radius: 12px;
+  background: transparent;
+  box-shadow: none;
+}
+#post-list .series-planned .series-num {
+  margin-top: 0.1rem;
+}
+#post-list .series-planned .card-series,
+#post-list .series-planned .card-title,
+#post-list .series-planned p {
+  color: var(--text-muted-color) !important;
+}
+#post-list .series-planned .card-title {
+  margin: 0 0 0.3rem;
+  font-size: 1.15rem;
+}
+#post-list .series-planned p {
+  margin: 0;
+  font-size: 0.95rem;
+}

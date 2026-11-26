@@ -18,6 +18,8 @@ tags:
 - Hotpatching
 - Endpoint Security
 blog: true
+series: runtime-attestation
+series_part: 3
 description: "How the Windows Secure Hotpatch Report uses VTL1 attestation to help anti-cheat and security tools tell legitimate hotpatches from kernel tampering."
 ---
 

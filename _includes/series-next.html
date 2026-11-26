@@ -1,0 +1,120 @@
+{%- comment -%}
+  The end-of-post slot. A post in a series gets a card for the next published
+  part, or for the series page when nothing later is out yet. Every other post
+  gets the usual related posts.
+{%- endcomment -%}
+
+{%- assign series_doc = nil -%}
+{%- if page.series -%}
+  {%- include series-data.html id=page.series -%}
+{%- endif -%}
+
+{%- if series_doc -%}
+  {%- comment -%}
+    Walk the parts in order: the last published part before this post is the
+    previous one, the first published part after it is the next one, and the
+    planned parts in between are the ones still being written.
+  {%- endcomment -%}
+  {%- assign series_prev = nil -%}
+  {%- assign series_next = nil -%}
+  {%- assign series_passed = false -%}
+  {%- assign series_waiting = '' | split: '' -%}
+  {%- assign series_waiting_title = nil -%}
+
+  {%- for series_key in series_keys -%}
+    {%- assign series_field = series_key | split: '|' -%}
+    {%- assign series_number = series_field[0] | minus: 100000 -%}
+    {%- assign series_index = series_field[2] | plus: 0 -%}
+
+    {%- if series_field[1] == 'post' -%}
+      {%- assign series_item = series_posts[series_index] -%}
+      {%- if series_item.url == page.url -%}
+        {%- assign series_passed = true -%}
+      {%- elsif series_passed -%}
+        {%- assign series_next = series_item -%}
+        {%- break -%}
+      {%- else -%}
+        {%- assign series_prev = series_item -%}
+      {%- endif -%}
+    {%- elsif series_passed -%}
+      {%- assign series_waiting = series_waiting | push: series_number -%}
+      {%- assign series_waiting_title = series_waiting_title | default: series_doc.planned[series_index].title -%}
+    {%- endif -%}
+  {%- endfor -%}
+
+  {%- capture series_waiting_text -%}
+    {%- if series_waiting.size == 1 -%}
+      {{ series_unit }} {{ series_waiting | first }} is
+    {%- else -%}
+      {{ series_unit }}s {{ series_waiting | array_to_sentence_string }} are
+    {%- endif -%}
+  {%- endcapture -%}
+
+  {%- comment -%} Shares the related-posts id so the theme styles both the same way. {%- endcomment -%}
+  <aside id="related-posts" class="series-next" aria-labelledby="series-next-label">
+    <h3 class="mb-4" id="series-next-label">Continue the series</h3>
+
+    {%- if series_next -%}
+      <a class="series-next-card card post-preview" href="{{ series_next.url | relative_url }}">
+        {%- if series_next.image -%}
+          <div class="series-next-media">
+            <img src="{{ series_next.image.path | default: series_next.image | relative_url }}" alt="" loading="lazy">
+          </div>
+        {%- else -%}
+          <div class="series-next-media is-placeholder"><i class="fas fa-layer-group" aria-hidden="true"></i></div>
+        {%- endif -%}
+        <div class="series-next-body">
+          <div class="card-series">
+            Next &middot; {{ series_unit }} {{ series_next.series_part }}
+            {%- if series_show_total %} of {{ series_count }}{% endif -%}
+          </div>
+          <h4>{{ series_next.title }}</h4>
+          {%- if series_next.description -%}
+            <p>{{ series_next.description }}</p>
+          {%- endif -%}
+        </div>
+      </a>
+
+      {%- if series_waiting.size == 1 -%}
+        <p class="series-next-note">
+          {{ series_unit }} {{ series_waiting | first }}, <em>{{ series_waiting_title | smartify }}</em>, is still being written.
+        </p>
+      {%- elsif series_waiting.size > 1 -%}
+        <p class="series-next-note">{{ series_waiting_text }} still being written.</p>
+      {%- endif -%}
+    {%- else -%}
+      <a class="series-next-card card post-preview" href="{{ series_doc.url | relative_url }}">
+        <div class="series-next-media is-placeholder"><i class="fas fa-layer-group" aria-hidden="true"></i></div>
+        <div class="series-next-body">
+          <div class="card-series">Series &middot; {{ series_count }} {{ series_units }}</div>
+          <h4>{{ series_doc.title }}</h4>
+          {%- if series_waiting.size > 0 -%}
+            <p>{{ series_waiting_text }} still being written. The series page lists everything that&rsquo;s out so far.</p>
+          {%- else -%}
+            <p>This is the last one. The series page lists them all.</p>
+          {%- endif -%}
+        </div>
+      </a>
+    {%- endif -%}
+
+    {%- if series_prev or series_next -%}
+      <div class="series-next-foot">
+        {%- if series_prev -%}
+          <a href="{{ series_prev.url | relative_url }}">
+            <i class="fas fa-arrow-left" aria-hidden="true"></i>
+            {{ series_unit }} {{ series_prev.series_part }}: {{ series_prev.series_title | default: series_prev.title }}
+          </a>
+        {%- else -%}
+          <span></span>
+        {%- endif -%}
+        {%- if series_next -%}
+          <a href="{{ series_doc.url | relative_url }}">
+            All {{ series_count }} {{ series_units }} <i class="fas fa-arrow-right" aria-hidden="true"></i>
+          </a>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+  </aside>
+{%- else -%}
+  {%- include related-posts.html lang=include.lang -%}
+{%- endif -%}

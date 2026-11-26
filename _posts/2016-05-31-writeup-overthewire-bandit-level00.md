@@ -11,6 +11,8 @@ tags:
 - OverTheWire
 - SSH
 writeup: true
+series: bandit
+series_part: 0
 points:
 ctf_category: Wargame
 description: "Logging into SSH and reading a file with cat"

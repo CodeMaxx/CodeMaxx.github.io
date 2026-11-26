@@ -11,6 +11,8 @@ tags:
 - OverTheWire
 - SSH
 writeup: true
+series: bandit
+series_part: 13
 points:
 ctf_category: Wargame
 description: "Using an SSH private key to log in without a password"

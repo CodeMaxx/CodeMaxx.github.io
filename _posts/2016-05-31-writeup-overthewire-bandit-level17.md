@@ -11,6 +11,8 @@ tags:
 - OverTheWire
 - Text Processing
 writeup: true
+series: bandit
+series_part: 17
 points:
 ctf_category: Wargame
 description: "Using diff to find the one changed line between two password files"
