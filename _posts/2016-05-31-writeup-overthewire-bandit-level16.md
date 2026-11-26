@@ -11,6 +11,8 @@ tags:
 - OverTheWire
 - Networking
 writeup: true
+series: bandit
+series_part: 16
 points:
 ctf_category: Wargame
 description: "Port scanning with nmap to find the SSL listener and get an SSH key"

@@ -11,6 +11,8 @@ tags:
 - OverTheWire
 - Shell
 writeup: true
+series: bandit
+series_part: 3
 points:
 ctf_category: Wargame
 description: "Finding and reading a hidden file with ls -a"

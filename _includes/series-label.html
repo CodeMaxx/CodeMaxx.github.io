@@ -1,0 +1,36 @@
+{%- comment -%}
+  The small "series, part" line above a post title. Expects series-data.html
+  to have run for the post's series.
+
+  Arguments:
+    post:  the post being labelled
+    link:  true to make the label a link to the series page
+    name:  false to leave the series title out (on the series page itself)
+    start: true to mark the post as the place to start reading
+{%- endcomment -%}
+
+{%- capture series_position -%}
+  {{- series_unit }} {{ include.post.series_part }}
+  {%- if series_show_total %} of {{ series_count }}{% endif -%}
+{%- endcapture -%}
+
+{%- if include.link -%}
+  <a class="card-series" href="{{ series_doc.url | relative_url }}">
+{%- else -%}
+  <div class="card-series">
+{%- endif -%}
+<i class="fas fa-layer-group" aria-hidden="true"></i>
+{%- if include.name == false -%}
+  {{ series_position }}
+{%- else -%}
+  <span class="card-series-name">{{ series_doc.title }}</span>
+  <span class="card-series-pos">{{ series_position }}</span>
+{%- endif -%}
+{%- if include.start -%}
+  <span class="series-start">Start here</span>
+{%- endif -%}
+{%- if include.link -%}
+  </a>
+{%- else -%}
+  </div>
+{%- endif -%}

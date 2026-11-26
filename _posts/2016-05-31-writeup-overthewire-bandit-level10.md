@@ -11,6 +11,8 @@ tags:
 - OverTheWire
 - Encoding
 writeup: true
+series: bandit
+series_part: 10
 points:
 ctf_category: Wargame
 description: "Decoding base64-encoded data with the base64 command"

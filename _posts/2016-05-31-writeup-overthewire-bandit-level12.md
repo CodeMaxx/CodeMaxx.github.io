@@ -11,6 +11,8 @@ tags:
 - OverTheWire
 - File Analysis
 writeup: true
+series: bandit
+series_part: 12
 points:
 ctf_category: Wargame
 description: "Decompressing a repeatedly-compressed hexdump with xxd, gzip, bzip2, and tar"

@@ -11,6 +11,8 @@ tags:
 - OverTheWire
 - Shell
 writeup: true
+series: bandit
+series_part: 5
 points:
 ctf_category: Wargame
 description: "Using find with a size filter to locate the password among many decoy files"

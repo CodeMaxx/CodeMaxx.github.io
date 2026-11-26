@@ -11,6 +11,8 @@ tags:
 - OverTheWire
 - File Analysis
 writeup: true
+series: bandit
+series_part: 9
 points:
 ctf_category: Wargame
 description: "Using strings to extract human-readable text from a binary file"

@@ -11,6 +11,8 @@ tags:
 - OverTheWire
 - Shell
 writeup: true
+series: bandit
+series_part: 6
 points:
 ctf_category: Wargame
 description: "Searching the whole server by owner, group, and size with find"

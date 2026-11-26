@@ -11,6 +11,8 @@ tags:
 - OverTheWire
 - Networking
 writeup: true
+series: bandit
+series_part: 14
 points:
 ctf_category: Wargame
 description: "Submitting a password to a localhost port using netcat"

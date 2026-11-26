@@ -1,0 +1,61 @@
+{%- comment -%}
+  The box under a post's hero that lists every part of its series. Renders
+  nothing for a post that is not in a series.
+{%- endcomment -%}
+
+{%- assign series_doc = nil -%}
+{%- if page.series -%}
+  {%- include series-data.html id=page.series -%}
+{%- endif -%}
+
+{%- if series_doc -%}
+  {%- comment -%} A long series starts collapsed so it does not push the post down. {%- endcomment -%}
+  <details class="series-box"{% if series_count <= 7 %} open{% endif %}>
+    <summary>
+      <span class="series-box-eyebrow"><i class="fas fa-layer-group" aria-hidden="true"></i>Series</span>
+      <span class="series-box-name">{{ series_doc.title }}</span>
+      <span class="series-box-pos">
+        {{- series_unit }} {{ page.series_part }}
+        {%- if series_show_total %} of {{ series_count }}{% endif -%}
+      </span>
+      <i class="fas fa-angle-down series-box-chevron" aria-hidden="true"></i>
+    </summary>
+
+    <ol class="series-parts">
+      {%- for series_key in series_keys -%}
+        {%- assign series_field = series_key | split: '|' -%}
+        {%- assign series_number = series_field[0] | minus: 100000 -%}
+        {%- assign series_index = series_field[2] | plus: 0 -%}
+
+        {%- if series_field[1] == 'post' -%}
+          {%- assign series_item = series_posts[series_index] -%}
+          {%- assign series_item_title = series_item.series_title | default: series_item.title -%}
+
+          {%- if series_item.url == page.url -%}
+            <li class="is-current" aria-current="page">
+              <span class="series-num">{{ series_number }}</span>
+              <span class="series-title">{{ series_item_title }}</span>
+              <span class="series-state">You are here</span>
+            </li>
+          {%- else -%}
+            <li>
+              <span class="series-num">{{ series_number }}</span>
+              <a class="series-title" href="{{ series_item.url | relative_url }}">{{ series_item_title }}</a>
+            </li>
+          {%- endif -%}
+        {%- else -%}
+          {%- assign series_item = series_doc.planned[series_index] -%}
+          <li class="is-planned">
+            <span class="series-num">{{ series_number }}</span>
+            <span class="series-title">{{ series_item.title | smartify }}</span>
+            <span class="series-state">Coming soon</span>
+          </li>
+        {%- endif -%}
+      {%- endfor -%}
+    </ol>
+
+    <a class="series-box-hub" href="{{ series_doc.url | relative_url }}">
+      About this series <i class="fas fa-arrow-right" aria-hidden="true"></i>
+    </a>
+  </details>
+{%- endif -%}

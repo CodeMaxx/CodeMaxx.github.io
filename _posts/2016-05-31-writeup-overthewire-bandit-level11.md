@@ -11,6 +11,8 @@ tags:
 - OverTheWire
 - Encoding
 writeup: true
+series: bandit
+series_part: 11
 points:
 ctf_category: Wargame
 description: "Decoding a ROT13 cipher using the tr command"

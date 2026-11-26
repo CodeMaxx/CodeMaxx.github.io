@@ -161,7 +161,7 @@
       {% assign _left = _left | append: ' loading="lazy"' %}
     {% endif %}
 
-    {% if page.layout == 'home' or page.layout == 'landing' %}
+    {% if page.layout == 'home' or page.layout == 'landing' or page.layout == 'series' %}
       <!-- create the image wrapper -->
       {% assign _wrapper_start = '<div class="preview-img ' | append: _wrapper_class | append: '">' %}
 

@@ -11,6 +11,8 @@ tags:
 - OverTheWire
 - Networking
 writeup: true
+series: bandit
+series_part: 15
 points:
 ctf_category: Wargame
 description: "Submitting a password over SSL using openssl s_client"
