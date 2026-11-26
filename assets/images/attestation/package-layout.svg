@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 584" width="960" height="584" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" role="img" aria-labelledby="t d">
+  <title id="t">The layout of a runtime report package</title>
+  <desc id="d">A runtime report package, top to bottom. The signed part holds the package header, the 32-byte nonce, and one digest header per report. The signature blob follows, and it is an RSA-PSS signature over the signed part. The authenticated part comes last and holds the reports, each with its own report header. Each digest header in the signed part is the SHA-512 hash of one report, so a report is trusted only when its hash matches its digest header.</desc>
+
+  <defs>
+    <filter id="soft" x="-10%" y="-30%" width="120%" height="170%">
+      <feDropShadow dx="0" dy="3" stdDeviation="3.5" flood-color="#2A2A35" flood-opacity="0.18"/>
+    </filter>
+    <pattern id="paper" width="22" height="22" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#2A2A35" fill-opacity="0.05"/>
+    </pattern>
+    <marker id="am" viewBox="0 0 10 10" refX="7.5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0.5 L10,5 L0,9.5 Z" fill="#2A2A35"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="960" height="584" fill="#FBF7F1"/>
+  <rect x="0" y="0" width="960" height="584" fill="url(#paper)"/>
+
+  <!-- ===== Signed part ===== -->
+  <text x="60" y="46" font-size="15" font-weight="700" letter-spacing="0.8" fill="#2E5AA8">Signed part</text>
+  <rect x="48" y="58" width="852" height="208" rx="16" fill="#EAF6FB" opacity="0.6"/>
+
+  <g filter="url(#soft)">
+    <rect x="60" y="70" width="828" height="54" rx="12" fill="#FFFFFF" stroke="#3E8FBF" stroke-width="2.5"/>
+    <rect x="60" y="134" width="828" height="54" rx="12" fill="#FFFFFF" stroke="#3E8FBF" stroke-width="2.5"/>
+    <rect x="60" y="198" width="828" height="54" rx="12" fill="#FFFFFF" stroke="#3E8FBF" stroke-width="2.5"/>
+  </g>
+  <g font-family="'SFMono-Regular', Consolas, monospace" font-size="14.5" font-weight="700" fill="#2E5AA8">
+    <text x="82" y="102">RUNTIME_REPORT_PACKAGE_HEADER</text>
+    <text x="82" y="166">Nonce[32]</text>
+    <text x="82" y="230">RUNTIME_REPORT_DIGEST_HEADER</text>
+  </g>
+  <g font-size="14.5" fill="#2A2A35">
+    <text x="470" y="102">magic, sizes, which reports are inside</text>
+    <text x="470" y="166">the challenge your server sent</text>
+    <text x="470" y="230">one per report: SHA-512 of that report</text>
+  </g>
+
+  <!-- ===== Signature ===== -->
+  <g filter="url(#soft)">
+    <rect x="60" y="284" width="828" height="54" rx="12" fill="#FFF6E0" stroke="#FFB020" stroke-width="2.5"/>
+  </g>
+  <text x="82" y="316" font-family="'SFMono-Regular', Consolas, monospace" font-size="14.5" font-weight="700" fill="#8A6A10">Signature blob</text>
+  <text x="470" y="316" font-size="14.5" fill="#2A2A35">RSA-PSS over the signed part above</text>
+
+  <!-- ===== Authenticated part ===== -->
+  <text x="60" y="376" font-size="15" font-weight="700" letter-spacing="0.8" fill="#6B6B7B">Authenticated part</text>
+  <rect x="48" y="388" width="852" height="144" rx="16" fill="#2A2A35" opacity="0.05"/>
+
+  <g filter="url(#soft)">
+    <rect x="60" y="400" width="828" height="54" rx="12" fill="#FFFFFF" stroke="#2A2A35" stroke-width="2.5"/>
+    <rect x="60" y="464" width="828" height="54" rx="12" fill="#FFFFFF" stroke="#2A2A35" stroke-width="2.5"/>
+  </g>
+  <g font-family="'SFMono-Regular', Consolas, monospace" font-size="14.5" font-weight="700" fill="#2A2A35">
+    <text x="82" y="432">RUNTIME_REPORT_HEADER + driver report</text>
+    <text x="82" y="496">RUNTIME_REPORT_HEADER + hotpatch report</text>
+  </g>
+  <g font-size="14.5" fill="#2A2A35">
+    <text x="470" y="432">must hash to its digest header</text>
+    <text x="470" y="496">must hash to its digest header</text>
+  </g>
+
+  <!-- ===== Each digest header points at one report ===== -->
+  <g fill="none" stroke="#2A2A35" stroke-width="2.5">
+    <path d="M888,225 H930 V491 H898" marker-end="url(#am)"/>
+    <path d="M930,427 H898" marker-end="url(#am)"/>
+  </g>
+
+  <text x="480" y="560" text-anchor="middle" font-size="14" fill="#8A8A98">Only the signed part is signed directly. The reports are tied to it through their digests.</text>
+</svg>

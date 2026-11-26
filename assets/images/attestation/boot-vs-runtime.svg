@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 320" width="960" height="320" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" role="img" aria-labelledby="t d">
+  <title id="t">What measured boot covers, and what it doesn't</title>
+  <desc id="d">A timeline from power on to now. Measured boot covers only the first stretch, startup, and records it in the TPM. After that, Windows keeps running and nothing more is recorded: a driver that loads twenty minutes later is not covered. A runtime report, at the far right, describes the machine at the moment of the request.</desc>
+
+  <defs>
+    <filter id="soft" x="-30%" y="-30%" width="160%" height="170%">
+      <feDropShadow dx="0" dy="3" stdDeviation="3.5" flood-color="#2A2A35" flood-opacity="0.18"/>
+    </filter>
+    <pattern id="paper" width="22" height="22" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#2A2A35" fill-opacity="0.05"/>
+    </pattern>
+    <marker id="am" viewBox="0 0 10 10" refX="7.5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0.5 L10,5 L0,9.5 Z" fill="#2A2A35"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="960" height="320" fill="#FBF7F1"/>
+  <rect x="0" y="0" width="960" height="320" fill="url(#paper)"/>
+
+  <!-- ===== Startup: the part measured boot records ===== -->
+  <g filter="url(#soft)">
+    <rect x="60" y="76" width="250" height="64" rx="14" fill="#FFF6E0" stroke="#FFB020" stroke-width="2.5"/>
+  </g>
+  <text x="185" y="104" text-anchor="middle" font-size="15.5" font-weight="700" fill="#8A6A10">Measured boot</text>
+  <text x="185" y="125" text-anchor="middle" font-size="13.5" fill="#8A6A10">startup, recorded in the TPM</text>
+
+  <!-- ===== Runtime: nothing recorded ===== -->
+  <text x="545" y="104" text-anchor="middle" font-size="14.5" font-weight="700" fill="#C8402F">A driver loads twenty minutes later.</text>
+  <text x="545" y="125" text-anchor="middle" font-size="13.5" fill="#6B6B7B">Measured boot has nothing to say about it.</text>
+
+  <!-- ===== Now: what a runtime report describes ===== -->
+  <g filter="url(#soft)">
+    <rect x="770" y="76" width="150" height="64" rx="14" fill="#EAF6FB" stroke="#3E8FBF" stroke-width="2.5"/>
+  </g>
+  <text x="845" y="104" text-anchor="middle" font-size="15.5" font-weight="700" fill="#2E5AA8">Runtime report</text>
+  <text x="845" y="125" text-anchor="middle" font-size="13.5" fill="#2E5AA8">the machine now</text>
+
+  <!-- ===== The timeline ===== -->
+  <line x1="60" y1="184" x2="912" y2="184" stroke="#2A2A35" stroke-width="2.5" marker-end="url(#am)"/>
+  <line x1="60" y1="174" x2="60" y2="194" stroke="#2A2A35" stroke-width="2.5"/>
+  <line x1="310" y1="174" x2="310" y2="194" stroke="#2A2A35" stroke-width="2.5"/>
+  <line x1="60" y1="184" x2="310" y2="184" stroke="#FFB020" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="545" cy="184" r="8" fill="#FBDDD6" stroke="#E8503A" stroke-width="2.5"/>
+  <circle cx="845" cy="184" r="8" fill="#EAF6FB" stroke="#3E8FBF" stroke-width="2.5"/>
+  <line x1="545" y1="138" x2="545" y2="170" stroke="#E8503A" stroke-width="2" stroke-dasharray="5 5"/>
+  <line x1="845" y1="146" x2="845" y2="170" stroke="#3E8FBF" stroke-width="2" stroke-dasharray="5 5"/>
+
+  <g font-size="13.5" fill="#6B6B7B">
+    <text x="60" y="220">power on</text>
+    <text x="310" y="220" text-anchor="middle">Windows is running</text>
+    <text x="845" y="220" text-anchor="middle">the request</text>
+  </g>
+
+  <text x="480" y="284" text-anchor="middle" font-size="14" fill="#8A8A98">The two work together: measured boot is what lets a server trust the key that signs the report.</text>
+</svg>

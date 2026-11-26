@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 444" width="960" height="444" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" role="img" aria-labelledby="t d">
+  <title id="t">Two kernels on one machine</title>
+  <desc id="d">With Virtualization Based Security, the hypervisor splits the machine into two worlds. VTL0, the normal world, holds the normal kernel, the security driver and the attacker's driver, all at the same privilege level. VTL1, the secure world, holds the Secure Kernel and its signing key. The attacker's driver cannot read VTL1 memory or run code there. The hypervisor enforces the boundary using the CPU's virtualization hardware.</desc>
+
+  <defs>
+    <filter id="soft" x="-30%" y="-30%" width="160%" height="170%">
+      <feDropShadow dx="0" dy="3" stdDeviation="3.5" flood-color="#2A2A35" flood-opacity="0.18"/>
+    </filter>
+    <pattern id="paper" width="22" height="22" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#2A2A35" fill-opacity="0.05"/>
+    </pattern>
+  </defs>
+
+  <rect x="0" y="0" width="960" height="444" fill="#FBF7F1"/>
+  <rect x="0" y="0" width="960" height="444" fill="url(#paper)"/>
+
+  <!-- ===== VTL0 ===== -->
+  <rect x="40" y="40" width="540" height="250" rx="16" fill="#2A2A35" opacity="0.05"/>
+  <text x="60" y="74" font-size="15" font-weight="700" letter-spacing="0.8" fill="#6B6B7B">VTL0: normal world</text>
+
+  <g filter="url(#soft)">
+    <rect x="60" y="96" width="156" height="100" rx="14" fill="#FFFFFF" stroke="#2A2A35" stroke-width="2.5"/>
+    <rect x="232" y="96" width="156" height="100" rx="14" fill="#FFFFFF" stroke="#2A2A35" stroke-width="2.5"/>
+    <rect x="404" y="96" width="156" height="100" rx="14" fill="#FBDDD6" stroke="#E8503A" stroke-width="2.5"/>
+  </g>
+  <text x="138" y="140" text-anchor="middle" font-size="15.5" font-weight="700" fill="#2A2A35">Normal kernel</text>
+  <text x="138" y="164" text-anchor="middle" font-size="13.5" fill="#6B6B7B">Windows itself</text>
+  <text x="310" y="140" text-anchor="middle" font-size="15.5" font-weight="700" fill="#2A2A35">Security driver</text>
+  <text x="310" y="164" text-anchor="middle" font-size="13.5" fill="#6B6B7B">anti-cheat, EDR</text>
+  <text x="482" y="140" text-anchor="middle" font-size="15.5" font-weight="700" fill="#C8402F">Attacker's driver</text>
+  <text x="482" y="164" text-anchor="middle" font-size="13.5" fill="#6B6B7B">cheat or rootkit</text>
+
+  <text x="310" y="240" text-anchor="middle" font-size="14.5" fill="#6B6B7B">All three run at the same privilege level.</text>
+
+  <!-- ===== VTL1 ===== -->
+  <rect x="640" y="40" width="280" height="250" rx="16" fill="#EAF6FB" opacity="0.7"/>
+  <text x="900" y="74" text-anchor="end" font-size="15" font-weight="700" letter-spacing="0.8" fill="#2E5AA8">VTL1: secure world</text>
+
+  <g filter="url(#soft)">
+    <rect x="660" y="96" width="240" height="100" rx="14" fill="#EAF6FB" stroke="#3E8FBF" stroke-width="2.5"/>
+  </g>
+  <text x="780" y="140" text-anchor="middle" font-size="15.5" font-weight="700" fill="#2E5AA8">Secure Kernel</text>
+  <text x="780" y="164" text-anchor="middle" font-size="13.5" fill="#6B6B7B">holds the signing key</text>
+
+  <text x="780" y="230" text-anchor="middle" font-size="14.5" font-weight="700" fill="#C8402F">VTL0 can't read this memory</text>
+  <text x="780" y="252" text-anchor="middle" font-size="14.5" font-weight="700" fill="#C8402F">or run code here.</text>
+
+  <!-- ===== The boundary, and the attacker stopping at it ===== -->
+  <line x1="610" y1="28" x2="610" y2="300" stroke="#FFB020" stroke-width="2.5" stroke-dasharray="8 6"/>
+  <line x1="568" y1="146" x2="596" y2="146" stroke="#E8503A" stroke-width="2.5"/>
+  <g stroke="#E8503A" stroke-width="3.5" stroke-linecap="round">
+    <line x1="602" y1="138" x2="618" y2="154"/>
+    <line x1="618" y1="138" x2="602" y2="154"/>
+  </g>
+
+  <!-- ===== Hypervisor ===== -->
+  <g filter="url(#soft)">
+    <rect x="40" y="312" width="880" height="66" rx="14" fill="#FFF6E0" stroke="#FFB020" stroke-width="2.5"/>
+  </g>
+  <text x="480" y="340" text-anchor="middle" font-size="15.5" font-weight="700" fill="#8A6A10">Hypervisor</text>
+  <text x="480" y="362" text-anchor="middle" font-size="13.5" fill="#8A6A10">enforces the boundary, using the CPU's virtualization hardware</text>
+
+  <text x="480" y="416" text-anchor="middle" font-size="14" fill="#8A8A98">VTL0 can only make requests, through calls the Secure Kernel chooses to answer.</text>
+</svg>

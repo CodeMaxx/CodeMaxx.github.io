@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 356" width="960" height="356" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" role="img" aria-labelledby="t d">
+  <title id="t">Ask for the size, allocate, then fetch</title>
+  <desc id="d">Three steps in a row. First, ask for the size by passing a NULL buffer; the call fails with ERROR_INSUFFICIENT_BUFFER and returns the size needed. Second, allocate a buffer of that size. Third, fetch the package by passing the nonce and the buffer; a return value of TRUE means the package was written. If the fetch fails with ERROR_INSUFFICIENT_BUFFER again, the package grew between the two calls, so go back to step two, resize and retry.</desc>
+
+  <defs>
+    <filter id="soft" x="-30%" y="-30%" width="160%" height="170%">
+      <feDropShadow dx="0" dy="3" stdDeviation="3.5" flood-color="#2A2A35" flood-opacity="0.18"/>
+    </filter>
+    <pattern id="paper" width="22" height="22" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#2A2A35" fill-opacity="0.05"/>
+    </pattern>
+    <marker id="am" viewBox="0 0 10 10" refX="7.5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0.5 L10,5 L0,9.5 Z" fill="#2A2A35"/>
+    </marker>
+    <marker id="amAmber" viewBox="0 0 10 10" refX="7.5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0.5 L10,5 L0,9.5 Z" fill="#FFB020"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="960" height="356" fill="#FBF7F1"/>
+  <rect x="0" y="0" width="960" height="356" fill="url(#paper)"/>
+
+  <!-- ===== Step 1 ===== -->
+  <g filter="url(#soft)">
+    <rect x="40" y="44" width="256" height="136" rx="16" fill="#FFFFFF" stroke="#2A2A35" stroke-width="2.5"/>
+  </g>
+  <text x="168" y="82" text-anchor="middle" font-size="17" font-weight="700" fill="#2A2A35">1. Ask for the size</text>
+  <text x="168" y="112" text-anchor="middle" font-family="'SFMono-Regular', Consolas, monospace" font-size="14" fill="#2A2A35">ReportBuffer = NULL</text>
+  <text x="168" y="142" text-anchor="middle" font-size="14.5" fill="#6B6B7B">The call fails, and tells you</text>
+  <text x="168" y="162" text-anchor="middle" font-size="14.5" fill="#6B6B7B">how many bytes it needs.</text>
+
+  <!-- ===== Step 2 ===== -->
+  <g filter="url(#soft)">
+    <rect x="352" y="44" width="256" height="136" rx="16" fill="#FFFFFF" stroke="#2A2A35" stroke-width="2.5"/>
+  </g>
+  <text x="480" y="82" text-anchor="middle" font-size="17" font-weight="700" fill="#2A2A35">2. Allocate</text>
+  <text x="480" y="128" text-anchor="middle" font-size="14.5" fill="#6B6B7B">A buffer of that size.</text>
+
+  <!-- ===== Step 3 ===== -->
+  <g filter="url(#soft)">
+    <rect x="664" y="44" width="256" height="136" rx="16" fill="#E8F6EC" stroke="#2E9E5B" stroke-width="2.5"/>
+  </g>
+  <text x="792" y="82" text-anchor="middle" font-size="17" font-weight="700" fill="#2E7D4F">3. Fetch</text>
+  <text x="792" y="112" text-anchor="middle" font-size="14.5" fill="#2A2A35">Pass the nonce and the buffer.</text>
+  <text x="792" y="152" text-anchor="middle" font-size="14.5" font-weight="700" fill="#2E7D4F">TRUE: the package is yours.</text>
+
+  <line x1="304" y1="112" x2="344" y2="112" stroke="#2A2A35" stroke-width="2.5" marker-end="url(#am)"/>
+  <line x1="616" y1="112" x2="656" y2="112" stroke="#2A2A35" stroke-width="2.5" marker-end="url(#am)"/>
+
+  <!-- ===== The retry loop ===== -->
+  <path d="M792,188 V238 H480 V192" fill="none" stroke="#FFB020" stroke-width="2.5" stroke-dasharray="8 6" marker-end="url(#amAmber)"/>
+  <text x="636" y="266" text-anchor="middle" font-size="14.5" font-weight="700" fill="#8A6A10">ERROR_INSUFFICIENT_BUFFER again?</text>
+  <text x="636" y="288" text-anchor="middle" font-size="14.5" fill="#8A6A10">The package grew. Resize and retry.</text>
+
+  <text x="480" y="332" text-anchor="middle" font-size="14" fill="#8A8A98">A driver can load, or a hotpatch can land, between the two calls.</text>
+</svg>

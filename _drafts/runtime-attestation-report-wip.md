@@ -60,6 +60,11 @@ This is the one most people think of. As a Windows machine starts, the firmware 
 
 Measured boot describes how the machine started. It does not describe a driver that loaded twenty minutes ago or a patch applied since.
 
+On a timeline, the gap looks like this:
+
+![A timeline from power on to now. Measured boot covers only startup and records it in the TPM. A driver that loads twenty minutes later is not covered. A runtime report describes the machine at the moment of the request.](/assets/images/attestation/boot-vs-runtime.svg){: .shadow }
+_A machine can start clean and be compromised an hour later._
+
 ### Runtime measurement on Linux
 
 Linux goes further with the [Integrity Measurement Architecture](https://ima-doc.readthedocs.io/en/latest/ima-concepts.html){: target="_blank" rel="noopener" } (IMA). Depending on policy, IMA hashes files as they are opened, executed or loaded as kernel modules. It appends each hash to a log and extends a TPM register with it, so a server can check that the log hasn't been edited.
@@ -80,10 +85,12 @@ The normal kernel doesn't produce or sign that package. On a machine with [Virtu
 
 Windows calls the normal world VTL0 and the secure world VTL1. You'll see those names in the figures and through the rest of the series, and Part 2 covers how the isolation works and why a server can rely on it.
 
-Measured boot still has a job here: it is how a server comes to trust the Secure Kernel's signing key, which Part 6 covers.
+Here are the two answers side by side:
 
 ![On the left, a hacked normal kernel answers 'all clean' with a red warning. On the right, the Secure Kernel hands back a signed report the hacked kernel cannot forge.](/assets/images/attestation/kernel-lies.svg){: .shadow }
 _The report still travels out through VTL0. Verification happens later, on your server._
+
+Measured boot still has a job here: it is how a server comes to trust the Secure Kernel's signing key, which Part 6 covers.
 
 Each request also carries a fresh random value chosen by your server, and the Secure Kernel signs that value into the package. An old package doesn't contain the new value, so it can't be passed off as a current one.
 
@@ -139,6 +146,25 @@ The report does not answer any of these questions on its own. It provides eviden
 
 The public sample retrieves, parses and prints the driver and hotpatch reports on x64 and ARM64. It has no third-party dependencies beyond the Windows SDK and the MSVC toolchain, and it links the C runtime statically, so the executable runs without the Visual C++ Redistributable.
 
+Here is the start of the driver report, from the same run as the package above:
+
+```plaintext
+========================================================================
+  Report 1 of 2  -  Driver report
+========================================================================
+  97 driver(s)
+
+  [0] crashdmp.sys (loads=1)
+      image hash      (SHA-256): bc78167bb32c243d41c061bbb76dc6cb5fe69dd637cf6632e166e8c316e1e88d
+      cert thumbprint (SHA-1): 1b5c9e0cfdfd9cd0744637d8b2d3b62b5081c467
+
+  [1] diskdump.sys (loads=1 unloaded)
+      image hash      (SHA-256): 2e8af9ea474f3b8e2506f141c3cb1111092d38ec898b882a9cf43f58a375398e
+      cert thumbprint (SHA-1): 1b5c9e0cfdfd9cd0744637d8b2d3b62b5081c467
+```
+
+The second entry is a driver that has already been unloaded, and the report still lists it.
+
 The sample only parses and prints. It does not verify the package signature or the report digests, so treat it as a starting point for the client side rather than a finished verifier.
 
 The driver report requires Windows 11 25H2 or later with VBS and HVCI enabled. The hotpatch report requires Insider build 29591.1000 or later with VBS enabled, and does not require HVCI. The README has the details: [github.com/CodeMaxx/windows-runtime-attestation-report](https://github.com/CodeMaxx/windows-runtime-attestation-report){: target="_blank" rel="noopener" }.
@@ -146,8 +172,8 @@ The driver report requires Windows 11 25H2 or later with VBS and HVCI enabled. T
 The rest of the series:
 
 1. **This post.** The problem, why existing attestation doesn't solve it, and a first look at the report.
-2. **Why you can believe it.** Two kernels, the signing key, and the round trip between your server and the machine.
-3. **The package and the API.** What comes back from the call field by field, and how to pull the reports out in code.
+2. **[Why you can believe it](/runtime-attestation-trust-model-wip/).** Two kernels, the signing key, and the round trip between your server and the machine.
+3. **[The package and the API](/runtime-attestation-api-package-wip/).** What comes back from the call field by field, and how to pull the reports out in code.
 4. **[The Secure Hotpatch Report](/secure-hotpatch-report/).** Telling a real Microsoft hotpatch apart from kernel tampering.
 5. **The driver report.** Every driver the machine has loaded, including the ones that are gone again, with the identity you need to spot an impostor.
 6. **Checking a report.** How your server uses the TPM to trust the signing key, what it has to verify, and what an attacker can still do.

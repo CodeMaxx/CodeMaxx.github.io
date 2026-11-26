@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 420" width="960" height="420" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" role="img" aria-labelledby="t d">
+  <title id="t">One signature, two kinds of fact</title>
+  <desc id="d">A hotpatch report entry sits under a single Secure Kernel signature. Inside it are two kinds of field. BaseCheckSum and BaseTimeDateStamp were verified in VTL1, because they come from the Microsoft-signed patch. BaseImageName was recorded from VTL0, where the Secure Kernel asked the normal kernel for it so the output is readable. The signature covers both kinds.</desc>
+
+  <defs>
+    <filter id="soft" x="-30%" y="-30%" width="160%" height="170%">
+      <feDropShadow dx="0" dy="3" stdDeviation="3.5" flood-color="#2A2A35" flood-opacity="0.18"/>
+    </filter>
+    <pattern id="paper" width="22" height="22" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#2A2A35" fill-opacity="0.05"/>
+    </pattern>
+  </defs>
+
+  <rect x="0" y="0" width="960" height="420" fill="#FBF7F1"/>
+  <rect x="0" y="0" width="960" height="420" fill="url(#paper)"/>
+
+  <!-- ===== The signed entry ===== -->
+  <g filter="url(#soft)">
+    <rect x="40" y="48" width="880" height="304" rx="16" fill="#FFFFFF" stroke="#2A2A35" stroke-width="2.5"/>
+  </g>
+  <text x="68" y="90" font-size="17" font-weight="700" fill="#2A2A35">A hotpatch report entry</text>
+
+  <rect x="596" y="66" width="296" height="36" rx="18" fill="#EAF6FB" stroke="#3E8FBF" stroke-width="2.5"/>
+  <path d="M616,84 l5,5 l9,-10" fill="none" stroke="#2E5AA8" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="640" y="89.5" font-size="14.5" font-weight="700" fill="#2E5AA8">One Secure Kernel signature</text>
+
+  <!-- ===== Verified in VTL1 ===== -->
+  <rect x="68" y="124" width="404" height="200" rx="14" fill="#E8F6EC" stroke="#2E9E5B" stroke-width="2.5"/>
+  <text x="92" y="160" font-size="16" font-weight="700" fill="#2E7D4F">Verified in VTL1</text>
+  <g font-family="'SFMono-Regular', Consolas, monospace" font-size="15" fill="#2A2A35">
+    <rect x="92" y="178" width="240" height="36" rx="8" fill="#FFFFFF" stroke="#2E9E5B" stroke-width="2"/>
+    <text x="108" y="201.5">BaseCheckSum</text>
+    <rect x="92" y="224" width="240" height="36" rx="8" fill="#FFFFFF" stroke="#2E9E5B" stroke-width="2"/>
+    <text x="108" y="247.5">BaseTimeDateStamp</text>
+  </g>
+  <text x="92" y="296" font-size="14.5" fill="#6B6B7B">From the Microsoft-signed patch.</text>
+
+  <!-- ===== Recorded from VTL0 ===== -->
+  <rect x="488" y="124" width="404" height="200" rx="14" fill="#FFF6E0" stroke="#FFB020" stroke-width="2.5"/>
+  <text x="512" y="160" font-size="16" font-weight="700" fill="#8A6A10">Recorded from VTL0</text>
+  <g font-family="'SFMono-Regular', Consolas, monospace" font-size="15" fill="#2A2A35">
+    <rect x="512" y="178" width="240" height="36" rx="8" fill="#FFFFFF" stroke="#FFB020" stroke-width="2"/>
+    <text x="528" y="201.5">BaseImageName</text>
+  </g>
+  <text x="512" y="250" font-size="14.5" fill="#6B6B7B">The Secure Kernel asks the normal kernel</text>
+  <text x="512" y="272" font-size="14.5" fill="#6B6B7B">for it, so the output is readable.</text>
+  <text x="512" y="302" font-size="14.5" font-weight="700" fill="#8A6A10">A cheat can spoof it.</text>
+
+  <text x="480" y="392" text-anchor="middle" font-size="14" fill="#8A8A98">The signature covers both kinds of field equally.</text>
+</svg>
